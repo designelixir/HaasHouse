@@ -1,19 +1,34 @@
 @font-face {
-    font-family: 'RainerTestv04-Bold';
+    font-family: 'Rainer-Bold';
     font-display: swap;
-    src: url('css/RainerTestv04-Bold.otf') format('otf');
+    src: url('fonts/woff2/Rainerv04-Bold.woff2') format('woff2'), url('fonts/woff/Rainerv04-Bold.woff') format('woff');
   }
 
-.nav_item h1 {
-    font-family: 'RainerTestv04-Bold', sans-serif;
-    font-size: 9vw;
+  @font-face {
+    font-family: 'Rainer-Medium';
+    font-display: swap;
+    src: url('fonts/woff2/Rainerv04-Medium.woff2') format('woff2'), url('fonts/woff/Rainerv04-Medium.woff') format('woff');
+  }
 
+  @font-face {
+    font-family: 'Rainer-Hairline';
+    font-display: swap;
+    src: url('fonts/woff2/Rainerv04-Hairline.woff2') format('woff2'), url('fonts/woff/Rainerv04-Hairline.woff') format('woff');
+  }
+
+
+
+.nav_item h1 {
+    font-family: 'Rainer-Bold', sans-serif;
+    font-size: 9vw;
+    color: black;
     margin: 0;
 }
 
 .nav_item a {
-    font-family: 'RainerTestv04-Bold', sans-serif;
+    font-family: 'Rainer-Medium', sans-serif;
     font-size: 5vw;
+    color: black;
 }
 
 body {
@@ -22,9 +37,10 @@ body {
     overflow: hidden; 
     margin: 0;
     padding: 0;
-    border: 4px solid orange;
-    background: black;
-    font-family: 'RainerTestv04-Bold';
+    background: url('../src/cloud_layer.png');
+    background-color: #77a8bc;
+    background-size: contain;
+    font-family: 'Rainer-Bold';
     
 }
 
@@ -35,15 +51,14 @@ button:hover{cursor: pointer; transform: scale(1.15)}
 #navigation_wrapper {
     width: 100%; 
     height: 250px; 
-    background: red; 
     display: flex; 
     justify-content: center;
     align-items: center;
+
 }
 
 .nav_item {
     float: left; 
-    border: 1px solid green;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -60,7 +75,6 @@ button:hover{cursor: pointer; transform: scale(1.15)}
     margin: 25px 50px;
     text-align: center;
     height: 200px; 
-    border: 2px solid pink;
     font-size: 10vw;   
 }
 
@@ -72,7 +86,6 @@ button:hover{cursor: pointer; transform: scale(1.15)}
     width: 100%; 
     height: 250px; 
     background: white; 
-    border: 2px solid lime;
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -88,8 +101,10 @@ button:hover{cursor: pointer; transform: scale(1.15)}
     width: 100%; 
     height: calc(100vh - 250px);
     top: 250px; 
-    background: teal;
-    border: 1px solid yellow; 
+   background-image: url('../src/tv_8.png');
+   background-size: contain;
+    background-repeat: no-repeat;
+   
 }
 
 .mobile_show {display: none;}
