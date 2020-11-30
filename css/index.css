@@ -21,14 +21,14 @@
 .nav_item h1 {
     font-family: 'Rainer-Bold', sans-serif;
     font-size: 9vw;
-    color: black;
+    color: white;
     margin: 0;
 }
 
 .nav_item a {
     font-family: 'Rainer-Medium', sans-serif;
     font-size: 5vw;
-    color: black;
+    color: white;
 }
 
 body {
@@ -37,9 +37,9 @@ body {
     overflow: hidden; 
     margin: 0;
     padding: 0;
-    background: url('../src/cloud_layer.png');
-    background-color: #77a8bc;
-    background-size: contain;
+    /* background: url('../src/test.jpg'); */
+    background-color: black;
+    background-size: cover;
     font-family: 'Rainer-Bold';
     
 }
@@ -98,13 +98,15 @@ button:hover{cursor: pointer; transform: scale(1.15)}
 #about_nav_item {width: 30%;}
 
 #television_wrapper {
+  
     width: 100%; 
     height: calc(100vh - 250px);
     top: 250px; 
-   background-image: url('../src/tv_8.png');
-   background-size: contain;
+    background-image: url('../src/tv_10.png');
+    background-size: 130%;
+    background-position-y: 0%;
     background-repeat: no-repeat;
-   
+
 }
 
 .mobile_show {display: none;}
