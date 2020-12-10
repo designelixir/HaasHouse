@@ -1,0 +1,63 @@
+<html lang="en">
+    <head>
+      <title>HAAS HOUSE</title>
+      <meta name="description" content="Portfolio for Megan Rae Byers's Design Elixir Studio."/>
+      <meta charset="utf-8">
+      <!-- important to have viewport for mobile devices -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+      <link rel="shortcut icon" href="src/favicon.ico" />
+
+      <!-- include preload for font faces -->
+      <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet"> -->
+      <!-- <link rel="stylesheet" rel="preload" href="https://use.typekit.net/rkj0ohr.css">  -->
+      <link rel="stylesheet" rel="preload" type="text/css" href="css/index.css" />
+      </head>
+    </html>
+
+    <body>
+
+        <div id="navigation_wrapper">
+            <div class="fade-in" id="mobile_nav_wrapper" style="display: none;">
+                <div class="mobile_nav_items">
+                        <img src="src/logo-black.svg" width="50px;"><br>
+                        <a>CONTACT</a><br>
+                        <a>ABOUT</a>
+                        
+                </div>
+                        
+            </div>
+            <div class="nav_item fade-in mobile_show" id="mobile_nav_button">
+                <button class="fade-in" id="hamburger_open" onclick='open_mobileNav(true)'><img  src="src/hamburger.svg" alt="hamburger menu"></button>
+                <button class="fade-in" id="hamburger_close" onclick='open_mobileNav(false)'><img  src="src/hamburger_x.svg" alt="close button"></button>
+            </div>
+            <div class="nav_item mobile_hide fade-in" id="about_nav_item">
+                    <a>ABOUT</a>
+                </div>
+            
+            <div class="nav_item fade-in" id="logo_nav_item">
+                <!-- <h1>HAAS HOUSE</h1> -->
+                <img src="src/org.svg" width="150px;">
+            </div>
+            <div class="nav_item mobile_hide fade-in" id="contact_nav_item">
+                    <a>CONTACT</a>
+                </div>
+            
+        </div>
+        
+
+        
+
+
+        <div id="photos-window" class="fade-in">
+            <a id="close-photos-window" style="cursor: pointer; font-size: 100px; float: left; ">X</a>
+            <h1 style="float: center; font-size: 100px; padding-left: 40%; ">PHOTOS</h1>
+            
+
+        </div>
+
+    </body> 
+    <script src="js/index.js"></script>   
+
+
+   
+</html>
