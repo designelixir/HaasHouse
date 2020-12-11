@@ -41,3 +41,13 @@ var close_photos_window = document.getElementById('close-photos-window');
 close_photos_window.addEventListener('click', function(){
     photos_window.style.display = "none";
 })
+
+function triggerD(descriptionNumber,show){
+    var trigger = document.getElementById(descriptionNumber);
+    if (show) {
+        trigger.style.display="block";
+
+    } else {
+        trigger.style.display="none";
+    }
+}
