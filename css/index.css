@@ -5,6 +5,12 @@
   }
 
   @font-face {
+    font-family: 'Rainer-v04';
+    font-display: swap;
+    src: url('fonts/woff2/Rainerv04.woff2') format('woff2'), url('fonts/woff/Rainerv04-Bold.woff') format('woff');
+  }
+
+  @font-face {
     font-family: 'Rainer-Medium';
     font-display: swap;
     src: url('fonts/woff2/Rainerv04-Medium.woff2') format('woff2'), url('fonts/woff/Rainerv04-Medium.woff') format('woff');
@@ -20,15 +26,14 @@
 
 .nav_item h1 {
     font-family: 'Rainer-Bold', sans-serif;
-    font-size: 9vw;
-    color: black;
+    font-size: 72px;
+    color: white;
     margin: 0;
 }
 
 .nav_item a {
-    font-family: 'Rainer-Medium', sans-serif;
-    font-size: 4vw;
-    letter-spacing: 55%;
+    font-family: 'Rainer-v04', sans-serif;
+    font-size: 36px;
     color: white;
 }
 
@@ -51,15 +56,18 @@ body {
     margin: 0;
     padding: 0;
     background: #2a2a2a;
-
+    background-image: url('https://image.shutterstock.com/image-photo/tropical-beach-600w-200624198.jpg');
     background-size: cover;
+    background-position: bottom;
     font-family: 'Rainer-Bold';
   
 }
 
 button {background: none; border: none; outline: none;}
 button:hover{cursor: pointer; transform: scale(1.15)}
-
+* {
+    box-sizing: border-box;
+  }
 
 #navigation_wrapper {
     width: 100%; 
@@ -110,7 +118,8 @@ button:hover{cursor: pointer; transform: scale(1.15)}
 #logo_nav_item {width: 40%;}
 #about_nav_item {width: 30%;}
 
-#television_container {
+
+/* #television_container {
     display: flex; 
     justify-content: center;
     align-content: center;
@@ -118,11 +127,11 @@ button:hover{cursor: pointer; transform: scale(1.15)}
     width: 100%;
 
     bottom: 0;
-}
+} */
 
-#television_wrapper {
-
-    width: 100%; 
+/* #television_wrapper {
+    margin-bottom: 200px;
+    width: 20%; 
     height: 80%;
     bottom: 0;
     position: absolute;
@@ -131,8 +140,8 @@ button:hover{cursor: pointer; transform: scale(1.15)}
     background-position-y: 0%;
     background-repeat: no-repeat;
 
-}
-
+} */
+/* 
 #tv-grid-container {
 
     width: 100%; 
@@ -144,22 +153,50 @@ button:hover{cursor: pointer; transform: scale(1.15)}
     top: 0;
     max-width: 1800px;
     height: 100%;
-    max-height: 100vh;
+    
     border: 2px solid yellow;
     object-fit: contain;
+} */
+
+
+  .tv-container {
+      border: 2px solid orange;
+      height: calc(100% - 250px);
+      display: inline-flex; 
+      width: 100%; 
+      flex-direction: column;
+  }
+
+  .tv-row {
+      height: 33%; 
+      width: 100%; 
+  
+      display: inline-flex; 
+      align-items: center;
+      justify-content: center;
+  }
+  .col img { max-height: 250px; top: 0; flex: none; box-sizing: border-box; }
+    #tv-row-bottom {
+    height: 40%;
+    
 }
 
 
-  * {
-    box-sizing: border-box;
-  }
+
+.col {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+}
 
   
-  .col {
+  /* .col {
     height: 100%;
-    display: flex; /* required */
-    flex-flow: row nowrap; /* required */
-
+    display: flex; 
+    /* flex-flow: row nowrap; 
+    /* border: 1px solid red;
+    object-fit: contain; 
   }
 
   .col40 {
@@ -170,9 +207,9 @@ button:hover{cursor: pointer; transform: scale(1.15)}
       
 
       
-  }
+  } */
 
-  .col10 {flex: 10%; }
+  /* .col10 {flex: 10%; }
 
   .col20 {
       max-height: 200px;
@@ -180,10 +217,10 @@ button:hover{cursor: pointer; transform: scale(1.15)}
 
 }
 
-.col30 {flex: 30%;}
 
-  .col img {width: 100%; top: 0; flex: none; box-sizing: border-box; 
-    }
+.col30 {flex: 30%;} */
+
+  
 
     .static-1 img {
     background: url('../src/rainbow-bars.jpg');
@@ -192,6 +229,11 @@ button:hover{cursor: pointer; transform: scale(1.15)}
     background-position-x: center;
     background-position-y: 10%;
 
+    }
+
+    .static-1 img:hover {
+        background: url('../src/surf-clip.gif');
+        background-size: contain;
     }
 
     .static-2 img {
@@ -266,9 +308,7 @@ button:hover{cursor: pointer; transform: scale(1.15)}
  }
 
 
-  .col20 {
-      flex: 20%;
-  }
+  
   
 
   
@@ -279,7 +319,7 @@ button:hover{cursor: pointer; transform: scale(1.15)}
       z-index: 1; 
       border: 2px solid red; 
       margin-bottom: 2vh;
-      max-height: 600px; 
+      max-height: 300px; 
 
   }
 
@@ -439,6 +479,11 @@ button:hover{cursor: pointer; transform: scale(1.15)}
     border: 3px solid gray;
     background: yellow; 
     color: black;
+}
+
+.films-tv:hover {
+    background-image: url('/src/rainbow_static.gif');
+    background-size: contain;
 }
 
 .channel-title {

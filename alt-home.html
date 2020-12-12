@@ -1,0 +1,118 @@
+<html lang="en">
+    <head>
+      <title>HAAS HOUSE</title>
+      <meta name="description" content="Portfolio for Megan Rae Byers's Design Elixir Studio."/>
+      <meta charset="utf-8">
+      <!-- important to have viewport for mobile devices -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+      <link rel="shortcut icon" href="src/favicon.ico" />
+
+      <!-- include preload for font faces -->
+      <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet"> -->
+      <!-- <link rel="stylesheet" rel="preload" href="https://use.typekit.net/rkj0ohr.css">  -->
+      <link rel="stylesheet" rel="preload" type="text/css" href="css/index.css" />
+      </head>
+    </html>
+
+    <body>
+
+        <div id="navigation_wrapper">
+            <div class="fade-in" id="mobile_nav_wrapper" style="display: none;">
+                <div class="mobile_nav_items">
+                        <img src="src/logo-black.svg" width="50px;"><br>
+                        <a>CONTACT</a><br>
+                        <a>ABOUT</a>
+                        
+                </div>
+                        
+            </div>
+            <div class="nav_item fade-in mobile_show" id="mobile_nav_button">
+                <button class="fade-in" id="hamburger_open" onclick='open_mobileNav(true)'><img  src="src/hamburger.svg" alt="hamburger menu"></button>
+                <button class="fade-in" id="hamburger_close" onclick='open_mobileNav(false)'><img  src="src/hamburger_x.svg" alt="close button"></button>
+            </div>
+            <div class="nav_item mobile_hide fade-in" id="about_nav_item">
+                    <a>ABOUT</a>
+                </div>
+            
+            <div class="nav_item fade-in" id="logo_nav_item">
+                <h1>HAAS HOUSE</h1>
+                <!-- <img src="src/org.svg" width="100px;"> -->
+            </div>
+            <div class="nav_item mobile_hide fade-in" id="contact_nav_item">
+                    <a>CONTACT</a>
+                </div>
+            
+        </div>
+        
+        <div class="tv-container">
+            <div class="tv-row">
+                <div class="col">
+                    h
+                </div>
+                <div class="col static-5" style="transform: translate(0%, 7%); height: 100%;">
+                    <img src="src/tvs/tv-9.png" >
+                </div>
+                <div class="col bluestatic" style="transform: translate(15%, 20%);">
+                    <img src="src/tvs/tv-10.png" style="width: 200px;">
+                </div>
+                <div class="col static-1 films-tv" style="transform: translate(20%, 15%);">
+                    <img src="src/tvs/tv-12.png">
+                    <a class="tv-link" style=" left: 20%; top: 20%;">FILMS</a>
+
+                </div>
+                <div class="col" style="max-width: 300px;">
+
+                </div>
+            </div>
+            <div class="tv-row">
+                <div class="col" style="transform: translate(-10%, -3%); z-index: 10;">
+                    <img src="src/tvs/tv-5.png" >
+                    <a id="photos-link" class="tv-link" style="margin: 0 10% 5% 0">PHOTOS</a>
+                </div>
+                <div class="col static-4" style="transform: translate(-5%, -3%); z-index: 10;">
+                    <img src="src/tvs/tv-6.png" >
+                </div>
+                <div class="col static-2" style="transform: translate(0%, 10%); z-index: 10;">
+                        <img src="src/tvs/tv-12.png" >
+                </div>
+            </div>
+
+
+            <div class="tv-row" id="tv-row-bottom">
+                <div class="col">
+                    <img class="tv" src="src/tvs/tv-12.png">
+                </div>
+                <div class="col">
+                    <img class="tv" src="src/tvs/tv-1-green.png">
+                </div>
+                <div class="col">
+                    <img class="tv" src="src/tvs/tv-2.png" >
+                    <a id="films_button" class="tv-link" style="color: white; ">DESIGN</a>
+                </div>
+                <div class="col">
+                    <img class="tv" src="src/tvs/tv-4-blue.png" >
+                </div>
+                <div class="col">
+                    <img class="tv" src="src/tvs/brownframetv.png">
+                </div>
+            </div>
+            
+
+
+        </div>
+      
+
+
+        <div id="photos-window" class="fade-in">
+            <a id="close-photos-window" style="cursor: pointer; font-size: 100px; float: left; ">X</a>
+            <h1 style="float: center; font-size: 100px; padding-left: 40%; ">PHOTOS</h1>
+            
+
+        </div>
+
+    </body> 
+    <script src="js/index.js"></script>   
+
+
+   
+</html>
