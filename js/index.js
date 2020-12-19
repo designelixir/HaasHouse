@@ -32,21 +32,68 @@ tv_guide_close_btn.addEventListener('click', function(){
     document.getElementById('happening-container').style.display="none";
 })
 
+
+
+var evt2 = document.getElementById('tv-container');
+
+function getXY(evt) {
+    var element = document.getElementById('tv-container-wrapper');  //replace elementId with your element's Id.
+    var rect = element.getBoundingClientRect();
+    var scrollTop = document.documentElement.scrollTop?
+                    document.documentElement.scrollTop:document.body.scrollTop;
+    var scrollLeft = document.documentElement.scrollLeft?                   
+                    document.documentElement.scrollLeft:document.body.scrollLeft;
+    var elementLeft = rect.left+scrollLeft;  
+    var elementTop = rect.top+scrollTop;
+
+        if (document.all){ //detects using IE   
+            x = event.clientX+scrollLeft-elementLeft; //event not evt because of IE
+            y = event.clientY+scrollTop-elementTop;
+        }
+        else{
+            x = evt.pageX-elementLeft;
+            y = evt.pageY-elementTop;
+    }
+}
+    
 var tv_link = document.getElementById('film-link');
 
 tv_link.addEventListener('click', function(){
-    television_wrapper.style.transform = "scale(4,4)";
-    television_wrapper.style.margin = "80% 0% 0% 10%";
+    television_wrapper.style.transform = "scale(4.5,4.5)";
 
-    tv_link.style.display = "none";
-    document.getElementById('film-tv').style.backgroundImage ="url('/assets/src/projector.jpg')";
+    var evt = document.getElementById('tv-container-wrapper');
+    var element = document.getElementById('tv-container-wrapper');  //replace elementId with your element's Id.
+    var rect = element.getBoundingClientRect();
+    var scrollTop = document.documentElement.scrollTop?
+                    document.documentElement.scrollTop:document.body.scrollTop;
+    var scrollLeft = document.documentElement.scrollLeft?                   
+                    document.documentElement.scrollLeft:document.body.scrollLeft;
+    var elementLeft = rect.left+scrollLeft;  
+    var elementTop = rect.top+scrollTop;
+    
+  
+        x = evt.pageX-elementLeft;
+        y = evt.pageY-elementTop;
+    // evt.style.left = x;
+    // evt.style.top = y;    
+
+    var tv_container = document.getElementById('tv-container-wrapper');
+    tv_container.style.marginTop = (y);
+    tv_container.style.marginLeft = (x);
+    // tv_container.style.marginRight = (rect.right);
+    // tv_container.style.marginBottom = (rect.bottom);
+    console.log(rect.top);
+    // value = 0; 
+    // for (i=0; i<100; i++){
+    //     value= value + 0.045;
+    //     // console.log(value);
+    //     television_wrapper.style.transform = "scale("+value+","+value+")";
+    // }
+    // television_wrapper.style.margin = "80% 0% 0% 10%";
+    // tv_link.style.display = "none";
+    // document.getElementById('film-tv').style.backgroundImage ="url('/assets/src/projector.jpg')";
 
 })
-
-
-
-
-
 
 // var films_btn = document.getElementById('films_button');
 // var television_grid_container = document.getElementById('tv-grid-container');
