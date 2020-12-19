@@ -77,12 +77,12 @@ tv_link.addEventListener('click', function(){
 //     photos_window.style.display = "none";
 // })
 
-// function triggerD(descriptionNumber,show){
-//     var trigger = document.getElementById(descriptionNumber);
-//     if (show) {
-//         trigger.style.display="block";
+function triggerD(descriptionNumber,show){
+    var trigger = document.getElementById(descriptionNumber);
+    if (show) {
+        trigger.style.display="block";
 
-//     } else {
-//         trigger.style.display="none";
-//     }
-// }
+    } else {
+        trigger.style.display="none";
+    }
+}

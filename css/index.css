@@ -21,6 +21,11 @@
     font-display: swap;
     src: url('fonts/woff2/Rainerv04-Hairline.woff2') format('woff2'), url('fonts/woff/Rainerv04-Hairline.woff') format('woff');
   }
+  html {
+    background: rgb(242,87,15);
+    background: linear-gradient(0deg, rgba(242,87,15,1) 30%, rgba(206,176,121,1) 59%, rgba(185,200,240,1) 74%, rgba(106,173,205,1) 100%);
+  }
+
 
   body {
     height: 100vh; 
@@ -28,10 +33,12 @@
     overflow: hidden; 
     margin: 0;
     padding: 0;
-    background: #2a2a2a;
-    background-image: url('../src/backgrounds/summer-beach-extended-clouds.jpg');
-    background-size: contain;
-    background-position: bottom;
+   
+   
+    background-image: url('../src/backgrounds/squished-beach.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     font-family: 'Rainer-Bold';
   
 }
@@ -42,19 +49,22 @@ button:hover{cursor: pointer; transform: scale(1.15)}
     box-sizing: border-box;
   }
 
+a {letter-spacing: 3px;}
+
 
 .nav_item h1 {
     font-family: 'Rainer-Bold', sans-serif;
-    font-size: 72px;
+    font-size: 100px;
     color: white;
     margin: 0;
+
 }
 
 .nav_item a {
     font-family: 'Rainer-v04', sans-serif;
-    font-size: 36px;
+    font-size: 45px;
     color: white;
-    border: 1px solid red;
+
 }
 
 .nav_item a:hover {text-decoration: underline;}
@@ -114,7 +124,7 @@ button:hover{cursor: pointer; transform: scale(1.15)}
 
 
 .tv-link {
-    font-size: 72px; 
+    font-size: 80px; 
     z-index: 200;
     text-decoration: none;
     position: absolute;
@@ -133,7 +143,7 @@ button:hover{cursor: pointer; transform: scale(1.15)}
 }
 
 #tv-container {
-    border: 2px solid orange;
+
     margin-bottom: 5%;
     display: inline-flex; 
     width: 90%; 
@@ -157,6 +167,7 @@ button:hover{cursor: pointer; transform: scale(1.15)}
 .col img {max-height: 25vh; width: auto; top: 0; flex: none; box-sizing: border-box;  }
 
 .col {
+
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -180,9 +191,17 @@ button:hover{cursor: pointer; transform: scale(1.15)}
   .blue-static {
       background: url('../src/statics/blue-static.gif');
       background-repeat: no-repeat;
-      background-size: 90% 80%;
+      background-size: 80% 80%;
       background-position: center;
   }
+
+  #film-tv:hover {
+    background: url('../src/statics/countdown.gif');
+    background-repeat: no-repeat;
+    background-size: 90% 80%;
+    background-position: center;
+}
+
   
   .gray-static {
     background: url('../src/statics/gray-static.gif');
@@ -191,8 +210,15 @@ button:hover{cursor: pointer; transform: scale(1.15)}
     background-position: center;
 }
 
-.rainbow-bar-static {
-    background: url('../src/statics/rainbow-animated.gif');
+.gray-static-stationary {
+    background: url('../src/statics/gray-static-stationary.png');
+    background-repeat: no-repeat;
+    background-size: 90% 90%;
+    background-position: center;
+}
+
+.no-signal-static {
+    background: url('../src/statics/no-signal-static.gif');
     background-repeat: no-repeat;
     background-size: 90% 90%;
     background-position: center;
@@ -206,12 +232,19 @@ button:hover{cursor: pointer; transform: scale(1.15)}
     background-position: center;
 }
 
-#film-tv:hover {
+.surf-static {
     background: url('../src/statics/surf-gif-fixed.gif');
     background-repeat: no-repeat;
     background-size: 90% 90%;
     background-position: center;
     
+}
+
+.blue-play {
+    background: url('../src/statics/play.gif');
+    background-repeat: no-repeat;
+    background-size: 80% 80%;
+    background-position: center;
 }
 
 
