@@ -25,61 +25,34 @@ function triggerD(descriptionNumber,show){
 var theBody = document.getElementById('the-body');
 
 
-function zoomTV(tvName){
+function zoomTV(tvNumber){
     var theBody = document.getElementById('the-body');
-    var theTvContainer = document.getElementById('tv-spread-container');
-    var zoomThisTV = document.getElementById(tvName)
 
-//measure
-    var bodyPosition = theBody.getBoundingClientRect();
-    var tvContainerMeasure = theTvContainer.getBoundingClientRect();
-    var tvPosition = zoomThisTV.getBoundingClientRect();
-    console.log("tv container: "+ tvContainerMeasure.bottom +", "+tvContainerMeasure.left);
-    console.log("targeted tv: "+ tvPosition.bottom +", "+tvPosition.left);
-    console.log("body: "+ bodyPosition.bottom +", "+bodyPosition.left);
-    theBody.style.transform = "scale(4,4)";
-    console.log("after");
-    console.log("tv container: "+ tvContainerMeasure.bottom +", "+tvContainerMeasure.left);
-    console.log("targeted tv: "+ tvPosition.bottom +", "+tvPosition.left);
-    console.log("body: "+ bodyPosition.bottom +", "+bodyPosition.left);
+    if(tvNumber === 1){
+        theBody.style.transform = "scale(5,5)";
+        theBody.style.transformOrigin = '62.5% 31%';
+        document.getElementById('films-link').style.display = 'none';
+        document.getElementById('films-window').style.display = 'block';
+        document.getElementById('tv-11-bg').style.display = "none";
+        document.getElementById('tv-11-bg-2').style.display = 'block';
+    }
+
+    else if(tvNumber === 2){
+        theBody.style.transform = "scale(5,5)";
+        theBody.style.transformOrigin = '17% center';
+        document.getElementById('tv-5-link').style.display = "none";
+        document.getElementById('tv-5-box').style.display = "block";
+    }
+
+    else if(tvNumber === 3){
+        theBody.style.transform = "scale(6,6)";
+        theBody.style.transformOrigin = '60% 78%';
+        document.getElementById('tv-3-link').style.display = "none";
+    }
     
-    
-    // theTvContainer.style.bottom = tvPosition.left;
-    
-    
-    theTvContainer.style.right = tvPosition.right / bodyPosition.right * 2;
-    theTvContainer.style.top = (tvPosition.top);
-    
+
 }
 
-
- 
-
-var tv10 = document.getElementById('tv-10-btn');
-//replace elementId with your element's Id.
-// var rect = element.getBoundingClientRect();
-// console.log("first" + rect.top);
-// tv10.addEventListener('click', function(){
-    
-
-//     var element = document.getElementById('tv-10-btn');  
-//     // 
-//     var rect = element.getBoundingClientRect();
-//     scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-//     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-//     console.log( { top: rect.top + scrollTop, left: rect.left + scrollLeft });
-
-//     theBody.style.marginLeft = -(rect.left + scrollLeft);
-//     theBody.style.marginTop = -(rect.top + scrollTop);
-//     theBody.style.transform = "scale(4,4)";
-    
-    
-   
-// })
-
-// document.querySelector('video').playbackRate = 0.25;
-
-// example use
 var tvSpreadContainer = document.getElementById('tv-spread-container');
 var navigation = document.querySelectorAll(".nav-link");
 

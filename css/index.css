@@ -64,7 +64,7 @@ a:hover { color: white; text-decoration: none;}
 p {font-size: 24px;}
 h1 {font-family: 'Rainer-Bold', sans-serif; font-size: 100px;margin: 0; color: white;}
 h3 {font-family: 'Rainer-v04', sans-serif; font-size: 60px; letter-spacing: 2px; color: white; text-shadow: 2px 2px 8px #000000}
-h4 {font-size: 45px; margin: -8px; padding: 2px 8px; font-family: 'Rainer-Bold', sans-serif; letter-spacing: 3px;}
+h4 {font-size: 45px; padding: 2px 8px; font-family: 'Rainer-Bold', sans-serif; letter-spacing: 3px;}
 
 #navigation_wrapper {
     width: calc(100% - 150px);
@@ -83,46 +83,54 @@ h4 {font-size: 45px; margin: -8px; padding: 2px 8px; font-family: 'Rainer-Bold',
 #contact_nav_item {width: 10%; float: right; text-align: right;}
 #logo_nav_item {min-width: 70%; margin: 0 2.5%; display: flex; justify-content: center;}
 
-.ocean-wrapper{
-    object-fit: cover;
-    width: 100vw;
-    height: 60vh;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    background-image: url('../src/beach-1.jpeg');
-    background-size: cover;
-}
-
-.palm-wrapper img {margin: -50px -50px; max-height: 50vh; z-index: 100; }
+.palm-wrapper {width: 120%; margin: -5% -10%; height: 55%; position: fixed; z-index: 100;}
+.palm-wrapper img {height: 100%;}
 .palm-left {float: left; animation: wobble-ver-left 200s both;}
 .palm-right {float: right; animation: wobble-hor-bottom 300s both;}
 
 
-#tv-spread-container {position: absolute; left: 0; bottom: 0; max-height: calc(100vh - 125px); margin: 0 5vw; width: 90vw;}
+#tv-spread-container {position: absolute; left: 0; bottom: 0; height: calc(100vh - 125px); top: 125px;  width: 80vw; margin: 0 10vw;}
 #tv-spread-wrapper {position: relative; display: inline; border: 2px solid rgba(0,0,0,0);}
 
 .tv-contents {z-index: -1; position: absolute; background-size: contain;}
-.tv-clickable {position: absolute;  border-radius: 6px; background-color: rgba(0,0,0,0)!important; background-image: none!important;}
+.tv-clickable {position: absolute; z-index: 300; border-radius: 6px; background-color: rgba(0,0,0,0)!important; background-image: none!important;}
 
-#tv-1 {width: 20%; top: 117%; left: 7%; height: 51%; background: blue;}
-#tv-2 {width: 18%; top: 126%; left: 29%; height: 50%; background-image: url('../src/statics/no-signal-static.gif')}
-.tv-3 {top: 122%; left: 49.5%; width: 15%; height: 47%; background: black;}
-#tv-4 {top: 120%; left: 72%; width: 20%; height: 53%; background-image: url('../src/statics/blue-static.gif')}
-.tv-5{left:8.5%; top: 68%; width: 15%; height: 39%; background: black;}
-#tv-6{left: 28.5%; top: 66%; width: 20%; height: 45%; background-image: url('../src/statics/gray-static-stationary.png');}
-#tv-7{left: 54.5%; top: 61%; width:16%; height: 45%; background-image: url('../src/statics/play.png');}
-#tv-8{left: 73%; top: 69%; width:17%; height: 45%; background: lime;}
-#tv-9{left: 14%; top: 30%; width: 9%; height: 24%; background: lime;}
-#tv-10 {left:32.5%; top: 9%; width: 18%; height: 43%; background-image: url('../src/statics/surf-gif-fixed.gif');}
-.tv-11 {left:54%; top: 7%; width: 16%; height: 44%; background: black; cursor: url(../src/green-remote.png), auto;}
+#tv-1 {width: 20%; top: 115%; left: 7%; height: 51%; background: blue;}
+#tv-2 {width: 18%; top: 124%; left: 29%; height: 42%; background-image: url('../src/statics/no-signal-static.gif')}
+.tv-3 {top: 122%; left: 51%; width: 15%; height: 39%; background: black;}
+#tv-4 {top: 120%; left: 73%; width: 20%; height: 46%; background-image: url('../src/statics/blue-static.gif')}
+.tv-5{left:5%; top: 71%; width: 20%; height: 36%; background: black;}
+#tv-5 {border: 2px solid aqua;}
+
+#tv-6{left: 28.5%; top: 73%; width: 20%; height: 40%; background-image: url('../src/statics/gray-static-stationary.png');}
+#tv-7{left: 54.5%; top: 70%; width:16%; height: 37%; background-image: url('../src/statics/play.png');}
+#tv-8{left: 73%; top: 69%; width:20%; height: 42%; background: lime;}
+#tv-9{left: 15%; top: 35%; width: 10%; height: 24%; background: lime;}
+#tv-10 {left:30.75%; top: 28%; width: 18%; height: 40%; background-image: url('../src/statics/surf-gif-fixed.gif');}
+.tv-11 {left:52%; top: 27%; width: 20%; height: 37%; cursor: url(../src/green-remote.png), auto;}
+#tv-11-bg {background-color: black;}
 #tv-11-btn:hover + #tv-11-bg{ background: url('../src/statics/countdown.gif'); background-size: 90% 100%; cursor: url(../src/green-remote.png), auto;}
-#tv-12 {left:75%; top: 23%; width: 16%; height: 35.5%; background-image: url('../src/statics/gray-static.gif');}
 
+#tv-11-bg-2 { width: 25%; height: 35%; left: 53%; }
+#tv-12 {left:77%; top: 34%; width: 13%; height: 30%; background-image: url('../src/statics/gray-static.gif');}
 
+.movie-play { height: 100%; width: 75%; float: left; display: flex; align-items: center; justify-content: center;}
+.movie-play img:hover {transform: scale(1.1)}
 
+#films-window {
+  width: 97%;
+  height: 75%; 
+  margin: 10% 9%;
+  top: 0;
+  position: absolute;
+  z-index: 300!important;
+  padding: 0%;
+}
 
+.movie {width: 75%; height: 100%;  float: left;}
+.movie-nav {width: 15%; height: 100%;  float: right; padding: 5px 0px;}
+.movie-nav p {font-size: 12px; line-height: 12px;}
+.movie-nav p:hover {font-size: 13px;}
 
 #about-window {width: 100vw; height: 100vh; z-index: 150; position: absolute; left: 0%; top: 0; background: rgba(255,255,255, 1); }
 
@@ -140,60 +148,11 @@ h4 {font-size: 45px; margin: -8px; padding: 2px 8px; font-family: 'Rainer-Bold',
 textarea {height: 100px; margin: 0px; border: 1px solid black; }
 
 
-/* TV GUIDE  */
-#happening-container {
-    width: 80%;
-    margin: 0 0% 0 10%; 
-    height: calc(100% - 150px);
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    padding: 8% 5%;
-   position: fixed;
-   z-index: 300;
-   animation-delay: 2s;
-
-}
-
-.tv-guide {width: 100%; max-width: 800px; height: 100%; max-height: 550px; border: 2px solid black; border-radius: 2px; }
-.tv-guide-section {width: 50%; float: left; border: 1px solid black; height: 151px; color: white; background: red; }
-#tv-guide-right { background: -webkit-linear-gradient(top, #21277A, #3b63bb); }
-.tv-guide-close-bar {width: 100%; max-width: 795px; height: 30px; background: #21277A; border: 1px solid black;}
-.tv-guide-close-bar button {width: 20px; height: 20px; margin: 2px; border-radius: 20px; float: right; background: green;}
-#tv-guide-section-title {width: 100%; height: 65px; background: #21277A; padding: 10px; top: 0; border: 1px solid black; display: flex; align-items: center; justify-content: space-between; }
-#tv-guide-section-description {width: 100%; height: 100px; background: #21277A; padding: 15px; 
-    background: -webkit-linear-gradient(top, #21277A, #3b63bb);
-    background: -moz-linear-gradient(top, #21277A, #3b63bb);
-    background: linear-gradient(to bottom, #21277A, #3b63bb);
-}
-#tv-guide-section-description span {font-family: Arial, sans-serif; font-size: 14px; display: none; }
+/* PHOTOS TV GUIDE  */
+#tv-5-box {width: 90%; height: 100%; border: 2px solid magenta; object-fit: contain; display: flex; align-items: center; justify-content: center; }
 
 
 
-
-.tv-guide-bottom {height: calc(100% - 200px); margin-top: 170px; background: black; width: 100%; padding: 25px; border: 3px solid black;}
-.tv-guide-channels {width: 100%; height: calc(100% - 50px); border: 1px solid rgba(0,0,0,0.2); border-radius: 3px; overflow-y: scroll;overflow-x: hidden; }
-.tv-guide-bottom-nav {height: 30px; margin-top: 5px; border: 1px solid rgba(0,0,0,0.2);  width: 100%; text-align: center;}
-.tv-guide-bottom-nav:hover {background: rgba(9,20, 28, 0.25); cursor: url(../src/green-remote.png), auto;}
-
-.channel {width: 80%; margin: 2% 10%;display: inline-block; flex-direction: row; height: 50px; border-radius: 2px; border: solid 3px black; background: #21277A; color: white; }
-.channel:hover {border: 3px solid gray; background: #3b63bb; color: black;}
-.channel a {font-family: 'Rainer-Medium', sans-serif; font-size: 45px; letter-spacing: 3px; color: white; }
-
-
-.films-tv:hover {
-    background-image: url('/src/rainbow_static.gif');
-    background-size: contain;
-    cursor: url(../src/green-remote.png), auto;
-}
-
-.channel-title {
-    font-size: 30px!important; 
-    display: flex; 
-    padding-top: 10px;
-    align-items: center; 
-    justify-content: center;  
-}
 
 .mobile_show {display: none;}
 
@@ -209,15 +168,6 @@ textarea {height: 100px; margin: 0px; border: 1px solid black; }
  
   }
 
-  .gradient {
-    max-height: 50vh;
-    background-origin: center;
-    background: linear-gradient(0deg, rgba(239,250,183,1) 2%, rgba(239,196,184,1) 37%, rgba(136,183,218,1) 71%, rgba(129,187,247,1) 92%, rgba(142,204,255,1) 100%);
-    /* background: linear-gradient(0deg, rgba(235,219,216,1) 0%, rgba(239,196,184,1) 15%, rgba(199,136,151,1) 30%, rgba(136,183,218,1) 65%, rgba(129,187,247,1) 84%, rgba(142,204,255,1) 100%); */
-    animation: movinggradient 30s ease infinite;
-    animation-direction: alternate;
-    background-size: 5% 300%; 
-  }
 
   
   
