@@ -8,7 +8,7 @@
       <link rel="shortcut icon" href="src/favicon.ico" />
       <link rel="stylesheet" rel="preload" type="text/css" href="css/index.css" />
       </head>
-    <div class=palm-wrapper>
+    <div class="palm-wrapper">
         <img class='palm-left' src="src/palm-left.png"  alt='palm leaf'>
         <img class='palm-right' src="src/palm-right.png" alt='palm leaf'>
     </div>
@@ -34,18 +34,53 @@
         <div id="tv-spread-wrapper">
             <button id="tv-1" class="tv-contents" aria-label="unclickable button"></button>
             <button id="tv-2" class="tv-contents" aria-label="unclickable button"></button>
-            <button id="tv-3" class="tv-3 tv-clickable" aria-label="Design" onclick="zoomTV('tv-3')"><a>DESIGN</a></button>
+            <button id="tv-3" class="tv-3 tv-clickable" aria-label="Design" onclick="zoomTV(3)"><a id="tv-3-link">DESIGN</a></button>
             <button class="tv-3 tv-contents" aria-label="unclickable button"></button>
             <button id="tv-4" class="tv-contents" aria-label="unclickable button"></button>
-            <button id="tv-5" class="tv-5 tv-clickable" onclick="zoomTV('tv-5', 2)" aria-label="Photos"><a>PHOTOS</a></button>
-            <button class="tv-5 tv-contents" aria-label="unclickable button"></button>
+            <button id="tv-5" class="tv-5 tv-clickable" onclick="zoomTV(2)" aria-label="Photos">
+                <a id="tv-5-link">PHOTOS</a>
+                
+                <div id="tv-5-box" style="display: none;">
+                   
+
+                    
+                </div>
+                
+               
+            
+            </button>
+            <div class="tv-5 tv-contents" aria-label="unclickable button"></div>
             <button id="tv-6" class="tv-contents" aria-label="unclickable button"></button>
             <button id="tv-7" class="tv-contents" aria-label="unclickable button"></button>
             <button id="tv-8" class="tv-contents" aria-label="unclickable button"></button>
             <button id="tv-9" class="tv-contents" aria-label="unclickable button"></button>
             <button id="tv-10" class="tv-contents" aria-label="unclickable button"></button>
-            <button id="tv-11-btn" class="tv-11 tv-clickable" aria-label="Films" onclick="zoomTV('tv-11-btn')"><a>FILMS</a></button>
+            
+            <button id="tv-11-btn" class="tv-11 tv-clickable" aria-label="Films" onclick="zoomTV(1)">
+                <a id="films-link">FILMS</a>
+                <div id="films-window" style="display: none;">
+                    <div id="movie-1" class="movie-play">
+                        <img src="https://lh3.googleusercontent.com/proxy/dUPCRILGWUmqCWi92oi58muGnt6CqTb9qmvONDWJF5Rwk9ZX6vFhlldOp7G7x_g1qF70SLpviJDED4Yk4bVMMyu_HBZBwOU" style="width: 25px;">
+                    </div>
+                    
+
+
+                    <div class="movie-nav">
+                        <p>	⏪</p>
+                        <p> ⏩</p>
+                    </div>
+                </div>
+            </button>
+            <div id="tv-11-bg-2" class="tv-11 tv-contents" aria-label="unclickable button" style="display: none;">
+                <div class="movie">
+                    <img src="src/casey-portrait.jpeg"> 
+                    <!-- this is where screenshots of the movies will go  -->
+                </div>
+            </div>
+
             <button id="tv-11-bg" class="tv-11 tv-contents" aria-label="unclickable button"></button>
+           
+           
             <button id="tv-12" class="tv-contents" aria-label="unclickable button"></button>
 
             <img id="tv-spread" src="src/tv-spread-7.png" alt="tvs stacked"/>
@@ -54,59 +89,22 @@
 
 
 
-</div></div>        
+</div></div>  
+
+
  
+
 
 
      <div id="about-window" style="display: none;">
         <div class="about-window-content">
-            <div id="happening-container">
-                <div class="tv-guide fade-in" >
-                    <div class="tv-guide-top">
-                        <div class="tv-guide-close-bar">
-                            <button id='tv-guide-close-btn'>X</button>  
-                            <button id='tv-guide-close-btn'>-</button>                   
-                        </div>
-                        <div class="tv-guide-section" id="tv-guide-section-left">
-                            <div id="tv-guide-section-title">
-                                <h4 style="float: left; ">CHANNEL 96</h4>
-                                <h4 style="float: right; ">PHOTOS </h4>
-    
-                            </div>
-                            <div id="tv-guide-section-description">
-                               <span id="channel1description">human beings</span>
-                               <span id="channel2description">pacific ocean, architecture, california, bolivia</span>
-                               <span id="channel3description">products, statues, concerts</span>
-                               
-                            </div>
-                        </div>
-                        <div class="tv-guide-section" id="tv-guide-right"></div>
-    
-                    </div>
-                    <div class="tv-guide-bottom">
-                        <div class="tv-guide-channels">
-                            <div class="channel" onmouseover="triggerD('channel1description', true)" onmouseout="triggerD('channel1description', false)">
-                                <a class="channel-title">PEOPLE  </a> 
-                            </div>
-                            <div class="channel" onmouseover="triggerD('channel2description', true)" onmouseout="triggerD('channel2description', false)">
-                                <a class="channel-title"> PLACES  </a> 
-                            </div>
-                            <div class="channel" onmouseover="triggerD('channel3description', true)" onmouseout="triggerD('channel3description', false)">
-                                <a class="channel-title"> THINGS   </a> 
-                            </div>
-                            
-                        </div>
-                    </div>
-        
-                </div>
-    
-            </div>
-            <!-- <div class="about-window-col">
+            
+            <div class="about-window-col">
                 <img src="src/casey-portrait.jpeg">
             </div>
             <div class="about-window-col">
                 <p>Lorem ipsum dolor sit amet, no dicit mediocrem eos, in nibh epicuri his, ne vim utamur temporibus consequuntur. Ne pri epicuri referrentur, mel timeam viderer efficiendi id, dicta aliquam ex quo. Sea te oblique omittam, amet aperiri sadipscing nec ut, has id idque vivendum mandamus. Et veri sanctus euripidis pro. Nec no hinc civibus omnesque.</p>
-            </div> -->
+            </div>
         </div>
      </div>
 
