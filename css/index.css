@@ -114,21 +114,20 @@ h4 {font-size: 45px; padding: 2px 8px; font-family: 'Rainer-Bold', sans-serif; l
 #tv-11-bg-2 { width: 25%; height: 35%; left: 53%; }
 #tv-12 {left:77%; top: 34%; width: 13%; height: 30%; background-image: url('../src/statics/gray-static.gif');}
 
-.movie-play { height: 100%; width: 75%; float: left; display: flex; align-items: center; justify-content: center;}
-.movie-play img:hover {transform: scale(1.1)}
 
 #films-window {
   width: 97%;
-  height: 75%; 
-  margin: 10% 9%;
+  height: 80%; 
+  margin: 8% 9%;
   top: 0;
   position: absolute;
   z-index: 300!important;
   padding: 0%;
 }
+.movie { height: 100%; width: 77%; float: left; display: flex; align-items: center; justify-content: center; border: 2px solid lime;}
 
-.movie {width: 75%; height: 100%;  float: left;}
-.movie-nav {width: 15%; height: 100%;  float: right; padding: 5px 0px;}
+.movie-bg {width: 75%; height: 100%;  border: 2px solid magenta; float: left; background: black;}
+.movie-nav {width: 15%; height: 100%;  float: right; padding: 5px 0px; border: 2px solid yellow;}
 .movie-nav p {font-size: 12px; line-height: 12px;}
 .movie-nav p:hover {font-size: 13px;}
 

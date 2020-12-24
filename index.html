@@ -59,24 +59,20 @@
             <button id="tv-11-btn" class="tv-11 tv-clickable" aria-label="Films" onclick="zoomTV(1)">
                 <a id="films-link">FILMS</a>
                 <div id="films-window" style="display: none;">
-                    <div id="movie-1" class="movie-play">
-                        <img src="https://lh3.googleusercontent.com/proxy/dUPCRILGWUmqCWi92oi58muGnt6CqTb9qmvONDWJF5Rwk9ZX6vFhlldOp7G7x_g1qF70SLpviJDED4Yk4bVMMyu_HBZBwOU" style="width: 25px;">
+                    <div class="movie">
+                        <iframe id="film-iframe" style="width:100%; height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                     </div>
                     
 
 
                     <div class="movie-nav">
-                        <p>	⏪</p>
-                        <p> ⏩</p>
+                        <p id="movie-nav-close">X</p>
+                        <p id="movie-nav-next">⏩</p>
+                        <p id="movie-nav-prev">⏪ </p>
                     </div>
                 </div>
             </button>
-            <div id="tv-11-bg-2" class="tv-11 tv-contents" aria-label="unclickable button" style="display: none;">
-                <div class="movie">
-                    <img src="src/casey-portrait.jpeg"> 
-                    <!-- this is where screenshots of the movies will go  -->
-                </div>
-            </div>
+            
 
             <button id="tv-11-bg" class="tv-11 tv-contents" aria-label="unclickable button"></button>
            
@@ -131,8 +127,10 @@
 
     
     </body> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script src="js/index.js"></script>   
-    
+    <script src="https://player.vimeo.com/api/player.js"></script>
 
 
    
