@@ -12,117 +12,6 @@ function open_mobileNav(open){
     
 }
 
-var photo_tv = document.getElementById('photo-tv');
-var television_wrapper = document.getElementById('tv-container-wrapper');
-var tv_container = document.getElementById('tv-container');
-
-photo_tv.addEventListener('click', function(){
-    television_wrapper.style.animation = "scale-in 0.25s both";
-    // television_wrapper.style.marginLeft = "140%";
-    document.getElementById('photo-tv').style.display="none";
-    document.getElementById('happening-container').style.display="block";
-})
-
-var tv_guide_close_btn = document.getElementById('tv-guide-close-btn');
-
-tv_guide_close_btn.addEventListener('click', function(){
-    television_wrapper.style.animation = "scale-out 0.25s both";
-    television_wrapper.style.marginLeft = "0%";
-    document.getElementById('photo-tv').style.display="block";
-    document.getElementById('happening-container').style.display="none";
-})
-
-
-
-var evt2 = document.getElementById('tv-container');
-
-function getXY(evt) {
-    var element = document.getElementById('tv-container-wrapper');  //replace elementId with your element's Id.
-    var rect = element.getBoundingClientRect();
-    var scrollTop = document.documentElement.scrollTop?
-                    document.documentElement.scrollTop:document.body.scrollTop;
-    var scrollLeft = document.documentElement.scrollLeft?                   
-                    document.documentElement.scrollLeft:document.body.scrollLeft;
-    var elementLeft = rect.left+scrollLeft;  
-    var elementTop = rect.top+scrollTop;
-
-        if (document.all){ //detects using IE   
-            x = event.clientX+scrollLeft-elementLeft; //event not evt because of IE
-            y = event.clientY+scrollTop-elementTop;
-        }
-        else{
-            x = evt.pageX-elementLeft;
-            y = evt.pageY-elementTop;
-    }
-}
-    
-var tv_link = document.getElementById('film-link');
-
-tv_link.addEventListener('click', function(){
-    television_wrapper.style.transform = "scale(4.5,4.5)";
-
-    var evt = document.getElementById('tv-container-wrapper');
-    var element = document.getElementById('tv-container-wrapper');  //replace elementId with your element's Id.
-    var rect = element.getBoundingClientRect();
-    var scrollTop = document.documentElement.scrollTop?
-                    document.documentElement.scrollTop:document.body.scrollTop;
-    var scrollLeft = document.documentElement.scrollLeft?                   
-                    document.documentElement.scrollLeft:document.body.scrollLeft;
-    var elementLeft = rect.left+scrollLeft;  
-    var elementTop = rect.top+scrollTop;
-    
-  
-        x = evt.pageX-elementLeft;
-        y = evt.pageY-elementTop;
-    // evt.style.left = x;
-    // evt.style.top = y;    
-
-    var tv_container = document.getElementById('tv-container-wrapper');
-    tv_container.style.marginTop = (y);
-    tv_container.style.marginLeft = (x);
-    // tv_container.style.marginRight = (rect.right);
-    // tv_container.style.marginBottom = (rect.bottom);
-    console.log(rect.top);
-    // value = 0; 
-    // for (i=0; i<100; i++){
-    //     value= value + 0.045;
-    //     // console.log(value);
-    //     television_wrapper.style.transform = "scale("+value+","+value+")";
-    // }
-    // television_wrapper.style.margin = "80% 0% 0% 10%";
-    // tv_link.style.display = "none";
-    // document.getElementById('film-tv').style.backgroundImage ="url('/assets/src/projector.jpg')";
-
-})
-
-// var films_btn = document.getElementById('films_button');
-// var television_grid_container = document.getElementById('tv-grid-container');
-
-// var close_films_button = document.getElementById('close-films');
-
-// films_btn.addEventListener('click', function(){
-//     console.log('clicked');
-//     close_films_button.style.display = 'block';
-//     television_wrapper.style.transform = 'scale(3,3)';
-//     television_grid_container.style.transform = 'translate(-10%, -40%)';
-// })
-
-// close_films_button.addEventListener('click', function(){
-//     television_wrapper.style.transform = 'scale(1,1)';
-//     television_grid_container.style.transform = 'translate(0%, 0%)';
-//     close_films_button.style.display = 'none';
-// })
-
-// var photos_window = document.getElementById('photos-window');
-// var photos_link = document.getElementById('photos-link');
-// photos_link.addEventListener('click', function(){
-//     photos_window.style.display = "block";
-// })
-
-// var close_photos_window = document.getElementById('close-photos-window');
-// close_photos_window.addEventListener('click', function(){
-//     photos_window.style.display = "none";
-// })
 
 function triggerD(descriptionNumber,show){
     var trigger = document.getElementById(descriptionNumber);
@@ -133,3 +22,95 @@ function triggerD(descriptionNumber,show){
         trigger.style.display="none";
     }
 }
+var theBody = document.getElementById('the-body');
+
+
+function zoomTV(tvName){
+    var theBody = document.getElementById('the-body');
+    var theTvContainer = document.getElementById('tv-spread-container');
+    var zoomThisTV = document.getElementById(tvName)
+
+//measure
+    var bodyPosition = theBody.getBoundingClientRect();
+    var tvContainerMeasure = theTvContainer.getBoundingClientRect();
+    var tvPosition = zoomThisTV.getBoundingClientRect();
+    console.log("tv container: "+ tvContainerMeasure.bottom +", "+tvContainerMeasure.left);
+    console.log("targeted tv: "+ tvPosition.bottom +", "+tvPosition.left);
+    console.log("body: "+ bodyPosition.bottom +", "+bodyPosition.left);
+    theBody.style.transform = "scale(4,4)";
+    console.log("after");
+    console.log("tv container: "+ tvContainerMeasure.bottom +", "+tvContainerMeasure.left);
+    console.log("targeted tv: "+ tvPosition.bottom +", "+tvPosition.left);
+    console.log("body: "+ bodyPosition.bottom +", "+bodyPosition.left);
+    
+    
+    // theTvContainer.style.bottom = tvPosition.left;
+    
+    
+    theTvContainer.style.right = tvPosition.right / bodyPosition.right * 2;
+    theTvContainer.style.top = (tvPosition.top);
+    
+}
+
+
+ 
+
+var tv10 = document.getElementById('tv-10-btn');
+//replace elementId with your element's Id.
+// var rect = element.getBoundingClientRect();
+// console.log("first" + rect.top);
+// tv10.addEventListener('click', function(){
+    
+
+//     var element = document.getElementById('tv-10-btn');  
+//     // 
+//     var rect = element.getBoundingClientRect();
+//     scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+//     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//     console.log( { top: rect.top + scrollTop, left: rect.left + scrollLeft });
+
+//     theBody.style.marginLeft = -(rect.left + scrollLeft);
+//     theBody.style.marginTop = -(rect.top + scrollTop);
+//     theBody.style.transform = "scale(4,4)";
+    
+    
+   
+// })
+
+// document.querySelector('video').playbackRate = 0.25;
+
+// example use
+var tvSpreadContainer = document.getElementById('tv-spread-container');
+var navigation = document.querySelectorAll(".nav-link");
+
+function toggleWindow(window_id, toggleNumber){
+var window = document.getElementById(window_id);
+
+if (window.style.display === "block"){
+    var open = true; 
+    navigation.forEach(element => {
+        element.style.color = "white";
+        element.style.animation = 'fade-in 1.75s cubic-bezier(.39,.575,.565,1.000)';
+        });
+    window.style.display === 'none';
+    tvSpreadContainer.classList.add('fade-in');
+}
+else {
+    var open = false; 
+    navigation.forEach(element => {
+        element.style.color = "black";
+        element.style.animation = 'fade-in 1.75s cubic-bezier(.39,.575,.565,1.000)'});
+    window.style.display === 'block';
+    tvSpreadContainer.classList.add('fade-out');
+}
+console.log('trigger: '+ open)
+if (!open && toggleNumber === 1){
+    window.classList.add("slide-in-left");
+    console.log("triggered open about window")
+} else if (!open && toggleNumber === 2){
+    console.log('triggered open contact')
+}
+
+}
+
+
