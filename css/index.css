@@ -1,5 +1,5 @@
-@import url('http://getbootstrap.com/2.3.2/assets/css/bootstrap.css');
-@import url('http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css');
+@import url('https://getbootstrap.com/2.3.2/assets/css/bootstrap.css');
+@import url('https://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css');
 
 @font-face {
     font-family: 'Rainer-Bold';
@@ -92,7 +92,7 @@ h4 {font-size: 45px; padding: 2px 8px; font-family: 'Rainer-Bold', sans-serif; l
 
 
 #tv-spread-container {position: absolute; left: 0; bottom: 0; height: 80%; width: 80%; margin: 17.5% 10% 2.5% 10%; border: 2px solid red;}
-#tv-spread-wrapper {position: relative; display: inline; border: 2px solid rgba(0,0,0,0);}
+#tv-spread-wrapper {position: relative; display: inline;  border: 2px solid rgba(0,0,0,0);}
 
 .tv-contents {z-index: -1; position: absolute; background-size: contain;}
 .tv-clickable {position: absolute; z-index: 300; border-radius: 6px; background-color: rgba(0,0,0,0)!important; background-image: none!important;}
