@@ -38,16 +38,11 @@
             <button class="tv-3 tv-contents" aria-label="unclickable button"></button>
             <button id="tv-4" class="tv-contents" aria-label="unclickable button"></button>
             <button id="tv-5" class="tv-5 tv-clickable" onclick="zoomTV(2)" aria-label="Photos">
-                <a id="tv-5-link">PHOTOS</a>
-                
-                <div id="tv-5-box" style="display: none;">
-                   
+                <div id="tv-5-screen">
 
-                    
                 </div>
+                <p id="tv-5-link">PHOTOS</p>
                 
-               
-            
             </button>
             <div class="tv-5 tv-contents" aria-label="unclickable button"></div>
             <button id="tv-6" class="tv-contents" aria-label="unclickable button"></button>
@@ -56,30 +51,23 @@
             <button id="tv-9" class="tv-contents" aria-label="unclickable button"></button>
             <button id="tv-10" class="tv-contents" aria-label="unclickable button"></button>
             
-            <button id="tv-11-btn" class="tv-11 tv-clickable" aria-label="Films" onclick="zoomTV(1)">
-                <a id="films-link">FILMS</a>
-                <div id="films-window" style="display: none;">
-                    <div class="movie">
-                        <iframe id="film-iframe" style="width:100%; height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                    </div>
-                    
-
-
-                    <div class="movie-nav">
-                        <p id="movie-nav-close">X</p>
-                        <p id="movie-nav-next">⏩</p>
-                        <p id="movie-nav-prev">⏪ </p>
-                    </div>
+            <div id="tv-11" class="tv-11 tv-clickable" aria-label="Films">
+                <div id="tv-11-screen">
+                    <a class="film-toggle" id="film-toggle-link">FILMS</a>
+                    <iframe id="film-iframe" style="width:100%; height:100%; display: none;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
-            </button>
+                <div class="movie-nav" style="display: none;">
+                    <p class="film-toggle" id="film-toggle-close">X</p>
+                    <p id="movie-nav-next">⏩</p>
+                    <p id="movie-nav-prev">⏪ </p>
+                </div>
+            </div>
             
-
-            <button id="tv-11-bg" class="tv-11 tv-contents" aria-label="unclickable button"></button>
            
            
             <button id="tv-12" class="tv-contents" aria-label="unclickable button"></button>
 
-            <img id="tv-spread" src="src/tv-spread-7.png" alt="tvs stacked"/>
+            <img id="tv-spread" src="src/tv-spread-8.png" alt="tvs stacked"/>
         </div>
 </div>
 

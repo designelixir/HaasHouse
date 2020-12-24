@@ -22,39 +22,28 @@ function triggerD(descriptionNumber,show){
         trigger.style.display="none";
     }
 }
-var theBody = document.getElementById('the-body');
+
+// open and close film window 
+var clickFilm = 0; 
+$('.film-toggle').click(function(){
+    clickFilm++;
+    if(clickFilm % 2 === 0){
+        $('#the-body').css({"transform": "scale(1)", "transform-origin": "62.5% 31%", "transition": "all 1s ease-in-out"});
+        $('#film-toggle-link').css("display", "block");
+        $('#film-iframe').css("display", "none");
+        $('#film-toggle-link').css("display", "block");
+        $('.movie-nav').css("display", "none");
+        $('.tv-11').css("animation", "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both");
+    } else {
+        $('#the-body').css({"transform": "scale(5)", "transform-origin": "62.5% 31%", "transition": "all 1s ease-in-out"});
+        $('#film-iframe').css("display", "block");
+        $('#film-toggle-link').css("display", "none");
+        $('.movie-nav').css("display", "block");
+        $('.tv-11').css("animation", "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both");
 
 
-function zoomTV(tvNumber){
-    var tvSpread = document.getElementById('tv-spread-container');
-    if(tvNumber === 1){
-        $('#the-body').css("transform", "scale(5)");
-        $('#the-body').css("transform-origin", "62.5% 31%");
-
-        
-        // $('#the-body').toggle(500, zoomFilm );
-        // theBody.style.transformOrigin = '62.5% 31%';
-        document.getElementById('films-link').style.display = 'none';
-        document.getElementById('films-window').style.display = 'block';
-        document.getElementById('tv-11-bg').style.backgroundImage = "none";
-        document.getElementById('tv-11-bg').style.backgroundColor = 'black';
     }
-
-    else if(tvNumber === 2){
-        theBody.style.transform = "scale(5,5)";
-        theBody.style.transformOrigin = '17% center';
-        document.getElementById('tv-5-link').style.display = "none";
-        document.getElementById('tv-5-box').style.display = "block";
-    }
-
-    else if(tvNumber === 3){
-        theBody.style.transform = "scale(6,6)";
-        theBody.style.transformOrigin = '60% 78%';
-        document.getElementById('tv-3-link').style.display = "none";
-    }
-    
-
-}
+});
 
 //film screen navigation functionality 
 var filmLinks = ["https://player.vimeo.com/video/487712165?title=0&byline=0&portrait=0", "https://player.vimeo.com/video/151901736?title=0&byline=0&portrait=0", "https://player.vimeo.com/video/97186301?title=0&byline=0&portrait=0"];
@@ -73,12 +62,6 @@ $('#movie-nav-prev').click(function(){
     $('#film-iframe').attr("src", filmLinks[currentVid]);
 });
 
-var theBodyJ = $("#the-body");
-var movieNavClose = document.getElementById('movie-nav-close');
-movieNavClose.addEventListener('click', function(){
-    console.log('clicked movie close');
-    $('#the-body').css("transform", "scale(2)!important!");
-})
 
 
 var tvSpreadContainer = document.getElementById('tv-spread-container');
