@@ -26,15 +26,18 @@ var theBody = document.getElementById('the-body');
 
 
 function zoomTV(tvNumber){
-    var theBody = document.getElementById('the-body');
-
+    var tvSpread = document.getElementById('tv-spread-container');
     if(tvNumber === 1){
-        theBody.style.transform = "scale(5,5)";
-        theBody.style.transformOrigin = '62.5% 31%';
+        $('#the-body').css("transform", "scale(5)");
+        $('#the-body').css("transform-origin", "62.5% 31%");
+
+        
+        // $('#the-body').toggle(500, zoomFilm );
+        // theBody.style.transformOrigin = '62.5% 31%';
         document.getElementById('films-link').style.display = 'none';
         document.getElementById('films-window').style.display = 'block';
-        document.getElementById('tv-11-bg').style.display = "none";
-        document.getElementById('tv-11-bg-2').style.display = 'block';
+        document.getElementById('tv-11-bg').style.backgroundImage = "none";
+        document.getElementById('tv-11-bg').style.backgroundColor = 'black';
     }
 
     else if(tvNumber === 2){
@@ -52,6 +55,31 @@ function zoomTV(tvNumber){
     
 
 }
+
+//film screen navigation functionality 
+var filmLinks = ["https://player.vimeo.com/video/487712165?title=0&byline=0&portrait=0", "https://player.vimeo.com/video/151901736?title=0&byline=0&portrait=0", "https://player.vimeo.com/video/97186301?title=0&byline=0&portrait=0"];
+var currentVid = 0;
+$('#film-iframe').attr("src", filmLinks[currentVid]); //set initial video 
+//next button
+$('#movie-nav-next').click(function(){
+    if (currentVid === filmLinks.length -1 ){currentVid = -1;} //loops back 
+    currentVid++;
+    $('#film-iframe').attr("src", filmLinks[currentVid]);
+});
+//back button
+$('#movie-nav-prev').click(function(){
+    if(currentVid <= 0){currentVid = filmLinks.length;}
+    currentVid--;
+    $('#film-iframe').attr("src", filmLinks[currentVid]);
+});
+
+var theBodyJ = $("#the-body");
+var movieNavClose = document.getElementById('movie-nav-close');
+movieNavClose.addEventListener('click', function(){
+    console.log('clicked movie close');
+    $('#the-body').css("transform", "scale(2)!important!");
+})
+
 
 var tvSpreadContainer = document.getElementById('tv-spread-container');
 var navigation = document.querySelectorAll(".nav-link");
