@@ -1,177 +1,145 @@
 <html lang="en">
     <head>
       <title>HAAS HOUSE</title>
-      <meta name="description" content="Portfolio for Megan Rae Byers's Design Elixir Studio."/>
+      <meta name="description" content="Portfolio for Casey Haas"/>
       <meta charset="utf-8">
       <!-- important to have viewport for mobile devices -->
       <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
       <link rel="shortcut icon" href="src/favicon.ico" />
-
-      <!-- include preload for font faces -->
-      <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet"> -->
-      <!-- <link rel="stylesheet" rel="preload" href="https://use.typekit.net/rkj0ohr.css">  -->
       <link rel="stylesheet" rel="preload" type="text/css" href="css/index.css" />
       </head>
-    </html>
+    <!-- <div class="ocean-wrapper">
+    </div> -->
+    <div class=palm-wrapper>
+        <img class='palm-left' src="src/palm-left.png"  alt='palm leaf'>
+        <img class='palm-right' src="src/palm-right.png" alt='palm leaf'>
+    </div>
+    <!-- <video playsinline autoplay muted loop  class="ocean-wrapper">
+        <source src="src/wave-color-corrected.mp4" type="video/mp4">
+    </video> -->
 
-    <body>
-
-        <div id="navigation_wrapper">
-            <div class="fade-in" id="mobile_nav_wrapper" style="display: none;">
-                <div class="mobile_nav_items">
-                        <img src="src/logo-black.svg" width="50px;"><br>
-                        <a>CONTACT</a><br>
-                        <a>ABOUT</a> 
-                </div>      
-            </div>
-            <div class="nav_item fade-in mobile_show" id="mobile_nav_button">
-                <button class="fade-in" id="hamburger_open" onclick='open_mobileNav(true)'><img  src="src/hamburger.svg" alt="hamburger menu"></button>
-                <button class="fade-in" id="hamburger_close" onclick='open_mobileNav(false)'><img  src="src/hamburger_x.svg" alt="close button"></button>
-            </div>
-            <!-- MAIN NAVIGATION -->
-            <div class="nav_item mobile_hide fade-in" id="about_nav_item">
-                <a>ABOUT</a>
+    <body id="the-body">
+        <div class="fade-in" id="navigation_wrapper">
+            <div id="about_nav_item">
+                <a class="nav-link" onclick="toggleWindow('about-window',1)">ABOUT</a>
             </div>
             
-            <div class="nav_item fade-in" id="logo_nav_item">
-                <h1>HAAS HOUSE</h1>
-                <!-- <img src="src/logo.svg" width="100px;"> -->
+            <div id="logo_nav_item">
+                <h1 class="nav-link">HAAS HOUSE</h1>
+                <!-- <img src="src/haas-logo-white.svg" width="100px;"> -->
             </div>
-            <div class="nav_item mobile_hide fade-in" id="contact_nav_item">
-                <a>CONTACT</a>
+            <div id="contact_nav_item">
+                <a class="nav-link" onclick="toggleWindow('contact-window',2)">CONTACT</a>
             </div>
         </div>
 
-        <div id="happening-container" class="fade-in">
-            <div class="tv-guide fade-in" >
-                <div class="tv-guide-top">
-                    <div class="tv-guide-close-bar">
-                        <button id='tv-guide-close-btn'>X</button>  
-                        <button id='tv-guide-close-btn'>-</button>                   
-                    </div>
-                    <div class="tv-guide-section" id="tv-guide-section-left">
-                        <div id="tv-guide-section-title">
-                            <p style="font-size: 32px; margin: -8px; padding: 0 8px;  float: left; ">HAAS HOUSE </p>
-                            <p style="font-size: 32px; margin: -8px; padding: 0 8px;  float: right; ">PHOTOS </p>
+        
+        
+        <div id="tv-spread-container">
+        <div id="tv-spread-wrapper">
+            <button id="tv-1" class="tv-contents" aria-label="unclickable button"></button>
+            <button id="tv-2" class="tv-contents" aria-label="unclickable button"></button>
+            <button id="tv-3" class="tv-3 tv-clickable" aria-label="Design" onclick="zoomTV('tv-3')"><a>DESIGN</a></button>
+            <button class="tv-3 tv-contents" aria-label="unclickable button"></button>
+            <button id="tv-4" class="tv-contents" aria-label="unclickable button"></button>
+            <button id="tv-5" class="tv-5 tv-clickable" onclick="zoomTV('tv-5', 2)" aria-label="Photos"><a>PHOTOS</a></button>
+            <button class="tv-5 tv-contents" aria-label="unclickable button"></button>
+            <button id="tv-6" class="tv-contents" aria-label="unclickable button"></button>
+            <button id="tv-7" class="tv-contents" aria-label="unclickable button"></button>
+            <button id="tv-8" class="tv-contents" aria-label="unclickable button"></button>
+            <button id="tv-9" class="tv-contents" aria-label="unclickable button"></button>
+            <button id="tv-10" class="tv-contents" aria-label="unclickable button"></button>
+            <button id="tv-11-btn" class="tv-11 tv-clickable" aria-label="Films" onclick="zoomTV('tv-11-btn')"><a>FILMS</a></button>
+            <button id="tv-11-bg" class="tv-11 tv-contents" aria-label="unclickable button"></button>
+            <button id="tv-12" class="tv-contents" aria-label="unclickable button"></button>
 
-                        </div>
-                        <div id="tv-guide-section-description">
-                           <span id="channel1description">#1 Lorem ipsum dolor sit amet, eum in assum altera, cu has postea bonorum, inani aliquam oporteat no has. Te mollis labitur temporibus mel, duo illud pericula similique an.</span>
-                           <span id="channel2description">#2 Lorem ipsum dolor sit amet, eum in assum altera, cu has postea bonorum, inani aliquam oporteat no has. Te mollis labitur temporibus mel, duo illud pericula similique an.</span>
-                           <span id="channel3description">#3 Lorem ipsum dolor sit amet, eum in assum altera, cu has postea bonorum, inani aliquam oporteat no has. Te mollis labitur temporibus mel, duo illud pericula similique an.</span>
-                           <span id="channel4description">#4 Lorem ipsum dolor sit amet, eum in assum altera, cu has postea bonorum, inani aliquam oporteat no has. Te mollis labitur temporibus mel, duo illud pericula similique an.</span>
-                           <span id="channel5description">#5 Lorem ipsum dolor sit amet, eum in assum altera, cu has postea bonorum, inani aliquam oporteat no has. Te mollis labitur temporibus mel, duo illud pericula similique an.</span>
-                           <span id="channel6description">#6 Lorem ipsum dolor sit amet, eum in assum altera, cu has postea bonorum, inani aliquam oporteat no has. Te mollis labitur temporibus mel, duo illud pericula similique an.</span>
+            <img id="tv-spread" src="src/tv-spread-5.png" alt="tvs stacked"/>
+        </div>
+</div>
 
+
+
+</div></div>        
+ 
+
+
+     <div id="about-window" style="display: none;">
+        <div class="about-window-content">
+            <div id="happening-container">
+                <div class="tv-guide fade-in" >
+                    <div class="tv-guide-top">
+                        <div class="tv-guide-close-bar">
+                            <button id='tv-guide-close-btn'>X</button>  
+                            <button id='tv-guide-close-btn'>-</button>                   
+                        </div>
+                        <div class="tv-guide-section" id="tv-guide-section-left">
+                            <div id="tv-guide-section-title">
+                                <h4 style="float: left; ">CHANNEL 96</h4>
+                                <h4 style="float: right; ">PHOTOS </h4>
+    
+                            </div>
+                            <div id="tv-guide-section-description">
+                               <span id="channel1description">human beings</span>
+                               <span id="channel2description">pacific ocean, architecture, california, bolivia</span>
+                               <span id="channel3description">products, statues, concerts</span>
+                               
+                            </div>
+                        </div>
+                        <div class="tv-guide-section" id="tv-guide-right"></div>
+    
+                    </div>
+                    <div class="tv-guide-bottom">
+                        <div class="tv-guide-channels">
+                            <div class="channel" onmouseover="triggerD('channel1description', true)" onmouseout="triggerD('channel1description', false)">
+                                <a class="channel-title">PEOPLE  </a> 
+                            </div>
+                            <div class="channel" onmouseover="triggerD('channel2description', true)" onmouseout="triggerD('channel2description', false)">
+                                <a class="channel-title"> PLACES  </a> 
+                            </div>
+                            <div class="channel" onmouseover="triggerD('channel3description', true)" onmouseout="triggerD('channel3description', false)">
+                                <a class="channel-title"> THINGS   </a> 
+                            </div>
+                            
                         </div>
                     </div>
-                    <div class="tv-guide-section" id="tv-guide-right"></div>
-
-                </div>
-                <div class="tv-guide-bottom">
-                    <div class="tv-guide-channels">
-                        <div class="channel" onmouseover="triggerD('channel1description', true)" onmouseout="triggerD('channel1description', false)">
-                            <a class="channel-title"> TITLE   </a> 
-                        </div>
-                        <div class="channel" onmouseover="triggerD('channel2description', true)" onmouseout="triggerD('channel2description', false)">
-                            <a class="channel-title"> TITLE   </a> 
-                        </div>
-                        <div class="channel" onmouseover="triggerD('channel3description', true)" onmouseout="triggerD('channel3description', false)">
-                            <a class="channel-title"> TITLE   </a> 
-                        </div>
-                        <div class="channel" onmouseover="triggerD('channel4description', true)" onmouseout="triggerD('channel4description', false)">
-                            <a class="channel-title"> TITLE   </a> 
-                        </div>
-                        <div class="channel" onmouseover="triggerD('channel5description', true)" onmouseout="triggerD('channel5description', false)">
-                            <a class="channel-title"> TITLE   </a> 
-                        </div>
-                        <div class="channel" onmouseover="triggerD('channel6description', true)" onmouseout="triggerD('channel6description', false)">
-                            <a class="channel-title"> TITLE   </a> 
-                        </div>
-                    </div>
-                    <div class="tv-guide-bottom-nav" >&#9660;</div>
+        
                 </div>
     
             </div>
-
+            <!-- <div class="about-window-col">
+                <img src="src/casey-portrait.jpeg">
+            </div>
+            <div class="about-window-col">
+                <p>Lorem ipsum dolor sit amet, no dicit mediocrem eos, in nibh epicuri his, ne vim utamur temporibus consequuntur. Ne pri epicuri referrentur, mel timeam viderer efficiendi id, dicta aliquam ex quo. Sea te oblique omittam, amet aperiri sadipscing nec ut, has id idque vivendum mandamus. Et veri sanctus euripidis pro. Nec no hinc civibus omnesque.</p>
+            </div> -->
         </div>
+     </div>
 
-        
-    <div id="tv-container-wrapper">
-        <div id="tv-container">
-            <div class="tv-row" id="tv-row-top" >
-                <div class="col" id="col9">
-                    <img src="src/tvs/tv-9.png" >
-                </div>
-                <div class="col" id="col10">
-                    <img class="surf-static" src="src/tvs/tv-10.png" >
-                </div>
-                <div class="col" id="col11">
-                    <img class="black-screen" id="film-tv" src="src/tvs/tv-11.png">
-                    <div class="link-container" style="margin-left: 15%">
-                        <a class="tv-link" id="film-link">FILM</a>
-
-                    </div>
-                </div>
-                <div class="col" id="col12">
-                    <img class="gray-static" src="src/tvs/tv-12.png" >
-                </div>
-            </div>
-            <div class="tv-row" id="tv-row-middle">
-                <div class="col" id="col5">
-                    <img src="src/tvs/tv-5.png">
-                    <div class="link-container" style="bottom: 7.5%;">
-                        <a class="tv-link" id="photo-tv">PHOTO</a>
-                    </div>
-                </div>
-                <div class="col" id="col6">
-                    <img class="gray-static-stationary"src="src/tvs/tv-6.png">
-                </div>
-                <div class="col" id="col7">
-                    <img class="blue-play" src='src/tvs/tv-7.png'>
-                </div>
-                <div class="col static-1 films-tv" id="col8">
-                    <img src="src/tvs/tv-8.png">
-                </div>
-            </div>
-
-            <div class="tv-row">
-                <div class="col" id="col1">
-                    <img src="src/tvs/tv-1.png">
-                </div>
-                <div class="col" id="col2">
-                    <img class="no-signal-static" src="src/tvs/tv-2.png">
-                </div>
-                <div class="col black-screen" id="col3">
-                    <img src="src/tvs/tv-3.png" >
-                    <div class='link-container'>
-                        <a class="tv-link">DESIGN</a>
-                    </div>
-                </div>
-                <div class="col static-1" id="col4">
-                    <img class="blue-static" src="src/tvs/tv-4.png">
-                    
-                </div>
+     <div id="contact-window" style="display: none">
+        <div class="contact-window-content">
+            <div class="contact-form-wrapper">
+                <form method=”post” name=”contact_form” action=”mailto:megan@designelixir.studio”> 
+                    <div class="form-row"><h2>Name</h2> <input class="contact-input" type=”text” name=”name”></div>
+                    <div class="form-row"><h2>Email:</h2><input class="contact-input"  type=”text” name=”email”></div>
+                    <div class="form-row" style="height: 100px;"><h2>Message:</h2><textarea class="contact-input" name=”message”></textarea></div>
+                    <button class="form-row contact-input" value=”Submit” type=”submit”> <input  value=”Submit”></button>
+                </form>
             </div>
             
-            
-
         </div>
-    </div>
-
-
-        <div id="photos-window" class="fade-in">
-            <a id="close-photos-window" style="cursor: pointer; font-size: 100px; float: left; ">X</a>
-            <h1 style="float: center; font-size: 100px; padding-left: 40%; ">PHOTOS</h1>
-            
-
-        </div>
-
-
+     </div>
         
 
+
+
+
+
+
+
+    
     </body> 
     <script src="js/index.js"></script>   
+    
 
 
    
