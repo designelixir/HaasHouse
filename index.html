@@ -37,14 +37,83 @@
             <button id="tv-3" class="tv-3 tv-clickable" aria-label="Design" onclick="zoomTV(3)"><a id="tv-3-link">DESIGN</a></button>
             <button class="tv-3 tv-contents" aria-label="unclickable button"></button>
             <button id="tv-4" class="tv-contents" aria-label="unclickable button"></button>
-            <button id="tv-5" class="tv-5 tv-clickable" onclick="zoomTV(2)" aria-label="Photos">
+
+
+            <div id="tv-5" class="tv-5 tv-clickable fade-in" aria-label="Photos">
                 <div id="tv-5-screen">
+                    <h6 class="photo-toggle-link" id="tv-5-link">PHOTOS</h6>
+                    <div class="photo-frame-wrapper" style="display: none;">
+                        
+                        <div class="photos-guide">
+                            <div class="photos-guide-close-bar">
+                                <p id='photo-guide-close'>X</p>  
+                            </div>
+                    
+                            <div class="photos-guide-top-sec">
+                                <div class="photos-guide-top-left">
+                                    <div class="photos-guide-title">
+                                        <h4 style="float: left; ">CHANNEL 96</h4>
+                                        <h4 style="float: right; ">PHOTOS </h4>
+                                    </div>
+                                    <div class="photos-guide-description">
+                                        <span id="channel1description">human beings</span>
+                                        <span id="channel2description">pacific ocean, architecture, california, bolivia</span>
+                                        <span id="channel3description">products, statues, concerts</span>
+                                           
+                                    </div>
+                                    
+                                </div>
+                                <div class="photos-guide-top-right">
+                                    <img src="src/haas-logo-white.svg">
+                                </div>
+                            </div>
+                    
+                            <div class="photos-guide-bottom-sec">
+                                <div class="channel" id="channel-people" onmouseover="triggerD('channel1description', true)" onmouseout="triggerD('channel1description', false)">
+                                    <a class="channel-title" >PEOPLE  </a> 
+                                </div>
+                                <div class="channel" id="channel-places" onmouseover="triggerD('channel2description', true)" onmouseout="triggerD('channel2description', false)">
+                                    <a class="channel-title" > PLACES  </a> 
+                                </div>
+                                <div class="channel" id="channel-things" onmouseover="triggerD('channel3description', true)" onmouseout="triggerD('channel3description', false)">
+                                    <a class="channel-title" > THINGS   </a> 
+                                </div>
+                            </div>
+                    
+                           
+                    
+                    
+                        </div>
+                        
+                    </div>
+                    <h1 id="no-signal" class="open-guide">NO SIGNAL</h1>
+                </div>
+                <div id="tv-5-nav" style="display: none;">
+                    <div class="tv-5-nav-section photo-toggle-link">
+                        <img src="src/power-off.svg" style="width: 45%;" alt="exit photos tv">
+                    </div>
+                    <div class="tv-5-nav-section" id="channel-switch">
+                        <img id="channel-switch-img" src="src/toggle-switch.png" style="width: 50%; margin-top: 5%; ">
+                    </div>
+                    <div class="tv-5-nav-section">
+                        <div id="photo-nav-prev">⏪ </div>
+                        <div id="photo-nav-next">⏩</div>
+                    </div>
+                    <div class="tv-5-nav-section">
+                        <h6 class="open-guide" style="font-size: 10px; padding: 0px 5px; margin-bottom: 75%; background: yellow; letter-spacing: 0; color: black;">TV GUIDE</h6>
+                    </div>
 
                 </div>
-                <p id="tv-5-link">PHOTOS</p>
+
                 
-            </button>
-            <div class="tv-5 tv-contents" aria-label="unclickable button"></div>
+                
+            </div>
+            <div class="tv-5 tv-contents" id="tv-5-picture-view" aria-label="unclickable button">
+                <img id="targeted-picture">
+            </div>
+
+
+
             <button id="tv-6" class="tv-contents" aria-label="unclickable button"></button>
             <button id="tv-7" class="tv-contents" aria-label="unclickable button"></button>
             <button id="tv-8" class="tv-contents" aria-label="unclickable button"></button>
@@ -53,21 +122,22 @@
             
             <div id="tv-11" class="tv-11 tv-clickable" aria-label="Films">
                 <div id="tv-11-screen">
-                    <a class="film-toggle" id="film-toggle-link">FILMS</a>
-                    <iframe id="film-iframe" style="width:100%; height:100%; display: none;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <h6 class="film-toggle" id="film-toggle-link">FILMS</h6>
+                    <iframe id="film-iframe" style="width:100%; height:100%; display: none; background-color: black;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="movie-nav" style="display: none;">
-                    <p class="film-toggle" id="film-toggle-close">X</p>
-                    <p id="movie-nav-next">⏩</p>
-                    <p id="movie-nav-prev">⏪ </p>
+                    <div class="film-toggle" id="film-toggle-close">❌</div>
+                    <div id="movie-nav-next">⏩</div>
+                    <div id="movie-nav-prev">⏪ </div>
+                    <div><a href="https://vimeo.com" target="_blank"><img src="src/vimeo.svg"></a></div>
                 </div>
             </div>
             
            
-           
+            
             <button id="tv-12" class="tv-contents" aria-label="unclickable button"></button>
 
-            <img id="tv-spread" src="src/tv-spread-8.png" alt="tvs stacked"/>
+            <img id="tv-spread" src="src/tv-spread-9.png" alt="tvs stacked"/>
         </div>
 </div>
 
