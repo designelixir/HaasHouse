@@ -16,39 +16,96 @@
     <body id="the-body">
         <div class="fade-in" id="navigation_wrapper">
             <div id="about_nav_item">
-                <a class="nav-link" onclick="toggleWindow('about-window',1)">ABOUT</a>
+                <a class="nav-link about-link">ABOUT</a>
             </div>
             
             <div id="logo_nav_item">
-                <h1 class="nav-link">HAAS HOUSE</h1>
-                <!-- <img src="src/haas-logo-white.svg" width="100px;"> -->
+                <h1 class="nav-link" id="haas-house" style="color: white; opacity: 0; position: absolute;">HAAS HOUSE</h1>
+                <img src="src/haas-logo-white.svg" id="haas-house-logo" style="width: 75px; position: absolute;">
             </div>
             <div id="contact_nav_item">
-                <a class="nav-link" onclick="toggleWindow('contact-window',2)">CONTACT</a>
+                <a class="nav-link contact-link">CONTACT</a>
             </div>
+            <span class="about-link close-nav">X</span>
+            <span class="contact-link close-nav">X</span>
+
         </div>
 
         
         
         <div id="tv-spread-container">
         <div id="tv-spread-wrapper">
-            <button id="tv-1" class="tv-contents" aria-label="unclickable button"></button>
-            <button id="tv-2" class="tv-contents" aria-label="unclickable button"></button>
-            <button id="tv-3" class="tv-3 tv-clickable" aria-label="Design" onclick="zoomTV(3)"><a id="tv-3-link">DESIGN</a></button>
-            <button class="tv-3 tv-contents" aria-label="unclickable button"></button>
-            <button id="tv-4" class="tv-contents" aria-label="unclickable button"></button>
+            <!-- unclickable TVS -->
+            <div id="tv-1" class="tv-contents" ></div>
+            <div id="tv-2" class="tv-contents"></div>
+            <div id="tv-4" class="tv-contents"></div>
+            <div id="tv-6" class="tv-contents"></div>
+            <div id="tv-7" class="tv-contents"></div>
+            <div id="tv-8" class="tv-contents"></div>
+            <div id="tv-9" class="tv-contents"></div>
+            <div id="tv-10" class="tv-contents"></div>
+            <div id="tv-12" class="tv-contents"></div>
 
 
-            <div id="tv-5" class="tv-5 tv-clickable fade-in" aria-label="Photos">
-                <div id="tv-5-screen">
-                    <h6 class="photo-toggle-link" id="tv-5-link">PHOTOS</h6>
-                    <div class="photo-frame-wrapper" style="display: none;">
-                        
+            <!-- DESIGN TV  -->
+            <div id="tv-3-designs" class="tv-3 tv-clickable">
+                <div class="tv-3-screen">
+                    <a id="designs-link">DESIGN</a>
+
+                    <div class="design-tv-guide" style="display: none;">
                         <div class="photos-guide">
-                            <div class="photos-guide-close-bar">
-                                <p id='photo-guide-close'>X</p>  
+                            <div class="photos-guide-close-bar"><p id='film-guide-close'>X</p></div>
+                            <div class="photos-guide-top-sec">
+                                <div class="photos-guide-top-left">
+                                    <div class="photos-guide-title">
+                                        <h4 style="float: left;">CHANNEL 96</h4>
+                                        <h4 style="float: right;">DESIGN </h4>
+                                    </div>
+                                    <div class="photos-guide-description">
+                                        <span id="channel4description">website design, digital design</span>
+                                        <span id="channel5description">posters</span>
+                                        <span id="channel6description">design for moving images</span>
+                                    </div>
+                                </div>
+                                <div class="photos-guide-top-right"><img src="src/haas-logo-white.svg"></div>
                             </div>
                     
+                            <div class="photos-guide-bottom-sec">
+                                <div class="channels" id="channel-web" onmouseover="triggerD('channel4description', true)" onmouseout="triggerD('channel4description', false)">
+                                    <a class="channel-title" >WEB</a> 
+                                </div>
+                                <div class="channels" id="channel-print" onmouseover="triggerD('channel5description', true)" onmouseout="triggerD('channel5description', false)">
+                                    <a class="channel-title">PRINT</a> 
+                                </div>
+                                <div class="channels" id="channel-film" onmouseover="triggerD('channel6description', true)" onmouseout="triggerD('channel6description', false)">
+                                    <a class="channel-title">FILM</a> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='tv-3-nav' style='display: none'>
+                    <div class="tv-3-nav-sec" id="design-power-off">
+                        <img src="src/power-off.svg" style="height: 60%; padding-right:3%; float: right;" alt="exit photos tv">
+                    </div>
+                    <div class="tv-3-nav-sec" style="display: flex; justify-content: center; align-items: center; padding-top: 15%;">
+                        <p id="design-nav-forward">🔼</p>
+                        <p id="design-nav-backward">🔽</p>
+                    </div>
+                    <div class="tv-3-nav-sec">
+                        <button id='design-tv-guide-button'>TV GUIDE</button>
+                    </div>
+                </div>
+            </div>
+            <div id='tv-3-bg' class="tv-3 tv-contents"><img id="tv-3-bg-target"></div>
+
+            <!-- PHOTO TV -->
+            <div id="tv-5" class="tv-5 tv-clickable fade-in" aria-label="Photos">
+                <div id="tv-5-screen">
+                    <h6 class="photo-toggle-link" id="tv-5-link">PHOTO</h6>
+                    <div class="photo-frame-wrapper" style="display: none;">
+                        <div class="photos-guide">
+                            <div class="photos-guide-close-bar"><p id='photo-guide-close'>X</p></div>
                             <div class="photos-guide-top-sec">
                                 <div class="photos-guide-top-left">
                                     <div class="photos-guide-title">
@@ -59,7 +116,6 @@
                                         <span id="channel1description">human beings</span>
                                         <span id="channel2description">pacific ocean, architecture, california, bolivia</span>
                                         <span id="channel3description">products, statues, concerts</span>
-                                           
                                     </div>
                                     
                                 </div>
@@ -67,7 +123,6 @@
                                     <img src="src/haas-logo-white.svg">
                                 </div>
                             </div>
-                    
                             <div class="photos-guide-bottom-sec">
                                 <div class="channel" id="channel-people" onmouseover="triggerD('channel1description', true)" onmouseout="triggerD('channel1description', false)">
                                     <a class="channel-title" >PEOPLE  </a> 
@@ -79,50 +134,29 @@
                                     <a class="channel-title" > THINGS   </a> 
                                 </div>
                             </div>
-                    
-                           
-                    
-                    
                         </div>
-                        
                     </div>
                     <h1 id="no-signal" class="open-guide">NO SIGNAL</h1>
                 </div>
                 <div id="tv-5-nav" style="display: none;">
-                    <div class="tv-5-nav-section photo-toggle-link">
+                    <div class=" tv-5-nav-section photo-toggle-link">
                         <img src="src/power-off.svg" style="width: 45%;" alt="exit photos tv">
                     </div>
                     <div class="tv-5-nav-section" id="channel-switch">
                         <img id="channel-switch-img" src="src/toggle-switch.png" style="width: 50%; margin-top: 5%; ">
                     </div>
                     <div class="tv-5-nav-section">
-                        <div id="photo-nav-prev">⏪ </div>
-                        <div id="photo-nav-next">⏩</div>
+                        <h6 class="open-guide" style="font-size: 10px; padding: 0px 5px; background: yellow; letter-spacing: 0; color: black;">TV GUIDE</h6>
                     </div>
-                    <div class="tv-5-nav-section">
-                        <h6 class="open-guide" style="font-size: 10px; padding: 0px 5px; margin-bottom: 75%; background: yellow; letter-spacing: 0; color: black;">TV GUIDE</h6>
-                    </div>
-
                 </div>
-
-                
-                
             </div>
-            <div class="tv-5 tv-contents" id="tv-5-picture-view" aria-label="unclickable button">
-                <img id="targeted-picture">
-            </div>
+            <div class="tv-5 tv-contents" id="tv-5-picture-view"><img id="targeted-picture"></div>
 
-
-
-            <button id="tv-6" class="tv-contents" aria-label="unclickable button"></button>
-            <button id="tv-7" class="tv-contents" aria-label="unclickable button"></button>
-            <button id="tv-8" class="tv-contents" aria-label="unclickable button"></button>
-            <button id="tv-9" class="tv-contents" aria-label="unclickable button"></button>
-            <button id="tv-10" class="tv-contents" aria-label="unclickable button"></button>
+            <!-- FILM TV -->
             
             <div id="tv-11" class="tv-11 tv-clickable" aria-label="Films">
                 <div id="tv-11-screen">
-                    <h6 class="film-toggle" id="film-toggle-link">FILMS</h6>
+                    <h6 class="film-toggle" id="film-toggle-link">FILM</h6>
                     <iframe id="film-iframe" style="width:100%; height:100%; display: none; background-color: black;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="movie-nav" style="display: none;">
@@ -133,11 +167,7 @@
                 </div>
             </div>
             
-           
-            
-            <button id="tv-12" class="tv-contents" aria-label="unclickable button"></button>
-
-            <img id="tv-spread" src="src/tv-spread-9.png" alt="tvs stacked"/>
+            <img id="tv-spread" src="src/tv-spread-15.png" alt="tvs stacked"/>
         </div>
 </div>
 
@@ -151,18 +181,25 @@
 
 
      <div id="about-window" style="display: none;">
-        <div class="about-window-content">
+       
+        <div class="about-window-content" >
+            <div class="about-window-col">
+                <img src="src/casey-portrait.jpeg" alt="Casey Haas Portrait">
+            </div>
+            <div class="about-window-col">
+                <p>Casey Haas is a filmmaker, photographer, and designer from the Bay Area. She is a recent graduate of CU Boulder & General Assembly, where she received a BFA in Film Production and a certificate in Visual Design. She created Haas House as an umbrella for all of her work- film, photography, and design. Her creations reflect the California dream she grew up in, whether it be the beaches of Half Moon Bay or the park down the street from the home she grew up in. A firm believer in the saying ‘the most personal is the most creative’, her work often explores her childhood and life experiences. Casey specializes in shooting 35mm, 120mm, super 8mm, and 16mm film.</p>
+            </div>
             
-            <div class="about-window-col">
-                <img src="src/casey-portrait.jpeg">
-            </div>
-            <div class="about-window-col">
-                <p>Lorem ipsum dolor sit amet, no dicit mediocrem eos, in nibh epicuri his, ne vim utamur temporibus consequuntur. Ne pri epicuri referrentur, mel timeam viderer efficiendi id, dicta aliquam ex quo. Sea te oblique omittam, amet aperiri sadipscing nec ut, has id idque vivendum mandamus. Et veri sanctus euripidis pro. Nec no hinc civibus omnesque.</p>
-            </div>
+        </div>
+        <div class="about-window-row">
+            <div class="about-window-col" style="width: 12%;"><img src="src/haas-logo-black.svg" style="width: 100%" alt="Haas House Logo in Black"></div>
+            <div class="about-window-col">Contact</div>
+            
+
         </div>
      </div>
 
-     <div id="contact-window" style="display: none">
+     <div id="contact-window" style="display: none;">
         <div class="contact-window-content">
             <div class="contact-form-wrapper">
                 <form method=”post” name=”contact_form” action=”mailto:megan@designelixir.studio”> 
