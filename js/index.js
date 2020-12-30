@@ -225,7 +225,7 @@ $('.channels').click(function(){
     });
     //back button
     $('#design-nav-backward').click(function(){
-        
+        current--;
         console.log("TRIGGERRRRR" + current)
         if (current <= 0){
             
