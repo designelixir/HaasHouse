@@ -1,56 +1,52 @@
-<html lang="en">
-    <head>
-      <title>HAAS HOUSE</title>
-      <meta name="description" content="Portfolio for Casey Haas"/>
-      <meta charset="utf-8">
-      <!-- important to have viewport for mobile devices -->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-      <link rel="shortcut icon" href="src/favicon.ico" />
-      <link rel="stylesheet" rel="preload" type="text/css" href="css/index.css" />
-      </head>
-    <div class="palm-wrapper">
-        <img class='palm-left' src="src/palm-left.png"  alt='palm leaf'>
-        <img class='palm-right' src="src/palm-right.png" alt='palm leaf'>
+<html>
+
+
+<head>
+    <title>HAAS HOUSE</title>
+    <meta name="description" content="Portfolio for Casey Haas"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" rel="preload" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/irk7lua.css">
+
+
+</head>
+
+<body id="the-body">
+    
+        <img class='palm-left palm' src="src/palm-left-1.png"  alt='palm leaf'>
+        <img class='palm-right palm' src="src/palm-right.png" alt='palm leaf'>
+    
+    <!-- NAVIGATION ####################################### -->
+    <div class="navigation">
+        <a class="about-link" rel="noopener">ABOUT</a>
+        <span id="logo-span"> 
+            <a href="https://haashouse.co"><h1 id="haas-house">HAAS HOUSE</h1></a>
+            <img src="src/haas-logo-white.svg" id="haas-house-logo" alt="Haas House Logo">
+        </span>
+        <a class="contact-link" rel="noopener">CONTACT</a>
     </div>
 
-    <body id="the-body">
-        <div class="fade-in" id="navigation_wrapper">
-            <div id="about_nav_item">
-                <a class="nav-link about-link">ABOUT</a>
-            </div>
-            
-            <div id="logo_nav_item">
-                <h1 class="nav-link" id="haas-house" style="color: white; opacity: 0; position: absolute;">HAAS HOUSE</h1>
-                <img src="src/haas-logo-white.svg" id="haas-house-logo" style="width: 75px; position: absolute;">
-            </div>
-            <div id="contact_nav_item">
-                <a class="nav-link contact-link">CONTACT</a>
-            </div>
-            <span class="about-link close-nav">X</span>
-            <span class="contact-link close-nav">X</span>
 
-        </div>
+    <!-- TV WRAPPER -->
 
-        
-        
-        <div id="tv-spread-container">
+    
+    <div id="tv-spread-container" >
         <div id="tv-spread-wrapper">
-            <!-- unclickable TVS -->
-            <div id="tv-1" class="tv-contents" ></div>
+            <!-- unclickable TVS #################################################################################-->
+            
             <div id="tv-2" class="tv-contents"></div>
             <div id="tv-4" class="tv-contents"></div>
-            <div id="tv-6" class="tv-contents"></div>
-            <div id="tv-7" class="tv-contents"></div>
-            <div id="tv-8" class="tv-contents"></div>
-            <div id="tv-9" class="tv-contents"></div>
             <div id="tv-10" class="tv-contents"></div>
             <div id="tv-12" class="tv-contents"></div>
 
 
-            <!-- DESIGN TV  -->
-            <div id="tv-3-designs" class="tv-3 tv-clickable">
+            <!-- DESIGN TV  ##########################################################################################-->
+            <div id="tv-3-designs" class="tv-3 tv-clickable" >
                 <div class="tv-3-screen">
-                    <a id="designs-link">DESIGN</a>
+                    <h2 id="designs-link">DESIGN</h2>
 
                     <div class="design-tv-guide" style="display: none;">
                         <div class="photos-guide">
@@ -95,17 +91,20 @@
                     <div class="tv-3-nav-sec">
                         <button id='design-tv-guide-button'>TV GUIDE</button>
                     </div>
+                    <div class="tv-3-nav-sec">
+                        <p id="design-description">project name</p>
+                    </div>
                 </div>
             </div>
             <div id='tv-3-bg' class="tv-3 tv-contents"><img id="tv-3-bg-target"></div>
 
-            <!-- PHOTO TV -->
+            <!-- PHOTO TV ######################################################################## -->
             <div id="tv-5" class="tv-5 tv-clickable fade-in" aria-label="Photos">
                 <div id="tv-5-screen">
-                    <h6 class="photo-toggle-link" id="tv-5-link">PHOTO</h6>
+                    <h2 class="photo-toggle-link" id="tv-5-link">PHOTO</h2>
                     <div class="photo-frame-wrapper" style="display: none;">
                         <div class="photos-guide">
-                            <div class="photos-guide-close-bar"><p id='photo-guide-close'>X</p></div>
+                            <div class="photos-guide-close-bar"><div id='photo-guide-close' class="channel">X</div></div>
                             <div class="photos-guide-top-sec">
                                 <div class="photos-guide-top-left">
                                     <div class="photos-guide-title">
@@ -136,96 +135,101 @@
                             </div>
                         </div>
                     </div>
-                    <h1 id="no-signal" class="open-guide">NO SIGNAL</h1>
+                    <!-- <h1 id="no-signal" class="open-guide">NO SIGNAL</h1> -->
                 </div>
                 <div id="tv-5-nav" style="display: none;">
-                    <div class=" tv-5-nav-section photo-toggle-link">
-                        <img src="src/power-off.svg" style="width: 45%;" alt="exit photos tv">
+                    <div class=" tv-5-nav-section photo-toggle-link" style="height: 27%; ">
+                        <img src="src/power-off.svg" style="width: 50%; height: auto; padding-right:4%;" alt="exit photos tv">
                     </div>
-                    <div class="tv-5-nav-section" id="channel-switch">
-                        <img id="channel-switch-img" src="src/toggle-switch.svg" style="width: 50%; margin-top: 5%; ">
+                    <div class="tv-5-nav-section" id="channel-switch" style="height: 27%;">
+                        <img id="channel-switch-img" src="src/toggle-switch.svg" style="max-width: 50%; margin-top: 5%;  ">
                     </div>
-                    <div class="tv-5-nav-section">
+                    <div class="tv-5-nav-section" style="height: 22%">
                         <h6 class="open-guide" style="font-size: 10px; padding: 0px 5px; background: yellow; letter-spacing: 0; color: black;">TV GUIDE</h6>
+                    </div>
+                    <div class="tv-5-nav-section photo-description-wrapper" style="display: block; height: 20%;">
+                        <p id="photo-description" class="photo-description-sec"></p>
                     </div>
                 </div>
             </div>
-            <div class="tv-5 tv-contents" id="tv-5-picture-view"><img id="targeted-picture"></div>
+            <div class="tv-5 tv-contents fade-in" id="tv-5-picture-view"><img id="targeted-picture"></div>
 
-            <!-- FILM TV -->
+            <!-- FILM TV ###################################################################################################-->
             
             <div id="tv-11" class="tv-11 tv-clickable" aria-label="Films">
                 <div id="tv-11-screen">
-                    <h6 class="film-toggle" id="film-toggle-link">FILM</h6>
+                    <h2 class="film-toggle" id="film-toggle-link">FILM</h2>
                     <iframe id="film-iframe" style="width:100%; height:100%; display: none; background-color: black;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="movie-nav" style="display: none;">
                     <div class="film-toggle" id="film-toggle-close">❌</div>
                     <div id="movie-nav-next">⏩</div>
                     <div id="movie-nav-prev">⏪ </div>
-                    <div><a href="https://vimeo.com/user127301491" target="_blank"><img src="src/vimeo.svg"></a></div>
                 </div>
             </div>
             
-            <img id="tv-spread" src="src/tv-spread-15.png" alt="tvs stacked"/>
+            <img id="tv-spread" src="src/tv-spread-22.png" alt="tvs stacked"/>
         </div>
-</div>
+    </div>
 
 
 
-</div></div>  
-
-
- 
-
-
-
-     <div id="about-window" style="display: none;">
-       
-        <div class="about-window-content" >
+    <!-- ABOUT WINDOW ####################################### -->
+    <div id="about-window" style="display: none;">
+        <div class="about-window-content">
             <div class="about-window-col">
                 <img src="src/casey-portrait.jpeg" alt="Casey Haas Portrait">
             </div>
             <div class="about-window-col">
                 <p>Casey Haas is a filmmaker, photographer, and designer from the Bay Area. She is a recent graduate of CU Boulder & General Assembly, where she received a BFA in Film Production and a certificate in Visual Design. She created Haas House as an umbrella for all of her work- film, photography, and design. Her creations reflect the California dream she grew up in, whether it be the beaches of Half Moon Bay or the park down the street from the home she grew up in. A firm believer in the saying ‘the most personal is the most creative’, her work often explores her childhood and life experiences. Casey specializes in shooting 35mm, 120mm, super 8mm, and 16mm film.</p>
             </div>
-            
         </div>
         <div class="about-window-row">
             <div class="about-window-col"><img src="src/haas-logo-black.svg" style="width: 75px" alt="Haas House Logo in Black"></div>
-            
-
         </div>
      </div>
 
+     <!-- CONTACT WINDOW #################################### -->
      <div id="contact-window" style="display: none;">
         <div class="contact-window-content">
             <div class="contact-form-wrapper">
-                <form method=”post” name=”contact_form” action=”mailto:megan@designelixir.studio”> 
-                    <div class="form-row"><h2>Name</h2> <input class="contact-input" type=”text” name=”name”></div>
-                    <div class="form-row"><h2>Email:</h2><input class="contact-input"  type=”text” name=”email”></div>
-                    <div class="form-row" style="height: 100px;"><h2>Message:</h2><textarea class="contact-input" name=”message”></textarea></div>
-                    <button class="form-row contact-input" value=”Submit” type=”submit”> <input  value=”Submit”></button>
-                </form>
+                <form action=”mailto:megan@designelixir.studio
+
+
+method=”POST”
+
+
+enctype=”multipart/form-data”
+
+
+name=”EmailForm”>
+
+
+Name:<br>
+
+
+<input type=”text” size=”19″ name=”ContactName”><br><br>
+
+
+Message:<br> <textarea name=”ContactCommentt” rows=”6″ cols=”20″>
+
+
+</textarea><br><br> <input type=”submit” value=”Submit”> </form>
             </div>
             
         </div>
+        <div class="contact-social-icons">
+            <a><img src="src/linkedin_1.svg" alt='linked in icon'></a>
+            <a><img src="src/instagram.svg" alt='instagram icon'></a>
+
+        </div>
      </div>
-        
 
 
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/index.js"></script>   
+<script src="https://player.vimeo.com/api/player.js"></script>
 
 
-
-
-
-    
-    </body> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <script src="js/index.js"></script>   
-    <script src="https://player.vimeo.com/api/player.js"></script>
-
-
-   
 </html>
