@@ -140,7 +140,7 @@ function triggerD(descriptionNumber,show){
 $('.open-guide').click(function(){
     $('.photo-frame-wrapper').css("display", "block");
     $('#no-signal').css("display", "none");
-    $('#tv-3-bg-target').attr("src", "src/black.png")
+    $('#tv-3-bg').css("background-image", "src/black.png")
 
 })
 
@@ -153,7 +153,8 @@ $('#designs-link').click(function(){
     $('#designs-link').css("display", "none");
     $('.design-tv-guide').css("display", "block");
     $('.tv-3-nav').css("display", "block");
-    $('#tv-3-bg-target').attr("src", "src/statics/gray-static.gif");
+    $('#tv-3-bg-target').attr("src", "src/black.png");
+    
 })
 
 $('#design-power-off').click(function(){
@@ -161,20 +162,21 @@ $('#design-power-off').click(function(){
     $('#designs-link').css("display", "block");
     $('.design-tv-guide').css("display", "none");
     $('.tv-3-nav').css("display", "none");
-    $('#tv-3-bg-target').attr("src", "src/black.png")
+    $('.tv-3-screen').css ("background", "#1e1e1e")
+    
 
 })
 
 $('#film-guide-close').click(function(){
     $('.design-tv-guide').css("display", "none");
-    $('#tv-3-bg').css("background-color", "black");
+    $('#tv-3-bg').css("background-color", "#1e1e1e");
     $('#tv-3-bg-target').attr("src", "src/statics/gray-static.gif");
 
 })
 
 $('#design-tv-guide-button').click(function(){
     $('.design-tv-guide').css("display", "block");
-    $('#tv-3-bg').css("background-color", "black");
+    $('#tv-3-bg').css("background-color", "#1e1e1e");
     $('#tv-3-bg-target').attr("src", "src/statics/gray-static.gif");
 
 })
