@@ -1,0 +1,63 @@
+<html>
+
+
+<head>
+    <title>HAAS HOUSE</title>
+    <meta name="description" content="Portfolio for Casey Haas"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" rel="preload" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/irk7lua.css">
+
+
+</head>
+
+<body id="the-body">
+    <div class="navigation">
+        <a class="about-link" rel="noopener">ABOUT</a>
+        <span id="logo-span"> 
+            <a href="https://haashouse.co"><h1 id="haas-house">HAAS HOUSE</h1></a>
+            <img src="src/haas-logo-white.svg" id="haas-house-logo" alt="Haas House Logo">
+        </span>
+        <a class="contact-link" rel="noopener">CONTACT</a>
+    </div>
+
+    <div id="tv-spread-container" >
+        <div id="tv-spread-wrapper">
+            <div id="tv-3-designs" class="tv-3 tv-clickable" >
+            </div>
+
+            <img id="tv-spread" src="src/tv-spread-22.png" alt="tvs stacked"/>
+
+        
+    </div></div>
+    
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/index.js"></script>   
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<script>
+
+    var tv3 = document.getElementById('tv-3-designs').getBoundingClientRect();
+
+    console.log(tv3)
+
+    $('#tv-3-designs').click(function(){
+    console.log('clicked design ')
+    $('#the-body').css({"transform": "scale(4)", "transform-origin-x": (tv3.right - 75), "transform-origin-y": (tv3.bottom)});
+    $('#designs-link').css("display", "none");
+    $('.design-tv-guide').css("display", "block");
+    $('.tv-3-nav').css("display", "block");
+    $('#tv-3-bg-target').attr("src", "src/statics/gray-static.gif");
+})
+
+
+
+</script>
+
+
+</html>

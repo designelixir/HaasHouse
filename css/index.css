@@ -94,7 +94,7 @@ a {font-family: 'Rainer-Medium', sans-serif; font-size: 45px;  color: white;  }
 a:hover { color: white; font-size: 55px; text-decoration: none;}
 p {font-family: freight-big-pro, serif; font-size: 18px;}
 h1 {font-family: 'Rainer-Bold', sans-serif; font-size: 100px; padding: 0; color: white; }
-h2 {font-family: 'Rainer-v04', sans-serif; font-size: 45px;  color: white; letter-spacing: 2px;}
+h2 {font-family: 'Rainer-v04', sans-serif; font-size: 45px;  color: white; letter-spacing: 2px; }
 
 h3 {font-family: 'Rainer-v04', sans-serif; font-size: 60px; letter-spacing: 2px; color: white; text-shadow: 2px 2px 8px #000000}
 h4 {font-size: 45px; padding: 2px 8px; font-family: 'Rainer-Bold', sans-serif; letter-spacing: 3px;}
@@ -132,13 +132,13 @@ h2:hover {font-size: 55px;}
 .movie-nav div:hover {transform: scale(1.1)}
 
 /* photos window */
-.tv-5{left:12.6%; top: 77.5%; width: 17.05%; height: 36.1%;  }
+.tv-5{left:12.6%; top: 77.5%; width: 17.05%; height: 37.1%;  }
 #tv-5-box {width: 90%; height: 100%; object-fit: contain; display: flex; align-items: center; justify-content: center;  }
 #tv-5-screen {width: 80%; height: 100%; display: flex; align-items: center; justify-content: center; float: left; padding: 5%;}
 #tv-5-nav {width: 18%; float: right; height: 97%; border-radius: 2px; display: inline-flex; flex-direction: column; }
 .tv-5-nav-section {width: 100%; display: flex; align-items: center; justify-content: center; }
 .tv-5-nav-section img:hover {transform: scale(1.25);}
-#tv-5-picture-view{ width: 14.25%; height: 36%; display: flex; align-items: center; justify-content: center; background: black;}
+#tv-5-picture-view{ width: 14.25%; height: 38%; display: flex; align-items: center; justify-content: center; background: black;}
 #targeted-picture {object-fit: contain; height: 100%; width: auto;}
 .photo-description-wrapper {border: 1px solid white; background: gray; padding: 2px; font-size: 3px; width: 100%; line-height: 3px; text-align: left;}
 .photo-description-sec {font-size: 7px!important; font-family: 'Rainer-v04', sans-serif; color: white; letter-spacing: 0.25px; margin: 0; padding: 0; line-height:7px; text-align: left}
@@ -168,24 +168,23 @@ h2:hover {font-size: 55px;}
 
 
 /* DESIGN WINDOW */
-.tv-3 {top: 130%; left: 48%; width: 16.5%; height: 40%; border: 2px solid lime; }
-#tv-3-bg {background: black; background-image: none; width: 13.5%; top: 130%; height: 40%; object-fit: contain;}
-#tv-3-bg-target {height: 100%; width: auto; }
+.tv-3 {top: 130%; left: 48%; width: 16.5%; height: 40%; }
+#tv-3-bg {background: black; background-image: none; width: 12%; top: 130%; height: 40%;  z-index: 100; display: flex; align-items: center; justify-content: center;}
+#tv-3-bg-target {object-fit: contain; height: 100%; width: auto;}
 
-.tv-3-screen {width: 73%; height: 100%; border: 2px solid magenta; float: left; display: flex; align-items: center; justify-content: center; padding: 5%}
+.tv-3-screen {width: 73%; height: 100%; float: left; display: flex; align-items: center; justify-content: center; padding: 5%}
 .tv-3-nav {width: 20%; height: 87%; padding-top: 12%; float: right; }
-.tv-3-nav-sec { width: 100%; height: 35%; }
+.tv-3-nav-sec { width: 100%;height: 15%;  }
 .tv-3-nav-sec p {font-size: 15px; line-height: 0;}
 .tv-3-nav-sec p:hover {font-size: 17px}
 #design-power-off:hover {transform: scale(1.1);}
-#design-tv-guide-button {border: 1px solid white; background: black; border-radius: 10px; width: 95%; height: 10px; color: white; font-size: 5px; line-height: 0;}
 
 .film-tv-guide { width: 100%; height: 100%; background: white;}
 .film-tv-guide-close-bar {width: 100%; height: 10px; border: 1px solid black;} 
 .film-tv-guide-content {height: calc(100% - 10px); width: 100%;}
 #film-guide-close {font-size: 30%; font-family: Arial, Helvetica, sans-serif; line-height: 90%; color: white;  }
 
-#design-description {font-size: 4px; color: white; text-align: center; background: black; width: 80%; padding: 2px;}
+#design-description {font-size: 4px; color: white; text-align: center; width: 80%; padding: 2px;}
 
 
 

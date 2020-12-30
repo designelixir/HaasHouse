@@ -50,7 +50,7 @@
 
                     <div class="design-tv-guide" style="display: none;">
                         <div class="photos-guide">
-                            <div class="photos-guide-close-bar"><p id='film-guide-close'>X</p></div>
+                            <div class="photos-guide-close-bar"><p id='design-guide-close'>X</p></div>
                             <div class="photos-guide-top-sec">
                                 <div class="photos-guide-top-left">
                                     <div class="photos-guide-title">
@@ -81,18 +81,20 @@
                     </div>
                 </div>
                 <div class='tv-3-nav' style='display: none'>
-                    <div class="tv-3-nav-sec" id="design-power-off">
+                    <div class="tv-3-nav-sec" id="design-power-off" style="height: 35%;">
                         <img src="src/power-off.svg" style="height: 60%; padding-right:3%; float: right;" alt="exit photos tv">
                     </div>
-                    <div class="tv-3-nav-sec" style="display: flex; justify-content: center; align-items: center; padding-top: 15%;">
+                    <div class="tv-3-nav-sec" style="display: flex; justify-content: center; align-items: center; height: 30%; padding-top: 15%; padding-bottom: 0;">
                         <p id="design-nav-forward">🔼</p>
                         <p id="design-nav-backward">🔽</p>
                     </div>
-                    <div class="tv-3-nav-sec">
-                        <button id='design-tv-guide-button'>TV GUIDE</button>
+                    <div class="tv-3-nav-sec" style="background: yellow; text-align: center; padding-top: 6px;" id="design-tv-guide-button">
+                        <h6  style="font-size: 10px; line-height: 0;  letter-spacing: 0; margin: 0; padding: 0;  color: black;">TV GUIDE</h6>
+
+                        <!-- <button id='design-tv-guide-button'>TV GUIDE</button> -->
                     </div>
-                    <div class="tv-3-nav-sec">
-                        <p id="design-description">project name</p>
+                    <div class="tv-3-nav-sec" style="height: 20%; margin-top: 20%; display: flex; align-items: center; justify-content: center; background: gray;">
+                        <p id="design-description" class="photo-description-sec">project name</p>
                     </div>
                 </div>
             </div>
@@ -135,8 +137,8 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <h1 id="no-signal" class="open-guide">NO SIGNAL</h1> -->
                 </div>
+
                 <div id="tv-5-nav" style="display: none;">
                     <div class=" tv-5-nav-section photo-toggle-link" style="height: 27%; ">
                         <img src="src/power-off.svg" style="width: 50%; height: auto; padding-right:4%;" alt="exit photos tv">
