@@ -75,7 +75,7 @@ $('.photo-toggle-link').click(function(){
     }
 });
 
-var peopleCollection = ["src/People/one.jpg", "src/people/two.jpg", "src/People/three.jpg", "src/People/four.jpg", "src/People/five.jpg", "src/People/six.jpg", "src/People/seven.jpg" , "src/People/eight.jpg" , "src/People/nine.jpg"  ]
+var peopleCollection = ["src/people/one.jpg", "src/people/two.jpg", "src/people/three.jpg", "src/people/four.jpg", "src/people/five.jpg", "src/people/six.jpg", "src/people/seven.jpg" , "src/people/eight.jpg" , "src/people/nine.jpg"  ]
 var peopleCollectionDescript = ['35mm <br/> MIKE CHAMBERLAIN <br/> Pacifica, CA', '35mm <br/>AMY EHARA<br/> Pacifica, CA', '35mm <br/>MCKENNA KOLEDO <br/> Pacific Palisades, CA', '35mm <br/>LONE PADDLEBOARDER <br/> Mavericks Beach, CA', '35mm <br/>MIKE CHAMBERLAIN<br/> Half Moon Bay, CA', '35mm <br/>EMMA DEVINCENZI <br/> San Francisco, CA', '35mm <br/>EMMA DEVINCENZI<br/> San Francisco, CA', '35mm <br/> MIKE CHAMBERLAIN <br/> Pacifica, CA', '35mm <br/>LAWRENCE RICKFORD<br/> Pacifica, CA' ]
 
 var placesCollection = ["src/places/one.jpg", "src/places/two.jpg", "src/places/three.jpg", "src/places/four.jpg", "src/places/five.jpg", "src/places/six.jpg", "src/places/seven.jpg", "src/places/eight.jpg", "src/places/nine.jpg", "src/places/ten.jpg", "src/places/eleven.jpg" ]
@@ -151,6 +151,7 @@ $('#designs-link').click(function(){
     $('#designs-link').css("display", "none");
     $('.design-tv-guide').css("display", "block");
     $('.tv-3-nav').css("display", "block");
+    // $('#tv-3-bg-target').attr("src", "src/black.png");
     
 })
 
