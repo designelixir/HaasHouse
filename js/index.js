@@ -63,7 +63,6 @@ $('.photo-toggle-link').click(function(){
         $('#tv-5-link').css("display", "block");
         $('.photo-frame-wrapper').css("display", "none");
         $('#tv-5-nav').css("display", "none");
-        $('#targeted-picture').attr("src", "src/black.png")
         $('#no-signal').css("display", "none");
 
         $('.tv-5').css("animation", "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both");
@@ -76,14 +75,14 @@ $('.photo-toggle-link').click(function(){
     }
 });
 
-var peopleCollection = ["src/people/one.jpg", "src/people/two.jpg", "src/people/three.jpg", "src/people/four.jpg", "src/people/five.jpg", "src/people/six.jpg", "src/people/seven.jpg" , "src/people/eight.jpg" , "src/people/nine.jpg"  ]
-var peopleCollectionDescript = ['35mm <br/> Mike Chamberlain <br/> Pacifica, CA', '35mm <br/>Amy Ehara<br/> Pacifica, CA', '35mm <br/>Mckenna Koledo <br/> Pacific Palisades, CA', '35mm <br/>Lone Paddleboarder <br/> Mavericks Beach, CA', '35mm <br/>Mike Chamerlain <br/> Half Moon Bay, CA', '35mm <br/>Emma Devincenzi <br/> San Francisco, CA', '35mm <br/>Emma Devincenzi <br/> San Francisco, CA', '35mm <br/> Mike Chamberlain <br/> Pacifica, CA', '35mm <br/>Lawrence Rickford <br/> Pacifica, CA' ]
+var peopleCollection = ["src/People/one.jpg", "src/people/two.jpg", "src/People/three.jpg", "src/People/four.jpg", "src/People/five.jpg", "src/People/six.jpg", "src/People/seven.jpg" , "src/People/eight.jpg" , "src/People/nine.jpg"  ]
+var peopleCollectionDescript = ['35mm <br/> MIKE CHAMBERLAIN <br/> Pacifica, CA', '35mm <br/>AMY EHARA<br/> Pacifica, CA', '35mm <br/>MCKENNA KOLEDO <br/> Pacific Palisades, CA', '35mm <br/>LONE PADDLEBOARDER <br/> Mavericks Beach, CA', '35mm <br/>MIKE CHAMBERLAIN<br/> Half Moon Bay, CA', '35mm <br/>EMMA DEVINCENZI <br/> San Francisco, CA', '35mm <br/>EMMA DEVINCENZI<br/> San Francisco, CA', '35mm <br/> MIKE CHAMBERLAIN <br/> Pacifica, CA', '35mm <br/>LAWRENCE RICKFORD<br/> Pacifica, CA' ]
 
 var placesCollection = ["src/places/one.jpg", "src/places/two.jpg", "src/places/three.jpg", "src/places/four.jpg", "src/places/five.jpg", "src/places/six.jpg", "src/places/seven.jpg", "src/places/eight.jpg", "src/places/nine.jpg", "src/places/ten.jpg", "src/places/eleven.jpg" ]
 var placesCollectionDescript = ['35mm <br/> Davenport, CA', '35mm <br/> Pigeon Point Lighthouse, CA', '35mm <br/> San Francisco, CA', '35mm <br/>Manhattan Beach, CA', '35mm <br/>Coroico, Bolivia', '35mm <br/>Davenport, CA', '35mm <br/>Pacific Ocean', '35mm <br/>San Francisco, CA', '35mm <br/>Foster City, CA', '35mm <br/> Pigeon Point Lighthouse', '35mm <br/> MARINA DISTRICT <br/> San Francisco, CA' ]
 
 var thingsCollection = ["src/things/one.jpg", "src/things/two.jpg", "src/things/three.jpg", "src/things/four.jpg"]
-var thingsCollectionDescript = ['35mm <br/>Palace of Fine Arts <br/> San Francisco, CA', '35mm <br/> Atlas Genus Concert <br/> Boulder, CO', '35mm <br/>Marina District <br/> San Francisco, CA', '35mm <br/>Palace of Fine Arts <br/> San Francisco, CA'  ]
+var thingsCollectionDescript = ['35mm <br/>PALANCE OF FINE ARTS <br/> San Francisco, CA', '35mm <br/> ATLAS GENUS CONCERT <br/> Boulder, CO', '35mm <br/>MARINA DISTRICT <br/> San Francisco, CA', '35mm <br/>PALACE OF FINE ARTS <br/> San Francisco, CA'  ]
 
 var fullPhotoCollection = [].concat(peopleCollection, placesCollection, thingsCollection);
 var fullPhotoDescript = [].concat(peopleCollectionDescript, placesCollectionDescript, thingsCollectionDescript)
@@ -140,7 +139,6 @@ function triggerD(descriptionNumber,show){
 $('.open-guide').click(function(){
     $('.photo-frame-wrapper').css("display", "block");
     $('#no-signal').css("display", "none");
-    $('#tv-3-bg').css("background-image", "src/black.png")
 
 })
 
@@ -153,7 +151,6 @@ $('#designs-link').click(function(){
     $('#designs-link').css("display", "none");
     $('.design-tv-guide').css("display", "block");
     $('.tv-3-nav').css("display", "block");
-    $('#tv-3-bg-target').attr("src", "src/black.png");
     
 })
 
