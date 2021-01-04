@@ -113,7 +113,7 @@ h2:hover {font-size: 55px;}
 .palm-left {float: left; left: -5%; animation: wobble-ver-left 150s both;}
 .palm-right {float: right; right: -5%; animation: wobble-hor-bottom 300s both;}
 
-#tv-spread-container {position: fixed;  bottom: 0; max-height: 95%;  }
+#tv-spread-container {position: fixed;  bottom: 0; max-height: 9 5%;  }
 #tv-spread-wrapper {position: relative; margin-top: 150px;  display: inline; border: 2px solid rgba(0,0,0,0)}
 .tv-contents {z-index: -1; position: absolute; background-size: contain;}
 .tv-clickable {position: absolute; z-index: 300; border-radius: 6px; background-color: rgba(0,0,0,0)!important; background-image: none!important;}
@@ -148,7 +148,7 @@ h2:hover {font-size: 55px;}
 .photo-frame-wrapper {display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
 #no-signal {font-size: 32px; text-align: center; position: absolute; z-index: 0; display: none;}
 .photos-guide {width: 100%; height: 100%; border: 2px solid black; border-radius: 2px; z-index: 5;}
-.photos-guide-close-bar {width: 100%; height: 5%; background: #21277A;}
+.photos-guide-close-bar {width: 100%; height: 10px; background: #21277A;}
 
 
 .photos-guide-top-sec {height: 35%; border-top: 1px solid black; width: 100%;  background: -webkit-linear-gradient(top, #21277A, #3b63bb); display: flex; justify-content: center; align-items: center;}
@@ -185,7 +185,7 @@ h2:hover {font-size: 55px;}
 #film-guide-close {font-size: 30%; font-family: Arial, Helvetica, sans-serif; line-height: 90%; color: white;  }
 
 #design-description {font-size: 4px; color: white; text-align: center; width: 80%; padding: 2px;}
-
+#design-guide-close {height: 5px;}
 .nav-buttons:hover {transform: scale(1.1)}
 
 
