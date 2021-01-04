@@ -50,9 +50,7 @@
     overflow: hidden; 
     margin: 0;
     padding: 0;
-    /* background-image: url('../src/beach-1-extended.jpg');  */
-    /* background-size: cover;
-    background-position: top; */
+    
     background: linear-gradient(180deg, rgba(29,52,121,1) 0%, rgba(37,65,140,1) 8%, rgba(51,90,176,1) 15%, rgba(60,105,188,1) 23%, rgba(73,130,214,1) 30%, rgba(91,154,230,1) 40%, rgba(142,204,255,1) 51%);
     font-family: 'Rainer-Bold';
     top: 0; 
@@ -73,7 +71,7 @@
   width: 100%; 
   height: 15%;
   display: flex; 
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
   z-index: 200;
@@ -81,12 +79,12 @@
   top: 0; left: 0; 
 }
 
-#logo-span { width: 70%; display: flex; justify-content: center; align-items: baseline;}
+#logo-span { display: flex; width: 70%; justify-content: center; align-items: baseline;}
 #logo-span img {max-height: 75px;}
 #logo-span:hover #haas-house-logo {animation: fade-in 0.1s cubic-bezier(.39,.575,.565,1.000); opacity: 1;}
 #logo-span:hover #haas-house {animation:fade-out 0.1s ease-out both}
 #haas-house-logo {opacity: 0; position: absolute;}
-.about-link, .contact-link {text-align: center; width: 15%; padding: 5%; letter-spacing: 5px;}
+.about-link, .contact-link { width: 100px; margin: 5%;  letter-spacing: 5px;}
 
 
 button {background: none; border: none; outline: none;}
@@ -192,14 +190,11 @@ h2:hover {font-size: 55px;}
 
 
 
-#about-window {width: 100vw; height: 100vh; z-index: 150; position: absolute; left: 0%; top: 0; background: white;  }
-.about-window-content {width: 100%; margin-top: 125px; height: calc(85% - 125px); display: flex; }
-.about-window-col {width: 100%; height: 90%; margin-top: 5%; font-family: Arial, Helvetica, sans-serif; font-size: 24px; line-height: 32px; display: flex; justify-content: center; align-items: center;}
-.about-window-col p {margin-right: 35%; }
-.about-window-col img {height: 100%; padding-left: 15%;}
-/* .about-window-row {width: 100%; height: 15%; padding: 2%; display: flex; align-items: center; justify-content: center;} */
-
-
+#about-window {width: 100%; height: 100%; z-index: 150; position: absolute; left: 0%; top: 0; background: white;  }
+.about-window-content { height: calc(100% - 125px); margin-top: 125px; width: 100%; display: flex; align-items: center; justify-content: center; overflow-y: scroll;  }
+.about-window-col { padding: 5% 1%; width: 100%;  height: 100%;  display: flex; justify-content: center; align-items: center;}
+.about-window-col img {height: 100%;  max-height: 450px; }
+.about-window-col p {padding: 10%; line-height: 24px;  }
 #contact-window {width: 100%; height: 100vh; padding: 75px; z-index: 150; position: absolute; top: 0; background: white; 
 }
 
@@ -219,6 +214,12 @@ textarea {height: 100px; margin: 0px; border: 1px solid black; }
 
 
 .mobile_show {display: none;}
+@media only screen and (max-width: 900px) {
+  .about-window-col {height: 50%; width: 100%; margin: 1%;   }
+
+}
+
+
 
 @media only screen and (max-width: 600px) {
     .mobile_show {display: block;}
@@ -226,7 +227,7 @@ textarea {height: 100px; margin: 0px; border: 1px solid black; }
 
     #haas-house {font-size: 12vw;}
     .about-link, .contact-link {font-size: 7vw;}
-    .palm {width: 40%;} 
+    .palm {width: 45%;} 
   }
 
   /* @media (min-height: 700px){

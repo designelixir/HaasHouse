@@ -247,7 +247,7 @@ $('.about-link').click(function(){
     if(aboutClickCount % 2 === 0){
         $('#about-window').css({"display": "block", "animation": "tilt-in-fwd-tl .6s cubic-bezier(.25,.46,.45,.94) both"})
         $('.about-link').text('X');
-        $('.about-link').css("color", "black")
+        $('.about-link').css({"color": "black"})
         $('#haas-house').css({"color": "black"})
         
 
@@ -266,7 +266,7 @@ $('.contact-link').click(function(){
     if(contactClickCount % 2 === 0){
         $('#contact-window').css({"display": "block", "animation": "tilt-in-fwd-tr .6s cubic-bezier(.25,.46,.45,.94) both"})
         $('.contact-link').text('X');
-        $('.contact-link').css("color", "black")
+        $('.contact-link').css({"color": "black"})
         $('#haas-house').css({"color": "black"})
         
     } else {

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>HAAS HOUSE</title>
+    <meta name="description" content="Portfolio for Casey Haas"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <link rel="shortcut icon" href="src/haas-logo-black.svg" type="image/x-icon">
+    <link rel="stylesheet" rel="preload" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/irk7lua.css">
+
+
+</head>
+
+<body id="the-body">
+
+    
+    <div class="navigation">
+        <a class="about-link link-remote" rel="noopener">ABOUT</a>
+        <span id="logo-span" class="link-remote"> 
+            <a href="https://haashouse.co"><h1 id="haas-house">HAAS HOUSE</h1></a>
+            <img src="src/haas-logo-white.svg" id="haas-house-logo" alt="Haas House Logo">
+        </span>
+        <a class="contact-link link-remote" rel="noopener">CONTACT</a>
+    </div>
+
+    <img class='palm-left palm' src="src/palm-left-1.png"  alt='palm leaf'>
+    <img class='palm-right palm' src="src/palm-right.png" alt='palm leaf'>
+
+    
+    <div style="height: 100%; border: 10px solid lime; box-sizing: border-box;">
+        <div style="border: 2px solid orange; margin-bottom: -10%; height: 70%; background: linear-gradient(180deg, rgba(29,52,121,1) 0%, rgba(37,65,140,1) 10%, rgba(45,79,157,1) 20%, rgba(51,90,176,1) 30%, rgba(60,105,188,1) 40%, rgba(73,130,214,1) 50%, rgba(91,154,230,1) 59%, rgba(142,204,255,1) 80%); width: 100%;">
+        <img src="src/tv-spread-22.png">
+        
+        </div>
+        <div style="bottom: 0;  max-height: 30%; border: 2px solid magenta;">
+            <img src="src/beach-spread.jpg">
+            <img src="src/sand-layer.jpg">
+    
+        </div>
+    </div>
+
+    
+    
+
+
+    <!-- ABOUT WINDOW ####################################### -->
+    <div id="about-window" style="display: none;">
+        <div class="about-window-content">
+            <div class="about-window-col">
+                <img src="src/AboutPagePhoto.png" alt="Casey Haas Portrait">
+            </div>
+            <div class="about-window-col">
+                <p>Casey Haas is a filmmaker, photographer, and designer from the Bay Area. She is a recent graduate of CU Boulder & General Assembly, where she received a BFA in Film Production and a certificate in Visual Design. She created Haas House as an umbrella for all of her work- film, photography, and design. Her creations reflect the California dream she grew up in, whether it be the beaches of Half Moon Bay or the park down the street from the home she grew up in. A firm believer in the saying ‘the most personal is the most creative’, her work often explores her childhood and life experiences. Casey specializes in shooting 35mm, 120mm, super 8mm, and 16mm film.</p>
+            </div>
+        </div>
+     </div>
+
+     <!-- CONTACT WINDOW #################################### -->
+     <div id="contact-window" style="display: none;">
+        <div class="contact-window-content">
+           
+
+        <div class="fcf-body">
+
+            <div id="fcf-form">
+            <h3 class="fcf-h3">Contact us</h3>
+
+            <form id="fcf-form-id" class="fcf-form-class" method="post" action="contact-form-process.php">
+                
+                <div class="fcf-form-group">
+                    <label for="Name" class="fcf-label">Your name</label>
+                    <div class="fcf-input-group">
+                        <input type="text" id="Name" name="Name" class="fcf-form-control" required>
+                    </div>
+                </div>
+
+                <div class="fcf-form-group">
+                    <label for="Email" class="fcf-label">Your email address</label>
+                    <div class="fcf-input-group">
+                        <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+                    </div>
+                </div>
+
+                <div class="fcf-form-group">
+                    <label for="Message" class="fcf-label">Your message</label>
+                    <div class="fcf-input-group">
+                        <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
+                    </div>
+                </div>
+
+                <div class="fcf-form-group">
+                    <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+                </div>
+
+            
+
+            </form>
+            </div>
+
+        </div>       
+        </div>
+        <div class="contact-social-icons">
+            <a href="https://www.linkedin.com/in/casey-t-haas/" target="blank" rel="noopener"><img src="src/linkedin_1.svg" alt='linked in icon'></a>
+            <a href="https://www.instagram.com/caseythaas/" target="blank" rel="noopener"><img src="src/instagram.svg" alt='instagram icon'></a>
+
+        </div>
+     </div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/index.js"></script>   
+<script src="https://player.vimeo.com/api/player.js"></script>
+</html>
