@@ -1,3 +1,5 @@
+
+
 <html>
 
 
@@ -7,7 +9,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
     <link rel="shortcut icon" href="src/haas-logo-black.svg" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" rel="preload" type="text/css" href="css/index.css" />
     <link rel="stylesheet" href="https://use.typekit.net/irk7lua.css">
 
@@ -21,12 +22,12 @@
     
     <!-- NAVIGATION ####################################### -->
     <div class="navigation">
-        <a class="about-link" rel="noopener">ABOUT</a>
-        <span id="logo-span"> 
+        <a class="about-link link-remote" rel="noopener">ABOUT</a>
+        <span id="logo-span" class="link-remote"> 
             <a href="https://haashouse.co"><h1 id="haas-house">HAAS HOUSE</h1></a>
             <img src="src/haas-logo-white.svg" id="haas-house-logo" alt="Haas House Logo">
         </span>
-        <a class="contact-link" rel="noopener">CONTACT</a>
+        <a class="contact-link link-remote" rel="noopener">CONTACT</a>
     </div>
 
 
@@ -45,12 +46,14 @@
 
             <!-- DESIGN TV  ##########################################################################################-->
             <div id="tv-3-designs" class="tv-3 tv-clickable" >
-                <div class="tv-3-screen">
-                    <h2 id="designs-link">DESIGN</h2>
+                <div class="tv-3-screen" >
+                    <h2 class="design-toggle link-remote" id="designs-link">DESIGN</h2>
 
                     <div class="design-tv-guide" style="display: none;">
                         <div class="photos-guide">
-                            <div class="photos-guide-close-bar"><p id='design-guide-close' style="font-size: 40%; line-height: 90%; color: white; font-family: 'Rainer-v04', sans-serif; " class="channels">X</p></div>
+                            <div class="photos-guide-close-bar">
+                                <img src="src/x.svg" id='design-guide-close' class="channels link-remote" alt="close design tv" style="height: 90%;  margin-top: 1px; padding-left: 98%; z-index: 30;">
+                            </div>
                             <div class="photos-guide-top-sec">
                                 <div class="photos-guide-top-left">
                                     <div class="photos-guide-title">
@@ -62,18 +65,18 @@
                                         <span id="channel5description">posters</span>
                                         <span id="channel6description">design for moving images</span>
                                     </div>
-                                </div>
+                                </div> 
                                 <div class="photos-guide-top-right"><img src="src/haas-logo-white.svg"></div>
                             </div>
                     
                             <div class="photos-guide-bottom-sec">
-                                <div class="channels" id="channel-web" onmouseover="triggerD('channel4description', true)" onmouseout="triggerD('channel4description', false)">
+                                <div class="channels channel-style link-remote" id="channel-web" onmouseover="triggerD('channel4description', true)" onmouseout="triggerD('channel4description', false)">
                                     <a class="channel-title" >WEB</a> 
                                 </div>
-                                <div class="channels" id="channel-print" onmouseover="triggerD('channel5description', true)" onmouseout="triggerD('channel5description', false)">
+                                <div class="channels channel-style link-remote" id="channel-print" onmouseover="triggerD('channel5description', true)" onmouseout="triggerD('channel5description', false)">
                                     <a class="channel-title">PRINT</a> 
                                 </div>
-                                <div class="channels" id="channel-film" onmouseover="triggerD('channel6description', true)" onmouseout="triggerD('channel6description', false)">
+                                <div class="channels channel-style link-remote" id="channel-film" onmouseover="triggerD('channel6description', true)" onmouseout="triggerD('channel6description', false)">
                                     <a class="channel-title">FILM</a> 
                                 </div>
                             </div>
@@ -82,14 +85,16 @@
                 </div>
                 <div class='tv-3-nav' style='display: none'>
                     <div class="tv-3-nav-sec" id="design-power-off" style="height: 35%;">
-                        <img src="src/power-off.svg" style="height: 60%; padding-right:3%; float: right;" alt="exit photos tv">
+                        <img src="src/power.svg" class="nav-buttons off-remote design-toggle" style="height: 60%; margin: 6% 8%; float: right;" alt="exit photos tv">
                     </div>
                     <div class="tv-3-nav-sec" style="display: flex; justify-content: center; align-items: center; height: 30%; padding-top: 15%; padding-bottom: 0;">
-                        <p id="design-nav-forward">🔼</p>
-                        <p id="design-nav-backward">🔽</p>
+                        <img src="src/rewind.svg" class="nav-buttons link-remote" id="design-nav-backward" alt="forward button" style="height: 10px; padding-right: 10px;">
+                        <img src="src/forward.svg" class="nav-buttons link-remote" id="design-nav-forward" alt="forward button" style="height: 10px;">
+
+                
                     </div>
-                    <div class="tv-3-nav-sec" style="background: yellow; text-align: center; padding-top: 6px;" id="design-tv-guide-button">
-                        <h6  style="font-size: 10px; line-height: 0;  letter-spacing: 0; margin: 0; padding: 0;  color: black;">TV GUIDE</h6>
+                    <div class="tv-3-nav-sec link-remote" style="background: yellow; text-align: center; padding-top: 8px;" id="design-tv-guide-button">
+                        <h6 class="nav-buttons" style="font-size: 10px; line-height: 0;  letter-spacing: 0; margin: 0; padding: 0;  color: black;">TV GUIDE</h6>
 
                         <!-- <button id='design-tv-guide-button'>TV GUIDE</button> -->
                     </div>
@@ -103,10 +108,13 @@
             <!-- PHOTO TV ######################################################################## -->
             <div id="tv-5" class="tv-5 tv-clickable fade-in" aria-label="Photos">
                 <div id="tv-5-screen">
-                    <h2 class="photo-toggle-link" id="tv-5-link">PHOTO</h2>
+                    <h2 class="photo-toggle-link link-remote" id="tv-5-link">PHOTO</h2>
                     <div class="photo-frame-wrapper" style="display: none;">
                         <div class="photos-guide">
-                            <div class="photos-guide-close-bar"><div id='photo-guide-close' class="channel">X</div></div>
+                            <div class="photos-guide-close-bar">
+                                <img src="src/x.svg" id='photo-guide-close' class="channel link-remote" alt="close design tv" style="height: 90%;  margin-top: 1px; padding-left: 98%; z-index: 30;">
+
+                                </div>
                             <div class="photos-guide-top-sec">
                                 <div class="photos-guide-top-left">
                                     <div class="photos-guide-title">
@@ -125,13 +133,13 @@
                                 </div>
                             </div>
                             <div class="photos-guide-bottom-sec">
-                                <div class="channel" id="channel-people" onmouseover="triggerD('channel1description', true)" onmouseout="triggerD('channel1description', false)">
+                                <div class="channel channel-style link-remote" id="channel-people" onmouseover="triggerD('channel1description', true)" onmouseout="triggerD('channel1description', false)">
                                     <a class="channel-title" >PEOPLE  </a> 
                                 </div>
-                                <div class="channel" id="channel-places" onmouseover="triggerD('channel2description', true)" onmouseout="triggerD('channel2description', false)">
+                                <div class="channel channel-style link-remote" id="channel-places" onmouseover="triggerD('channel2description', true)" onmouseout="triggerD('channel2description', false)">
                                     <a class="channel-title" > PLACES  </a> 
                                 </div>
-                                <div class="channel" id="channel-things" onmouseover="triggerD('channel3description', true)" onmouseout="triggerD('channel3description', false)">
+                                <div class="channel channel-style link-remote" id="channel-things" onmouseover="triggerD('channel3description', true)" onmouseout="triggerD('channel3description', false)">
                                     <a class="channel-title" > THINGS   </a> 
                                 </div>
                             </div>
@@ -140,16 +148,16 @@
                 </div>
 
                 <div id="tv-5-nav" style="display: none;">
-                    <div class=" tv-5-nav-section photo-toggle-link" style="height: 27%; ">
-                        <img src="src/power-off.svg" style="width: 50%; height: auto; padding-right:4%;" alt="exit photos tv">
+                    <div class=" tv-5-nav-section photo-toggle-link off-remote" style="height: 27%; ">
+                        <img src="src/power.svg" style="width: 45%; height: auto; padding: 1% 3% 0 0" alt="exit photos tv">
                     </div>
-                    <div class="tv-5-nav-section" id="channel-switch" style="height: 27%;">
-                        <img id="channel-switch-img" src="src/toggle-switch.svg" style="max-width: 50%; margin-top: 5%;  ">
+                    <div class="tv-5-nav-section link-remote" id="channel-switch" style="height: 27%;">
+                        <img id="channel-switch-img" src="src/toggle-switch.svg" style="max-width: 45%; margin-top: -2%;  ">
                     </div>
-                    <div class="tv-5-nav-section" style="height: 22%">
+                    <div class="tv-5-nav-section link-remote" style="height: 22%">
                         <h6 class="open-guide" style="font-size: 10px; padding: 0px 5px; background: yellow; letter-spacing: 0; color: black;">TV GUIDE</h6>
                     </div>
-                    <div class="tv-5-nav-section photo-description-wrapper" style="display: block; height: 20%;">
+                    <div class="tv-5-nav-section photo-description-wrapper" style="display: block; height: 20%; margin-top: 5%;">
                         <p id="photo-description" class="photo-description-sec"></p>
                     </div>
                 </div>
@@ -159,14 +167,14 @@
             <!-- FILM TV ###################################################################################################-->
             
             <div id="tv-11" class="tv-11 tv-clickable" aria-label="Films">
-                <div id="tv-11-screen">
+                <div id="tv-11-screen" class="link-remote">
                     <h2 class="film-toggle" id="film-toggle-link">FILM</h2>
                     <iframe id="film-iframe" style="width:100%; height:100%; display: none; background-color: black;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="movie-nav" style="display: none;">
-                    <div class="film-toggle" id="film-toggle-close">❌</div>
-                    <div id="movie-nav-next">⏩</div>
-                    <div id="movie-nav-prev">⏪ </div>
+                    <img src="src/power.svg" class="film-toggle off-remote" alt="exit film tv">
+                    <img class="link-remote" src="src/forward.svg" id="movie-nav-prev" alt="backwards button">
+                    <img class="link-remote" src="src/rewind.svg" id="movie-nav-next" alt="forward button">
                 </div>
             </div>
             
@@ -194,31 +202,50 @@
      <!-- CONTACT WINDOW #################################### -->
      <div id="contact-window" style="display: none;">
         <div class="contact-window-content">
-            <div class="contact-form-wrapper">
-                <form action=”mailto:megan@designelixir.studio
+            <?php
+include('js/contact-form-process.php');
+?>
 
+<div class="fcf-body">
 
-method=”POST”
+    <div id="fcf-form">
+    <h3 class="fcf-h3">Contact us</h3>
 
-
-enctype=”multipart/form-data”
-
-
-name=”EmailForm”>
-
-
-Name:<br>
-
-
-<input type=”text” size=”19″ name=”ContactName”><br><br>
-
-
-Message:<br> <textarea name=”ContactCommentt” rows=”6″ cols=”20″>
-
-
-</textarea><br><br> <input type=”submit” value=”Submit”> </form>
+    <form id="fcf-form-id" class="fcf-form-class" method="post" action="contact-form-process.php">
+        
+        <div class="fcf-form-group">
+            <label for="Name" class="fcf-label">Your name</label>
+            <div class="fcf-input-group">
+                <input type="text" id="Name" name="Name" class="fcf-form-control" required>
             </div>
-            
+        </div>
+
+        <div class="fcf-form-group">
+            <label for="Email" class="fcf-label">Your email address</label>
+            <div class="fcf-input-group">
+                <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+            </div>
+        </div>
+
+        <div class="fcf-form-group">
+            <label for="Message" class="fcf-label">Your message</label>
+            <div class="fcf-input-group">
+                <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
+            </div>
+        </div>
+
+        <div class="fcf-form-group">
+            <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+        </div>
+
+        <div class="fcf-credit" id="fcf-credit">
+        Simple HTML email form provided by: <a href="https://www.freecontactform.com" target="_blank">FreeContactForm.com</a>
+        </div>
+
+    </form>
+    </div>
+
+</div>       
         </div>
         <div class="contact-social-icons">
             <a href="https://www.linkedin.com/in/casey-t-haas/" target="blank" rel="noopener"><img src="src/linkedin_1.svg" alt='linked in icon'></a>
@@ -232,6 +259,7 @@ Message:<br> <textarea name=”ContactCommentt” rows=”6″ cols=”20″>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="js/index.js"></script>   
 <script src="https://player.vimeo.com/api/player.js"></script>
+
 
 
 </html>

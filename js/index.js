@@ -21,7 +21,7 @@ $('.film-toggle').click(function(){
         $('.movie-nav').css("display", "none");
         $('.tv-11').css("animation", "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both");
         // $('#film-iframe').removeAttr("src");
-        $('#tv-11-screen').css({'background-color': '#1e1e1e'})
+        $('#tv-11-screen').css({'background-color': 'black'})
 
         
 
@@ -64,25 +64,27 @@ $('.photo-toggle-link').click(function(){
         $('.photo-frame-wrapper').css("display", "none");
         $('#tv-5-nav').css("display", "none");
         $('#no-signal').css("display", "none");
-
+        $('#targeted-picture').attr("src", "src/black.svg")
         $('.tv-5').css("animation", "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both");
     } else {
         $('#the-body').css({"transform": "scale(4)", "transform-origin-x": (tv5.left), "transform-origin-y": (tv5.top + 75 )});
         $('#tv-5-link').css("display", "none");
         $('.photo-frame-wrapper').css("display", "block");
         $('#tv-5-nav').css("display", "block");
+        $('#targeted-picture').attr("src", "src/statics/gray-static-stationary.png")
+
 
     }
 });
 
-var peopleCollection = ["src/people/one.jpg", "src/people/two.jpg", "src/people/three.jpg", "src/people/four.jpg", "src/people/five.jpg", "src/people/six.jpg", "src/people/seven.jpg" , "src/people/eight.jpg" , "src/people/nine.jpg"  ]
+var peopleCollection = ["src/People/one.jpg", "src/People/two.jpg", "src/People/three.jpg", "src/People/four.jpg", "src/People/five.jpg", "src/People/six.jpg", "src/People/seven.jpg" , "src/People/eight.jpg" , "src/People/nine.jpg"  ]
 var peopleCollectionDescript = ['35mm <br/> MIKE CHAMBERLAIN <br/> Pacifica, CA', '35mm <br/>AMY EHARA<br/> Pacifica, CA', '35mm <br/>MCKENNA KOLEDO <br/> Pacific Palisades, CA', '35mm <br/>LONE PADDLEBOARDER <br/> Mavericks Beach, CA', '35mm <br/>MIKE CHAMBERLAIN<br/> Half Moon Bay, CA', '35mm <br/>EMMA DEVINCENZI <br/> San Francisco, CA', '35mm <br/>EMMA DEVINCENZI<br/> San Francisco, CA', '35mm <br/> MIKE CHAMBERLAIN <br/> Pacifica, CA', '35mm <br/>LAWRENCE RICKFORD<br/> Pacifica, CA' ]
 
-var placesCollection = ["src/places/one.jpg", "src/places/two.jpg", "src/places/three.jpg", "src/places/four.jpg", "src/places/five.jpg", "src/places/six.jpg", "src/places/seven.jpg", "src/places/eight.jpg", "src/places/nine.jpg", "src/places/ten.jpg", "src/places/eleven.jpg" ]
+var placesCollection = ["src/Places/one.jpg", "src/Places/two.jpg", "src/Places/three.jpg", "src/Places/four.jpg", "src/Places/five.jpg", "src/Places/six.jpg", "src/Places/seven.jpg", "src/Places/eight.jpg", "src/Places/nine.jpg", "src/Places/ten.jpg", "src/Places/eleven.jpg" ]
 var placesCollectionDescript = ['35mm <br/> Davenport, CA', '35mm <br/> Pigeon Point Lighthouse, CA', '35mm <br/> San Francisco, CA', '35mm <br/>Manhattan Beach, CA', '35mm <br/>Coroico, Bolivia', '35mm <br/>Davenport, CA', '35mm <br/>Pacific Ocean', '35mm <br/>San Francisco, CA', '35mm <br/>Foster City, CA', '35mm <br/> Pigeon Point Lighthouse', '35mm <br/> MARINA DISTRICT <br/> San Francisco, CA' ]
 
-var thingsCollection = ["src/things/one.jpg", "src/things/two.jpg", "src/things/three.jpg", "src/things/four.jpg"]
-var thingsCollectionDescript = ['35mm <br/>PALANCE OF FINE ARTS <br/> San Francisco, CA', '35mm <br/> ATLAS GENUS CONCERT <br/> Boulder, CO', '35mm <br/>MARINA DISTRICT <br/> San Francisco, CA', '35mm <br/>PALACE OF FINE ARTS <br/> San Francisco, CA'  ]
+var thingsCollection = ["src/Things/one.jpg", "src/Things/two.jpg", "src/Things/three.jpg", "src/Things/four.jpg"]
+var thingsCollectionDescript = ['35mm <br/>PALACE OF FINE ARTS <br/> San Francisco, CA', '35mm <br/> ATLAS GENUS CONCERT <br/> Boulder, CO', '35mm <br/>MARINA DISTRICT <br/> San Francisco, CA', '35mm <br/>PALACE OF FINE ARTS <br/> San Francisco, CA'  ]
 
 var fullPhotoCollection = [].concat(peopleCollection, placesCollection, thingsCollection);
 var fullPhotoDescript = [].concat(peopleCollectionDescript, placesCollectionDescript, thingsCollectionDescript)
@@ -143,33 +145,26 @@ $('.open-guide').click(function(){
 })
 
 // DESIGN TV ###########################
+var designCounter = 0;
+$('.design-toggle').click(function(){
+    designCounter++;
+    if(designCounter % 2 === 0){ //zoom out
+        $('#the-body').css({"transform": "scale(1)"});
+        $('#designs-link').css("display", "block");
+        $('.design-tv-guide').css("display", "none");
+        $('.tv-3-nav').css("display", "none");
+        $('.tv-3-screen').css ("background", "black")
+        $('#tv-3-bg-target').removeAttr("src")
 
-$('#designs-link').click(function(){
-    var tv3 = document.getElementById('tv-3-designs').getBoundingClientRect();
-
-    $('#the-body').css({"transform": "scale(4)", "transform-origin-x": (tv3.right - 75), "transform-origin-y": (tv3.bottom)});
-    $('#designs-link').css("display", "none");
-    $('.design-tv-guide').css("display", "block");
-    $('.tv-3-nav').css("display", "block");
-    // $('#tv-3-bg-target').attr("src", "src/black.png");
-    
-})
-
-$('#design-power-off').click(function(){
-    $('#the-body').css({"transform": "scale(1)"});
-    $('#designs-link').css("display", "block");
-    $('.design-tv-guide').css("display", "none");
-    $('.tv-3-nav').css("display", "none");
-    $('.tv-3-screen').css ("background", "#1e1e1e")
-    
-
-})
-
-$('#film-guide-close').click(function(){
-    $('.design-tv-guide').css("display", "none");
-    $('#tv-3-bg').css("background-color", "#1e1e1e");
-    $('#tv-3-bg-target').attr("src", "src/statics/gray-static.gif");
-
+    } else {
+        var tv3 = document.getElementById('tv-3-designs').getBoundingClientRect();
+        $('#the-body').css({"transform": "scale(4)", "transform-origin-x": (tv3.right - 75), "transform-origin-y": (tv3.bottom)});
+        $('#designs-link').css("display", "none");
+        $('.design-tv-guide').css("display", "block");
+        $('#tv-3-bg-target').attr("src", "src/statics/gray-static.gif");
+        $('#tv-3-bg-target').css("background-size", "cover")
+        $('.tv-3-nav').css("display", "block");   
+    }
 })
 
 $('#design-tv-guide-button').click(function(){
@@ -180,8 +175,8 @@ $('#design-tv-guide-button').click(function(){
 })
 
 
-var webCollection = ["src/casey-portrait.jpeg", "https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_90,w_1400/fl_lossy,pg_1/kmkrsltibnrzrsubcgvd/will-smith", "https://s3.amazonaws.com/sfc-datebook-wordpress/wp-content/uploads/sites/2/2020/07/MER9673f0f77451bb620d8210bf2cfa4_bravo0706-1024x684.jpg"]
-var webCollectionDescript = ["project one", "project two", "project three"]
+var webCollection = ["src/web/slide1.jpg", "src/web/slide2.jpg", "src/web/slide3.jpg", "src/web/slide4.jpg", "src/web/slide5.jpg", "src/web/slide6.jpg", ]
+var webCollectionDescript = ['LIQUID LAB', 'LIQUID LAB', 'LIQUID LAB', 'LIQUID LAB', 'LIQUID LAB', 'LIQUID LAB',]
 
 var printCollection = ["https://ewscripps.brightspotcdn.com/dims4/default/3a54f41/2147483647/strip/true/crop/2038x1146+5+216/resize/1280x720!/quality/90/?url=http%3A%2F%2Fewscripps-brightspot.s3.amazonaws.com%2F26%2F12%2Fa6f367014ff6bd297b8b2fbe3c6e%2Fandrew-plutt.jpg", "https://bloximages.newyork1.vip.townnews.com/outtherecolorado.com/content/tncms/assets/v3/editorial/d/e5/de52bca7-16bc-5b16-8c06-b05e593ff698/5eecdc1b7713c.image.jpg?crop=1254%2C705%2C0%2C65&resize=1254%2C705&order=crop%2Cresize", "https://s1.it.atcdn.net/wp-content/uploads/2019/11/Colorado-road-trip-hero-800x600.jpg", "https://www.visittheusa.com/sites/default/files/styles/hero_l_x2/public/images/exp-background/2019-11/de9cba61-3eb7-40e0-a4a0-3aa523961e41.jpeg?itok=3Yf7hyME"]
 var printCollectionDescript = ["project 1", "project 2", "project 3", "project 4"]
@@ -285,3 +280,7 @@ $('.contact-link').click(function(){
     contactClickCount++;
     
 })
+
+
+
+
