@@ -1,17 +1,33 @@
 
-// theFilmWindow = document.getElementById('tv-11');
-// var measureFilmWindow = theFilmWindow.getBoundingClientRect();
-// console.log(measureFilmWindow.top);
+window.onresize = reCalibrate;
+window.onload = reCalibrate;
 
-// let originX = (10 * (measureFilmWindow.left/window.innerWidth * 100)) / 5, 
-// originY = (10 * (measureFilmWindow.top/window.innerHeight * 100)) / 5;
+var thisScale = 4;
 
-// open and close film window 
+function reCalibrate(){
+    if (window.innerHeight > window.innerWidth){
+        $('#tv-spread-container').css({"width": "200%", "left": "-50%"})
+        $('.design-tv').css({"width": "37vw", "height": "25.5vw", "top": "131%"})
+        $('.photo-tv').css({"width": "20.75%", "height": "41%", "left": "31%", "top": "82%"})
+        $('.photo-tv-screen').css({"width": "77%", "height": "95%"})
+        $('.photo-tv-nav').css({"background-color": "#302d2a"})
+        thisScale = 2;
+    } else {
+         $('#tv-spread-container').css({"width": "100%", "left": "0%"})
+        $('.design-tv').css({"width": "18%", "height": "41%"})
+        $('.photo-tv').css({"width": "18.5%", "height": "39%", "left": "11.5%", "top": "78%"})
+        $('.photo-tv-screen').css({"width": "79%", "height": "90%"})
+        $('.photo-tv-nav').css({"background-color": "rgba(0,0,0,0)"})
+        thisScale = 4;
+    }
+}
+
+
 var clickFilm = 0; 
 $('.film-toggle').click(function(){
     clickFilm++;
     var tv11 = document.getElementById('tv-11').getBoundingClientRect();
-
+   
     if(clickFilm % 2 === 0){
 
         $('#the-body').css({"transform": "scale(1)", "transform-origin-x": (tv11.right -100), "transform-origin-y": (tv11.top + 50)});
@@ -26,7 +42,7 @@ $('.film-toggle').click(function(){
         
 
     } else {
-        $('#the-body').css({"transform": "scale(4)", "transform-origin-x": (tv11.right -100), "transform-origin-y": (tv11.top + 50)});
+        $('#the-body').css({"transform": "scale(" + thisScale +")", "transform-origin-x": (tv11.right -100), "transform-origin-y": (tv11.top + 50)});
         $('#film-iframe').css("display", "block");
         $('#film-toggle-link').css("display", "none");
         $('.movie-nav').css("display", "block");
@@ -56,22 +72,22 @@ $('#movie-nav-prev').click(function(){
 var clickPhoto = 0;
 $('.photo-toggle-link').click(function(){
     clickPhoto++;
-    var tv5 = document.getElementById('tv-5').getBoundingClientRect();
+    
+    var tv5 = document.getElementById('photo-tv').getBoundingClientRect();
 
     if(clickPhoto% 2 === 0){
         $('#the-body').css({"transform": "scale(1)", "transform-origin-x": (tv5.right - 50), "transform-origin-y": (tv5.bottom)});
         $('#tv-5-link').css("display", "block");
-        $('.photo-frame-wrapper').css("display", "none");
-        $('#tv-5-nav').css("display", "none");
-        $('#no-signal').css("display", "none");
-        $('#targeted-picture').attr("src", "src/black.svg")
-        $('.tv-5').css("animation", "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both");
+        $('#photo-bg-target').attr("src", "src/black.svg")
+        $('#photo-tv-guide').css({"display": "none"})
+        $('.photo-tv-nav').css({"display": "none"})
     } else {
-        $('#the-body').css({"transform": "scale(4)", "transform-origin-x": (tv5.left), "transform-origin-y": (tv5.top + 75 )});
+        
+        $('#the-body').css({"transform": "scale(" + thisScale +")", "transform-origin-x": (tv5.left), "transform-origin-y": (tv5.top + 75 )});
         $('#tv-5-link').css("display", "none");
-        $('.photo-frame-wrapper').css("display", "block");
-        $('#tv-5-nav').css("display", "block");
-        $('#targeted-picture').attr("src", "src/statics/gray-static-stationary.png")
+        $('#photo-bg-target').attr("src", "src/statics/gray-static-stationary.png")
+        $('#photo-tv-guide').css({"display": "block"})
+        $('.photo-tv-nav').css({"display": "block"})
 
 
     }
@@ -92,8 +108,8 @@ var fullPhotoDescript = [].concat(peopleCollectionDescript, placesCollectionDesc
 
 
 
-$('.channel').click(function(){
-    $('.photo-frame-wrapper').css("display", "none");
+$('.photo-channel').click(function(){
+    $('#photo-tv-guide').css("display", "none");
     var activeCategory = [];
     var activeDescript = [];
 
@@ -104,27 +120,30 @@ $('.channel').click(function(){
 
     var categoryChannelCount = activeCategory.length;
     
-    $('#targeted-picture').attr("src", activeCategory[0]);
-    $('#photo-description').html(activeDescript[0])
+    $('#photo-bg-target').attr("src", activeCategory[0]);
+    $('#photo-project-description').html(activeDescript[0])
     var channelSwitch = 1;
-    $('#channel-switch').click(function(){        
+    $('#channel-switch-img').click(function(){        
         var rotateThisMuch = channelSwitch * (360/13);
         if (channelSwitch < categoryChannelCount) {
             $('#channel-switch-img').css('transform', 'rotate('+rotateThisMuch+'deg)')
-            $('#targeted-picture').attr("src", activeCategory[channelSwitch]);
-            $('#targeted-picture').css("animation","fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both")
-            $('#photo-description').html([activeDescript[channelSwitch]])        
+            $('#photo-bg-target').attr("src", activeCategory[channelSwitch]);
+            $('#photo-project-description').html([activeDescript[channelSwitch]])        
         } else {
             channelSwitch = 0;
-            $('#targeted-picture').attr("src", activeCategory[channelSwitch]);
-            $('#photo-description').html(activeDescript[channelSwitch]);
+            $('#photo-bg-target').attr("src", activeCategory[channelSwitch]);
+            $('#photo-project-description').html(activeDescript[channelSwitch]);
             $('#channel-switch-img').css('transform', 'rotate(0deg)')
         }
         channelSwitch++;
-    
     });
-
 })
+
+$('#photo-tv-guide-btn').click(function(){
+    $('#photo-tv-guide').css({"display": "block"});
+})
+
+
 
 function triggerD(descriptionNumber,show){
     var trigger = document.getElementById(descriptionNumber);
@@ -138,12 +157,6 @@ function triggerD(descriptionNumber,show){
 
 
 
-$('.open-guide').click(function(){
-    $('.photo-frame-wrapper').css("display", "block");
-    $('#no-signal').css("display", "none");
-
-})
-
 // DESIGN TV ###########################
 var designCounter = 0;
 $('.design-toggle').click(function(){
@@ -151,27 +164,23 @@ $('.design-toggle').click(function(){
     if(designCounter % 2 === 0){ //zoom out
         $('#the-body').css({"transform": "scale(1)"});
         $('#designs-link').css("display", "block");
-        $('.design-tv-guide').css("display", "none");
-        $('.tv-3-nav').css("display", "none");
-        $('.tv-3-screen').css ("background", "black")
-        $('#tv-3-bg-target').removeAttr("src")
-
+        $('#design-tv-guide').css("display", "none");
+        $('.design-tv-nav').css("display", "none");
+        $('#design-bg-target').attr("src", "src/black.svg");
     } else {
-        var tv3 = document.getElementById('tv-3-designs').getBoundingClientRect();
-        $('#the-body').css({"transform": "scale(4)", "transform-origin-x": (tv3.right - 75), "transform-origin-y": (tv3.bottom)});
+        var tv3 = document.getElementById('design-tv').getBoundingClientRect();
+        console.log('clocled design tv')
+        $('#the-body').css({"transform": "scale(" + thisScale +")", "transform-origin-x": (tv3.right - 75), "transform-origin-y": (tv3.bottom)});
         $('#designs-link').css("display", "none");
-        $('.design-tv-guide').css("display", "block");
-        $('#tv-3-bg-target').attr("src", "src/statics/gray-static.gif");
-        $('#tv-3-bg-target').css("background-size", "cover")
-        $('.tv-3-nav').css("display", "block");   
+        $('#design-tv-guide').css("display", "block");
+        $('#design-bg-target').attr("src", "src/statics/gray-static.gif");
+        $('.design-tv-nav').css("display", "block");   
     }
 })
 
-$('#design-tv-guide-button').click(function(){
-    $('.design-tv-guide').css("display", "block");
-    $('#tv-3-bg').css("background-color", "#1e1e1e");
-    $('#tv-3-bg-target').attr("src", "src/statics/gray-static.gif");
 
+$('.design-tv-guide-toggle').click(function(){
+    $('#design-tv-guide').css("display", "block");
 })
 
 
@@ -189,20 +198,18 @@ var fullDesignDescript = [].concat(webCollectionDescript, printCollectionDescrip
 
 
 
-$('.channels').click(function(){
-    $('.design-tv-guide').css("display", "none");
+$('.design-channel').click(function(){
+    $('#design-tv-guide').css("display", "none");
     var activeCategory = [];
     var activeDescript = [];
-
     if ($(this).attr("id") == "design-guide-close"){activeCategory = fullDesignCollection; activeDescript = fullDesignDescript }
     else if($(this).index() === 0){activeCategory = webCollection; activeDescript = webCollectionDescript }
     else if($(this).index()===1){activeCategory = printCollection; activeDescript = printCollectionDescript}
     else if($(this).index()===2){activeCategory = filmCollection; activeDescript = filmCollectionDescript}
-
-    var categoryChannelCount = activeCategory.length;
     
-    $('#tv-3-bg-target').attr("src", activeCategory[0]);
-    $('#design-description').html(activeDescript[0])
+    var categoryChannelCount = activeCategory.length;
+    $('#design-bg-target').attr("src", activeCategory[0]);
+    $('#design-project-description').html(activeDescript[0])
     var current = 0;
 
     //next button
@@ -210,28 +217,23 @@ $('.channels').click(function(){
         current++;
         if ((current) >= categoryChannelCount ){  //loops back 
             current = 0; 
-            $('#tv-3-bg-target').attr("src", activeCategory[current]);
-            $('#design-description').html(activeDescript[current]);
+            $('#design-bg-target').attr("src", activeCategory[current]);
+            $('#design-project-description').html(activeDescript[current]);
         }
-        $('#tv-3-bg-target').attr("src", activeCategory[current]);
-        $('#design-description').html(activeDescript[current]);
-
-        console.log(current);
+        $('#design-bg-target').attr("src", activeCategory[current]);
+        $('#design-project-description').html(activeDescript[current]);
     });
+
     //back button
     $('#design-nav-backward').click(function(){
         current--;
-        console.log("TRIGGERRRRR" + current)
-        if (current <= 0){
-            
-            console.log('targeted')
-             
-            $('#tv-3-bg-target').attr("src", activeCategory[categoryChannelCount]);
-            $('#design-description').html(activeDescript[categoryChannelCount]);
+        if (current < 0){
+            $('#design-bg-target').attr("src", activeCategory[categoryChannelCount]);
+            $('#design-project-description').html(activeDescript[categoryChannelCount]);
             current = categoryChannelCount;
         } else {
-            $('#tv-3-bg-target').attr("src", activeCategory[current]);
-            $('#design-description').html(activeDescript[current]);
+            $('#design-bg-target').attr("src", activeCategory[current]);
+            $('#design-project-description').html(activeDescript[current]);
         }
         
         
@@ -247,14 +249,14 @@ $('.about-link').click(function(){
     if(aboutClickCount % 2 === 0){
         $('#about-window').css({"display": "block", "animation": "tilt-in-fwd-tl .6s cubic-bezier(.25,.46,.45,.94) both"})
         $('.about-link').text('X');
-        $('.about-link').css("color", "black")
+        $('.about-link').css({"color": "black"})
         $('#haas-house').css({"color": "black"})
         
 
     } else {
         $('#about-window').css({ "animation": "slide-out-br .5s cubic-bezier(.55,.085,.68,.53) both"})
         $('.about-link').text('ABOUT');
-        $('.about-link').css("color", "white")
+        $('.about-link').css({"color": "white"})
         $('#haas-house').css({"color": "white"})
         
     }
@@ -266,7 +268,7 @@ $('.contact-link').click(function(){
     if(contactClickCount % 2 === 0){
         $('#contact-window').css({"display": "block", "animation": "tilt-in-fwd-tr .6s cubic-bezier(.25,.46,.45,.94) both"})
         $('.contact-link').text('X');
-        $('.contact-link').css("color", "black")
+        $('.contact-link').css({"color": "black"})
         $('#haas-house').css({"color": "black"})
         
     } else {
