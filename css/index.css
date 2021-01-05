@@ -111,7 +111,7 @@ h2:hover {font-size: 55px;}
 .palm-left {float: left; left: -5%; animation: wobble-ver-left 150s both;}
 .palm-right {float: right; right: -5%; animation: wobble-hor-bottom 300s both;}
 
-#tv-spread-container {position: fixed;  bottom: 0; max-height: 95%;  }
+#tv-spread-container {position: fixed;  bottom: 0; max-height: 9 5%;  }
 #tv-spread-wrapper {position: relative; margin-top: 150px;  display: inline; border: 2px solid rgba(0,0,0,0)}
 .tv-contents {z-index: -1; position: absolute; background-size: contain;}
 .tv-clickable {position: absolute; z-index: 300; border-radius: 6px; background-color: rgba(0,0,0,0)!important; background-image: none!important;}
