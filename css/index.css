@@ -111,38 +111,45 @@ h2:hover {font-size: 55px;}
 .palm-left {float: left; left: -5%; animation: wobble-ver-left 150s both;}
 .palm-right {float: right; right: -5%; animation: wobble-hor-bottom 300s both;}
 
-#tv-spread-container {position: fixed;  bottom: 0; max-height: 9 5%;  }
-#tv-spread-wrapper {position: relative; margin-top: 150px;  display: inline; border: 2px solid rgba(0,0,0,0)}
+#tv-spread-container {position: fixed;  bottom: 0; height: 85vh; display: flex; align-items: flex-end; justify-content: center;}
+#tv-spread-wrapper {position: relative; margin-top: 150px;  display: inline; border: 2px solid rgba(0,0,0,0); bottom: 0; max-height: 100%;}
 .tv-contents {z-index: -1; position: absolute; background-size: contain;}
 .tv-clickable {position: absolute; z-index: 300; border-radius: 6px; background-color: rgba(0,0,0,0)!important; background-image: none!important;}
 
-#tv-2 {width: 15%; top: 133%; left: 32.5%; height: 40%; background-image: url('../src/statics/no-signal-static.gif'); }
-#tv-4 {top: 126%; left: 66.5%; width: 20%; height: 45%; background-image: url('../src/statics/blue-static.gif')}
-#tv-10 {left:33.25%; top: 35%; width: 16%; height: 37%; background-image: url('../src/statics/surf-gif-fixed.gif');}
-#tv-12 {left:72%; top: 42%; width: 11%; height: 28%; background-image: url('../src/statics/gray-static.gif');}
+#tv-2 {width: 14%; top: 64%; left: 34%; height:27%; background-image: url('../src/statics/no-signal-static.gif'); }
+#tv-4 {top: 60%; left: 66.5%; width: 15%; height: 30%; background-image: url('../src/statics/blue-static.gif')}
+#tv-10 {left:35.5%; top: 7.5%; width: 13%; height: 23%; background-image: url('../src/statics/surf-gif-fixed.gif');}
+#tv-12 {left:69%; top: 12%; width: 11%; height: 18%; background-image: url('../src/statics/gray-static.gif');}
+
+
+
+
+
+
+
 
 /* films window */
-.tv-11 {left:52%; top: 34%; width: 17%; height: 36.75%; z-index: 5; }
-#tv-11-screen {height: 97.5%; width: 85%; float: left; background-color: black;  border-radius: 15px; display: flex; align-items: center; justify-content: center;;}
-#film-iframe {border-radius: 15px; }
+.tv-11 {left:51.5%; top: 6.5%; width: 15%; height: 22%; z-index: 5; border: 2px solid yellow; }
+#tv-11-screen {height: 97.5%; width: 86.5%; float: left; border: 1px solid red; margin: 2px;  border-radius: 5px; display: flex; align-items: center; justify-content: center;;}
+
 #tv-11-screen:hover { background-image: url('../src/statics/countdown.gif'); background-size: 90% 100%;}
-.movie-nav {width: 7%; height: 40%; border: 0.01em solid #5a5f60; background: #162231; float: right; margin: 2% 2.5% 0 0;  border-radius: 2px; display: inline-flex; flex-direction: column;}
-.movie-nav img {width: 60%; height: auto; margin: 5px 20%;}
+.movie-nav {width: 7%; height: 43%; border: 0.01em solid #5a5f60; background: #162231; float: right; margin: 2% 1% 0 0; padding: 1%;  border-radius: 1px;  }
+.movie-nav img { margin: 0% 5%;}
 
 
 
 /* photos window */
-.photo-tv {top: 78%; left: 11.5%; width: 18.5%; height: 39%; z-index: 5; object-fit: contain;  }
-.photo-tv-screen {margin: 1% 0 0 2%; width: 79%; background: black; padding: 5%; height: 90%; border-radius: 5px; position: absolute; float: left; display: flex; align-items: center; justify-content: center;  border-radius: 5px;}
+.photo-tv {top: 32%; left: 16.5%; width: 16%; height: 22%; z-index: 5; object-fit: contain; border: 3px solid lime; }
+.photo-tv-screen {margin: 1% 0 0 1%; width: 78%; border: 1px solid pink; background: black; padding: 5%; height: 95%; border-radius: 5px; position: absolute; float: left; display: flex; align-items: center; justify-content: center;  border-radius: 5px;}
 .photo-tv-bg {height: 100%;  width: 100%; position: absolute; z-index: 0; display: flex; align-items: center; justify-content: center; }
-.photo-tv-bg img {height: 95%; width: auto;}
+.photo-tv-bg img {max-height: 100%;}
 #tv-5-link {position: absolute; z-index: 4;}
 
-.photo-tv-nav {float: right; width: 18%; height: 95%; }
-#photo-tv-guide-btn {font-size: 10px; line-height: 0; letter-spacing: 0; margin:0 0% 10% 0%; padding: 10px 0px; text-align: center; background: yellow; color: black;}
+.photo-tv-nav {float: right; width: 18%; height: 95%; margin-top: 2%; }
+#photo-tv-guide-btn {font-size: 10px; line-height: 0; letter-spacing: 0; margin:0 0% 0% 0%; padding: 10px 0px; text-align: center; background: yellow; color: black;}
 #photo-tv-guide {z-index: 1;}
 
-#photo-project-description {width: 100%; background: gray; color:  white; font-size: 7px!important; font-family: 'Rainer-v04', sans-serif; letter-spacing: 0.25px; margin: 0; padding: 3px; line-height: 7px; text-align: left;}
+#photo-project-description {width: 100%; background: gray; color:  white; font-size: 6px!important; font-family: 'Rainer-v04', sans-serif; letter-spacing: 0.25px; margin: 0; padding: 3px; line-height: 7px; text-align: left;}
 
 
 
@@ -152,16 +159,21 @@ h2:hover {font-size: 55px;}
 
 
 /* DESIGN WINDOW */
-.design-tv {top: 129.5%; left: 50%; width: 18.5%; height: 41%; z-index: 5; object-fit: contain;  }
-.design-tv-screen {height: 95%; width: 75%; float: left; display: flex; align-items: center; justify-content: center; padding: 7.5% 5%; border-radius: 5px;}
-.design-tv-bg {z-index: -5; height: 100%; position: absolute; width: 73%;background: black; margin: auto; text-align: center; object-fit: contain; display: flex; align-items: center; justify-content: center;}
-.design-tv-nav {width: 18%; float: right; height: 100%; display: none;}
 
-#design-power {width: 60%; margin: 68% 0% 40% 50%;}
-.design-navs { margin-top: 150%;padding-left: 10%; }
-.design-navs img {height: 10px; padding: 3% 5%; }
-#design-tv-guide-btn {font-size: 10px; line-height: 0; letter-spacing: 0; margin:0 0% 50% 0; padding: 10px 0px; text-align: center; background: yellow; color: black;}
-#design-project-description {background: gray; height: 15%; width: 100%;   font-size: 7px!important; font-family: 'Rainer-v04', sans-serif; color: white; letter-spacing: 0.25px; margin: 0; padding: 5px 10px; line-height:7px; text-align: left}
+.design-tv {top: 63%; left: 50%; width: 16%; height: 25%; z-index: 5; object-fit: contain; border: 3px solid lime; }
+.design-tv-screen {margin: 1% 0 0 1%; width: 72%; border: 1px solid pink;  padding: 5%; height: 95%; border-radius: 5px; position: absolute; float: left; display: flex; align-items: center; justify-content: center;  border-radius: 5px;}
+.design-tv-bg {height: 100%;  width: 100%; position: absolute; z-index: -5; display: flex; align-items: center; justify-content: center; }
+.design-tv-bg img {max-height: 100%;}
+#designs-link {position: absolute; z-index: 4;}
+
+
+.design-tv-nav {width: 18%; float: right; height: 100%; display: none;} 
+
+#design-power {width: 60%; margin: 70% 0% 0% 50%;}
+.design-navs {padding-left: 10%; margin: 30% 0 20% 0; background: black; width: 100%; display: flex; align-items: center; justify-content: center;}
+.design-navs img {width: 50%; padding: 5%; }
+#design-tv-guide-btn {font-size: 10px; line-height: 0; letter-spacing: 0; margin:10% 0% 10% 0; padding: 10px 0px; text-align: center; background: yellow; color: black;}
+#design-project-description {background: gray; height: 20%; width: 100%;   font-size: 6px!important; font-family: 'Rainer-v04', sans-serif; color: white; letter-spacing: 0.25px; margin: 0; padding: 3px 3px; line-height:6px; text-align: left}
 
 
 
@@ -171,19 +183,20 @@ h2:hover {font-size: 55px;}
 .tv-guide-close-bar {width: 100%; height: 10%; border-bottom: 1px solid black; background: -webkit-linear-gradient(top, #21277A, #3b63bb); }
 .tv-guide-close-bar img {height: 95%; margin: 0; float: right; padding: 1% 2%; }
 
-.tv-guide-top {height: 35%; width: 100%; border-bottom: 1px solid black;  background: -webkit-linear-gradient(top, #21277A, #3b63bb);}
-.tv-guide-title { color: white; width: 100%; height: 30%; padding: 0% 2%; border-bottom: 1px solid black; display: inline-flex; justify-content: space-between;}
-.tv-guide-description {height: 45%; width: 100%; font-family: freight-big-pro, serif; font-size: 0.5em; color: white; display: flex; align-items: center; justify-content: center;}
-.tv-guide-description span {display: none; }
+.tv-guide-top {height: 40%; width: 100%; border-bottom: 1px solid black;  background: -webkit-linear-gradient(top, #21277A, #3b63bb);}
+.tv-guide-title { color: white; width: 100%; height: 50%; padding: 0% 2%; line-height: 0; border-bottom: 1px solid black; display: inline-flex; justify-content: space-between; align-items: center;}
+.tv-guide-title h1 {font-size: 80%!important;}
+.tv-guide-description {height: 50%; width: 100%; font-family: freight-big-pro, serif; font-size: 40%; color: white; display: flex; align-items: center; justify-content: center;}
+.tv-guide-description span {display: none; font-size: 0.35vw; }
 
-.tv-guide-bottom { height: 55%; background: black; width: 100%; padding: 2% 10%; }
-.tv-guide-details {width: 70%; height: 100%; float: left; background: -webkit-linear-gradient(top, #21277A, #3b63bb);}
+.tv-guide-bottom { height: 50%; background: black; width: 100%; padding: 2% 10%; }
+.tv-guide-details {width: 70%; height: 100%; float: left; background: -webkit-linear-gradient(top, #21277A, #3b63bb); padding: 0!important;}
 .tv-guide-photo {height: 100%; width: 30%; float: right; display: flex; align-items: center; justify-content: center; border-left: 1px solid black;}
 .tv-guide-photo img {height: 60%;}
 
 .channel-style {width: 100%; height: 30%; border: solid 1px black; background: #21277A; color: white; display: flex; align-items: center; justify-content: center; }
 .channel-style:hover {border: 1px solid gray; background: #3b63bb; }
-.channel-style h4 { font-size: 10px; margin: 0; padding: 0; }
+.channel-style h4 { font-size: 0.8vh;  margin: 0; padding: 0; font-family: 'Rainer-Bold', sans-serif;}
 
 
 
@@ -197,7 +210,7 @@ h2:hover {font-size: 55px;}
 #contact-window {width: 100%; height: 100vh; padding: 75px; z-index: 150; position: absolute; top: 0; background: white; 
 }
 
-.contact-window-content {width: 100%; margin-top: 125px; height: calc(80% - 125px); display: flex; justify-content: center; align-items: center; }
+.contact-window-content {width: 100%; margin-top: 125px; height: calc(90% - 125px); border: 2px solid green; display: flex; justify-content: center; align-items: center; }
 .contact-form-wrapper {width: 40%; height: 100%; }
 .contact-social-icons {height: 20%; display: flex; align-items: center; justify-content: center;}
 .contact-social-icons img {width: 50px; padding-right: 10%;}
@@ -206,10 +219,11 @@ h2:hover {font-size: 55px;}
 .form-row {height: 50px;  width: 100%; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; }
 textarea {height: 100px; margin: 0px; border: 1px solid black; }
 
+.exportHeader {display: none!important;}
 
 /* PHOTOS TV GUIDE  */
 
-.beach-spread {position: absolute; bottom: 0; width: 100%; height: 40%; background-image: url("../src/beach-spread.jpg"); background-size: cover; }
+.beach-spread {position: fixed; bottom: 0; width: 100vw; height: 40vh; background-image: url("../src/beach-spread.jpg"); background-size: cover }
 
 
 .mobile_show {display: none;}

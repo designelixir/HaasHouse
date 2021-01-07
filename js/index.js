@@ -7,17 +7,17 @@ var thisScale = 4;
 function reCalibrate(){
     if (window.innerHeight > window.innerWidth){
         $('#tv-spread-container').css({"width": "200%", "left": "-50%"})
-        $('.design-tv').css({"width": "37vw", "height": "25.5vw", "top": "131%"})
-        $('.photo-tv').css({"width": "20.75%", "height": "41%", "left": "31%", "top": "82%"})
+        $('.photo-tv').css({"width": "18.5%", "height": "25.5%", "left": "33%", "top": "36.5%"})
         $('.photo-tv-screen').css({"width": "77%", "height": "95%"})
         $('.photo-tv-nav').css({"background-color": "#302d2a"})
+        $('.design-tv').css({"top": "66%"})
         thisScale = 2;
     } else {
          $('#tv-spread-container').css({"width": "100%", "left": "0%"})
-        $('.design-tv').css({"width": "18%", "height": "41%"})
-        $('.photo-tv').css({"width": "18.5%", "height": "39%", "left": "11.5%", "top": "78%"})
-        $('.photo-tv-screen').css({"width": "79%", "height": "90%"})
-        $('.photo-tv-nav').css({"background-color": "rgba(0,0,0,0)"})
+         $('.photo-tv').css({"width": "16%", "height": "22%", "left": "16.5%", "top": "32%"})
+         $('.photo-tv-screen').css({"width": "78%", "height": "95%"})
+         $('.photo-tv-nav').css({"background-color": "rgba(0,0,0,0)"})
+         $('.design-tv').css({"top": "63%"})
         thisScale = 4;
     }
 }
@@ -185,7 +185,7 @@ $('.design-tv-guide-toggle').click(function(){
 
 
 var webCollection = ["src/web/slide1.jpg", "src/web/slide2.jpg", "src/web/slide3.jpg", "src/web/slide4.jpg", "src/web/slide5.jpg", "src/web/slide6.jpg", ]
-var webCollectionDescript = ['LIQUID LAB', 'LIQUID LAB', 'LIQUID LAB', 'LIQUID LAB', 'LIQUID LAB', 'LIQUID LAB',]
+var webCollectionDescript = ['LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020']
 
 var printCollection = ["https://ewscripps.brightspotcdn.com/dims4/default/3a54f41/2147483647/strip/true/crop/2038x1146+5+216/resize/1280x720!/quality/90/?url=http%3A%2F%2Fewscripps-brightspot.s3.amazonaws.com%2F26%2F12%2Fa6f367014ff6bd297b8b2fbe3c6e%2Fandrew-plutt.jpg", "https://bloximages.newyork1.vip.townnews.com/outtherecolorado.com/content/tncms/assets/v3/editorial/d/e5/de52bca7-16bc-5b16-8c06-b05e593ff698/5eecdc1b7713c.image.jpg?crop=1254%2C705%2C0%2C65&resize=1254%2C705&order=crop%2Cresize", "https://s1.it.atcdn.net/wp-content/uploads/2019/11/Colorado-road-trip-hero-800x600.jpg", "https://www.visittheusa.com/sites/default/files/styles/hero_l_x2/public/images/exp-background/2019-11/de9cba61-3eb7-40e0-a4a0-3aa523961e41.jpeg?itok=3Yf7hyME"]
 var printCollectionDescript = ["project 1", "project 2", "project 3", "project 4"]

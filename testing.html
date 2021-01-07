@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>HAAS HOUSE</title>
+    <meta name="description" content="Portfolio for Casey Haas"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <link rel="shortcut icon" href="src/haas-logo-black.svg" type="image/x-icon">
+    <link rel="stylesheet" rel="preload" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/irk7lua.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTCJJ8YNMR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZTCJJ8YNMR');
+</script>
+
+</head>
+
+
+<body id="the-body">
+    <div class="beach-spread" style="border: 2px solid yellow;">
+        
+
+    </div>
+
+    <div class="navigation">
+        <a class="about-link link-remote" rel="noopener">ABOUT</a>
+        <span id="logo-span" class="link-remote"> 
+            <a href="https://haashouse.co"><h1 id="haas-house">HAAS HOUSE</h1></a>
+            <img src="src/haas-logo-white.svg" id="haas-house-logo" alt="Haas House Logo">
+        </span>
+        <a class="contact-link link-remote" rel="noopener">CONTACT</a>
+    </div>
+
+    <img class='palm-left palm' src="src/palm-left-1.png"  alt='palm leaf'>
+    <img class='palm-right palm' src="src/palm-right.png" alt='palm leaf'>
+
+   
+
+    <div id="tv-spread-container" style="border: 3px solid yellow;">
+        <div id="tv-spread-wrapper" style="border: 2px solid red;">
+            
+            <!-- unclickable TVS #################################################################################-->
+            
+            <div id="tv-2" class="tv-contents"></div>
+            <div id="tv-4" class="tv-contents"></div>
+            <div id="tv-10" class="tv-contents"></div>
+            <div id="tv-12" class="tv-contents"></div>
+
+
+            <!-- DESIGN TV  ##########################################################################################-->
+           
+            <div class="tv-clickable design-tv" id="design-tv">
+                <div class="design-tv-screen">
+                    <h2 class="design-toggle link-remote" id="designs-link">DESIGN</h2>
+                    <div class="design-tv-bg">
+                        <img id="design-bg-target" alt="Photo Tv Display" src="src/black.svg">
+                    </div>
+                    <div class="tv-guide" id="design-tv-guide" style="display: none;"> 
+                        <div class="tv-guide-close-bar">
+                            <img src="src/x.svg" id="design-guide-close" class="design-channel link-remote" alt="close design tv">
+                        </div>
+                        <div class="tv-guide-top">
+                            <div class="tv-guide-details">
+                                <div class="tv-guide-title">
+                                    <h1 style="float: left;">CHANNEL 96</h1>
+                                    <h1 style="float: right;">PHOTO</h1>
+                                </div>
+                                <div class="tv-guide-description" id="design-description">
+                                    <span id="channel4description">website design, digital design</span>
+                                    <span id="channel5description">posters</span>
+                                    <span id="channel6description">design for moving images</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tv-guide-photo">
+                                <img src="src/haas-logo-white.svg">
+                            </div>
+                        </div>
+                        <div class="tv-guide-bottom">
+                            <div class="design-channel channel-style link-remote" id="channel-web" onmouseover="triggerD('channel4description', true)" onmouseout="triggerD('channel4description', false)">
+                                <h4>WEB</h4> 
+                            </div>
+                            <div class="design-channel channel-style link-remote" id="channel-print" onmouseover="triggerD('channel5description', true)" onmouseout="triggerD('channel5description', false)">
+                                <h4 style="margin-bottom: 1%;">PRINT</h4> 
+                            </div>
+                            <div class="design-channel channel-style link-remote" id="channel-film" onmouseover="triggerD('channel6description', true)" onmouseout="triggerD('channel6description', false)">
+                                <h4 style="margin-bottom: 1%;">FILM</h4> 
+                            </div>
+                        </div>
+                    </div> 
+
+                    
+
+               </div>
+               <div class="design-tv-nav">
+                <img class="nav-buttons off-remote design-toggle" id="design-power" src="src/power.svg"  alt="exit photos tv">
+                <span class="design-navs">
+                    <img class="nav-buttons link-remote" id="design-nav-backward" src="src/rewind.svg"  alt="forward button" >
+                    <img class="nav-buttons link-remote" id="design-nav-forward" src="src/forward.svg"  alt="forward button">
+                </span>
+                <h6 class="link-remote design-tv-guide-toggle" id="design-tv-guide-btn">TV GUIDE</h6>
+                <p id="design-project-description"></p>
+           </div>
+            </div>
+               
+               
+               
+           
+
+            <!-- PHOTO TV ######################################################################## -->
+            
+            <div class="tv-clickable photo-tv" id="photo-tv">
+                <div class="photo-tv-screen">
+                    <h2 class="photo-toggle-link link-remote" id="tv-5-link">PHOTO</h2>
+                    <div class="photo-tv-bg">
+                        <img id="photo-bg-target" alt="Photo Tv Display" src="src/black.svg">
+                    </div>
+                    <div class="tv-guide" id="photo-tv-guide" style="display: none;"> 
+                        <div class="tv-guide-close-bar">
+                            <img src="src/x.svg" id="photo-guide-close" class="photo-channel link-remote" alt="close design tv">
+                        </div>
+                        <div class="tv-guide-top">
+                            <div class="tv-guide-details">
+                                <div class="tv-guide-title">
+                                    <h1 style="float: left;">CHANNEL 96</h1>
+                                    <h1 style="float: right;">PHOTO</h1>
+                                </div>
+                                <div class="tv-guide-description" id="photo-description">
+                                    <span id="channel1description">human beings</span>
+                                    <span id="channel2description">pacific ocean, architecture, california, bolivia </span>
+                                    <span id="channel3description">products, statues, concerts </span>
+                                </div>
+                            </div>
+                            
+                            <div class="tv-guide-photo">
+                                <img src="src/haas-logo-white.svg">
+                            </div>
+                        </div>
+                        <div class="tv-guide-bottom">
+                            <div class="photo-channel channel-style link-remote" id="channel-people" onmouseover="triggerD('channel1description', true)" onmouseout="triggerD('channel1description', false)">
+                                <h4>PEOPLE  </h4> 
+                            </div>
+                            <div class="photo-channel channel-style link-remote" id="channel-places" onmouseover="triggerD('channel2description', true)" onmouseout="triggerD('channel2description', false)">
+                                <h4> PLACES  </h4> 
+                            </div>
+                            <div class="photo-channel channel-style link-remote" id="channel-things" onmouseover="triggerD('channel3description', true)" onmouseout="triggerD('channel3description', false)">
+                                <h4> THINGS   </h4> 
+                            </div>
+                        </div>
+                    </div> 
+
+                    
+
+               </div>
+               <div class="photo-tv-nav" style="display: none">
+                    <img class="photo-toggle-link off-remote" src="src/power.svg" alt="exit photos tv" style="width: 50%; margin: 18% 0 0 30%">
+                    <img id="channel-switch-img" class="link-remote"  src="src/toggle-switch.svg" style="width: 50%; margin: 30% 30% 20% 30%;">
+                    <h6 class="link-remote" id="photo-tv-guide-btn">TV GUIDE</h6>
+                    <p id="photo-project-description"></p>
+                </div>
+            </div>
+
+            <!-- FILM TV ###################################################################################################-->
+            <div id="tv-11" class="tv-11 tv-clickable" aria-label="Films">
+                <div id="tv-11-screen" class="link-remote">
+                    <h2 class="film-toggle" id="film-toggle-link">FILM</h2>
+                    <iframe id="film-iframe" style="width:100%; height:100%; display: none; background-color: black;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+                <div class="movie-nav" style="display: none;">
+                    <img src="src/power.svg" class="film-toggle off-remote" alt="exit film tv">
+                    <img class="link-remote" src="src/forward.svg" id="movie-nav-prev" alt="backwards button">
+                    <img class="link-remote" src="src/rewind.svg" id="movie-nav-next" alt="forward button">
+                </div>
+            </div>
+            
+            
+            <img id="tv-spread" src="src/tv-spread-32.png" alt="tvs stacked" style="border: 3px solid orange"/>
+        </div>
+    </div>
+
+    
+    
+
+
+    <!-- ABOUT WINDOW ####################################### -->
+    <div id="about-window" style="display: none;">
+        <div class="about-window-content">
+            <div class="about-window-col">
+                <img src="src/AboutPagePhoto.png" alt="Casey Haas Portrait">
+            </div>
+            <div class="about-window-col">
+                <p>Casey Haas is a filmmaker, photographer, and designer from the Bay Area. She is a recent graduate of CU Boulder & General Assembly, where she received a BFA in Film Production and a certificate in Visual Design. She created Haas House as an umbrella for all of her work- film, photography, and design. Her creations reflect the California dream she grew up in, whether it be the beaches of Half Moon Bay or the park down the street from the home she grew up in. A firm believer in the saying ‘the most personal is the most creative’, her work often explores her childhood and life experiences. Casey specializes in shooting 35mm, 120mm, super 8mm, and 16mm film.</p>
+            </div>
+        </div>
+     </div>
+
+     <!-- CONTACT WINDOW #################################### -->
+     <div id="contact-window" style="display: none;">
+        <div class="contact-window-content">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdS0PVQZK7AQi5gYhcx9u1PGEltumcWLpH00MzGl24_8niwQg/viewform?embedded=true" width="640" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+             
+        </div>
+        <div class="contact-social-icons">
+            <a href="https://www.linkedin.com/in/casey-t-haas/" target="blank" rel="noopener"><img src="src/linkedin_1.svg" alt='linked in icon'></a>
+            <a href="https://www.instagram.com/caseythaas/" target="blank" rel="noopener"><img src="src/instagram.svg" alt='instagram icon'></a>
+
+        </div>
+     </div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/index.js"></script>   
+<script src="https://player.vimeo.com/api/player.js"></script>
+</html>
