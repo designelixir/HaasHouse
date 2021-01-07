@@ -130,7 +130,7 @@ h2:hover {font-size: 55px;}
 
 /* films window */
 .tv-11 {left:51.5%; top: 6.5%; width: 15%; height: 22%; z-index: 5;  }
-#tv-11-screen {height: 97.5%; width: 86.5%; float: left; border: 1px solid red; margin: 2px;  border-radius: 5px; display: flex; align-items: center; justify-content: center;;}
+#tv-11-screen {height: 97.5%; width: 86.5%; float: left; margin: 2px;  border-radius: 5px; display: flex; align-items: center; justify-content: center;;}
 
 #tv-11-screen:hover { background-image: url('../src/statics/countdown.gif'); background-size: 90% 100%;}
 .movie-nav {width: 7%; height: 43%; border: 0.01em solid #5a5f60; background: #162231; float: right; margin: 2% 1% 0 0; padding: 1%;  border-radius: 1px;  }
@@ -139,7 +139,7 @@ h2:hover {font-size: 55px;}
 
 
 /* photos window */
-.photo-tv {top: 32%; left: 16.5%; width: 16%; height: 22%; z-index: 5; object-fit: contain; border: 3px solid lime; }
+.photo-tv {top: 32%; left: 16.5%; width: 16%; height: 22%; z-index: 5; object-fit: contain; }
 .photo-tv-screen {margin: 1% 0 0 1%; width: 78%; border: 1px solid pink; background: black; padding: 5%; height: 95%; border-radius: 5px; position: absolute; float: left; display: flex; align-items: center; justify-content: center;  border-radius: 5px;}
 .photo-tv-bg {height: 100%;  width: 100%; position: absolute; z-index: 0; display: flex; align-items: center; justify-content: center; }
 .photo-tv-bg img {max-height: 100%;}
