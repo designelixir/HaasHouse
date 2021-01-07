@@ -210,7 +210,7 @@ h2:hover {font-size: 55px;}
 #contact-window {width: 100%; height: 100vh; padding: 75px; z-index: 150; position: absolute; top: 0; background: white; 
 }
 
-.contact-window-content {width: 100%; margin-top: 125px; height: calc(90% - 125px); border: 2px solid green; display: flex; justify-content: center; align-items: center; }
+.contact-window-content {width: 100%; margin-top: 125px; height: calc(90% - 125px); display: flex; justify-content: center; align-items: center; }
 .contact-form-wrapper {width: 40%; height: 100%; }
 .contact-social-icons {height: 20%; display: flex; align-items: center; justify-content: center;}
 .contact-social-icons img {width: 50px; padding-right: 10%;}
