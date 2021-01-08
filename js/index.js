@@ -1,31 +1,32 @@
 
-window.onresize = reCalibrate;
-window.onload = reCalibrate;
+// window.onresize = reCalibrate;
+// window.onload = reCalibrate;
 
 var thisScale = 4;
 
-function reCalibrate(){
-    if (window.innerHeight > window.innerWidth){
-        $('#tv-spread-container').css({"width": "200%", "left": "-50%"})
-        $('.photo-tv').css({"width": "18.5%", "height": "25.5%", "left": "33%", "top": "36.5%"})
-        $('.photo-tv-screen').css({"width": "77%", "height": "95%"})
-        $('.photo-tv-nav').css({"background-color": "#302d2a"})
-        $('.design-tv').css({"top": "66%"})
-        thisScale = 2;
-    } else {
-         $('#tv-spread-container').css({"width": "100%", "left": "0%"})
-         $('.photo-tv').css({"width": "16%", "height": "22%", "left": "16.5%", "top": "32%"})
-         $('.photo-tv-screen').css({"width": "78%", "height": "95%"})
-         $('.photo-tv-nav').css({"background-color": "rgba(0,0,0,0)"})
-         $('.design-tv').css({"top": "63%"})
-        thisScale = 4;
-    }
-}
+// function reCalibrate(){
+//     if (window.innerHeight > window.innerWidth){
+//         $('#tv-spread-container').css({"width": "200%", "left": "-50%"})
+//         $('.photo-tv').css({"width": "18.5%", "height": "25.5%", "left": "33%", "top": "36.5%"})
+//         $('.photo-tv-screen').css({"width": "77%", "height": "95%"})
+//         $('.photo-tv-nav').css({"background-color": "#302d2a"})
+//         $('.design-tv').css({"top": "66%"})
+//         thisScale = 2;
+//     } else {
+//          $('#tv-spread-container').css({"width": "100%", "left": "0%"})
+//          $('.photo-tv').css({"width": "16%", "height": "22%", "left": "16.5%", "top": "32%"})
+//          $('.photo-tv-screen').css({"width": "78%", "height": "95%"})
+//          $('.photo-tv-nav').css({"background-color": "rgba(0,0,0,0)"})
+//          $('.design-tv').css({"top": "63%"})
+//         thisScale = 4;
+//     }
+// }
 
 
 var clickFilm = 0; 
 $('.film-toggle').click(function(){
     clickFilm++;
+    console.log('clicked films');
     var tv11 = document.getElementById('tv-11').getBoundingClientRect();
    
     if(clickFilm % 2 === 0){
@@ -49,6 +50,24 @@ $('.film-toggle').click(function(){
         $('.tv-11').css("animation", "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both");
     }
 });
+
+
+var mobileClickFilm = 0; 
+$('.film-link-mobile').click(function(){
+    mobileClickFilm++;
+    var tv11mobile = document.getElementById('film-mobile-tv').getBoundingClientRect();
+
+    if(mobileClickFilm % 2 === 0){
+        console.log('yeah')
+    } else {
+        $('#the-body').css({"transform": "scale(3.75)", "transform-origin-x": (tv11mobile.left + 85), "transform-origin-y": (tv11mobile.top + 100)});
+        $('.mobile-tv-window-navigation').css({"bottom": (tv11mobile.bottom - 100)})
+    }
+    console.log(tv11mobile)
+
+    console.log('clicky')
+})
+
 
 //film screen navigation functionality 
 var filmLinks = ["https://player.vimeo.com/video/494815946?quality=1080p", "https://player.vimeo.com/video/494873166?quality=1080p"];
@@ -185,7 +204,7 @@ $('.design-tv-guide-toggle').click(function(){
 
 
 var webCollection = ["src/web/slide1.jpg", "src/web/slide2.jpg", "src/web/slide3.jpg", "src/web/slide4.jpg", "src/web/slide5.jpg", "src/web/slide6.jpg", ]
-var webCollectionDescript = ['LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020']
+var webCollectionDescript = ['LIQUID LAB <br/> General Assembly 2020', 'LIQUID LAB <br/> General Assembly 2020', 'LIQUID LAB <br/> General Assembly 2020', 'LIQUID LAB <br/> General Assembly 2020', 'LIQUID LAB <br/> General Assembly 2020', 'LIQUID LAB <br/> General Assembly 2020', 'LIQUID LAB <br/> General Assembly 2020']
 
 var printCollection = ["https://ewscripps.brightspotcdn.com/dims4/default/3a54f41/2147483647/strip/true/crop/2038x1146+5+216/resize/1280x720!/quality/90/?url=http%3A%2F%2Fewscripps-brightspot.s3.amazonaws.com%2F26%2F12%2Fa6f367014ff6bd297b8b2fbe3c6e%2Fandrew-plutt.jpg", "https://bloximages.newyork1.vip.townnews.com/outtherecolorado.com/content/tncms/assets/v3/editorial/d/e5/de52bca7-16bc-5b16-8c06-b05e593ff698/5eecdc1b7713c.image.jpg?crop=1254%2C705%2C0%2C65&resize=1254%2C705&order=crop%2Cresize", "https://s1.it.atcdn.net/wp-content/uploads/2019/11/Colorado-road-trip-hero-800x600.jpg", "https://www.visittheusa.com/sites/default/files/styles/hero_l_x2/public/images/exp-background/2019-11/de9cba61-3eb7-40e0-a4a0-3aa523961e41.jpeg?itok=3Yf7hyME"]
 var printCollectionDescript = ["project 1", "project 2", "project 3", "project 4"]
@@ -285,4 +304,25 @@ $('.contact-link').click(function(){
 
 
 
+
+$(window).on('resize', function(){
+
+    $('.tv-window').each(function(){
+
+        var tvWrapper = document.getElementById("tv-wrapper").getBoundingClientRect();
+        var boundingBOX = document.getElementById("tvs").getBoundingClientRect();
+        var designBOX = document.getElementById("design").getBoundingClientRect();
+        var photoBOX = document.getElementById("photo").getBoundingClientRect();
+
+        var topspacer = tvWrapper.height - boundingBOX.height;
+        var leftspacer = (tvWrapper.width - boundingBOX.width);
+
+        $('#design').css({"bottom": boundingBOX.bottom / designBOX.bottom, "height": boundingBOX.height / 3.3, "width": boundingBOX.width / 4.4 })
+        $('#film').css({"margin-top": topspacer, "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.4 })
+        $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.25), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.7, "width": boundingBOX.width / 4 })        
+
+    });
+
+    
+}).trigger('resize');
 

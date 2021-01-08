@@ -89,13 +89,11 @@
 
 
 button {background: none; border: none; outline: none;}
-/* button:hover {cursor: url(../src/remote.svg), auto;}
-h3:hover {font-size: 90px; cursor: url(../src/remote.svg), auto;} */
 
 a {font-family: 'Rainer-Medium', sans-serif; font-size: 45px;  color: white; cursor: url('../src/link-remote.svg'), auto!important;  }
 /* text-shadow: 4px 4px 8px #000000 */
 a:hover { color: white; font-size: 55px; text-decoration: none;}
-p {font-family: freight-big-pro, serif; font-size: 18px;}
+p {font-family: freight-big-pro, serif; font-size: 19px!important;}
 h1 {font-family: 'Rainer-Bold', sans-serif; font-size: 100px; padding: 0; color: white; }
 h2 {font-family: 'Rainer-v04', sans-serif; font-size: 45px;  color: white; letter-spacing: 2px;  }
 
@@ -113,16 +111,36 @@ h2:hover {font-size: 55px;}
 
 #tv-spread-container {position: fixed;  bottom: 0; height: 85vh; display: flex; align-items: flex-end; justify-content: center;}
 #tv-spread-wrapper {position: relative; margin-top: 150px;  display: inline; border: 2px solid rgba(0,0,0,0); bottom: 0; max-height: 100%;}
-.tv-contents {z-index: -1; position: absolute; background-size: contain;}
+/* .tv-contents {z-index: -1; position: absolute; background-size: contain;} */
 .tv-clickable {position: absolute; z-index: 300; border-radius: 6px; background-color: rgba(0,0,0,0)!important; background-image: none!important;}
+
+.mobile-tv-spread-container {width: 100vw; max-height: 85vh; height: 100%; border: 3px solid orange; position: fixed; bottom: 0; display: flex; align-items: flex-end; justify-content: center;}
+.mobile-tv-spread-wrapper { width: 100%; bottom: 0; position: relative; display: inline; border: 3px solid green; }
+
+.mobile-tvs {position: absolute; display: flex; align-items: center; justify-content: center; top: 0; left: 0; bottom: 0; right: 0;}
+
+#design-mobile-tv {width: 18vw; height: 20vh; top: 55vh; left: 38.5vw;}
+#photo-mobile-tv {width: 32%; height: 15%; bottom: 26%; left: 12%;  border: 2px solid magenta;}
+#film-mobile-tv {width: 32%; height: 15%; bottom: 45%; right: 16%; border: 3px solid lime;}
+
 
 #tv-2 {width: 14%; top: 64%; left: 34%; height:27%; background-image: url('../src/statics/no-signal-static.gif'); }
 #tv-4 {top: 60%; left: 66.5%; width: 15%; height: 30%; background-image: url('../src/statics/blue-static.gif')}
 #tv-10 {left:35.5%; top: 7.5%; width: 13%; height: 23%; background-image: url('../src/statics/surf-gif-fixed.gif');}
 #tv-12 {left:69%; top: 12%; width: 11%; height: 18%; background-image: url('../src/statics/gray-static.gif');}
 
+#tv-2-mobile {width: 35%; bottom: 5%; height: 20%; left: 12%; background-image: url('../src/statics/no-signal-static.gif'); }
+#tv-4-mobile {width: 35%; bottom: 5%; right: -10%; height: 20%; background-image: url('../src/statics/blue-static.gif') }
+#tv-10-mobile {width: 33%; bottom: 40%; height: 20%; left: 15%; background-image: url('../src/statics/surf-gif-fixed.gif'); }
 
+.mobile-window {height: 100vh; width: 100vw; overflow-y: scroll;  position: fixed; top: 0; left: 0; z-index: 10;}
+.mobile-tv-window-navigation {width: 25vw; margin: 0 2.5%; height: 100px; background: black; bottom: 0;  position: fixed; display: flex; align-items: center; justify-content: center;}
+.mobile-tv-window-navigation img {height: 40%; margin: 3%;}
+#mobile-tv-guide {width: 25%; height: 40%; background: yellow; color: black; font-size: 16px; text-align: center; padding: 3% 1%;}
 
+.mobile-view-screen {height: 100%; margin-top: 30%; margin-bottom: 0; width: 100%; border: 2px solid green; background: white; }
+
+.mobile-film-tv{width: 100%; height: 62%; padding: 10% 8% 10% 5%; }
 
 
 
@@ -140,7 +158,7 @@ h2:hover {font-size: 55px;}
 
 /* photos window */
 .photo-tv {top: 32%; left: 16.5%; width: 16%; height: 22%; z-index: 5; object-fit: contain; }
-.photo-tv-screen {margin: 1% 0 0 1%; width: 78%; border: 1px solid pink; background: black; padding: 5%; height: 95%; border-radius: 5px; position: absolute; float: left; display: flex; align-items: center; justify-content: center;  border-radius: 5px;}
+.photo-tv-screen {margin: 1% 0 0 1%; width: 78%; background: black; padding: 5%; height: 95%; border-radius: 5px; position: absolute; float: left; display: flex; align-items: center; justify-content: center;  border-radius: 5px;}
 .photo-tv-bg {height: 100%;  width: 100%; position: absolute; z-index: 0; display: flex; align-items: center; justify-content: center; }
 .photo-tv-bg img {max-height: 100%;}
 #tv-5-link {position: absolute; z-index: 4;}
@@ -150,8 +168,6 @@ h2:hover {font-size: 55px;}
 #photo-tv-guide {z-index: 1;}
 
 #photo-project-description {width: 100%; background: gray; color:  white; font-size: 6px!important; font-family: 'Rainer-v04', sans-serif; letter-spacing: 0.25px; margin: 0; padding: 3px; line-height: 7px; text-align: left;}
-
-
 
 
 
@@ -196,7 +212,7 @@ h2:hover {font-size: 55px;}
 
 .channel-style {width: 100%; height: 30%; border: solid 1px black; background: #21277A; color: white; display: flex; align-items: center; justify-content: center; }
 .channel-style:hover {border: 1px solid gray; background: #3b63bb; }
-.channel-style h4 { font-size: 0.8vh;  margin: 0; padding: 0; font-family: 'Rainer-Bold', sans-serif;}
+.channel-style h4 { font-size: 0.8vh;  margin: 0; padding: 0; font-family: 'Rainer-v04', sans-serif;}
 
 
 
@@ -204,9 +220,9 @@ h2:hover {font-size: 55px;}
 
 #about-window {width: 100%; height: 100%; z-index: 150; position: absolute; left: 0%; top: 0; background: white;  }
 .about-window-content { height: calc(100% - 125px); margin-top: 125px; width: 100%; display: flex; align-items: center; justify-content: center; overflow-y: scroll;  }
-.about-window-col { padding: 2% 0%; width: 35%;  height: 100%;  display: flex; justify-content: center; align-items: center; object-fit: contain;}
+.about-window-col { padding: 2% 0%; margin: 2%; width: 35%;  height: 100%;  display: flex; justify-content: center; align-items: center; object-fit: contain;}
 
-.about-window-col p {padding: 10%; line-height: 24px;  }
+.about-window-col p { line-height: 24px;  }
 #contact-window {width: 100%; height: 100vh; padding: 75px; z-index: 150; position: absolute; top: 0; background: white; 
 }
 
@@ -296,3 +312,39 @@ textarea {height: 100px; margin: 0px; border: 1px solid black; }
  /* CONTACT WINDOW EXIT ANIMATION */
 .slide-out-bl{-webkit-animation:slide-out-bl .5s cubic-bezier(.55,.085,.68,.53) both;animation:slide-out-bl .5s cubic-bezier(.55,.085,.68,.53) both}
 @-webkit-keyframes slide-out-bl{0%{-webkit-transform:translateY(0) translateX(0);transform:translateY(0) translateX(0);opacity:1}100%{-webkit-transform:translateY(1000px) translateX(-1000px);transform:translateY(1000px) translateX(-1000px);opacity:0}}@keyframes slide-out-bl{0%{-webkit-transform:translateY(0) translateX(0);transform:translateY(0) translateX(0);opacity:1}100%{-webkit-transform:translateY(1000px) translateX(-1000px);transform:translateY(1000px) translateX(-1000px);opacity:0}}@-webkit-keyframes slide-out-bl{0%{-webkit-transform:translateY(0) translateX(0);transform:translateY(0) translateX(0);opacity:1}100%{-webkit-transform:translateY(1000px) translateX(-1000px);transform:translateY(1000px) translateX(-1000px);opacity:0}}@keyframes slide-out-bl{0%{-webkit-transform:translateY(0) translateX(0);transform:translateY(0) translateX(0);opacity:1}100%{-webkit-transform:translateY(1000px) translateX(-1000px);transform:translateY(1000px) translateX(-1000px);opacity:0}}
+
+.tv-window h1 {font-size: 2rem;}
+.tv-window {display: flex; align-items: center; justify-content: center;}
+
+
+#design
+{
+  margin-left: 49.25%;
+  margin-bottom: 3%;
+  position: absolute;
+  height: 19.5%;
+  width: 22%;
+  border: solid 2px #f00;
+}
+
+#film
+{
+  top: 0.75vh;
+  margin-left: 50.75%;
+  position: absolute;
+  height: 18%;
+  width: 22%;
+  border: solid 2px #f00;
+}
+
+
+#photo
+{
+  
+  margin-bottom: 5%;
+  left: 26.5%;
+  position: absolute;
+  height: 25%;
+  width: 22%;
+  border: solid 2px #f00;
+}
