@@ -305,7 +305,8 @@ $('.contact-link').click(function(){
 
 
 
-$(window).on('resize', function(){
+
+function positionTVS(){
 
     $('.tv-window').each(function(){
 
@@ -318,11 +319,22 @@ $(window).on('resize', function(){
         var leftspacer = (tvWrapper.width - boundingBOX.width);
 
         $('#design').css({"bottom": boundingBOX.bottom / designBOX.bottom, "height": boundingBOX.height / 3.3, "width": boundingBOX.width / 4.4 })
-        $('#film').css({"margin-top": topspacer, "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.4 })
-        $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.25), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.7, "width": boundingBOX.width / 4 })        
+        $('#film').css({"margin-top": topspacer, "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.45 })
+        $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.25), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.75, "width": boundingBOX.width / 4 })        
 
     });
 
     
-}).trigger('resize');
+}
 
+$(window).on('resize', positionTVS).trigger('resize');
+$(window).resize(mediaQUERY);
+window.onload = mediaQUERY, positionTVS;
+
+function mediaQUERY(){
+	if ($(window).width() <= 900){	
+        console.log("start shrinkin bish")
+        $("#tv-container").css({"width": "160%", "margin-left": "-30%"});
+        
+	}	
+}
