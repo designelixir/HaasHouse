@@ -138,15 +138,18 @@ h2:hover {font-size: 55px;}
 .tv-window h1 {font-size: 2rem;}
 .tv-screen-wrapper {display: inline-flex; align-items: center; justify-content: center; height: 100%; border: 3px solid green;}
 .tv-screen {display: flex; align-items: center; justify-content: center; float: left;}
-.tv-screen-nav {height: 100%; border: 3px solid magenta; float: right; top: 0;}
+.tv-screen-nav {height: 100%; border: 3px solid magenta; float: right;}
 
 #design {margin-left: 49.25%; margin-bottom: 3%; position: absolute; height: 19.5%; width: 22%; border: solid 2px #f00;}
 #design-screen {height: 80%; width: 90%; background: orange;}
 
 
-#film {top: 0.75vh; margin-left: 50.9%; position: absolute; height: 18%; width: 22%; border: solid 2px #f00;}
+#film {top: 1vh; margin-left: 50.8%; position: absolute; height: 18%; width: 22%; border: solid 2px #f00;}
 #film-screen:hover { background-image: url('../src/statics/countdown.gif'); background-size: 100% 100%;}
-#film-screen {height: 85%; width: 90%; background: red;}
+#film-screen {height: 88%; width: 94%; border: 2px solid #5d6564; margin-left: 3.25%; background: black; border-radius: 5px; }
+#film-screen-nav {background-color: #0e1c2c; height: 92%; margin: 17% 12% 0 0; padding: 25%;}
+#film-screen-nav img:hover {transform: scale(1.1)}
+#film-iframe {border-radius: 3px;}
 
 
 #photo {margin-bottom: 5%; left: 26.5%; position: absolute; height: 25%; width: 22%; border: solid 2px #f00;}
@@ -169,7 +172,8 @@ h2:hover {font-size: 55px;}
     .window-sec {height: 50%; padding:  2% 5%; }
     #about-sec-left {width: 100%!important; margin-left: 0; justify-content: center;  }
     #about-sec-right {width: 100%!important;  margin-right: 0;  justify-content: center;}
-
+    #tv-container {width: 160%; margin-left: -30%;}
+    h1 {font-size: 72px;}
   }
   
 

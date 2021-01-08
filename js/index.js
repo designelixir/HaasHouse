@@ -1,51 +1,21 @@
-
-// window.onresize = reCalibrate;
-// window.onload = reCalibrate;
-
 var thisScale = 4;
-
-// function reCalibrate(){
-//     if (window.innerHeight > window.innerWidth){
-//         $('#tv-spread-container').css({"width": "200%", "left": "-50%"})
-//         $('.photo-tv').css({"width": "18.5%", "height": "25.5%", "left": "33%", "top": "36.5%"})
-//         $('.photo-tv-screen').css({"width": "77%", "height": "95%"})
-//         $('.photo-tv-nav').css({"background-color": "#302d2a"})
-//         $('.design-tv').css({"top": "66%"})
-//         thisScale = 2;
-//     } else {
-//          $('#tv-spread-container').css({"width": "100%", "left": "0%"})
-//          $('.photo-tv').css({"width": "16%", "height": "22%", "left": "16.5%", "top": "32%"})
-//          $('.photo-tv-screen').css({"width": "78%", "height": "95%"})
-//          $('.photo-tv-nav').css({"background-color": "rgba(0,0,0,0)"})
-//          $('.design-tv').css({"top": "63%"})
-//         thisScale = 4;
-//     }
-// }
+var thisMultiplier = .4;
 
 
 var clickFilm = 0; 
 $('.film-toggle').click(function(){
     clickFilm++;
-    console.log('clicked films');
-    var tv11 = document.getElementById('tv-11').getBoundingClientRect();
-   
+    var filmCONTAINER = document.getElementById('film').getBoundingClientRect();
+    var bodymeasure = document.getElementById('the-body').getBoundingClientRect();
     if(clickFilm % 2 === 0){
-
-        $('#the-body').css({"transform": "scale(1)", "transform-origin-x": (tv11.right -100), "transform-origin-y": (tv11.top + 50)});
-        $('#film-toggle-link').css("display", "block");
+        $('#the-body').css({"transform": "scale(1)", "transform-origin-x": (filmCONTAINER.right -100), "transform-origin-y": (filmCONTAINER.top + 50)});
+        $('#film-link').css("display", "block");
         $('#film-iframe').css("display", "none");
-        $('#film-toggle-link').css("display", "block");
         $('.movie-nav').css("display", "none");
-        $('.tv-11').css("animation", "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both");
-        // $('#film-iframe').removeAttr("src");
-        $('#tv-11-screen').css({'background-color': 'black'})
-
-        
-
     } else {
-        $('#the-body').css({"transform": "scale(" + thisScale +")", "transform-origin-x": (tv11.right -100), "transform-origin-y": (tv11.top + 50)});
+        $('#the-body').css({"transform": "scale("+thisScale+")", "transform-origin-x": filmCONTAINER.x * (thisScale * (thisMultiplier)), "transform-origin-y": filmCONTAINER.y});
         $('#film-iframe').css("display", "block");
-        $('#film-toggle-link').css("display", "none");
+        $('#film-link').css("display", "none");
         $('.movie-nav').css("display", "block");
         $('.tv-11').css("animation", "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both");
     }
@@ -309,7 +279,7 @@ $('.contact-link').click(function(){
 function positionTVS(){
 
     $('.tv-window').each(function(){
-
+        // $('#the-body').css({"transform": "scale(1)", "margin": "0", "left": "0"})
         var tvWrapper = document.getElementById("tv-wrapper").getBoundingClientRect();
         var boundingBOX = document.getElementById("tvs").getBoundingClientRect();
         var designBOX = document.getElementById("design").getBoundingClientRect();
@@ -329,12 +299,16 @@ function positionTVS(){
 
 $(window).on('resize', positionTVS).trigger('resize');
 $(window).resize(mediaQUERY);
-window.onload = mediaQUERY, positionTVS;
+window.addEventListener("onload", positionTVS)
 
 function mediaQUERY(){
 	if ($(window).width() <= 900){	
         console.log("start shrinkin bish")
-        $("#tv-container").css({"width": "160%", "margin-left": "-30%"});
+        // $("#tv-container").css({"width": "160%", "margin-left": "-30%"});
         
-	}	
+    }	
+    thisScale = 3;
+    thisMultiplier = 0.5;
 }
+
+console.log(thisScale)

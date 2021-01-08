@@ -71,12 +71,19 @@
 
                 <!-- FILM -->
                 <div class="tv-window" id="film">
-                    <div class="tv-screen-wrapper" style="width: 86%">
+                    <div class="tv-screen-wrapper" style="width: 85%">
                         <div class="tv-screen" id="film-screen">
-                            <h2>FILM</h2>
+                            <h2 class="film-toggle" id="film-link">FILM</h2>
+                            <iframe id="film-iframe" style="width:98%; height:100%; display: none; background-color: black;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
                         </div>
                     </div>
-                    <div class="tv-screen-nav" style="width: 14%;">
+                    <div class="tv-screen-nav" style="width: 15%;">
+                        <div id="film-screen-nav" >
+                            <img src="src/power.svg" class="film-toggle off-remote" alt="exit film tv">
+                            <img class="link-remote" src="src/forward.svg" id="movie-nav-prev" alt="backwards button">
+                            <img class="link-remote" src="src/rewind.svg" id="movie-nav-next" alt="forward button">
+                        </div>
 
                     </div>
                 </div>
