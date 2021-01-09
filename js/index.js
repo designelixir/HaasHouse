@@ -124,8 +124,8 @@ $('#photo-tv-guide-btn').click(function(){
     $('#photo-target').removeAttr("src");
     $('#photo-screen').css({"background-image": "url(src/statics/blue-static.gif)"})
     $('#photo-tv-guide').css({"display": "block"});
-    var activeCategory = [];
-    var activeDescript = [];
+    activeCategory = [];
+    activeDescript = [];
 })
 
 
