@@ -1,56 +1,32 @@
-
-window.onresize = reCalibrate;
-window.onload = reCalibrate;
-
 var thisScale = 4;
+var thisMultiplier = .4;
 
-function reCalibrate(){
-    if (window.innerHeight > window.innerWidth){
-        $('#tv-spread-container').css({"width": "200%", "left": "-50%"})
-        $('.photo-tv').css({"width": "18.5%", "height": "25.5%", "left": "33%", "top": "36.5%"})
-        $('.photo-tv-screen').css({"width": "77%", "height": "95%"})
-        $('.photo-tv-nav').css({"background-color": "#302d2a"})
-        $('.design-tv').css({"top": "66%"})
-        thisScale = 2;
-    } else {
-         $('#tv-spread-container').css({"width": "100%", "left": "0%"})
-         $('.photo-tv').css({"width": "16%", "height": "22%", "left": "16.5%", "top": "32%"})
-         $('.photo-tv-screen').css({"width": "78%", "height": "95%"})
-         $('.photo-tv-nav').css({"background-color": "rgba(0,0,0,0)"})
-         $('.design-tv').css({"top": "63%"})
-        thisScale = 4;
-    }
-}
-
-
+// #####################################################################################################################
+// ZOOM FILM TV
 var clickFilm = 0; 
 $('.film-toggle').click(function(){
     clickFilm++;
-    var tv11 = document.getElementById('tv-11').getBoundingClientRect();
-   
+    var filmCONTAINER = document.getElementById('film').getBoundingClientRect();
+    var bodymeasure = document.getElementById('the-body').getBoundingClientRect();
     if(clickFilm % 2 === 0){
-
-        $('#the-body').css({"transform": "scale(1)", "transform-origin-x": (tv11.right -100), "transform-origin-y": (tv11.top + 50)});
-        $('#film-toggle-link').css("display", "block");
+        $('#the-body').css({"transform": "scale(1)", "transform-origin-x": (filmCONTAINER.left), "transform-origin-y": (filmCONTAINER.top + 50)});
+        $('#film-link').css("display", "block");
         $('#film-iframe').css("display", "none");
-        $('#film-toggle-link').css("display", "block");
-        $('.movie-nav').css("display", "none");
-        $('.tv-11').css("animation", "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both");
-        // $('#film-iframe').removeAttr("src");
-        $('#tv-11-screen').css({'background-color': 'black'})
-
-        
-
+        $('#film-screen-nav').css("display", "none");
+        $('#film-screen').css({"border": "none"})
     } else {
-        $('#the-body').css({"transform": "scale(" + thisScale +")", "transform-origin-x": (tv11.right -100), "transform-origin-y": (tv11.top + 50)});
+        $('#film-screen').css({"border": "2px solid #5d6564"})
+        $('#the-body').css({"transform": "scale(3)", "transform-origin-x": filmCONTAINER.left + 100, "transform-origin-y": filmCONTAINER.top + 50});
         $('#film-iframe').css("display", "block");
-        $('#film-toggle-link').css("display", "none");
-        $('.movie-nav').css("display", "block");
+        $('#film-link').css("display", "none");
+        $('#film-screen-nav').css("display", "block");
         $('.tv-11').css("animation", "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both");
     }
 });
 
-//film screen navigation functionality 
+
+// #####################################################################################################################
+//TOGGLE THROUGH FILMS 
 var filmLinks = ["https://player.vimeo.com/video/494815946?quality=1080p", "https://player.vimeo.com/video/494873166?quality=1080p"];
 var currentVid = 0;
 $('#film-iframe').attr("src", filmLinks[currentVid]); //set initial video 
@@ -69,27 +45,29 @@ $('#movie-nav-prev').click(function(){
 
 
 
-var clickPhoto = 0;
-$('.photo-toggle-link').click(function(){
-    clickPhoto++;
-    
-    var tv5 = document.getElementById('photo-tv').getBoundingClientRect();
 
-    if(clickPhoto% 2 === 0){
-        $('#the-body').css({"transform": "scale(1)", "transform-origin-x": (tv5.right - 50), "transform-origin-y": (tv5.bottom)});
-        $('#tv-5-link').css("display", "block");
-        $('#photo-bg-target').attr("src", "src/black.svg")
+
+// #####################################################################################################################
+// ZOOM PHOTO TV 
+var clickPhotoTV = 0;
+$('.photo-toggle').click(function(){
+    clickPhotoTV++;
+    var photoBOX = document.getElementById('photo').getBoundingClientRect();
+
+    if(clickPhotoTV % 2 === 0){
+        $('#the-body').css({"transform": "scale(1)", "transform-origin-x": (photoBOX.left ), "transform-origin-y": (photoBOX.bottom)});
+        $('#photo-link').css("display", "block");
+        $('#photo-screen').css({"background-image": "none"})
+
         $('#photo-tv-guide').css({"display": "none"})
-        $('.photo-tv-nav').css({"display": "none"})
+        $('#photo-screen-nav').css({"display": "none"})
+        $('#photo-target').removeAttr("src")
     } else {
-        
-        $('#the-body').css({"transform": "scale(" + thisScale +")", "transform-origin-x": (tv5.left), "transform-origin-y": (tv5.top + 75 )});
-        $('#tv-5-link').css("display", "none");
-        $('#photo-bg-target').attr("src", "src/statics/gray-static-stationary.png")
+        $('#the-body').css({"transform": "scale(" + thisScale +")", "transform-origin-x": (photoBOX.left + 100), "transform-origin-y": (photoBOX.top + 100 )});
+        $('#photo-link').css("display", "none");
+        $('#photo-screen').css({"background-color":"black", "background-image": "url(src/statics/blue-static.gif)", "background-size": "cover", "background-repeat": "no-repeat"})
         $('#photo-tv-guide').css({"display": "block"})
-        $('.photo-tv-nav').css({"display": "block"})
-
-
+        $('#photo-screen-nav').css({"display": "block"})
     }
 });
 
@@ -99,7 +77,7 @@ var peopleCollectionDescript = ['35mm <br/> MIKE CHAMBERLAIN <br/> Pacifica, CA'
 var placesCollection = ["src/Places/one.jpg", "src/Places/two.jpg", "src/Places/three.jpg", "src/Places/four.jpg", "src/Places/five.jpg", "src/Places/six.jpg", "src/Places/seven.jpg", "src/Places/eight.jpg", "src/Places/nine.jpg", "src/Places/ten.jpg", "src/Places/eleven.jpg" ]
 var placesCollectionDescript = ['35mm <br/> Davenport, CA', '35mm <br/> Pigeon Point Lighthouse, CA', '35mm <br/> San Francisco, CA', '35mm <br/>Manhattan Beach, CA', '35mm <br/>Coroico, Bolivia', '35mm <br/>Davenport, CA', '35mm <br/>Pacific Ocean', '35mm <br/>San Francisco, CA', '35mm <br/>Foster City, CA', '35mm <br/> Pigeon Point Lighthouse', '35mm <br/> MARINA DISTRICT <br/> San Francisco, CA' ]
 
-var thingsCollection = ["src/Things/one.jpg", "src/Things/two.jpg", "src/Things/three.jpg", "src/Things/four.jpg"]
+var thingsCollection = ["src/Things/one.jpg", "src/Things/two.JPG", "src/Things/three.jpg", "src/Things/four.jpg"]
 var thingsCollectionDescript = ['35mm <br/>PALACE OF FINE ARTS <br/> San Francisco, CA', '35mm <br/> ATLAS GENUS CONCERT <br/> Boulder, CO', '35mm <br/>MARINA DISTRICT <br/> San Francisco, CA', '35mm <br/>PALACE OF FINE ARTS <br/> San Francisco, CA'  ]
 
 var fullPhotoCollection = [].concat(peopleCollection, placesCollection, thingsCollection);
@@ -107,9 +85,10 @@ var fullPhotoDescript = [].concat(peopleCollectionDescript, placesCollectionDesc
 
 
 
-
+// TOGGLE BETWEEN PHOTOS 
 $('.photo-channel').click(function(){
     $('#photo-tv-guide').css("display", "none");
+    $('#photo-screen').css("background-image", "none");
     var activeCategory = [];
     var activeDescript = [];
 
@@ -120,18 +99,20 @@ $('.photo-channel').click(function(){
 
     var categoryChannelCount = activeCategory.length;
     
-    $('#photo-bg-target').attr("src", activeCategory[0]);
+    $('#photo-target').attr("src", activeCategory[0]);
     $('#photo-project-description').html(activeDescript[0])
     var channelSwitch = 1;
     $('#channel-switch-img').click(function(){        
         var rotateThisMuch = channelSwitch * (360/13);
         if (channelSwitch < categoryChannelCount) {
             $('#channel-switch-img').css('transform', 'rotate('+rotateThisMuch+'deg)')
-            $('#photo-bg-target').attr("src", activeCategory[channelSwitch]);
-            $('#photo-project-description').html([activeDescript[channelSwitch]])        
+            $('#photo-target').css("animation", "fade-in 1s cubic-bezier(.39,.575,.565,1.000) both")
+            $('#photo-target').attr("src", activeCategory[channelSwitch]);
+            $('#photo-project-description').html([activeDescript[channelSwitch]]) 
+               
         } else {
             channelSwitch = 0;
-            $('#photo-bg-target').attr("src", activeCategory[channelSwitch]);
+            $('#photo-target').attr("src", activeCategory[channelSwitch]);
             $('#photo-project-description').html(activeDescript[channelSwitch]);
             $('#channel-switch-img').css('transform', 'rotate(0deg)')
         }
@@ -140,7 +121,11 @@ $('.photo-channel').click(function(){
 })
 
 $('#photo-tv-guide-btn').click(function(){
+    $('#photo-target').removeAttr("src");
+    $('#photo-screen').css({"background-image": "url(src/statics/blue-static.gif)"})
     $('#photo-tv-guide').css({"display": "block"});
+    var activeCategory = [];
+    var activeDescript = [];
 })
 
 
@@ -161,54 +146,64 @@ function triggerD(descriptionNumber,show){
 var designCounter = 0;
 $('.design-toggle').click(function(){
     designCounter++;
+
     if(designCounter % 2 === 0){ //zoom out
         $('#the-body').css({"transform": "scale(1)"});
-        $('#designs-link').css("display", "block");
+        $('#design-link').css("display", "block");
         $('#design-tv-guide').css("display", "none");
-        $('.design-tv-nav').css("display", "none");
-        $('#design-bg-target').attr("src", "src/black.svg");
+        $('#design-screen-nav').css("display", "none");
+        $('#design-target').removeAttr("src");
+        $('.shadows').css("display", "block");
+        $('#design-screen').css("background-image", "none");
     } else {
-        var tv3 = document.getElementById('design-tv').getBoundingClientRect();
-        console.log('clocled design tv')
-        $('#the-body').css({"transform": "scale(" + thisScale +")", "transform-origin-x": (tv3.right - 75), "transform-origin-y": (tv3.bottom)});
-        $('#designs-link').css("display", "none");
+        var designBOX = document.getElementById('design').getBoundingClientRect();
+        $('#the-body').css({"transform": "scale(3)", "transform-origin-x": (designBOX.left + 100), "transform-origin-y": (designBOX.bottom) });
+        $('#design-link').css("display", "none");
         $('#design-tv-guide').css("display", "block");
-        $('#design-bg-target').attr("src", "src/statics/gray-static.gif");
-        $('.design-tv-nav').css("display", "block");   
+        $('#design-screen').css({"background-color": "black", "background-image": "url(src/statics/blue-static.gif)", "background-size": "cover", "background-repeat": "no-repeat"})
+        $('#design-screen-nav').css("display", "block");   
+        $('.shadows').css("display", "none");
     }
 })
 
 
-$('.design-tv-guide-toggle').click(function(){
+$('#design-tv-guide-btn').click(function(){
+    $('#design-target').removeAttr("src");
+    $('#design-screen').css({"background-image": "url(src/statics/gray-line-static.gif)", "background-size": "cover", "background-repeat": "no-repeat"})
+    $('#design-project-description').text("");
     $('#design-tv-guide').css("display", "block");
+    $('#design-target').css("display", "block");
+    $('#design-video').css("display", "none")
+    activeCategory = [];
+    activeDescript = [];
 })
 
 
 var webCollection = ["src/web/slide1.jpg", "src/web/slide2.jpg", "src/web/slide3.jpg", "src/web/slide4.jpg", "src/web/slide5.jpg", "src/web/slide6.jpg", ]
-var webCollectionDescript = ['LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020']
+var webCollectionDescript = ['LIQUID LAB <br/> General Assembly 2020', 'LIQUID LAB <br/> General Assembly 2020', 'LIQUID LAB <br/> General Assembly 2020', 'LIQUID LAB <br/> General Assembly 2020', 'LIQUID LAB <br/> General Assembly 2020', 'LIQUID LAB <br/> General Assembly 2020', 'LIQUID LAB <br/> General Assembly 2020']
 
-var printCollection = ["https://ewscripps.brightspotcdn.com/dims4/default/3a54f41/2147483647/strip/true/crop/2038x1146+5+216/resize/1280x720!/quality/90/?url=http%3A%2F%2Fewscripps-brightspot.s3.amazonaws.com%2F26%2F12%2Fa6f367014ff6bd297b8b2fbe3c6e%2Fandrew-plutt.jpg", "https://bloximages.newyork1.vip.townnews.com/outtherecolorado.com/content/tncms/assets/v3/editorial/d/e5/de52bca7-16bc-5b16-8c06-b05e593ff698/5eecdc1b7713c.image.jpg?crop=1254%2C705%2C0%2C65&resize=1254%2C705&order=crop%2Cresize", "https://s1.it.atcdn.net/wp-content/uploads/2019/11/Colorado-road-trip-hero-800x600.jpg", "https://www.visittheusa.com/sites/default/files/styles/hero_l_x2/public/images/exp-background/2019-11/de9cba61-3eb7-40e0-a4a0-3aa523961e41.jpeg?itok=3Yf7hyME"]
-var printCollectionDescript = ["project 1", "project 2", "project 3", "project 4"]
 
-var filmCollection = ["https://contenthub-static.grammarly.com/blog/wp-content/uploads/2018/05/things-to-write-about-760x400.jpg", "https://www.howsweeteats.com/wp-content/uploads/2019/07/tt-1-76.jpg", "https://cambridgewords.files.wordpress.com/2019/04/obvious_300x200.jpg?w=640", "https://www.howsweeteats.com/wp-content/uploads/2019/10/IMG_8425.jpg", "https://www.howsweeteats.com/wp-content/uploads/2019/03/tt-1-59.jpg", "https://assets.londonist.com/uploads/2018/05/i875/rainbow.jpg"]
-var filmCollectionDescript = ["project #1", "project #2", "project #3", "project #4", "project #5", "prokect # 6"]
+var filmCollection = ["src/film/comingsoon.svg"]
+var filmCollectionDescript = ["Check back later!"]
 
-var fullDesignCollection = [].concat(webCollection, printCollection, filmCollection);
-var fullDesignDescript = [].concat(webCollectionDescript, printCollectionDescript, filmCollectionDescript)
+var fullDesignCollection = [].concat(webCollection, filmCollection);
+var fullDesignDescript = [].concat(webCollectionDescript,filmCollectionDescript)
 
 
 
 $('.design-channel').click(function(){
     $('#design-tv-guide').css("display", "none");
+    $('#design-screen').css("background-image", "none")
+
     var activeCategory = [];
     var activeDescript = [];
     if ($(this).attr("id") == "design-guide-close"){activeCategory = fullDesignCollection; activeDescript = fullDesignDescript }
     else if($(this).index() === 0){activeCategory = webCollection; activeDescript = webCollectionDescript }
-    else if($(this).index()===1){activeCategory = printCollection; activeDescript = printCollectionDescript}
+    else if($(this).index()===1){$('#design-video').css("display", "block"); $('#design-target').css('display', 'none'); $('#design-project-description').text("California Love Magazine");}
     else if($(this).index()===2){activeCategory = filmCollection; activeDescript = filmCollectionDescript}
     
     var categoryChannelCount = activeCategory.length;
-    $('#design-bg-target').attr("src", activeCategory[0]);
+    $('#design-target').attr("src", activeCategory[0]);
     $('#design-project-description').html(activeDescript[0])
     var current = 0;
 
@@ -217,10 +212,10 @@ $('.design-channel').click(function(){
         current++;
         if ((current) >= categoryChannelCount ){  //loops back 
             current = 0; 
-            $('#design-bg-target').attr("src", activeCategory[current]);
+            $('#design-target').attr("src", activeCategory[current]);
             $('#design-project-description').html(activeDescript[current]);
         }
-        $('#design-bg-target').attr("src", activeCategory[current]);
+        $('#design-target').attr("src", activeCategory[current]);
         $('#design-project-description').html(activeDescript[current]);
     });
 
@@ -228,11 +223,11 @@ $('.design-channel').click(function(){
     $('#design-nav-backward').click(function(){
         current--;
         if (current < 0){
-            $('#design-bg-target').attr("src", activeCategory[categoryChannelCount]);
+            $('#design-target').attr("src", activeCategory[categoryChannelCount]);
             $('#design-project-description').html(activeDescript[categoryChannelCount]);
             current = categoryChannelCount;
         } else {
-            $('#design-bg-target').attr("src", activeCategory[current]);
+            $('#design-target').attr("src", activeCategory[current]);
             $('#design-project-description').html(activeDescript[current]);
         }
         
@@ -283,6 +278,44 @@ $('.contact-link').click(function(){
     
 })
 
+var w = window.innerWidth;
+var h = window.innerHeight;
 
+function positionTVS(){
+    $('.tv-window').each(function(){
+        // $('#the-body').css({"transform": "scale(1)", "margin": "0", "left": "0"})
+        var tvWrapper = document.getElementById("tv-wrapper").getBoundingClientRect();
+        var boundingBOX = document.getElementById("tvs").getBoundingClientRect();
+        var designBOX = document.getElementById("design").getBoundingClientRect();
+        var photoBOX = document.getElementById("photo").getBoundingClientRect();
+        var topspacer = tvWrapper.height - boundingBOX.height;
+        var leftspacer = (tvWrapper.width - boundingBOX.width);
 
+        if (w / 2 > h){
+           console.log("crotch")
+            $('#film').css({"margin-top": topspacer, "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.45, "top": "0.5%", "margin-left": "50.5%" })
+            $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.35), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.75, "width": boundingBOX.width / 4, "left": "26%"  })        
+            $('#design').css({"bottom": boundingBOX.bottom / designBOX.bottom, "height": boundingBOX.height / 3.5, "width": boundingBOX.width / 4.4, "margin-left": "49.75%", "margin-bottom": "2%" })
+        
+        } else {
+            $('#film').css({"margin-top": topspacer, "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.45 })
+            $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.3), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.75, "width": boundingBOX.width / 4, "left": "26.5%"  })        
+            $('#design').css({"bottom": boundingBOX.bottom / designBOX.bottom, "height": boundingBOX.height / 3.5, "width": boundingBOX.width / 4.4,  "margin-bottom": "3.25%" })
+        }
+    });
+}
+
+$(window).on('resize', positionTVS).trigger('resize');
+$(window).resize(mediaQUERY);
+window.addEventListener("onload", positionTVS)
+
+function mediaQUERY(){
+	if ($(window).width() <= 900){	
+        
+        // $("#tv-container").css({"width": "160%", "margin-left": "-30%"});
+        
+    }	
+    thisScale = 3;
+    thisMultiplier = 0.5;
+}
 
