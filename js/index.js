@@ -307,7 +307,11 @@ function positionTVS(){
 
 $(window).on('resize', positionTVS).trigger('resize');
 $(window).resize(mediaQUERY);
-window.addEventListener("onload", positionTVS)
+window.onload = function() {
+    init();
+    positionTVS
+  };
+
 
 function mediaQUERY(){
 	if ($(window).width() <= 900){	
