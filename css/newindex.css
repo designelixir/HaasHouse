@@ -64,22 +64,12 @@
     transition: all 1s ease-in-out;
     
 }
-
+/* CURSOR CLASSES */
 .link-remote:hover {cursor: url('../src/link-remote.svg'), auto!important;}
 .off-remote:hover {cursor: url('../src/off-remote.svg'), auto!important;}
+.scale-up-hover:hover {transform: scale(1.1);}
 
-.navigation {
-  width: 100%; 
-  height: 10%;
-  display: flex; 
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-  z-index: 200;
-  position: absolute; 
-  top: 0; left: 0; 
-  margin-top: 25px;
-}
+.navigation {width: 100%; height: 10%; display: flex; justify-content: space-around; align-items: center; text-align: center; z-index: 200; position: absolute; top: 0; left: 0; margin-top: 25px;}
 
 #logo-span { display: flex; width: 70%; justify-content: center; align-items: baseline;}
 #logo-span img {max-height: 75px;}
@@ -89,6 +79,7 @@
 .about-link, .contact-link { width: 100px; margin: 5%;  letter-spacing: 5px;}
 
 
+
 button {background: none; border: none; outline: none;}
 
 a {font-family: 'Rainer-Medium', sans-serif; font-size: 45px;  color: white; cursor: url('../src/link-remote.svg'), auto!important;  }
@@ -96,11 +87,10 @@ a {font-family: 'Rainer-Medium', sans-serif; font-size: 45px;  color: white; cur
 a:hover { color: white; font-size: 55px; text-decoration: none;}
 p {font-family: freight-big-pro, serif; font-size: 1.25rem; line-height: 1.5rem}
 h1 {font-family: 'Rainer-Bold', sans-serif; font-size: 100px; padding: 0; color: white; }
-h2 {font-family: 'Rainer-v04', sans-serif; font-size: 45px;  color: white; letter-spacing: 2px;  }
+h2 {font-family: 'Rainer-v04', sans-serif; font-size: 2.25rem;  color: white; letter-spacing: 2px;  }
 h3 {font-family: 'Rainer-v04', sans-serif; font-size: 60px; letter-spacing: 2px; color: white; text-shadow: 2px 2px 8px #000000}
 h4 {font-size: 90%; font-family: 'Rainer-Hairline', sans-serif; line-height: 0px; letter-spacing: 1px; margin: 0; }h6 {font-family: 'Rainer-v04', sans-serif; font-size: 3rem; letter-spacing: 5px; color: white; }
-h6:hover {font-size: 3.25rem; }
-h2:hover {font-size: 55px;}
+
 
 .close-nav {font-size: 48px; position: absolute; text-align: center; right: 0px; top: 55px;  width: 50px; height: 50px; display: none; animation:tilt-in-fwd-tr .6s cubic-bezier(.25,.46,.45,.94) both}
 .close-nav:hover {font-size: 58px; }
@@ -137,46 +127,79 @@ h2:hover {font-size: 55px;}
 /* TV BOXES  */
 .tv-window h1 {font-size: 2rem;}
 .tv-screen-wrapper {display: inline-flex; align-items: center; justify-content: center; height: 100%; border: 3px solid green;}
-.tv-screen {display: flex; align-items: center; justify-content: center; float: left;}
-.tv-screen-nav {height: 100%; border: 3px solid magenta; float: right;}
-
-#design {margin-left: 49.25%; margin-bottom: 3%; position: absolute; height: 19.5%; width: 22%; border: solid 2px #f00;}
-#design-screen {height: 80%; width: 90%; background: orange;}
+.tv-screen {display: flex; align-items: center; justify-content: center; float: left; z-index: 10;}
+.tv-screen-nav {height: 100%;  float: right; z-index: 10; }
 
 
-#film {top: 1vh; margin-left: 50.8%; position: absolute; height: 18%; width: 22%; border: solid 2px #f00;}
+/* DESIGN */
+#design {margin-left: 49.25%; margin-bottom: 3%; position: absolute; height: 19%; width: 22%; border: solid 2px #f00;}
+#design-screen {height: 80%; width: 90%;}
+#design-screen-nav { height: 95%; margin-top: 5%; width: 100%; z-index: 10; background: #1e1e1e; display: none;}
+
+#design-tv-guide {padding: 10% 5%;}
+
+/* FILM */
+#film {top: 1vh; margin-left: 51%; position: absolute; height: 18%; width: 22%; border: solid 2px #f00;}
 #film-screen:hover { background-image: url('../src/statics/countdown.gif'); background-size: 100% 100%;}
 #film-screen {height: 88%; width: 94%; border: 2px solid #5d6564; margin-left: 3.25%; background: black; border-radius: 5px; }
-#film-screen-nav {background-color: #0e1c2c; height: 92%; margin: 17% 12% 0 0; padding: 25%;}
+#film-screen-nav {background-color: #0e1c2c; height: 92%; margin: 17% 12% 0 0; padding: 25%; display: none;}
 #film-screen-nav img:hover {transform: scale(1.1)}
 #film-iframe {border-radius: 3px;}
 
+/* PHOTO */
+#photo {margin-bottom: 5%; left: 26.75%; position: absolute; height: 25%; width: 22%; border: solid 2px #f00;}
+#photo-screen {height: 97%; width: 98%;  background: black; border-radius: 5px;}
+#photo-target {max-height: 100%;}
+#photo-screen-nav {width: 100%; height: 100%; display: none; border: 1px solid rgba(0,0,0,0);  background-color: #3d3b37; border-radius: 3px; border: 1px solid #332c2b; display: flex; flex-direction: column; text-align: center;}
 
-#photo {margin-bottom: 5%; left: 26.5%; position: absolute; height: 25%; width: 22%; border: solid 2px #f00;}
-#photo-screen {height: 80%; width: 83%; background: teal;}
+#photo-tv-guide {padding: 10% 10%;}
 
 
 
 
+/* TV GUIDE  */
 
+.tv-guide {width: 100%; height: 100%; border: 2px solid black;   }
+.tv-guide-close-bar {width: 100%; height: 10%; border-bottom: 1px solid black; background: -webkit-linear-gradient(top, #21277A, #3b63bb); }
+.tv-guide-close-bar img {height:10px; margin: 0; float: right; padding: 1% 2%; }
+
+.tv-guide-top {height: 40%; width: 100%; border-bottom: 1px solid black;  background: -webkit-linear-gradient(top, #21277A, #3b63bb);}
+.tv-guide-title { color: white; width: 100%; height: 50%; padding: 0% 2%; line-height: 0; border-bottom: 1px solid black; display: inline-flex; justify-content: space-between; align-items: center;}
+.tv-guide-title h1 {font-size: 80%!important;}
+.tv-guide-description {height: 45%; width: 100%; font-family: freight-big-pro, serif; color: white; display: flex; align-items: center; justify-content: center;}
+.tv-guide-description span {display: none; font-size: 5px}
+
+.tv-guide-bottom { height: 50%; background: black; width: 100%; padding: 2% 10%; }
+.tv-guide-details {width: 70%; height: 100%; float: left; background: -webkit-linear-gradient(top, #21277A, #3b63bb); padding: 0!important;}
+.tv-guide-photo {height: 100%; width: 30%; float: right; display: flex; align-items: center; justify-content: center; border-left: 1px solid black;}
+.tv-guide-photo img {height: 60%;}
+
+.channel-style {width: 100%; height: 30%; border: solid 1px black; background: #21277A; color: white; display: flex; align-items: center; justify-content: center; }
+.channel-style:hover {border: 1px solid gray; background: #3b63bb; }
+.channel-style h4 { font-size: 0.8vh;  margin: 0; padding: 0; font-family: 'Rainer-v04', sans-serif;}
+
+.tv-guide-btn{font-size: 8px; width: 90%; margin: 0% 5%; line-height: 0; letter-spacing: 0;  padding: 15% 0px; text-align: center; background: yellow; border-style: outset; border: 1px outset ; color: black;}
+.tv-guide-btn:hover {border: 1px inset; background-color: gold;}
+.project-description {width: 95%; background: gray; color: white; font-size: 6px!important; font-family: 'Rainer-v04', sans-serif; letter-spacing: 0.25px; padding: 3px; margin: 10% 2.5%; line-height: 7px; text-align: left;}
 
 @media only screen and (max-width: 900px) {
-    body {
-      background: lightblue;
-      box-sizing: border-box;
-    }
     .palm {height: 40%; width: auto;}
-    .palm-left {margin-left: -30%;}
-    .palm-right {margin-right: -30%;}
+    .palm-left {margin-left: 0%;}
+    .palm-right {margin-right: 0%;}
     .window-sec-wrapper {display: block; flex-direction: column; height: 100%; }
     .window-sec {height: 50%; padding:  2% 5%; }
     #about-sec-left {width: 100%!important; margin-left: 0; justify-content: center;  }
     #about-sec-right {width: 100%!important;  margin-right: 0;  justify-content: center;}
     #tv-container {width: 160%; margin-left: -30%;}
-    h1 {font-size: 72px;}
+    h1 {font-size: 56px;}
+    a {font-size: 32px!important;}
+    
   }
+
+  
   
 
+  /* PALM ANIMATIONS */
 @keyframes wobble-ver-left{0%,100%{-webkit-transform:translateY(0) rotate(0);transform:translateY(0) rotate(0);-webkit-transform-origin:50% 50%;transform-origin:50% 50%}15%{-webkit-transform:translateY(-30px) rotate(-6deg);transform:translateY(-30px) rotate(-6deg)}30%{-webkit-transform:translateY(15px) rotate(6deg);transform:translateY(15px) rotate(6deg)}45%{-webkit-transform:translateY(-15px) rotate(-3.6deg);transform:translateY(-15px) rotate(-3.6deg)}60%{-webkit-transform:translateY(9px) rotate(2.4deg);transform:translateY(9px) rotate(2.4deg)}75%{-webkit-transform:translateY(-6px) rotate(-1.2deg);transform:translateY(-6px) rotate(-1.2deg)}}
 @keyframes wobble-hor-bottom{0%,100%{-webkit-transform:translateX(0);transform:translateX(0);-webkit-transform-origin:50% 50%;transform-origin:50% 50%}15%{-webkit-transform:translateX(-30px) rotate(-6deg);transform:translateX(-30px) rotate(-6deg)}30%{-webkit-transform:translateX(15px) rotate(6deg);transform:translateX(15px) rotate(6deg)}45%{-webkit-transform:translateX(-15px) rotate(-3.6deg);transform:translateX(-15px) rotate(-3.6deg)}60%{-webkit-transform:translateX(9px) rotate(2.4deg);transform:translateX(9px) rotate(2.4deg)}75%{-webkit-transform:translateX(-6px) rotate(-1.2deg);transform:translateX(-6px) rotate(-1.2deg)}}
 
