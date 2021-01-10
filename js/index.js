@@ -1,29 +1,48 @@
 var thisScale = 4;
 var thisMultiplier = .4;
 
+var bodymeasure = document.getElementById('the-body').getBoundingClientRect();
+var filmCONTAINER = document.getElementById('film').getBoundingClientRect();
+
+console.log("width:" + bodymeasure.width)
+console.log("body height:"+ bodymeasure.height)
+console.log("film left"+ filmCONTAINER.left + " filmright"+ filmCONTAINER.right)
+
+var filmLeft = filmCONTAINER.width / bodymeasure.width;
+console.log(filmLeft)
 // #####################################################################################################################
 // ZOOM FILM TV
 var clickFilm = 0; 
 $('.film-toggle').click(function(){
     clickFilm++;
+
     var filmCONTAINER = document.getElementById('film').getBoundingClientRect();
     var bodymeasure = document.getElementById('the-body').getBoundingClientRect();
+    var tvSPREAD = document.getElementById('tvs').getBoundingClientRect();
+
+    var tvbodyDIFFheight = (bodymeasure.height - tvSPREAD.height) / (bodymeasure.height);
+    var tvbodyDIFFwidth = (bodymeasure.width - tvSPREAD.width) / bodymeasure.width;
+
+    var transformfilmY = 28% - tvbodyDIFFheight;
+    var transformfilmX = 60% - tvbodyDIFFwidth;
+
     if(clickFilm % 2 === 0){
-        $('#the-body').css({"transform": "scale(1)", "transform-origin-x": (filmCONTAINER.left), "transform-origin-y": (filmCONTAINER.top + 50)});
+        $('#the-body').css({"transform": "scale(1)" });
         $('#film-link').css("display", "block");
         $('#film-iframe').css("display", "none");
         $('#film-screen-nav').css("display", "none");
         $('#film-screen').css({"border": "none"})
     } else {
         $('#film-screen').css({"border": "2px solid #5d6564"})
-        $('#the-body').css({"transform": "scale(3)", "transform-origin-x": filmCONTAINER.left + 100, "transform-origin-y": filmCONTAINER.top + 50});
+        $('#the-body').css({"transform": "scale("+ filmLeft * 20 +")", "transform-origin-x": transformfilmX, "transform-origin-y": transformfilmY});
         $('#film-iframe').css("display", "block");
         $('#film-link').css("display", "none");
         $('#film-screen-nav').css("display", "block");
         $('.tv-11').css("animation", "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both");
     }
+    console.log(bodymeasure);
+    console.log(filmCONTAINER);
 });
-
 
 // #####################################################################################################################
 //TOGGLE THROUGH FILMS 
@@ -146,6 +165,7 @@ function triggerD(descriptionNumber,show){
 var designCounter = 0;
 $('.design-toggle').click(function(){
     designCounter++;
+    $('#design-video').css("display", "none")
 
     if(designCounter % 2 === 0){ //zoom out
         $('#the-body').css({"transform": "scale(1)"});
@@ -180,7 +200,7 @@ $('#design-tv-guide-btn').click(function(){
 
 
 var webCollection = ["src/web/slide1.jpg", "src/web/slide2.jpg", "src/web/slide3.jpg", "src/web/slide4.jpg", "src/web/slide5.jpg", "src/web/slide6.jpg", ]
-var webCollectionDescript = ['LIQUID LAB <br/> General Assembly 2020', 'LIQUID LAB <br/> General Assembly 2020', 'LIQUID LAB <br/> General Assembly 2020', 'LIQUID LAB <br/> General Assembly 2020', 'LIQUID LAB <br/> General Assembly 2020', 'LIQUID LAB <br/> General Assembly 2020', 'LIQUID LAB <br/> General Assembly 2020']
+var webCollectionDescript = ['LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020']
 
 
 var filmCollection = ["src/film/comingsoon.svg"]
@@ -199,7 +219,7 @@ $('.design-channel').click(function(){
     var activeDescript = [];
     if ($(this).attr("id") == "design-guide-close"){activeCategory = fullDesignCollection; activeDescript = fullDesignDescript }
     else if($(this).index() === 0){activeCategory = webCollection; activeDescript = webCollectionDescript }
-    else if($(this).index()===1){$('#design-video').css("display", "block"); $('#design-target').css('display', 'none'); $('#design-project-description').text("California Love Magazine");}
+    else if($(this).index()===1){$('#design-video').css("display", "block"); $('#design-target').css('display', 'none'); $('#design-project-description').text("Golden Coast Magazine");}
     else if($(this).index()===2){activeCategory = filmCollection; activeDescript = filmCollectionDescript}
     
     var categoryChannelCount = activeCategory.length;
@@ -283,7 +303,7 @@ var h = window.innerHeight;
 
 function positionTVS(){
     $('.tv-window').each(function(){
-        // $('#the-body').css({"transform": "scale(1)", "margin": "0", "left": "0"})
+        
         var tvWrapper = document.getElementById("tv-wrapper").getBoundingClientRect();
         var boundingBOX = document.getElementById("tvs").getBoundingClientRect();
         var designBOX = document.getElementById("design").getBoundingClientRect();
@@ -307,8 +327,11 @@ function positionTVS(){
 
 $(window).on('resize', positionTVS).trigger('resize');
 $(window).resize(mediaQUERY);
+$(window).resize(function(){
+    $('#the-body').css({"transform": "scale(1)"})
+})
 window.onload = function() {
-    init();
+   
     positionTVS
   };
 

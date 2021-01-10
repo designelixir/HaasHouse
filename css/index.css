@@ -107,7 +107,7 @@ h4 {font-size: 90%; font-family: 'Rainer-Hairline', sans-serif; line-height: 0px
 #tv-container {box-sizing: border-box; position: fixed; height: 80vh; top: 20vh; width: 100vw;  display: flex; align-items: center; justify-content: center;}
 #tv-wrapper {box-sizing: border-box; height: 100%; width: 100%; display: flex; justify-content: center; align-items: flex-end; position: relative; background-image: url('../src/spread-gifs.gif'); background-size: contain; background-position: center bottom; background-repeat: no-repeat;}
 #tv-contents-container { box-sizing: border-box; position: absolute; top: 0; left: 0; height: 100%; width: 100%; }
-#tvs {box-sizing: border-box; max-width: 100%; max-height: 100%;  }
+#tvs {box-sizing: border-box;  max-width: 100%; max-height: 100%;  }
 
 /* WINDOWS  */
 
@@ -121,11 +121,13 @@ h4 {font-size: 90%; font-family: 'Rainer-Hairline', sans-serif; line-height: 0px
 
 #contact-sec {justify-content: center;}
 
-.contact-social-icons {height: 20%; width: 100%; display: flex; align-items: center; justify-content: center;}
-.contact-social-icons img {width: 75px; padding: 10%;}
+.contact-social-icons {height: 20%; width: 100%; padding-top: calc(30% + 100px);  display: flex; align-items: center; justify-content: center;}
+.contact-social-icons img {width: 50px; padding: 10%;}
+#mail-img:hover {transform: scale(1.25)}
 
 
 /* TV BOXES  */
+/* .tv-window {border: 3px solid magenta; } */
 .tv-window h1 {font-size: 2rem;}
 .tv-screen-wrapper {display: inline-flex; align-items: center; justify-content: center; height: 100%; }
 .tv-screen {display: flex; align-items: center; justify-content: center; float: left; z-index: 10;}
@@ -135,7 +137,7 @@ h4 {font-size: 90%; font-family: 'Rainer-Hairline', sans-serif; line-height: 0px
 /* DESIGN */
 #design {margin-left: 49.25%; margin-bottom: 3%; position: absolute; height: 19%; width: 22%; }
 #design-screen {height: 80%; width: 85%;}
-#design-screen-nav { height: 95%;  margin-right: 5%; float: right; width: 90%; z-index: 10; background: #1e1e1e; display: none;}
+#design-screen-nav { height: 90%;  margin-right: 5%; float: right; margin-top: 10%; width: 90%; z-index: 10; background: #1e1e1e; display: none;}
 
 #design-tv-guide {padding: 10% 5%;}
 #design-video {display: none; width: 100%; height: 100%;}
@@ -143,7 +145,7 @@ h4 {font-size: 90%; font-family: 'Rainer-Hairline', sans-serif; line-height: 0px
 /* FILM */
 #film {top: 1.5vh; margin-left: 51%; position: absolute; height: 18%; width: 22%; }
 #film-screen:hover { background-image: url('../src/statics/countdown.gif'); background-size: 100% 100%;}
-#film-screen {height: 85%; width: 100%; margin-left: 5%;  border-radius: 5px; }
+#film-screen {height: 85%; width: 90%; margin-left: 5%;  border-radius: 5px; }
 #film-screen-nav {background-color: #0e1c2c; height: 92%; margin: 17% 12% 0 0; padding: 25%; display: none;}
 #film-screen-nav img:hover {transform: scale(1.1)}
 #film-iframe {border-radius: 3px;}
@@ -195,6 +197,7 @@ h4 {font-size: 90%; font-family: 'Rainer-Hairline', sans-serif; line-height: 0px
     #tv-container {width: 160%; margin-left: -30%;}
     h1 {font-size: 56px;}
     a {font-size: 32px!important;}
+    #tv-container {padding-bottom: 25%; height: 90vh; border: 2px solid yellow;}
     
   }
 
@@ -240,3 +243,5 @@ h4 {font-size: 90%; font-family: 'Rainer-Hairline', sans-serif; line-height: 0px
 .slide-out-bl{-webkit-animation:slide-out-bl .5s cubic-bezier(.55,.085,.68,.53) both;animation:slide-out-bl .5s cubic-bezier(.55,.085,.68,.53) both}
 @-webkit-keyframes slide-out-bl{0%{-webkit-transform:translateY(0) translateX(0);transform:translateY(0) translateX(0);opacity:1}100%{-webkit-transform:translateY(1000px) translateX(-1000px);transform:translateY(1000px) translateX(-1000px);opacity:0}}@keyframes slide-out-bl{0%{-webkit-transform:translateY(0) translateX(0);transform:translateY(0) translateX(0);opacity:1}100%{-webkit-transform:translateY(1000px) translateX(-1000px);transform:translateY(1000px) translateX(-1000px);opacity:0}}@-webkit-keyframes slide-out-bl{0%{-webkit-transform:translateY(0) translateX(0);transform:translateY(0) translateX(0);opacity:1}100%{-webkit-transform:translateY(1000px) translateX(-1000px);transform:translateY(1000px) translateX(-1000px);opacity:0}}@keyframes slide-out-bl{0%{-webkit-transform:translateY(0) translateX(0);transform:translateY(0) translateX(0);opacity:1}100%{-webkit-transform:translateY(1000px) translateX(-1000px);transform:translateY(1000px) translateX(-1000px);opacity:0}}
 
+.bounce-top{-webkit-animation:bounce-top 2s both;animation:bounce-top 2s both}
+@-webkit-keyframes bounce-top{0%{-webkit-transform:translateY(-45px);transform:translateY(-45px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:1}24%{opacity:1}40%{-webkit-transform:translateY(-24px);transform:translateY(-24px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}65%{-webkit-transform:translateY(-12px);transform:translateY(-12px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}82%{-webkit-transform:translateY(-6px);transform:translateY(-6px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}93%{-webkit-transform:translateY(-4px);transform:translateY(-4px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}25%,55%,75%,87%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}100%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:1}}@keyframes bounce-top{0%{-webkit-transform:translateY(-45px);transform:translateY(-45px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:1}24%{opacity:1}40%{-webkit-transform:translateY(-24px);transform:translateY(-24px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}65%{-webkit-transform:translateY(-12px);transform:translateY(-12px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}82%{-webkit-transform:translateY(-6px);transform:translateY(-6px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}93%{-webkit-transform:translateY(-4px);transform:translateY(-4px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}25%,55%,75%,87%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}100%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:1}}
