@@ -192,7 +192,7 @@ var webCollection = ["src/web/slide1.jpg", "src/web/slide2.jpg", "src/web/slide3
 var webCollectionDescript = ['LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020']
 
 var printCollection = ["src/print/golden-coast-2.gif", "src/print/sea-cloud.jpg"]
-var printCollectionDescript = ["Golden Coast Magazine", "Sea Cloud Poster"]
+var printCollectionDescript = ["Golden Coast Magazine", "Sea Cloud Film Poster"]
 
 var filmCollection = ["src/film/comingsoon.svg"]
 var filmCollectionDescript = ["Check back later!"]
