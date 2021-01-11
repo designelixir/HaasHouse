@@ -136,7 +136,7 @@ h4 {font-size: 90%; font-family: 'Rainer-Hairline', sans-serif; line-height: 0px
 /* DESIGN */
 #design {margin-left: 49.25%; margin-bottom: 3%; position: absolute; height: 19%; width: 22%; }
 #design-screen {height: 80%; width: 85%;}
-#design-screen-nav { height: 90%;  margin-right: 5%; float: right; margin-top: 10%; width: 90%; z-index: 10; background: #1e1e1e; display: none;}
+#design-screen-nav { height: 90%;  margin-right: 5%; float: right; margin-top: 15%; width: 95%; z-index: 10; background: #1e1e1e; border: 2px solid black; border-radius: 5px;  display: none;}
 
 #design-tv-guide {padding: 10% 5%;}
 #design-target {max-height: 100%;}

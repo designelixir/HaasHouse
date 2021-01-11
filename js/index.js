@@ -1,3 +1,4 @@
+positionTVS;
 var bodymeasure = document.getElementById('the-body').getBoundingClientRect();
 
 var thisScaler = bodymeasure.width /500;
