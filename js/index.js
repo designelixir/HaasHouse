@@ -1,15 +1,7 @@
-var thisScale = 4;
-var thisMultiplier = .4;
-
 var bodymeasure = document.getElementById('the-body').getBoundingClientRect();
-var filmCONTAINER = document.getElementById('film').getBoundingClientRect();
 
-console.log("width:" + bodymeasure.width)
-console.log("body height:"+ bodymeasure.height)
-console.log("film left"+ filmCONTAINER.left + " filmright"+ filmCONTAINER.right)
+var thisScaler = bodymeasure.width /500;
 
-var filmLeft = filmCONTAINER.width / bodymeasure.width;
-console.log(filmLeft)
 // #####################################################################################################################
 // ZOOM FILM TV
 var clickFilm = 0; 
@@ -17,14 +9,10 @@ $('.film-toggle').click(function(){
     clickFilm++;
 
     var filmCONTAINER = document.getElementById('film').getBoundingClientRect();
-    var bodymeasure = document.getElementById('the-body').getBoundingClientRect();
     var tvSPREAD = document.getElementById('tvs').getBoundingClientRect();
-
-    var tvbodyDIFFheight = (bodymeasure.height - tvSPREAD.height) / (bodymeasure.height);
-    var tvbodyDIFFwidth = (bodymeasure.width - tvSPREAD.width) / bodymeasure.width;
-
-    var transformfilmY = 28% - tvbodyDIFFheight;
-    var transformfilmX = 60% - tvbodyDIFFwidth;
+    // var thisScaler = filmCONTAINER.width / bodymeasure.width *17;
+    var transformfilmX = filmCONTAINER.x + (filmCONTAINER.width / 2);
+    var transformfilmY = filmCONTAINER.bottom - (filmCONTAINER.height / 2 ) - 100;
 
     if(clickFilm % 2 === 0){
         $('#the-body').css({"transform": "scale(1)" });
@@ -34,14 +22,13 @@ $('.film-toggle').click(function(){
         $('#film-screen').css({"border": "none"})
     } else {
         $('#film-screen').css({"border": "2px solid #5d6564"})
-        $('#the-body').css({"transform": "scale("+ filmLeft * 20 +")", "transform-origin-x": transformfilmX, "transform-origin-y": transformfilmY});
+        $('#the-body').css({"transform": "scale("+ thisScaler + ")", "transform-origin-x": transformfilmX, "transform-origin-y": transformfilmY});
         $('#film-iframe').css("display", "block");
         $('#film-link').css("display", "none");
         $('#film-screen-nav').css("display", "block");
         $('.tv-11').css("animation", "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both");
     }
-    console.log(bodymeasure);
-    console.log(filmCONTAINER);
+
 });
 
 // #####################################################################################################################
@@ -72,9 +59,11 @@ var clickPhotoTV = 0;
 $('.photo-toggle').click(function(){
     clickPhotoTV++;
     var photoBOX = document.getElementById('photo').getBoundingClientRect();
-
+    var transformfilmX = photoBOX.x + (photoBOX.width / 2.25);
+    var transformfilmY = photoBOX.y + (photoBOX.height / 2);
+    
     if(clickPhotoTV % 2 === 0){
-        $('#the-body').css({"transform": "scale(1)", "transform-origin-x": (photoBOX.left ), "transform-origin-y": (photoBOX.bottom)});
+        $('#the-body').css({"transform": "scale(1)", "transform-origin-x": transformfilmX, "transform-origin-y": transformfilmY});
         $('#photo-link').css("display", "block");
         $('#photo-screen').css({"background-image": "none"})
 
@@ -82,7 +71,7 @@ $('.photo-toggle').click(function(){
         $('#photo-screen-nav').css({"display": "none"})
         $('#photo-target').removeAttr("src")
     } else {
-        $('#the-body').css({"transform": "scale(" + thisScale +")", "transform-origin-x": (photoBOX.left + 100), "transform-origin-y": (photoBOX.top + 100 )});
+        $('#the-body').css({"transform": "scale("+thisScaler+")", "transform-origin-x": transformfilmX, "transform-origin-y": transformfilmY});
         $('#photo-link').css("display", "none");
         $('#photo-screen').css({"background-color":"black", "background-image": "url(src/statics/blue-static.gif)", "background-size": "cover", "background-repeat": "no-repeat"})
         $('#photo-tv-guide').css({"display": "block"})
@@ -93,23 +82,24 @@ $('.photo-toggle').click(function(){
 var peopleCollection = ["src/People/one.jpg", "src/People/two.jpg", "src/People/three.jpg", "src/People/four.jpg", "src/People/five.jpg", "src/People/six.jpg", "src/People/seven.jpg" , "src/People/eight.jpg" , "src/People/nine.jpg"  ]
 var peopleCollectionDescript = ['35mm <br/> MIKE CHAMBERLAIN <br/> Pacifica, CA', '35mm <br/>AMY EHARA<br/> Pacifica, CA', '35mm <br/>MCKENNA KOLEDO <br/> Pacific Palisades, CA', '35mm <br/>LONE PADDLEBOARDER <br/> Mavericks Beach, CA', '35mm <br/>MIKE CHAMBERLAIN<br/> Half Moon Bay, CA', '35mm <br/>EMMA DEVINCENZI <br/> San Francisco, CA', '35mm <br/>EMMA DEVINCENZI<br/> San Francisco, CA', '35mm <br/> MIKE CHAMBERLAIN <br/> Pacifica, CA', '35mm <br/>LAWRENCE RICKFORD<br/> Pacifica, CA' ]
 
-var placesCollection = ["src/Places/one.jpg", "src/Places/two.jpg", "src/Places/three.jpg", "src/Places/four.jpg", "src/Places/five.jpg", "src/Places/six.jpg", "src/Places/seven.jpg", "src/Places/eight.jpg", "src/Places/nine.jpg", "src/Places/ten.jpg", "src/Places/eleven.jpg" ]
-var placesCollectionDescript = ['35mm <br/> Davenport, CA', '35mm <br/> Pigeon Point Lighthouse, CA', '35mm <br/> San Francisco, CA', '35mm <br/>Manhattan Beach, CA', '35mm <br/>Coroico, Bolivia', '35mm <br/>Davenport, CA', '35mm <br/>Pacific Ocean', '35mm <br/>San Francisco, CA', '35mm <br/>Foster City, CA', '35mm <br/> Pigeon Point Lighthouse', '35mm <br/> MARINA DISTRICT <br/> San Francisco, CA' ]
+var placesCollection = ["src/Places/one.jpg", "src/Places/two.jpg", "src/Places/three.jpg", "src/Places/four.jpg", "src/Places/5.jpg", "src/Places/five.jpg", "src/Places/six.jpg", "src/Places/seven.jpg", "src/Places/eight.jpg", "src/Places/nine.jpg", "src/Places/ten.jpg", "src/Places/eleven.jpg" ]
+var placesCollectionDescript = ['35mm <br/> Davenport, CA', '35mm <br/> Pigeon Point Lighthouse, CA', '35mm <br/> San Francisco, CA', '35mm <br/>Manhattan Beach, CA', '35mm <br/> Santa Cruz, CA', '35mm <br/>Coroico, Bolivia', '35mm <br/>Davenport, CA', '35mm <br/>Pacific Ocean', '35mm <br/>San Francisco, CA', '35mm <br/>Foster City, CA', '35mm <br/> Pigeon Point Lighthouse', '35mm <br/> MARINA DISTRICT <br/> San Francisco, CA' ]
 
-var thingsCollection = ["src/Things/one.jpg", "src/Things/two.JPG", "src/Things/three.jpg", "src/Things/four.jpg"]
-var thingsCollectionDescript = ['35mm <br/>PALACE OF FINE ARTS <br/> San Francisco, CA', '35mm <br/> ATLAS GENUS CONCERT <br/> Boulder, CO', '35mm <br/>MARINA DISTRICT <br/> San Francisco, CA', '35mm <br/>PALACE OF FINE ARTS <br/> San Francisco, CA'  ]
+var thingsCollection = ["src/Things/one.jpg", "src/Things/two.JPG", "src/Things/three.jpg", "src/Things/four.jpg", "src/Things/five.jpg"]
+var thingsCollectionDescript = ['35mm <br/>PALACE OF FINE ARTS <br/> San Francisco, CA', '35mm <br/> ATLAS GENUS CONCERT <br/> Boulder, CO', '35mm <br/>MARINA DISTRICT <br/> San Francisco, CA', '35mm <br/>PALACE OF FINE ARTS <br/> San Francisco, CA', '35mm <br/> SANTA CRUZ BOARDWALK <br/> Santa Cruz, CA'   ]
 
 var fullPhotoCollection = [].concat(peopleCollection, placesCollection, thingsCollection);
 var fullPhotoDescript = [].concat(peopleCollectionDescript, placesCollectionDescript, thingsCollectionDescript)
 
-
+var activeCategory = [];
+var activeDescript = [];
 
 // TOGGLE BETWEEN PHOTOS 
 $('.photo-channel').click(function(){
     $('#photo-tv-guide').css("display", "none");
     $('#photo-screen').css("background-image", "none");
-    var activeCategory = [];
-    var activeDescript = [];
+    activeCategory = [];
+    activeDescript = [];
 
     if ($(this).attr("id") == "photo-guide-close"){activeCategory = fullPhotoCollection; activeDescript = fullPhotoDescript }
     else if($(this).index() === 0){activeCategory = peopleCollection; activeDescript = peopleCollectionDescript }
@@ -143,8 +133,7 @@ $('#photo-tv-guide-btn').click(function(){
     $('#photo-target').removeAttr("src");
     $('#photo-screen').css({"background-image": "url(src/statics/blue-static.gif)"})
     $('#photo-tv-guide').css({"display": "block"});
-    activeCategory = [];
-    activeDescript = [];
+    
 })
 
 
@@ -165,7 +154,10 @@ function triggerD(descriptionNumber,show){
 var designCounter = 0;
 $('.design-toggle').click(function(){
     designCounter++;
-    $('#design-video').css("display", "none")
+    var designBOX = document.getElementById('design').getBoundingClientRect();
+
+    var transformfilmX = designBOX.left + (designBOX.width / 2);
+    var transformfilmY = designBOX.bottom + (designBOX.height / 2) - 125;
 
     if(designCounter % 2 === 0){ //zoom out
         $('#the-body').css({"transform": "scale(1)"});
@@ -176,8 +168,7 @@ $('.design-toggle').click(function(){
         $('.shadows').css("display", "block");
         $('#design-screen').css("background-image", "none");
     } else {
-        var designBOX = document.getElementById('design').getBoundingClientRect();
-        $('#the-body').css({"transform": "scale(3)", "transform-origin-x": (designBOX.left + 100), "transform-origin-y": (designBOX.bottom) });
+        $('#the-body').css({"transform": "scale("+thisScaler+")", "transform-origin-x": transformfilmX, "transform-origin-y": transformfilmY });
         $('#design-link').css("display", "none");
         $('#design-tv-guide').css("display", "block");
         $('#design-screen').css({"background-color": "black", "background-image": "url(src/statics/blue-static.gif)", "background-size": "cover", "background-repeat": "no-repeat"})
@@ -193,15 +184,15 @@ $('#design-tv-guide-btn').click(function(){
     $('#design-project-description').text("");
     $('#design-tv-guide').css("display", "block");
     $('#design-target').css("display", "block");
-    $('#design-video').css("display", "none")
-    activeCategory = [];
-    activeDescript = [];
+   
 })
 
 
 var webCollection = ["src/web/slide1.jpg", "src/web/slide2.jpg", "src/web/slide3.jpg", "src/web/slide4.jpg", "src/web/slide5.jpg", "src/web/slide6.jpg", ]
 var webCollectionDescript = ['LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020']
 
+var printCollection = ["src/print/golden-coast-2.gif", "src/print/sea-cloud.jpg"]
+var printCollectionDescript = ["Golden Coast Magazine", "Sea Cloud Poster"]
 
 var filmCollection = ["src/film/comingsoon.svg"]
 var filmCollectionDescript = ["Check back later!"]
@@ -209,17 +200,18 @@ var filmCollectionDescript = ["Check back later!"]
 var fullDesignCollection = [].concat(webCollection, filmCollection);
 var fullDesignDescript = [].concat(webCollectionDescript,filmCollectionDescript)
 
-
+var activeCategory = [];
+var activeDescript = [];
 
 $('.design-channel').click(function(){
     $('#design-tv-guide').css("display", "none");
     $('#design-screen').css("background-image", "none")
 
-    var activeCategory = [];
-    var activeDescript = [];
+    activeCategory = [];
+    activeDescript = [];
     if ($(this).attr("id") == "design-guide-close"){activeCategory = fullDesignCollection; activeDescript = fullDesignDescript }
     else if($(this).index() === 0){activeCategory = webCollection; activeDescript = webCollectionDescript }
-    else if($(this).index()===1){$('#design-video').css("display", "block"); $('#design-target').css('display', 'none'); $('#design-project-description').text("Golden Coast Magazine");}
+    else if($(this).index()===1){activeCategory = printCollection; activeDescript = printCollectionDescript}
     else if($(this).index()===2){activeCategory = filmCollection; activeDescript = filmCollectionDescript}
     
     var categoryChannelCount = activeCategory.length;
@@ -312,14 +304,13 @@ function positionTVS(){
         var leftspacer = (tvWrapper.width - boundingBOX.width);
 
         if (w / 2 > h){
-           console.log("crotch")
-            $('#film').css({"margin-top": topspacer, "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.45, "top": "0.5%", "margin-left": "50.5%" })
+            $('#film').css({"margin-top": topspacer + 50, "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.45, "top": "0.5%", "margin-left": "50.5%" })
             $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.35), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.75, "width": boundingBOX.width / 4, "left": "26%"  })        
             $('#design').css({"bottom": boundingBOX.bottom / designBOX.bottom, "height": boundingBOX.height / 3.5, "width": boundingBOX.width / 4.4, "margin-left": "49.75%", "margin-bottom": "2%" })
         
         } else {
             $('#film').css({"margin-top": topspacer, "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.45 })
-            $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.3), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.75, "width": boundingBOX.width / 4, "left": "26.5%"  })        
+            $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.3), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.75, "width": boundingBOX.width / 3.95, "left": "26.5%"  })        
             $('#design').css({"bottom": boundingBOX.bottom / designBOX.bottom, "height": boundingBOX.height / 3.5, "width": boundingBOX.width / 4.4,  "margin-bottom": "3.25%" })
         }
     });
@@ -331,18 +322,18 @@ $(window).resize(function(){
     $('#the-body').css({"transform": "scale(1)"})
 })
 window.onload = function() {
-   
-    positionTVS
+    positionTVS;
+    if ($(window).width() <= 900){	
+        console.log('triggered')
+        thisScaler = bodymeasure.width / 400;
+    }
   };
 
 
 function mediaQUERY(){
-	if ($(window).width() <= 900){	
-        
-        // $("#tv-container").css({"width": "160%", "margin-left": "-30%"});
-        
-    }	
-    thisScale = 3;
-    thisMultiplier = 0.5;
+		
+    
 }
+
+
 
