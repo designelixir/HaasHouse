@@ -1,6 +1,5 @@
 positionTVS;
 var bodymeasure = document.getElementById('the-body').getBoundingClientRect();
-
 var thisScaler = bodymeasure.width /500;
 
 // #####################################################################################################################
@@ -34,21 +33,21 @@ $('.film-toggle').click(function(){
 
 // #####################################################################################################################
 //TOGGLE THROUGH FILMS 
-var filmLinks = ["https://player.vimeo.com/video/494815946?quality=1080p", "https://player.vimeo.com/video/494873166?quality=1080p"];
-var currentVid = 0;
-$('#film-iframe').attr("src", filmLinks[currentVid]); //set initial video 
-//next button
-$('#movie-nav-next').click(function(){
-    if (currentVid === filmLinks.length -1 ){currentVid = -1;} //loops back 
-    currentVid++;
-    $('#film-iframe').attr("src", filmLinks[currentVid]);
-});
-//back button
-$('#movie-nav-prev').click(function(){
-    if(currentVid <= 0){currentVid = filmLinks.length;}
-    currentVid--;
-    $('#film-iframe').attr("src", filmLinks[currentVid]);
-});
+// var filmLinks = ["https://player.vimeo.com/video/494815946?quality=1080p", "https://player.vimeo.com/video/494873166?quality=1080p"];
+// var currentVid = 0;
+// $('#film-iframe').attr("src", filmLinks[currentVid]); //set initial video 
+// //next button
+// $('#movie-nav-next').click(function(){
+//     if (currentVid === filmLinks.length -1 ){currentVid = -1;} //loops back 
+//     currentVid++;
+//     $('#film-iframe').attr("src", filmLinks[currentVid]);
+// });
+// //back button
+// $('#movie-nav-prev').click(function(){
+//     if(currentVid <= 0){currentVid = filmLinks.length;}
+//     currentVid--;
+//     $('#film-iframe').attr("src", filmLinks[currentVid]);
+// });
 
 
 
@@ -305,13 +304,13 @@ function positionTVS(){
         var leftspacer = (tvWrapper.width - boundingBOX.width);
 
         if (w / 2 > h){
-            $('#film').css({"margin-top": topspacer + 50, "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.45, "top": "0.5%", "margin-left": "50.5%" })
+            $('#film').css({"margin-top": topspacer + 50, "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.45, "top": "0.5%", "margin-left": "50%" })
             $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.35), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.75, "width": boundingBOX.width / 4, "left": "26%"  })        
             $('#design').css({"bottom": boundingBOX.bottom / designBOX.bottom, "height": boundingBOX.height / 3.5, "width": boundingBOX.width / 4.4, "margin-left": "49.75%", "margin-bottom": "2%" })
         
         } else {
             $('#film').css({"margin-top": topspacer, "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.45 })
-            $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.3), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.75, "width": boundingBOX.width / 3.95, "left": "26.5%"  })        
+            $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.3), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.75, "width": boundingBOX.width / 3.95, "left": "26%"  })        
             $('#design').css({"bottom": boundingBOX.bottom / designBOX.bottom, "height": boundingBOX.height / 3.5, "width": boundingBOX.width / 4.4,  "margin-bottom": "3.25%" })
         }
     });
