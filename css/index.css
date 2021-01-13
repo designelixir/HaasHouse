@@ -127,16 +127,17 @@ h4 {font-size: 90%; font-family: 'Rainer-Hairline', sans-serif; line-height: 0px
 
 
 /* TV BOXES  */
+/* .tv-window {border: 3px solid lime;} */
 .tv-window h1 {font-size: 2rem;}
 .tv-screen-wrapper {display: inline-flex; align-items: center; justify-content: center; height: 100%; }
 .tv-screen {display: flex; align-items: center; justify-content: center; float: left; z-index: 10;}
-.tv-screen-nav {height: 100%;  float: right; z-index: 10; }
+.tv-screen-nav {height: 100%;  float: right; z-index: 10;   }
 
 
 /* DESIGN */
 #design {margin-left: 49.25%; margin-bottom: 3%; position: absolute; height: 19%; width: 22%; }
 #design-screen {height: 80%; width: 85%;}
-#design-screen-nav { height: 90%;  margin-right: 5%; float: right; margin-top: 15%; width: 95%; z-index: 10; background: #1e1e1e; border: 2px solid black; border-radius: 5px;  display: none;}
+#design-screen-nav { height: 60%;  margin-right: 5%; float: right;  width: 95%; z-index: 10; display: none;}
 
 #design-tv-guide {padding: 10% 5%;}
 #design-target {max-height: 100%;}
@@ -146,15 +147,15 @@ h4 {font-size: 90%; font-family: 'Rainer-Hairline', sans-serif; line-height: 0px
 #film {top: 1.5vh; margin-left: 50.5%; position: absolute; height: 18%; width: 22%; }
 #film-screen:hover { background-image: url('../src/statics/countdown.gif'); background-size: 100% 100%;}
 #film-screen {height: 85%; width: 90%; margin-left: 5%;  border-radius: 5px; }
-#film-screen-nav {background-color: #0e1c2c; height: 92%; margin: 17% 12% 0 0; padding: 25%; display: none;}
+#film-screen-nav { height: 92%;  padding: 40% 30% 0 20%; display: none;}
 #film-screen-nav img:hover {transform: scale(1.1)}
 #film-iframe {border-radius: 3px;}
 
 /* PHOTO */
-#photo {margin-bottom: 5%; left: 26.75%; position: absolute; height: 25%; width: 22%; }
+#photo {margin-bottom: 5%; left: 27%; position: absolute; height: 25%; width: 22%; }
 #photo-screen {height: 90%; width: 90%;  border-radius: 5px;}
 #photo-target {max-height: 100%;}
-#photo-screen-nav {width: 100%; height: 100%; display: none; border: 1px solid rgba(0,0,0,0);  background-color: #3d3b37; border-radius: 3px; border: 1px solid #332c2b;  flex-direction: column; text-align: center;}
+#photo-screen-nav {width: 100%; height: 100%; padding-top: 10%; display: none;flex-direction: column; text-align: center;}
 
 #photo-tv-guide {padding: 10% 10%;}
 
