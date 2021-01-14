@@ -1,6 +1,9 @@
 positionTVS;
 var bodymeasure = document.getElementById('the-body').getBoundingClientRect();
-var thisScaler = bodymeasure.width /500;
+var boundingBOX = document.getElementById("tvs").getBoundingClientRect();
+
+var thisScaler = bodymeasure.width / (boundingBOX.width / 2.4);
+
 
 // #####################################################################################################################
 // ZOOM FILM TV
@@ -22,7 +25,7 @@ $('.film-toggle').click(function(){
         $('#film-screen').css({"border": "none"})
     } else {
         $('#film-screen').css({"border": "2px solid #5d6564"})
-        $('#the-body').css({"transform": "scale("+ thisScaler + ")", "transform-origin-x": transformfilmX, "transform-origin-y": transformfilmY});
+        $('#the-body').css({"transform": "scale("+thisScaler+")", "transform-origin-x": transformfilmX, "transform-origin-y": transformfilmY});
         $('#film-iframe').css("display", "block");
         $('#film-link').css("display", "none");
         $('#film-screen-nav').css("display", "block");
@@ -30,27 +33,6 @@ $('.film-toggle').click(function(){
     }
 
 });
-
-// #####################################################################################################################
-//TOGGLE THROUGH FILMS 
-// var filmLinks = ["https://player.vimeo.com/video/499418125?quality=1080p", "https://player.vimeo.com/video/494873166?quality=1080p"];
-// var currentVid = 0;
-// $('#film-iframe').attr("src", filmLinks[currentVid]); //set initial video 
-// //next button
-// $('#movie-nav-next').click(function(){
-//     if (currentVid === filmLinks.length -1 ){currentVid = -1;} //loops back 
-//     currentVid++;
-//     $('#film-iframe').attr("src", filmLinks[currentVid]);
-// });
-// //back button
-// $('#movie-nav-prev').click(function(){
-//     if(currentVid <= 0){currentVid = filmLinks.length;}
-//     currentVid--;
-//     $('#film-iframe').attr("src", filmLinks[currentVid]);
-// });
-
-
-
 
 
 // #####################################################################################################################
@@ -65,7 +47,7 @@ $('.photo-toggle').click(function(){
     if(clickPhotoTV % 2 === 0){
         $('#the-body').css({"transform": "scale(1)", "transform-origin-x": transformfilmX, "transform-origin-y": transformfilmY});
         $('#photo-link').css("display", "block");
-        $('#photo-screen').css({"background-image": "none"})
+        $('#photo-screen').css({"background-image": "none", "background-color": "rgba(0,0,0,0)"})
 
         $('#photo-tv-guide').css({"display": "none"})
         $('#photo-screen-nav').css({"display": "none"})
@@ -168,7 +150,7 @@ $('.design-toggle').click(function(){
         $('.shadows').css("display", "block");
         $('#design-screen').css("background-image", "none");
     } else {
-        $('#the-body').css({"transform": "scale("+thisScaler * 1.25+")", "transform-origin-x": transformfilmX, "transform-origin-y": transformfilmY });
+        $('#the-body').css({"transform": "scale("+thisScaler +")", "transform-origin-x": transformfilmX, "transform-origin-y": transformfilmY });
         $('#design-link').css("display", "none");
         $('#design-tv-guide').css("display", "block");
         $('#design-screen').css({"background-color": "black", "background-image": "url(src/statics/blue-static.gif)", "background-size": "cover", "background-repeat": "no-repeat"})
@@ -293,50 +275,54 @@ $('.contact-link').click(function(){
 
 
 function positionTVS(){
-    $('.tv-window').each(function(){
+    var tvWrapper = document.getElementById("tv-wrapper").getBoundingClientRect();
+    var boundingBOX = document.getElementById("tvs").getBoundingClientRect();
+    var designBOX = document.getElementById("design").getBoundingClientRect();
+    var photoBOX = document.getElementById("photo").getBoundingClientRect();
+    var filmBOX = document.getElementById("film").getBoundingClientRect();
 
-        var w = window.innerWidth;
-        var h = window.innerHeight;
-        var tvWrapper = document.getElementById("tv-wrapper").getBoundingClientRect();
-        var boundingBOX = document.getElementById("tvs").getBoundingClientRect();
-        var designBOX = document.getElementById("design").getBoundingClientRect();
-        var photoBOX = document.getElementById("photo").getBoundingClientRect();
-        var filmBOX = document.getElementById("film").getBoundingClientRect();
+    var topspacer = tvWrapper.height - boundingBOX.height;
+    var leftspacer = (tvWrapper.width - boundingBOX.width);
+    $('#film').css({
+        "margin-top": topspacer,
+        "height": boundingBOX.height / 3.6,
+        "width": boundingBOX.width / 4.45,
+        "top": "1.65%",
+        "margin-left": "50.65%" 
+    })
+    $('#photo').css({
+        "margin-top": topspacer, 
+        "top": boundingBOX.height / 3,
+        "bottom": "27%",
+        "margin-left": leftspacer / 4, 
+        "height": boundingBOX.height /3.4, 
+        "width": boundingBOX.width / 3.9, 
+        "left": "26%"  
+    })
+    $('#design').css({
+        "bottom": boundingBOX.bottom / designBOX.bottom, 
+        "height": boundingBOX.height / 3.4, 
+        "width": boundingBOX.width / 4.3, 
+        "margin-left": leftspacer / 2, 
+        "left": boundingBOX.width / 2.05,
+        "top": boundingBOX.height / 1.55,
+        "margin-top": topspacer
+    })        
 
-        var topspacer = tvWrapper.height - boundingBOX.height;
-        var leftspacer = (tvWrapper.width - boundingBOX.width);
-
-        if (w / 2 > h){
-            $('#film').css({"margin-top": topspacer + (filmBOX.height * 0.05), "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.45, "top": "0.5%", "margin-left": "50.5%" })
-            $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.3), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.75, "width": boundingBOX.width / 4, "left": "26%"  })        
-            $('#design').css({"bottom": boundingBOX.bottom / designBOX.bottom, "height": boundingBOX.height / 3.55, "width": boundingBOX.width / 4.5, "margin-left": "49.75%", "margin-bottom": "2%" })
-        
-        } else {
-            $('#film').css({"margin-top": topspacer, "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.45 })
-            $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.3), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.75, "width": boundingBOX.width / 4, "left": "26%"  })        
-            $('#design').css({"bottom": boundingBOX.bottom / designBOX.bottom, "height": boundingBOX.height / 3.55, "width": boundingBOX.width / 4.5,  "margin-bottom": "3.25%" })
-        }
-    });
-}
-
-$(window).on('resize', positionTVS).trigger('resize');
-$(window).resize(mediaQUERY);
-$(window).resize(function(){
-    $('#the-body').css({"transform": "scale(1)"})
-})
-window.onload = function() {
-    positionTVS;
-    if ($(window).width() <= 900){	
-        console.log('triggered')
-        thisScaler = bodymeasure.width / 400;
-    }
-  };
-
-
-function mediaQUERY(){
-		
     
 }
 
 
 
+
+
+// if (w / 2 > h){
+//     $('#film').css({"margin-top": topspacer + (filmBOX.height * 0.05), "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.45, "top": "0.5%", "margin-left": "50.5%" })
+//     $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.3), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.75, "width": boundingBOX.width / 4, "left": "26%"  })        
+//     $('#design').css({"bottom": boundingBOX.bottom / designBOX.bottom, "height": boundingBOX.height / 3.55, "width": boundingBOX.width / 4.5, "margin-left": "49.75%", "margin-bottom": "2%" })
+
+// } else {
+//     $('#film').css({"margin-top": topspacer, "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.45 })
+//     $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.3), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.75, "width": boundingBOX.width / 4, "left": "26%"  })        
+//     $('#design').css({"bottom": boundingBOX.bottom / designBOX.bottom, "height": boundingBOX.height / 3.55, "width": boundingBOX.width / 4.5,  "margin-bottom": "3.25%" })
+// }
