@@ -135,13 +135,15 @@ h4 {font-size: 90%; font-family: 'Rainer-Hairline', sans-serif; line-height: 0px
 
 
 /* DESIGN */
-#design {margin-left: 49.25%; margin-bottom: 3%; position: absolute; height: 19%; width: 22%; }
+#design {margin-left: 49.25%; margin-bottom: 3%; position: absolute; height: 19%; width: 19%; }
 #design-screen {height: 80%; width: 85%;}
-#design-screen-nav { height: 60%;  margin-right: 5%; float: right;  width: 95%; z-index: 10; display: none;}
+#design-screen-nav { height: 60%; padding: 5%; float: right;  width: 100%; z-index: 10; display: none;}
 
 #design-tv-guide {padding: 10% 5%;}
 #design-target {max-height: 100%;}
 #design-video {display: none; width: 100%; height: 100%;}
+#design-screen-nav img:hover {transform: scale(1.25)}
+
 
 /* FILM */
 #film {top: 1.5vh; margin-left: 50.5%; position: absolute; height: 18%; width: 22%; }
@@ -156,6 +158,7 @@ h4 {font-size: 90%; font-family: 'Rainer-Hairline', sans-serif; line-height: 0px
 #photo-screen {height: 90%; width: 90%;  border-radius: 5px;}
 #photo-target {max-height: 100%;}
 #photo-screen-nav {width: 100%; height: 100%; padding-top: 10%; display: none;flex-direction: column; text-align: center;}
+#photo-screen-nav img:hover {transform: scale(1.25)}
 
 #photo-tv-guide {padding: 10% 10%;}
 
@@ -185,7 +188,7 @@ h4 {font-size: 90%; font-family: 'Rainer-Hairline', sans-serif; line-height: 0px
 
 .tv-guide-btn{font-size: 8px; width: 90%; margin: 0% 5%; line-height: 0; letter-spacing: 0;  padding: 15% 0px; text-align: center; background: yellow; border-style: outset; border: 1px outset ; color: black;}
 .tv-guide-btn:hover {border: 1px inset; background-color: gold;}
-.project-description {width: 95%; background: gray; color: white; font-size: 6px!important; font-family: 'Rainer-v04', sans-serif; letter-spacing: 0.25px; padding: 3px; margin: 10% 2.5%; line-height: 7px; text-align: left;}
+.project-description {width: 95%; background: gray; color: white; font-size: 0.65rem!important; font-family: 'Rainer-v04', sans-serif; letter-spacing: 0.25px; padding: 3px; margin: 10% 2.5%; line-height: 0.75rem; text-align: left;}
 
 @media only screen and (max-width: 900px) {
     .palm {height: 40%; width: auto;}

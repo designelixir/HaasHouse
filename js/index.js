@@ -168,7 +168,7 @@ $('.design-toggle').click(function(){
         $('.shadows').css("display", "block");
         $('#design-screen').css("background-image", "none");
     } else {
-        $('#the-body').css({"transform": "scale("+thisScaler+")", "transform-origin-x": transformfilmX, "transform-origin-y": transformfilmY });
+        $('#the-body').css({"transform": "scale("+thisScaler * 1.25+")", "transform-origin-x": transformfilmX, "transform-origin-y": transformfilmY });
         $('#design-link').css("display", "none");
         $('#design-tv-guide').css("display", "block");
         $('#design-screen').css({"background-color": "black", "background-image": "url(src/statics/blue-static.gif)", "background-size": "cover", "background-repeat": "no-repeat"})
@@ -309,12 +309,12 @@ function positionTVS(){
         if (w / 2 > h){
             $('#film').css({"margin-top": topspacer + (filmBOX.height * 0.05), "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.45, "top": "0.5%", "margin-left": "50.5%" })
             $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.3), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.75, "width": boundingBOX.width / 4, "left": "26%"  })        
-            $('#design').css({"bottom": boundingBOX.bottom / designBOX.bottom, "height": boundingBOX.height / 3.5, "width": boundingBOX.width / 4.4, "margin-left": "49.75%", "margin-bottom": "2%" })
+            $('#design').css({"bottom": boundingBOX.bottom / designBOX.bottom, "height": boundingBOX.height / 3.55, "width": boundingBOX.width / 4.5, "margin-left": "49.75%", "margin-bottom": "2%" })
         
         } else {
             $('#film').css({"margin-top": topspacer, "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.45 })
-            $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.3), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.75, "width": boundingBOX.width / 3.95, "left": "26%"  })        
-            $('#design').css({"bottom": boundingBOX.bottom / designBOX.bottom, "height": boundingBOX.height / 3.5, "width": boundingBOX.width / 4.4,  "margin-bottom": "3.25%" })
+            $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.3), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.75, "width": boundingBOX.width / 4, "left": "26%"  })        
+            $('#design').css({"bottom": boundingBOX.bottom / designBOX.bottom, "height": boundingBOX.height / 3.55, "width": boundingBOX.width / 4.5,  "margin-bottom": "3.25%" })
         }
     });
 }
