@@ -16,7 +16,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-ZTCJJ8YNMR');
     </script>
     
@@ -56,10 +55,10 @@
             
             <div id="tv-contents-container">
                 <!-- DESIGN -->
-                <div class="tv-window" id="design">
+                <div class="tv-window " id="design">
                     <div class='tv-screen-wrapper' style="width: 75%">
                         <div class="tv-screen" id="design-screen">
-                            <h2 class="design-toggle scale-up-hover link-remote" id="design-link">DESIGN</h2>
+                            <h2 class="scale-up-hover design-toggle link-remote" id="design-link" >DESIGN</h2>
                             <img id="design-target">
                             
                             <!-- DESIGN TV GUIDE -->
@@ -102,7 +101,7 @@
                     <div class="tv-screen-nav" style="width: 20%;">
                         
                             <div id="design-screen-nav">
-                                <img class="nav-buttons off-remote design-toggle" id="design-power" src="src/power.svg"  alt="exit photos tv" style="width: 50%; margin: 30% 25%;" >
+                                <img class="nav-buttons off-remote design-toggle power-btn" id="design-power" src="src/on_1.svg"  alt="exit photos tv" style="width: 50%; margin: 30% 25%;" >
                                 <div class="link-remote" style="height: 30%; width: 100%;">
                                     <img id="design-nav-backward" src="src/rewind.svg"  alt="forward button" style="float: left; width: 35%; margin: 5%;">
                                     <img id="design-nav-forward" src="src/forward.svg"  alt="forward button" style=" float: right; width: 35%; margin: 5%;">
@@ -161,8 +160,10 @@
                     </div>
                     <div class="tv-screen-nav" style="width: 15%;">
                         <div id="photo-screen-nav">
-                                <img src="src/power.svg" class="off-remote photo-toggle" alt="exit photos tv" style="width: 60%; margin: 5% 20%;">
-                                <img id="channel-switch-img" class="link-remote" src="src/toggle-switch.svg" alt="toggle between photos" style="width: 70%; margin: 15%;">   
+                                <img src="src/on_1.svg" class="off-remote photo-toggle power-btn" alt="exit photos tv" style="padding: 15%;">
+                                <img src="src/rewind.svg" id="last-photo" class="link-remote" style="width: 40%; margin-right: 10%;">
+                                <img src="src/forward.svg" id="next-photo" class="link-remote" style="width: 40%;">
+                                <!-- <img id="channel-switch-img" class="link-remote" src="src/toggle-switch.svg" alt="toggle between photos" style="width: 70%; margin: 15%;">    -->
                                 <h6 class="link-remote tv-guide-btn" id="photo-tv-guide-btn">TV GUIDE</h6>
                                 <p class="project-description" id="photo-project-description"></p>
                         </div>
@@ -180,9 +181,8 @@
                     </div>
                     <div class="tv-screen-nav" style="width: 15%;">
                         <div id="film-screen-nav" >
-                            <img src="src/power.svg" class="film-toggle off-remote" alt="exit film tv">
-                            <!-- <img class="link-remote" src="src/forward.svg" id="movie-nav-prev" alt="backwards button">
-                            <img class="link-remote" src="src/rewind.svg" id="movie-nav-next" alt="forward button"> -->
+                            <img src="src/on_1.svg" class="film-toggle off-remote power-btn" alt="exit film tv">
+                            
                         </div>
 
                     </div>
@@ -191,7 +191,7 @@
 
             </div>
             <!-- TV STACK IMAGE  -->
-            <img src="src/tv-spread-111.png" rel="preload" id="tvs" alt="stack of tvs" >
+            <img src="src/tv-spread-112.png" rel="preload" id="tvs" alt="stack of tvs" >
         </div>
         <div class="shadows"></div>
     </div>
@@ -218,7 +218,7 @@
                     <h2 style='color: black;'>THANKS FOR STOPPING BY!</h2>
                     <h2 style='color: black; padding-bottom: 30%;'>LET'S KEEP IN TOUCH.</h2>
                     <div class="bounce-top" id="mail-icon" style="height: 100px; ">
-                        <a id="mail-btn" href="mailto:casey@haashouse.co" target="blank" rel="noopener"><img id="mail-img" src="src/mail-anim6.gif" alt='email icon' style="width: 200px;"></a>
+                        <a id="mail-btn" href="mailto:casey@haashouse.co" target="blank" rel="noopener"><img id="mail-img" src="src/mail-gif.gif" alt='email icon' style="width: 200px;"></a>
                         
                     </div>
 
@@ -248,13 +248,15 @@
 <script>
 
     function ready(){
-        $('#loader').css({"animation": "fade-out 1s ease-out both", "z-index": "-1000"})
+        console.log("fired")
+        $('#loader').css({"animation": "fade-out 5s ease-out both", "z-index": "-1000"})
         positionTVS();
         if ($(window).width() <= 900){	
         console.log('triggered')
         thisScaler = bodymeasure.width / 400;
     }
     }
+    window.addEventListener('fullscreenchange', ready);
 
     window.addEventListener("DOMContentLoaded", ready);
     window.addEventListener("resize", ready);

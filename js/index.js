@@ -2,7 +2,7 @@ positionTVS;
 var bodymeasure = document.getElementById('the-body').getBoundingClientRect();
 var boundingBOX = document.getElementById("tvs").getBoundingClientRect();
 
-var thisScaler = 3;
+var thisScaler = bodymeasure.width / (boundingBOX.width / 2.45);
 
 
 // #####################################################################################################################
@@ -13,7 +13,6 @@ $('.film-toggle').click(function(){
 
     var filmCONTAINER = document.getElementById('film').getBoundingClientRect();
     var tvSPREAD = document.getElementById('tvs').getBoundingClientRect();
-    // var thisScaler = filmCONTAINER.width / bodymeasure.width *17;
     var transformfilmX = filmCONTAINER.x + (filmCONTAINER.width / 2);
     var transformfilmY = filmCONTAINER.bottom - (filmCONTAINER.height / 2 ) - 100;
 
@@ -25,7 +24,7 @@ $('.film-toggle').click(function(){
         $('#film-screen').css({"border": "none"})
     } else {
         $('#film-screen').css({"border": "2px solid #5d6564"})
-        $('#the-body').css({"transform": "scale("+thisScaler+")", "transform-origin-x": transformfilmX, "transform-origin-y": transformfilmY});
+        $('#the-body').css({"transform": "scale("+thisScaler+")", "transform-origin-x": transformfilmX, "transform-origin-y": transformfilmY + 50});
         $('#film-iframe').css("display", "block");
         $('#film-link').css("display", "none");
         $('#film-screen-nav').css("display", "block");
@@ -89,26 +88,36 @@ $('.photo-channel').click(function(){
     else if($(this).index()===2){activeCategory = thingsCollection; activeDescript = thingsCollectionDescript}
 
     var categoryChannelCount = activeCategory.length;
-    
-    $('#photo-target').attr("src", activeCategory[0]);
-    $('#photo-project-description').html(activeDescript[0])
-    var channelSwitch = 1;
-    $('#channel-switch-img').click(function(){        
-        var rotateThisMuch = channelSwitch * (360/13);
-        if (channelSwitch < categoryChannelCount) {
-            $('#channel-switch-img').css('transform', 'rotate('+rotateThisMuch+'deg)')
-            $('#photo-target').css("animation", "fade-in 1s cubic-bezier(.39,.575,.565,1.000) both")
+    var channelSwitch = 0; 
+    $('#photo-target').attr("src", activeCategory[channelSwitch]);
+    $('#photo-project-description').html(activeDescript[channelSwitch])
+   
+    $('#next-photo').click(function(){
+        channelSwitch++;
+        console.log(channelSwitch)
+        if (channelSwitch < categoryChannelCount){
             $('#photo-target').attr("src", activeCategory[channelSwitch]);
             $('#photo-project-description').html([activeDescript[channelSwitch]]) 
-               
+
         } else {
-            channelSwitch = 0;
+            channelSwitch = 0; 
             $('#photo-target').attr("src", activeCategory[channelSwitch]);
-            $('#photo-project-description').html(activeDescript[channelSwitch]);
-            $('#channel-switch-img').css('transform', 'rotate(0deg)')
+            $('#photo-project-description').html([activeDescript[channelSwitch]]) 
         }
-        channelSwitch++;
     });
+
+    $('#last-photo').click(function(){
+        channelSwitch--;
+        if(channelSwitch < 0 ){
+            channelSwitch = categoryChannelCount;
+            $('#photo-target').attr("src", activeCategory[channelSwitch]);
+            $('#photo-project-description').html([activeDescript[channelSwitch]]) 
+        } else {
+            $('#photo-target').attr("src", activeCategory[channelSwitch]);
+            $('#photo-project-description').html([activeDescript[channelSwitch]]) 
+        }    
+    });
+ 
 })
 
 $('#photo-tv-guide-btn').click(function(){
@@ -239,15 +248,14 @@ $('.about-link').click(function(){
         $('#about-window').css({"display": "block", "animation": "tilt-in-fwd-tl .6s cubic-bezier(.25,.46,.45,.94) both"})
         $('.about-link').text('X');
         $('.about-link').css({"color": "black"})
-        $('#haas-house').css({"color": "black"})
+        $('#haas-house').attr("src", "src/haas-house-black.svg")
         
 
     } else {
         $('#about-window').css({ "animation": "slide-out-br .5s cubic-bezier(.55,.085,.68,.53) both"})
         $('.about-link').text('ABOUT');
         $('.about-link').css({"color": "white"})
-        $('#haas-house').css({"color": "white"})
-        
+        $('#haas-house').attr("src", "src/haas-house-white.svg")        
     }
     aboutClickCount++;
 })
@@ -258,13 +266,13 @@ $('.contact-link').click(function(){
         $('#contact-window').css({"display": "block", "animation": "tilt-in-fwd-tr .6s cubic-bezier(.25,.46,.45,.94) both"})
         $('.contact-link').text('X');
         $('.contact-link').css({"color": "black"})
-        $('#haas-house').css({"color": "black"})
+        $('#haas-house').attr("src", "src/haas-house-black.svg")
         
     } else {
         $('#contact-window').css({ "animation": "slide-out-bl .5s cubic-bezier(.55,.085,.68,.53) both"})
         $('.contact-link').text('CONTACT');
         $('.contact-link').css("color", "white")
-        $('#haas-house').css({"color": "white"})
+        $('#haas-house').attr("src", "src/haas-house-white.svg")
         
         
     }
@@ -286,7 +294,7 @@ function positionTVS(){
     $('#film').css({
         "margin-top": topspacer,
         "height": boundingBOX.height / 3.6,
-        "width": boundingBOX.width / 4.45,
+        "width": boundingBOX.width / 4.4,
         "top": "1.65%",
         "margin-left": "50.65%" 
     })
@@ -313,16 +321,10 @@ function positionTVS(){
 }
 
 
+$('.power-btn').mouseover(function(){
+    $('.power-btn').attr("src", "src/off_1.svg");
+})
 
-
-
-// if (w / 2 > h){
-//     $('#film').css({"margin-top": topspacer + (filmBOX.height * 0.05), "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.45, "top": "0.5%", "margin-left": "50.5%" })
-//     $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.3), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.75, "width": boundingBOX.width / 4, "left": "26%"  })        
-//     $('#design').css({"bottom": boundingBOX.bottom / designBOX.bottom, "height": boundingBOX.height / 3.55, "width": boundingBOX.width / 4.5, "margin-left": "49.75%", "margin-bottom": "2%" })
-
-// } else {
-//     $('#film').css({"margin-top": topspacer, "height": boundingBOX.height / 3.6, "width": boundingBOX.width / 4.45 })
-//     $('#photo').css({"margin-top": topspacer + (photoBOX.height * 1.3), "margin-left": leftspacer / 4, "height": boundingBOX.height / 3.75, "width": boundingBOX.width / 4, "left": "26%"  })        
-//     $('#design').css({"bottom": boundingBOX.bottom / designBOX.bottom, "height": boundingBOX.height / 3.55, "width": boundingBOX.width / 4.5,  "margin-bottom": "3.25%" })
-// }
+$('.power-btn').mouseout(function(){
+    $('.power-btn').attr("src", "src/on_1.svg");
+})
