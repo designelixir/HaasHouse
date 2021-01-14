@@ -2,7 +2,7 @@ positionTVS;
 var bodymeasure = document.getElementById('the-body').getBoundingClientRect();
 var boundingBOX = document.getElementById("tvs").getBoundingClientRect();
 
-var thisScaler = bodymeasure.width / (boundingBOX.width / 2.4);
+var thisScaler = 3;
 
 
 // #####################################################################################################################
