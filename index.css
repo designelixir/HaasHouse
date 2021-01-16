@@ -33,13 +33,14 @@
     src: url('https://use.typekit.net/irk7lua.css')
   }
 
-a {font-family: 'Rainer-Medium', sans-serif; font-size: 45px;  color: white; cursor: url('src/link-remote.svg'), auto!important;  }
-a:hover { color: white; font-size: 55px; text-decoration: none;}
+h5 {font-family: 'Rainer-v04', sans-serif; font-size: 45px;  color: white; cursor: url('src/link-remote.svg'), auto!important;  }
+h5:hover { color: white; font-size: 55px; text-decoration: none;}
 p {font-family: freight-big-pro, serif; font-size: 1.25em; line-height: 1.25em}
 h1 {font-family: 'Rainer-Bold', sans-serif; font-size: 82px; padding: 0; color: white; }
 h2 {font-family: 'Rainer-v04', sans-serif; font-size: 2.5em;  color: white; letter-spacing: 2px;  }
 h3 {font-family: 'Rainer-v04', sans-serif; font-size: 3.5em; letter-spacing: 2px; color: white; text-shadow: 2px 2px 8px #000000}
 h4 {font-size: 2em; font-family: 'Rainer-v04', sans-serif; line-height: 10px; letter-spacing: 0.1em; margin: 0; }
+
 h6 {font-family: 'Rainer-v04', sans-serif; font-size: 3rem; letter-spacing: 5px; color: white; }
 
 *, *:before, *:after {
@@ -111,7 +112,7 @@ left: 0;
 .tv-window h2 { margin: 0; padding: 0;  }
 .tv-window {display: flex; align-items: center; justify-content: center; text-align: center; z-index: 100;  }
 
-.fullscreen-wrapper {position: fixed; top: 0; left: 0; border: 2px solid black; height: 100vh; width: 100vw;  animation:fade-in 1s cubic-bezier(.0,.9,0.95,1.000) both; }
+.fullscreen-wrapper {position: fixed; top: 0; left: 0; border: 2px solid black; height: 100vh; width: 100vw; animation:fade-in 0.25s cubic-bezier(.0,.9,0.95,1.000) both;  }
 .tv {width: 100%; height: 100%; display: inline-flex;}
 .screen {width: 100%; height: 100%; float: left; background: black; border: 2px solid #e2e2e2; border-radius: 5px; display: flex; align-items: center; justify-content: center; background-image: url("src/blue-static.gif"); background-size: cover; background-repeat: no-repeat;}
 .nav {width: 25%; min-width: 125px; float: right; height: 100%; margin-left: 1%; padding-top: 5%; display: inline-flex; flex-direction: column; align-items: center; justify-content: space-around; }

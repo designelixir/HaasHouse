@@ -1,3 +1,4 @@
+
 window.onload = function () { 
     $('.loader-content').css("display", "none");
     $('#loader').css({"animation": "fade-out 2s ease-out both"})
@@ -70,11 +71,15 @@ $('.film-toggle').click(function(){
         $('#film-screen').css("display", "none");
         $('#scene').css({"transform": "scale(1)"});
         $('#film-link').css("animation", "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both");
+        $('.navigation').css("animation", "fade-in 1s cubic-bezier(.39,.575,.565,1.000) both");
+
         
     } else {
         $('#scene').css({"transform": "scale(5)", "transform-origin-x": filmCONTAINER.x * 1.3, "transform-origin-y": transformfilmY + 100});
         $('#film-screen').css("display", "block");
         $('#film-link').css("animation", "fade-out 0.5s cubic-bezier(.39,.575,.565,1.000) both");
+        $('.navigation').css("animation", "fade-out 0.25s cubic-bezier(.39,.575,.565,1.000) both");
+
     }
     
 });
@@ -92,11 +97,13 @@ $('.photo-toggle').click(function(){
         $('#scene').css({"transform": "scale(1)"});
         $('#photo-fullscreen').css("display", "none")
         $('#photo-link').css("animation", "fade-in 0.5s cubic-bezier(.39,.575,.565,1.000) both");
+        $('.navigation').css("animation", "fade-in 0.25s cubic-bezier(.39,.575,.565,1.000) both");
 
     } else {
         $('#scene').css({"transform": "scale(5)", "transform-origin-x": "40%", "transform-origin-y": "62%"});
         $('#photo-fullscreen').css("display", "block")
         $('#photo-link').css("animation", "fade-out 0.5s cubic-bezier(.39,.575,.565,1.000) both");
+        $('.navigation').css("animation", "fade-out 0.25s cubic-bezier(.39,.575,.565,1.000) both");
 
     }
     
@@ -189,10 +196,14 @@ $('.design-toggle').click(function(){
         $('#scene').css({"transform": "scale(1)"});
         $('#design-link').css("display", "block");
         $('#design-fullscreen').css("display", "none");
+        $('.navigation').css("animation", "fade-in 1s cubic-bezier(.39,.575,.565,1.000) both");
+
     } else {
         $('#scene').css({"transform": "scale(5)", "transform-origin-x": "55%", "transform-origin-y": "90%"});
         $('#design-link').css("display", "none");
         $('#design-fullscreen').css("display", "block");
+        $('.navigation').css("animation", "fade-out 0.25s cubic-bezier(.39,.575,.565,1.000) both");
+
     }
 })
 
