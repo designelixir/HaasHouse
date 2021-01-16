@@ -214,18 +214,18 @@ $('#design-tv-guide-btn').click(function(){
     $('#design-project-description').text("");
     $('#design-tv-guide').css("display", "block");
     $('#design-target').css("display", "block");
-   
+    $('#design-video').css("display", "none")
 })
 
 
 var webCollection = ["src/web/slide1.jpg", "src/web/slide2.jpg", "src/web/slide3.jpg", "src/web/slide4.jpg", "src/web/slide5.jpg", "src/web/slide6.jpg", ]
 var webCollectionDescript = ['LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020', 'LIQUID LAB <br/> General Assembly, 2020']
 
-var printCollection = ["src/print/golden-coast-2.gif", "src/print/sea-cloud.jpg"]
+var printCollection = ["src/print/golden-coast-2.gif" ]
 var printCollectionDescript = ["Golden Coast Magazine", "Sea Cloud Film Poster"]
 
-var filmCollection = ["src/film/comingsoon.svg"]
-var filmCollectionDescript = ["Check back later!"]
+var filmCollection = ["src/print/sea-cloud.jpg"]
+var filmCollectionDescript = ["Sea Cloud Film Poster"]
 
 var fullDesignCollection = [].concat(webCollection, filmCollection);
 var fullDesignDescript = [].concat(webCollectionDescript,filmCollectionDescript)
@@ -236,12 +236,12 @@ var activeDescript = [];
 $('.design-channel').click(function(){
     $('#design-tv-guide').css("display", "none");
     $('#design-screen').css("background-image", "none")
-
+    $('#design-target').css("display", "block"); $('#design-video').css("display", "none")
     activeCategory = [];
     activeDescript = [];
     if ($(this).attr("id") == "design-guide-close"){activeCategory = fullDesignCollection; activeDescript = fullDesignDescript }
     else if($(this).index() === 0){activeCategory = webCollection; activeDescript = webCollectionDescript }
-    else if($(this).index()===1){activeCategory = printCollection; activeDescript = printCollectionDescript}
+    else if($(this).index()===1){$('#design-target').css("display", "none"); $('#design-video').css("display", "block")}
     else if($(this).index()===2){activeCategory = filmCollection; activeDescript = filmCollectionDescript}
     
     var categoryChannelCount = activeCategory.length;
