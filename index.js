@@ -1,4 +1,54 @@
+window.onload = function () { 
+    $('.loader-content').css("display", "none");
+    $('#loader').css({"animation": "fade-out 2s ease-out both"})
+    $('#loader-wrapper').hide(1000)
+    positionTVS();
+    
+    }
+    
+    function positionTVS(){
+        var tvWrapper = document.getElementById("tv-wrapper").getBoundingClientRect();
+        var boundingBOX = document.getElementById("tvs").getBoundingClientRect();
+        var designBOX = document.getElementById("design").getBoundingClientRect();
 
+        var topspacer = tvWrapper.height - boundingBOX.height;
+        var leftspacer = (tvWrapper.width - boundingBOX.width);
+    
+        $('#film').css({
+        "margin-top": topspacer,
+        "height": boundingBOX.height / 3.6,
+        "width": boundingBOX.width / 4.4,
+        "top": "1.65%",
+        "margin-left": "50.65%" 
+        })
+        
+        $('#photo').css({
+        "margin-top": topspacer, 
+        "top": boundingBOX.height / 3,
+        "bottom": "27%",
+        "margin-left": leftspacer / 4, 
+        "height": boundingBOX.height /3.4, 
+        "width": boundingBOX.width / 3.9, 
+        "left": "26%"  
+        })
+        
+        $('#design').css({
+        "bottom": boundingBOX.bottom / designBOX.bottom, 
+        "height": boundingBOX.height / 3.4, 
+        "width": boundingBOX.width / 4.3, 
+        "margin-left": leftspacer / 2, 
+        "left": boundingBOX.width / 2.05,
+        "top": boundingBOX.height / 1.55,
+        "margin-top": topspacer
+        })        
+    
+    
+    }
+    
+    window.addEventListener("DOMContentLoaded", positionTVS);
+    window.addEventListener("resize", positionTVS);
+    window.addEventListener("load", positionTVS); 
+    
 
 $('.power-btn').mouseover(function(){
     $('.power-btn').attr("src", "src/off_1.svg");
@@ -85,7 +135,6 @@ $('.photo-channel').click(function(){
         $('#photo-tv-guide').css({"display": "none"});
         $('#photo-screen').css({"background-image": "none"})
         channelSwitch++;
-        console.log(channelSwitch)
         if (channelSwitch < categoryChannelCount){
             $('#photo-target').attr("src", activeCategory[channelSwitch]);
             $('#photo-project-description').html([activeDescript[channelSwitch]]) 

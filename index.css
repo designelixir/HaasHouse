@@ -111,16 +111,13 @@ left: 0;
 .tv-window h2 { margin: 0; padding: 0;  }
 .tv-window {display: flex; align-items: center; justify-content: center; text-align: center; z-index: 100;  }
 
-.fullscreen-wrapper {position: fixed; top: 0; left: 0; border: 2px solid black; height: 100vh; width: 100vw; animation-delay: 2s; animation:fade-in 1s cubic-bezier(.0,.9,0.95,1.000) both; }
+.fullscreen-wrapper {position: fixed; top: 0; left: 0; border: 2px solid black; height: 100vh; width: 100vw;  animation:fade-in 1s cubic-bezier(.0,.9,0.95,1.000) both; }
 .tv {width: 100%; height: 100%; display: inline-flex;}
-
 .screen {width: 100%; height: 100%; float: left; background: black; border: 2px solid #e2e2e2; border-radius: 5px; display: flex; align-items: center; justify-content: center; background-image: url("src/blue-static.gif"); background-size: cover; background-repeat: no-repeat;}
-.nav {width: 30%; min-width: 125px; float: right; height: 100%; margin-left: 1%; padding-top: 5%; display: inline-flex; flex-direction: column; align-items: center; justify-content: space-around; }
+.nav {width: 25%; min-width: 125px; float: right; height: 100%; margin-left: 1%; padding-top: 5%; display: inline-flex; flex-direction: column; align-items: center; justify-content: space-around; }
 .nav-description {font-size: 2em; padding: 2.5%; background: grey; width: 100%; color: white; line-height: 1.25em; margin: 10% 0; text-align: center;}
 .sec-wrapper { height: 50%; width: 100%; text-align: center; }
-
 .sec-wrapper img:hover {transform: scale(1.25)}
-
 
 /* FILM BOUNDING BOX & FULL SCREEN */
 #film {top: 1.65vh; margin-left: 50.5%; position: absolute; padding: 0.5%; }

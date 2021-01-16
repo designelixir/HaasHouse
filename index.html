@@ -4,17 +4,17 @@
     <title>HAAS HOUSE</title>
     <meta name="description" content="Portfolio for Casey Haas"/>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes" />
     <link rel="shortcut icon" href="src/haas-logo-black.svg" type="image/x-icon">
-    <link rel="stylesheet" rel="preload" type="text/css" href="index.css" />
-    <link rel="stylesheet" href="https://use.typekit.net/irk7lua.css">
+    <link rel="stylesheet"  type="text/css" href="index.css" />
+    <link rel="preconnect" href="https://use.typekit.net/irk7lua.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTCJJ8YNMR"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ZTCJJ8YNMR');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZTCJJ8YNMR');
     </script>
     
 
@@ -22,7 +22,7 @@
 
 
 <body id="the-body">
-    <div id="scene">
+<div id="scene">
     <div id="loader-wrapper">
         <div id="loader">
             <div class="loader-content"> 
@@ -39,12 +39,12 @@
     </div>
 
     <div class="navigation">
-        <a class="about-link link-remote" rel="noopener">ABOUT</a>
+        <a href="" class="about-link link-remote" rel="noopener">ABOUT</a>
         <span id="logo-span" class="link-remote"> 
             <img src="src/haas-house-white.svg" class="link-remote" id="haas-house" alt="Haas House Text Logo">
             <img src="src/haas-logo-white.svg" class="link-remote"  id="haas-house-logo" alt="Haas House Logo">
         </span>
-        <a class="contact-link link-remote" rel="noopener">CONTACT</a>
+        <a href="" class="contact-link link-remote" rel="noopener">CONTACT</a>
     </div>
 
     <img class='palm-left palm' src="src/palm-left.png"  alt='palm leaf'>
@@ -81,7 +81,7 @@
 <div class="fullscreen-wrapper" id="film-screen" style="display: none">
     <div class="tv" id="film-full">
         <div class="screen">
-            <iframe id="film-iframe" style="width:100%; height:100%;  background-color: black;" frameborder="0" allow="autoplay; fullscreen" autoplay src="https://player.vimeo.com/video/499418125?quality=1080p"></iframe>
+            <iframe id="film-iframe" style="width:100%; height:100%;  background-color: black;" allow="fullscreen" src="https://player.vimeo.com/video/499418125?quality=1080p"></iframe>
         </div>
         <div class="nav">
             <img src="src/on_1.svg" class="film-toggle off-remote power-btn" alt="exit film tv">
@@ -94,7 +94,7 @@
 <div class="fullscreen-wrapper" id="photo-fullscreen"  style="display: none">
     <div class="tv" id="photo-full">
         <div class="screen" id="photo-screen">
-            <img id="photo-target">
+            <img id="photo-target" src="" >
             <div class="tv-guide" id="photo-tv-guide"> 
                 <div class="tv-guide-close-bar">
                     <img src="src/x.svg" id="photo-guide-close" class="photo-channel link-remote" alt="close photo tv guide" style="height: 80%; float: right; padding: 5px; ">
@@ -113,7 +113,7 @@
                     </div>
                     
                     <div class="tv-guide-photo">
-                        <img src="src/haas-logo-white.svg">
+                        <img src="src/haas-logo-white.svg" alt="Haas House Logo">
                     </div>
                 </div>
                 <div class="tv-guide-bottom">
@@ -138,7 +138,7 @@
                     </div>
             </div>
             <div class="sec-wrapper">
-                    <img class="link-remote tv-guide-btn"src="src/tvguide.svg" id="photo-tv-guide-btn">
+                    <img class="link-remote tv-guide-btn" src="src/tvguide.svg" id="photo-tv-guide-btn" alt="Toggle Photo TV Guide button">
                     <p class="project-description" id="photo-project-description"></p>
             </div>
             
@@ -152,7 +152,7 @@
 <div class="fullscreen-wrapper" id="design-fullscreen"  style="display: none">
     <div class="tv" id="design-full">
         <div class="screen" id="design-screen">
-            <img id="design-target">
+            <img id="design-target" src="" >
             <div class="tv-guide" id="design-tv-guide"> 
                 <div class="tv-guide-close-bar">
                     <img src="src/x.svg" id="design-guide-close" class="design-channel link-remote" alt="close design tv" style="height: 80%; float: right; padding: 5px;">
@@ -163,7 +163,7 @@
                             <h3 class="channel96" style="float: left;">CHANNEL 96</h3>
                             <h3 class="guidetype" style="float: right;">DESIGN</h3>
                         </div>
-                        <div class="tv-guide-description" id="photo-description">
+                        <div class="tv-guide-description" id="design-description">
                             <span id="channel4description">website design, digital design</span>
                             <span id="channel5description">posters, magazines</span>
                             <span id="channel6description">design for moving images</span>
@@ -172,7 +172,7 @@
                     </div>
                     
                     <div class="tv-guide-photo">
-                        <img src="src/haas-logo-white.svg">
+                        <img src="src/haas-logo-white.svg" alt="Haas House Logo">
                     </div>
                 </div>
                 <div class="tv-guide-bottom">
@@ -197,7 +197,7 @@
             </div>
             </div>
             <div class="sec-wrapper">
-                <img class="link-remote tv-guide-btn"src="src/tvguide.svg" id="design-tv-guide-btn">
+                <img class="link-remote tv-guide-btn" src="src/tvguide.svg" id="design-tv-guide-btn" alt="Design TV Guide Toggle">
                 <p class="project-description" id="design-project-description"></p>
             </div>
             
@@ -216,7 +216,7 @@
                 <img src="src/about-blurb.svg" alt="Casey Haas is a filmmaker, photographer, and designer from the Bay Area. She is a recent graduate of CU Boulder & General Assembly, where she received a BFA in Film Production and a certificate in Visual Design. She created Haas House as an umbrella for all of her work- film, photography, and design. Her creations reflect the California dream she grew up in, whether it be the beaches of Half Moon Bay or the park down the street from the home she grew up in. A firm believer in the saying ‘the most personal is the most creative’, her work often explores her childhood and life experiences. Casey specializes in shooting 35mm, 120mm, super 8mm, and 16mm film.">
             </div>
         </div>
-</div>
+    </div>
 </div>
 
 <!-- CONTACT WINDOW -->
@@ -235,63 +235,7 @@
 
 
 </body>
-
-<script>
-    window.onload = function () { 
-        $('.loader-content').css("display", "none");
-        $('#loader').css({"animation": "fade-out 2s ease-out both"})
-        $('#loader-wrapper').hide(1000)
-        positionTVS();
-
-     }
-    
-     function positionTVS(){
-    console.log ("calibrating")
-    var bodymeasure = document.getElementById('the-body').getBoundingClientRect();
-    var tvWrapper = document.getElementById("tv-wrapper").getBoundingClientRect();
-    var boundingBOX = document.getElementById("tvs").getBoundingClientRect();
-     var designBOX = document.getElementById("design").getBoundingClientRect();
-     var photoBOX = document.getElementById("photo").getBoundingClientRect();
-    var filmBOX = document.getElementById("film").getBoundingClientRect();
-
-    var topspacer = tvWrapper.height - boundingBOX.height;
-    var leftspacer = (tvWrapper.width - boundingBOX.width);
-
-    $('#film').css({
-        "margin-top": topspacer,
-        "height": boundingBOX.height / 3.6,
-        "width": boundingBOX.width / 4.4,
-        "top": "1.65%",
-        "margin-left": "50.65%" 
-    })
-    $('#photo').css({
-        "margin-top": topspacer, 
-        "top": boundingBOX.height / 3,
-        "bottom": "27%",
-        "margin-left": leftspacer / 4, 
-        "height": boundingBOX.height /3.4, 
-        "width": boundingBOX.width / 3.9, 
-        "left": "26%"  
-    })
-    $('#design').css({
-        "bottom": boundingBOX.bottom / designBOX.bottom, 
-        "height": boundingBOX.height / 3.4, 
-        "width": boundingBOX.width / 4.3, 
-        "margin-left": leftspacer / 2, 
-        "left": boundingBOX.width / 2.05,
-        "top": boundingBOX.height / 1.55,
-        "margin-top": topspacer
-    })        
-
-    
-}
-
-    window.addEventListener("DOMContentLoaded", positionTVS);
-    window.addEventListener("resize", positionTVS);
-    window.addEventListener("load", positionTVS); 
-    
-</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="index.js"></script>   
-<script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>   
+    <script src="https://player.vimeo.com/api/player.js"></script>
 </html>
