@@ -178,9 +178,9 @@ video {width: 100%; }
 #about-sec-right {margin:0% 10% 0 0; justify-content: flex-start; }
 .window-sec img { max-height: 100%; }
 
-.contact-content {display: inline-flex; flex-direction: column; text-align: center; width: 100%; height: 80vh; top: 20vh;  }
+.contact-content {display: inline-flex; flex-direction: column; text-align: center; width: 100%; height: 80vh; padding: 10% 0%; top: 20vh;  }
 
-.contact-social-icons {height: 20%; width: 100%; margin-top: 10%;  bottom: 0; position: absolute;  display: flex; align-items: center; justify-content: center;}
+.contact-social-icons { width: 100%; margin-top: 25%; position: absolute;  display: flex; align-items: center; justify-content: center;}
 .contact-social-icons img {width: 50px; padding: 10%;}
 #mail-img:hover {transform: scale(1.15)}
 #mail-btn { height: 45%;  }
