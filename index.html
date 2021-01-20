@@ -22,16 +22,31 @@
 
 
 <body id="the-body">
+<div id="hamburger-wrapper"><img src="src/hamburger.svg" class="togglemobile" id="hamburger" style="height: 30px; position: fixed; top: 5%; left: 5%; z-index: 210;"></div>
+
 <div class="navigation">
+
+    <h5 class="mobile-about-link link-remote abouttoggle">X</h5>
     <h5 class="about-link link-remote abouttoggle">ABOUT</h5>
-    <span id="logo-span" class="link-remote"> 
+    <span class="link-remote logo-span"> 
         <img src="src/haas-house-white.svg" class="link-remote" id="haas-house" alt="Haas House Text Logo">
         <img src="src/haas-logo-white.svg" class="link-remote"  id="haas-house-logo" alt="Haas House Logo">
     </span>
     <h5 class="contact-link link-remote contacttoggle" >CONTACT</h5>
+    <h5 class="mobile-contact-link link-remote contacttoggle" >X</h5>
+
 </div>
 
 
+<div class="mobile-navigation bounce-top">
+
+    <h5 class="abouttoggle togglemobile">ABOUT</h5>
+    <h5 class="contacttoggle togglemobile">CONTACT</h5>
+    <div class="contact-social-icons">
+        <a href="https://www.linkedin.com/in/casey-t-haas/" target="blank" rel="noopener"><img src="src/linkedin_1.svg" alt='linked in icon'></a>
+        <a href="https://www.instagram.com/caseythaas/" target="blank" rel="noopener"><img src="src/instagram.svg" alt='instagram icon'></a>
+    </div>
+</div>
 
 
 
@@ -58,6 +73,11 @@
 
     <div id="tv-container" class="fade-in">
         <div id="tv-wrapper">
+            <div class="tv-gif-bg" id="film-hover"></div>
+           
+
+
+
             <div id="tv-contents-container">
                     <!-- FILM BOUNDING BOX -->
                     <div class="tv-window film-toggle link-remote" id="film">
@@ -77,7 +97,9 @@
             <!-- TV STACK IMAGE  -->
             <img src="src/tv-spread.png" rel="preload" id="tvs" alt="stack of tvs" height="100%" width="auto">
         </div>
-        <div class="shadows"></div>
+        <div class="shadows" id="left-shadow"></div>
+        <div class="shadows" id="right-shadow"></div>
+
     </div>
 </div>
 <!-- end scene -->
@@ -214,6 +236,13 @@
 
 <!-- ABOUT WINDOW -->
 <div id="about-window" class="window">
+    <div class="navigation">
+        <img src="src/close.svg" class="abouttoggle"  style="height: 40px; position: fixed; top: 5%; left: 5%; background: white; z-index: 400;">
+        <span class="link-remote logo-span"> 
+            <img src="src/haas-house-black.svg" class="link-remote" id="haas-house" alt="Haas House Text Logo">
+            <img src="src/haas-logo-black.svg" class="link-remote"  id="haas-house-logo" alt="Haas House Logo">
+        </span>
+    </div>
 
     <div class="window-wrapper">
         <div class="window-sec-wrapper">
@@ -229,6 +258,13 @@
 
 <!-- CONTACT WINDOW -->
 <div id="contact-window" class="window">
+    <div class="navigation">
+        <img src="src/close.svg" class="contacttoggle"  style="height: 40px; position: fixed; top: 5%; right: 5%; background: white; z-index: 400;">
+        <span class="link-remote logo-span"> 
+            <img src="src/haas-house-black.svg" class="link-remote" id="haas-house" alt="Haas House Text Logo">
+            <img src="src/haas-logo-black.svg" class="link-remote"  id="haas-house-logo" alt="Haas House Logo">
+        </span>
+    </div>
     <div class="window-wrapper" >
        <div class="contact-content">
             <h2 style='color: black;'>THANKS FOR STOPPING BY!<br/>LET'S KEEP IN TOUCH.</h2>

@@ -47,7 +47,7 @@ window.onload = function () {
     window.addEventListener("DOMContentLoaded", positionTVS);
     window.addEventListener("resize", positionTVS);
     window.addEventListener("load", positionTVS); 
-    window.addEventListener("animationend", positionTVS);
+    window.addEventListener("animation", positionTVS);
     
 
 $('.power-btn').mouseover(function(){
@@ -285,42 +285,31 @@ $('.design-channel').click(function(){
 })
 
     var aboutClickCount = 0;
-$('.abouttoggle').click(function(){
-    if(aboutClickCount % 2 === 0){
-        
-        $('#about-window').css({"display": "block", "animation": "tilt-in-fwd-tl .6s cubic-bezier(.25,.46,.45,.94) both"})
-        $('.contact-link').css({"display": "none"})
-        $('.about-link').text('X');
-        $('.about-link').css({"color": "black"})
-        $('#haas-house').attr("src", "src/haas-house-black.svg")
-        $('#haas-house-logo').attr("src", "src/haas-logo-black.svg")
-        $('#logo-span').css({"margin-right": "20%"})
-       
+$('.abouttoggle').click(abouttoggle)
 
+function abouttoggle(){
+    
+    if(aboutClickCount % 2 === 0){
+        $('#about-window').css({"display": "block", "animation": "tilt-in-fwd-tl .6s cubic-bezier(.25,.46,.45,.94) both"})
+        $('#hamburger').css("display", "none");
+
+        
     } else {
-        
         $('#about-window').css({ "animation": "slide-out-br .5s cubic-bezier(.55,.085,.68,.53) both"})
-        $('.about-link').text('ABOUT');
-        $('.about-link').css({"color": "white"})
-        $('.contact-link').css({"display": "block"})
-        $('#logo-span').css({"margin-right": "0%"})
-        $('#haas-house').attr("src", "src/haas-house-white.svg")  
-        $('#haas-house-logo').attr("src", "src/haas-logo-white.svg")
-        
+        $('#hamburger').css("display", "block");
     }
     aboutClickCount++;
   
     
-})
+}
+
+$('.contacttoggle').click(contacttoggle)
+
 
 var contactClickCount = 0; 
-$('.contacttoggle').click(function(){
+function contacttoggle(){
     if(contactClickCount % 2 === 0){
         $('#contact-window').css({"display": "block", "animation": "tilt-in-fwd-tr .6s cubic-bezier(.25,.46,.45,.94) both"})
-        $('.contact-link').text('X');
-        $('.contact-link').css({"color": "black"})
-        $('#haas-house').attr("src", "src/haas-house-black.svg")
-        $('#haas-house-logo').attr("src", "src/haas-logo-black.svg")
         $('.navigation').css({"background": "none"})
         $('#mail-img').attr("src", "src/mail-gif.gif")
         $('#mail-btn').css("animation", "bounce-top 2s both");
@@ -339,5 +328,37 @@ $('.contacttoggle').click(function(){
     }
     contactClickCount++;
     
+}
+
+
+
+
+
+
+var togglemobilecount = 0; 
+$('.togglemobile').click(togglemobile)
+
+function togglemobile(){
+    console.log("clicky")
+    if(togglemobilecount % 2 === 0){
+        $('.mobile-navigation').css("display", "block")
+        $('#hamburger').attr("src", "src/close.svg")
+        
+
+    } else {
+        $('.mobile-navigation').css("display", "none")
+        $('#hamburger').attr("src", "src/hamburger.svg")
+       
+    }
+    togglemobilecount++;
+}
+
+
+
+$('#film').mouseover(function(){
+    $('#film-hover').css({"display": "block"})
 })
 
+$('#film').mouseout(function(){
+    $('#film-hover').css({"display": "none"})
+})
