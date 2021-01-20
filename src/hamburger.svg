@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="89.712" height="83.333" viewBox="0 0 89.712 83.333">
+  <defs>
+    <style>
+      .a {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="a" width="89.712" height="18.519"/>
+    <rect class="a" y="32.716" width="89.712" height="18.519"/>
+    <rect class="a" y="64.815" width="89.712" height="18.519"/>
+  </g>
+</svg>

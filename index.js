@@ -8,47 +8,46 @@ window.onload = function () {
     }
     
     function positionTVS(){
-        var tvWrapper = document.getElementById("tv-wrapper").getBoundingClientRect();
-        var boundingBOX = document.getElementById("tvs").getBoundingClientRect();
-        var designBOX = document.getElementById("design").getBoundingClientRect();
+    var tvWrapper = document.getElementById("tv-wrapper").getBoundingClientRect();
+    var boundingBOX = document.getElementById("tvs").getBoundingClientRect();
+    var designBOX = document.getElementById("design").getBoundingClientRect();
 
-        var topspacer = tvWrapper.height - boundingBOX.height;
-        var leftspacer = (tvWrapper.width - boundingBOX.width);
+    var topspacer = tvWrapper.height - boundingBOX.height;
+    var leftspacer = (tvWrapper.width - boundingBOX.width);
+
+    $('#film').css({
+    "margin-top": topspacer,
+    "height": boundingBOX.height / 3.6,
+    "width": boundingBOX.width / 4.4,
+    "top": "1.65%",
+    "margin-left": "50.65%" 
+    })
     
-        $('#film').css({
-        "margin-top": topspacer,
-        "height": boundingBOX.height / 3.6,
-        "width": boundingBOX.width / 4.4,
-        "top": "1.65%",
-        "margin-left": "50.65%" 
-        })
-        
-        $('#photo').css({
-        "margin-top": topspacer, 
-        "top": boundingBOX.height / 3,
-        "bottom": "27%",
-        "margin-left": leftspacer / 4, 
-        "height": boundingBOX.height /3.4, 
-        "width": boundingBOX.width / 3.9, 
-        "left": "26%"  
-        })
-        
-        $('#design').css({
-        "bottom": boundingBOX.bottom / designBOX.bottom, 
-        "height": boundingBOX.height / 3.4, 
-        "width": boundingBOX.width / 4.3, 
-        "margin-left": leftspacer / 2, 
-        "left": boundingBOX.width / 2.05,
-        "top": boundingBOX.height / 1.55,
-        "margin-top": topspacer
-        })        
+    $('#photo').css({
+    "margin-top": topspacer, 
+    "top": boundingBOX.height / 3,
+    "bottom": "27%",
+    "margin-left": leftspacer / 4, 
+    "height": boundingBOX.height /3.4, 
+    "width": boundingBOX.width / 3.9, 
+    "left": "26%"  
+    })
     
-    
-    }
+    $('#design').css({
+    "bottom": boundingBOX.bottom / designBOX.bottom, 
+    "height": boundingBOX.height / 3.4, 
+    "width": boundingBOX.width / 4.3, 
+    "margin-left": leftspacer / 2, 
+    "left": boundingBOX.width / 2.05,
+    "top": boundingBOX.height / 1.55,
+    "margin-top": topspacer
+    })        
+}
     
     window.addEventListener("DOMContentLoaded", positionTVS);
     window.addEventListener("resize", positionTVS);
     window.addEventListener("load", positionTVS); 
+    window.addEventListener("animationend", positionTVS);
     
 
 $('.power-btn').mouseover(function(){
@@ -113,10 +112,10 @@ $('.photo-toggle').click(function(){
 
 var peopleCollection = ["src/People/one.jpg", "src/People/two.jpg", "src/People/three.jpg", "src/People/four.jpg", "src/People/five.jpg", "src/People/six.jpg", "src/People/seven.jpg" , "src/People/eight.jpg" , "src/People/nine.jpg"  ]
 var peopleCollectionDescript = ['35mm <br/> MIKE CHAMBERLAIN <br/> Pacifica, CA', '35mm <br/>AMY EHARA<br/> Pacifica, CA', '35mm <br/>MCKENNA KOLEDO <br/> Pacific Palisades, CA', '35mm <br/>LONE PADDLEBOARDER <br/> Mavericks Beach, CA', '35mm <br/>MIKE CHAMBERLAIN<br/> Half Moon Bay, CA', '35mm <br/>EMMA DEVINCENZI <br/> San Francisco, CA', '35mm <br/>EMMA DEVINCENZI<br/> San Francisco, CA', '35mm <br/> MIKE CHAMBERLAIN <br/> Pacifica, CA', '35mm <br/>LAWRENCE RICKFORD<br/> Pacifica, CA' ]
-var placesCollection = ["src/Places/one.jpg", "src/Places/two.jpg", "src/Places/three.jpg", "src/Places/four.jpg", "src/Places/5.jpg", "src/Places/five.jpg", "src/Places/six.jpg", "src/Places/seven.jpg", "src/Places/eight.jpg", "src/Places/nine.jpg", "src/Places/ten.jpg", "src/Places/eleven.jpg" ]
-var placesCollectionDescript = ['35mm <br/> Davenport, CA', '35mm <br/> Pigeon Point Lighthouse, CA', '35mm <br/> San Francisco, CA', '35mm <br/>Manhattan Beach, CA', '35mm <br/> Santa Cruz, CA', '35mm <br/>Coroico, Bolivia', '35mm <br/>Davenport, CA', '35mm <br/>Pacific Ocean', '35mm <br/>San Francisco, CA', '35mm <br/>Foster City, CA', '35mm <br/> Pigeon Point Lighthouse', '35mm <br/> MARINA DISTRICT <br/> San Francisco, CA' ]
+var placesCollection = ["src/Places/one.jpg", "src/Places/two.jpg", "src/Places/three.jpg", "src/Places/four.jpg", "src/Places/5.jpg", "src/Places/five.jpg", "src/Places/six.jpg", "src/Places/seven.jpg", "src/Places/eight.jpg", "src/Places/nine.jpg", "src/Places/ten.jpg" ]
+var placesCollectionDescript = ['35mm <br/> Davenport, CA', '35mm <br/> Pigeon Point Lighthouse, CA', '35mm <br/> San Francisco, CA', '35mm <br/>Manhattan Beach, CA', '35mm <br/> Santa Cruz, CA', '35mm <br/>Coroico, Bolivia', '35mm <br/>Davenport, CA', '35mm <br/>Pacific Ocean', '35mm <br/>San Francisco, CA', '35mm <br/>Foster City, CA', '35mm <br/> Pigeon Point Lighthouse' ]
 var thingsCollection = ["src/Things/one.jpg", "src/Things/two.JPG", "src/Things/three.jpg", "src/Things/four.jpg", "src/Things/five.jpg"]
-var thingsCollectionDescript = ['35mm <br/>PALACE OF FINE ARTS <br/> San Francisco, CA', '35mm <br/> ATLAS GENUS CONCERT <br/> Boulder, CO', '35mm <br/>MARINA DISTRICT <br/> San Francisco, CA', '35mm <br/>PALACE OF FINE ARTS <br/> San Francisco, CA', '35mm <br/> SANTA CRUZ BOARDWALK <br/> Santa Cruz, CA'   ]
+var thingsCollectionDescript = ['35mm <br/>PALACE OF FINE ARTS <br/> San Francisco, CA', '35mm <br/> ATLAS GENIUS CONCERT <br/> Boulder, CO', '35mm <br/>MARINA DISTRICT <br/> San Francisco, CA', '35mm <br/>PALACE OF FINE ARTS <br/> San Francisco, CA', '35mm <br/> SANTA CRUZ BOARDWALK <br/> Santa Cruz, CA'   ]
 var fullPhotoCollection = [].concat(peopleCollection, placesCollection, thingsCollection);
 var fullPhotoDescript = [].concat(peopleCollectionDescript, placesCollectionDescript, thingsCollectionDescript)
 var activeCategory = [];
@@ -241,7 +240,7 @@ $('.design-channel').click(function(){
     activeDescript = [];
     if ($(this).attr("id") == "design-guide-close"){activeCategory = fullDesignCollection; activeDescript = fullDesignDescript }
     else if($(this).index() === 0){activeCategory = webCollection; activeDescript = webCollectionDescript }
-    else if($(this).index()===1){$('#design-target').css("display", "none"); $('#design-video').css("display", "block")}
+    else if($(this).index()===1){$('#design-target').css("display", "none"); $('#design-video').css("display", "block"); $('#design-project-description').text('Golden Coast Magazine, 2021')}
     else if($(this).index()===2){activeCategory = filmCollection; activeDescript = filmCollectionDescript}
     
     var categoryChannelCount = activeCategory.length;
@@ -286,37 +285,51 @@ $('.design-channel').click(function(){
 })
 
     var aboutClickCount = 0;
-$('.about-link').click(function(){
+$('.abouttoggle').click(function(){
     if(aboutClickCount % 2 === 0){
+        
         $('#about-window').css({"display": "block", "animation": "tilt-in-fwd-tl .6s cubic-bezier(.25,.46,.45,.94) both"})
+        $('.contact-link').css({"display": "none"})
         $('.about-link').text('X');
         $('.about-link').css({"color": "black"})
         $('#haas-house').attr("src", "src/haas-house-black.svg")
-        
+        $('#haas-house-logo').attr("src", "src/haas-logo-black.svg")
+        $('#logo-span').css({"margin-right": "20%"})
+       
 
     } else {
+        
         $('#about-window').css({ "animation": "slide-out-br .5s cubic-bezier(.55,.085,.68,.53) both"})
         $('.about-link').text('ABOUT');
         $('.about-link').css({"color": "white"})
-        $('#haas-house').attr("src", "src/haas-house-white.svg")        
+        $('.contact-link').css({"display": "block"})
+        $('#logo-span').css({"margin-right": "0%"})
+        $('#haas-house').attr("src", "src/haas-house-white.svg")  
+        $('#haas-house-logo').attr("src", "src/haas-logo-white.svg")
+        
     }
     aboutClickCount++;
+  
+    
 })
 
 var contactClickCount = 0; 
-$('.contact-link').click(function(){
+$('.contacttoggle').click(function(){
     if(contactClickCount % 2 === 0){
         $('#contact-window').css({"display": "block", "animation": "tilt-in-fwd-tr .6s cubic-bezier(.25,.46,.45,.94) both"})
         $('.contact-link').text('X');
         $('.contact-link').css({"color": "black"})
         $('#haas-house').attr("src", "src/haas-house-black.svg")
-        
+        $('#haas-house-logo').attr("src", "src/haas-logo-black.svg")
+        $('.navigation').css({"background": "none"})
     } else {
         $('#contact-window').css({ "animation": "slide-out-bl .5s cubic-bezier(.55,.085,.68,.53) both"})
         $('.contact-link').text('CONTACT');
         $('.contact-link').css("color", "white")
-        $('#haas-house').attr("src", "src/haas-house-white.svg")
-        
+        $('#haas-house').attr("src", "src/haas-house-white.svg")  
+        $('#haas-house-logo').attr("src", "src/haas-logo-white.svg")
+        $('.navigation').css({"background": "rgba(0,0,0,0)"})
+
         
     }
     contactClickCount++;
