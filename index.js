@@ -322,6 +322,7 @@ $('.contacttoggle').click(function(){
         $('#haas-house').attr("src", "src/haas-house-black.svg")
         $('#haas-house-logo').attr("src", "src/haas-logo-black.svg")
         $('.navigation').css({"background": "none"})
+        $('#mail-img').attr("src", "src/mail-gif.gif")
     } else {
         $('#contact-window').css({ "animation": "slide-out-bl .5s cubic-bezier(.55,.085,.68,.53) both"})
         $('.contact-link').text('CONTACT');
@@ -329,6 +330,7 @@ $('.contacttoggle').click(function(){
         $('#haas-house').attr("src", "src/haas-house-white.svg")  
         $('#haas-house-logo').attr("src", "src/haas-logo-white.svg")
         $('.navigation').css({"background": "rgba(0,0,0,0)"})
+        
 
         
     }
