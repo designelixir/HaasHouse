@@ -83,13 +83,13 @@ left: 0;
 
 .navigation {width: 100%; height: 10%; display: flex; justify-content: space-around; align-items: center; text-align: center; z-index: 190; position: absolute; top: 0; left: 0; margin-top: 25px;}
 
-.logo-span { display: flex; justify-content: center; align-items: baseline; width: 70%; margin: 0% 15%;}
+.logo-span { display: flex; justify-content: center; align-items: baseline; width: 30%; }
 .logo-span img {max-height: 75px;}
 .logo-span:hover #haas-house-logo {animation: fade-in 0.1s cubic-bezier(.39,.575,.565,1.000); opacity: 1; }
 .logo-span:hover #haas-house {animation:fade-out 0.1s ease-out both}
 #haas-house-logo {opacity: 0; position: absolute;}
 
-.about-link, .contact-link { margin: 5%; position: absolute;  letter-spacing: 5px; }
+.about-link, .contact-link { margin: 5%; position: absolute;  letter-spacing: 5px; z-index: 300;}
 .about-link {left: 0%;}
 .contact-link {right: 0%;}
 
