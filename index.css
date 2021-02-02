@@ -81,13 +81,14 @@ left: 0;
 .mobile-about-link, .mobile-contact-link { width: 100px; margin: 5%;  letter-spacing: 5px; z-index: 20; color: black!important; display: none; }
 #hamburger-wrapper {display: none;}
 
-.navigation {width: 100%; height: 10%; display: flex; justify-content: space-around; align-items: center; text-align: center; z-index: 190; position: absolute; top: 0; left: 0; margin-top: 25px;}
+.navigation {width: calc(100% - 30px); height: 10%; display: flex; justify-content: space-around; align-items: center; text-align: center; z-index: 190; position: absolute; top: 0; left: 0; margin-top: 25px; margin-right: 10px; }
 
-.logo-span { display: flex; justify-content: center; align-items: baseline; width: 30%; }
+.logo-span { display: flex; justify-content: center; align-items: center; width: 100%; }
 .logo-span img {max-height: 75px;}
 .logo-span:hover #haas-house-logo {animation: fade-in 0.1s cubic-bezier(.39,.575,.565,1.000); opacity: 1; }
 .logo-span:hover #haas-house {animation:fade-out 0.1s ease-out both}
 #haas-house-logo {opacity: 0; position: absolute;}
+
 
 .about-link, .contact-link { margin: 5%; position: absolute;  letter-spacing: 5px; z-index: 300;}
 .about-link {left: 0%;}
@@ -99,6 +100,24 @@ left: 0;
 .beach-spread {position: fixed; bottom: 0; width: 100vw; height: 40vh; background-image: url("src/beach-spread.jpg"); background-size: cover }
 .sand {height: 20vh; width: 100%; position: absolute; bottom: 0; background-image: url('src/sand.png'); background-size: cover;}
 .shadows {height: 21vh; width: 30%; position: absolute; bottom: 0; background-size: cover; background-repeat: no-repeat; z-index: 5; background-position: top;}
+
+.clouds {position: fixed; top: 0;  height: 60%; width: 100vw; }
+
+.clouds-wrapper {
+  width: 250%; 
+	height: 90%; 
+  background-image: url("src/wide-clouds6.png");
+  background-size: contain;
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
+
+	animation: animatedBackground 120s linear infinite;
+}
+
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 220% 0; }
+}
 
 #left-shadow {background-image: url('src/shadows-left.png'); left: 0;}
 #right-shadow {background-image: url('src/shadow-right.png'); right: 0;}
@@ -189,7 +208,7 @@ video {width: 100%; }
 #about-sec-right {margin:0% 10% 0 0; justify-content: flex-start; }
 .window-sec img { max-height: 100%; }
 
-.contact-content {display: inline-flex; flex-direction: column; justify-content: space-around; text-align: center; width: 100%; height: 80vh; padding: 10% 0%; top: 20vh;  }
+.contact-content {display: inline-flex; flex-direction: column; justify-content: space-around; text-align: center; width: 100%; border: 2px solid pink; height: 80vh; padding: 10% 0%; top: 20vh;  }
 
 .contact-social-icons { width: 100%; height: 100px; margin-top: 75px; display: flex; align-items: center; justify-content: center;}
 .contact-social-icons img {width: 50px; padding: 10%;}
@@ -228,7 +247,7 @@ h2 {font-size: 32px}
   #tv-container {padding-bottom: 20%;}
   .about-link, .contact-link {display: none;}
   #hamburger-wrapper {display: block;}
-  
+  .clouds {height: 80%;}
 }
 
 
@@ -279,5 +298,5 @@ h2 {font-size: 32px}
   @-webkit-keyframes heartbeat{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}@keyframes heartbeat{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}
   
   
-  
+
   
