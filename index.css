@@ -57,7 +57,7 @@ height: 100vh;
 /* CURSOR CLASSES */
 .link-remote:hover {cursor: url('src/link-remote.svg'), auto!important;}
 .off-remote:hover {cursor: url('src/off-remote.svg'), auto!important;}
-.scale-up-hover:hover {transform: scale(1.25);}
+.scale-up-hover:hover {transform: scale(1.25); }
 
 body {
 height: 100vh; 
@@ -94,7 +94,7 @@ left: 0;
 .about-link {left: 0%;}
 .contact-link {right: 0%;}
 
-.palm {width: 35%; position: fixed; margin-top: -5%;}
+.palm {width: 35%; position: fixed; margin-top: -5%; z-index: 100;}
 .palm-left {float: left; left: -5%; animation: wobble-ver-left 150s both;}
 .palm-right {float: right; right: -5%; animation: wobble-hor-bottom 300s both;}
 .beach-spread {position: fixed; bottom: 0; width: 100vw; height: 40vh; background-image: url("src/beach-spread.jpg"); background-size: cover }
@@ -104,7 +104,7 @@ left: 0;
 .clouds {position: fixed; top: 0;  height: 60%; width: 100vw; }
 
 .clouds-wrapper {
-  width: 250%; 
+  width: 250%;
 	height: 90%; 
   background-image: url("src/wide-clouds6.png");
   background-size: contain;
@@ -131,24 +131,26 @@ left: 0;
   
 
 #tv-container {box-sizing: border-box; position: fixed; height: 80vh; top: 20vh; width: 100vw;  display: flex; align-items: center; justify-content: center;}
-#tv-wrapper {box-sizing: border-box; height: 100%; width: 100%; display: flex; justify-content: center; align-items: flex-end; position: relative; background-image: url('src/tv-spread-bg.gif'); background-size: contain; background-position: center bottom; background-repeat: no-repeat; z-index: -2;}
+#tv-wrapper {box-sizing: border-box; height: 100%; width: 100%; display: flex; justify-content: center; align-items: flex-end; position: relative; background-image: url('src/tv-spread-bg.webp'); background-size: contain; background-position: center bottom; background-repeat: no-repeat; z-index: -2;}
 #tv-contents-container { box-sizing: border-box; position: absolute; top: 0; left: 0; height: 100%; width: 100%; }
 #tvs {box-sizing: border-box;  max-width: 100%; max-height: 100%;  }
 
 .tv-gif-bg { height: 100%; width: 100%; position: absolute; background-size: contain; background-position: center bottom; background-repeat: no-repeat; z-index: -1;}
-#film-hover {background-image: url('src/countdown.gif'); display: none;}
+#film-hover {background-image: url('src/countdown.webp'); display: none;}
+#photo-hover {background-image: url('src/casey-bg.png'); display: none; }
+#design-hover {background-image: url('src/magazine-bg.webp'); display: none; }
 
-
-.tv-window h2 { margin: 0; padding: 0;  }
+.tv-window h2 { margin: 0; padding: 0; text-shadow: 2px 2px 4px #000000; }
 .tv-window {display: flex; align-items: center; justify-content: center; text-align: center; }
 
 .fullscreen-wrapper {position: fixed; top: 0; left: 0; border: 2px solid black; height: 100vh; width: 100vw; animation:fade-in 0.25s cubic-bezier(.0,.9,0.95,1.000) both;  }
 .tv {width: 100%; height: 100%; display: inline-flex;}
-.screen {width: 100%; height: 100%; float: left; background: black; border: 2px solid #e2e2e2; border-radius: 5px; display: flex; align-items: center; justify-content: center; background-image: url("src/blue-static.gif"); background-size: cover; background-repeat: no-repeat;}
+.screen {width: 100%; height: 100%; float: left; background: black; border: 2px solid #e2e2e2; border-radius: 5px; display: flex; align-items: center; justify-content: center; background-image: url("src/blue-static.webp"); background-size: cover; background-repeat: no-repeat;}
 .nav {width: 25%; min-width: 125px; float: right; height: 100%; margin-left: 1%; padding-top: 5%; display: inline-flex; flex-direction: column; align-items: center; justify-content: space-around; }
 .nav-description {font-size: 2em; padding: 2.5%; background: grey; width: 100%; color: white; line-height: 1.25em; margin: 10% 0; text-align: center;}
 .sec-wrapper { height: 50%; width: 100%; text-align: center; }
 .sec-wrapper img:hover {transform: scale(1.25)}
+
 
 /* FILM BOUNDING BOX & FULL SCREEN */
 #film {top: 1.65vh; margin-left: 50.5%; position: absolute; padding: 0.5%; }

@@ -1,14 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="89.712" height="83.333" viewBox="0 0 89.712 83.333">
-  <defs>
-    <style>
-      .a {
-        fill: #fff;
-      }
-    </style>
-  </defs>
-  <g>
-    <rect class="a" width="89.712" height="18.519"/>
-    <rect class="a" y="32.716" width="89.712" height="18.519"/>
-    <rect class="a" y="64.815" width="89.712" height="18.519"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="89.712" height="83.333"  fill="#fff" xmlns:v="https://vecta.io/nano"><path d="M0 0h89.712v18.519H0zm0 32.716h89.712v18.519H0zm0 32.099h89.712v18.519H0z"/></svg>
