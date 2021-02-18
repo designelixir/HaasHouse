@@ -137,7 +137,7 @@ left: 0;
 
 .tv-gif-bg { height: 100%; width: 100%; position: absolute; background-size: contain; background-position: center bottom; background-repeat: no-repeat; z-index: -1;}
 #film-hover {background-image: url('src/countdown.webp'); display: none;}
-#photo-hover {background-image: url('src/casey-bg.png'); display: none; }
+#photo-hover {background-image: url('src/greenscreen.webp'); display: none; }
 #design-hover {background-image: url('src/magazine-bg.webp'); display: none; }
 
 .tv-window h2 { margin: 0; padding: 0; text-shadow: 2px 2px 4px #000000; }
@@ -153,16 +153,16 @@ left: 0;
 
 
 /* FILM BOUNDING BOX & FULL SCREEN */
-#film {top: 1.65vh; margin-left: 50.5%; position: absolute; padding: 0.5%; }
+#film {top: 1.65vh; margin-left: 50.5%; margin-right: 10%; position: absolute; padding: 0.5% 0 0.5% 1%;}
 #film-screen{padding: 5% 5%; background-image: url("src/tv-11.png"); background-size: 100% 100%; background-repeat: no-repeat;}
 
 /* PHOTO BOUNDING BOX & FULL SCREEN */
-#photo {margin-bottom: 5%; top: 1%; left: 27%; position: absolute; height: 25%; width: 22%; padding: 0.7% 0.5%; }
+#photo {margin-bottom: 5%; top: 1%; left: 27%; position: absolute; height: 25%; width: 22%; padding: 0.7% 0% 0.7% 1.25%; }
 #photo-fullscreen {padding: 2%; background-image: url("src/tv-6.png"); background-size: 100% 100%; background-repeat: no-repeat;}
 #photo-target {max-height: 100%;}
 
 /* DESIGN BOUNDING BOX & FULL SCREEN */
-#design {margin-left: 49.25%; position: absolute; height: 19%; width: 19%; }
+#design {margin-left: 49.25%; position: absolute; height: 19%; width: 19%; padding-left: 0.5%; }
 #design-fullscreen {padding: 1% 5% 4% 2%; background-image: url("src/tv-3.png"); background-size: 100% 100%; background-repeat: no-repeat;}
 #design-target {max-height: 100%;}
 #design-fullscreen .nav {background: #1e1e1e;}
