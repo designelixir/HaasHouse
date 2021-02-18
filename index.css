@@ -157,7 +157,7 @@ left: 0;
 #film-screen{padding: 5% 5%; background-image: url("src/tv-11.png"); background-size: 100% 100%; background-repeat: no-repeat;}
 
 /* PHOTO BOUNDING BOX & FULL SCREEN */
-#photo {margin-bottom: 5%; top: 1%; left: 27%; position: absolute; height: 25%; width: 22%; padding: 0.7% 0% 0.7% 1.25%; }
+#photo {margin-bottom: 5%; top: 1%; left: 27%; position: absolute; height: 25%; width: 22%; padding: 0.7% 0% 0.7% 0.7%; }
 #photo-fullscreen {padding: 2%; background-image: url("src/tv-6.png"); background-size: 100% 100%; background-repeat: no-repeat;}
 #photo-target {max-height: 100%;}
 
