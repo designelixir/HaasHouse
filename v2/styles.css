@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+
+* {box-sizing: border-box; font-family: 'Almarai', sans-serif;}
+:root {
+    --gold: #FADD60;
+    --tan: #F0EAD6;
+    --darktan: #949188;
+}
+html {max-width: 100vw; overflow-x: hidden;}
+body {width: 100%; margin: 0px}
+
+#navigation-bar {width: 100vw; height: 100vh; background: white; position: fixed; top: 0vh; left: 0vw; z-index: 300000;}
+.nav-logo {width: 200px;}
+.nav-link-wrapper {border: 1px solid blue; height: 80%;}
+.nav-link {color: var(--tan); text-decoration: none; font-weight: 700; font-size: 48px!important; margin: 2.5px 0}
+.nav-link:hover {color: var(--darktan)}
+
+
+#menuButton {border: unset; color: var(--gold); background: unset; font-size: 68px; transform: rotate(90deg); position: fixed; top: 10px; right: 20px; z-index: 4000000;}
+#menuButton:hover {color: var(--tan)}
+
+.full-width {width: 100%;}
+
+.flex-center-center {display: flex; align-items: center; justify-content: center; flex:1}
+.flex-center-end {display: flex; align-items: center; justify-content: flex-end; flex:1}
+.flex-center-start {display: flex; align-items: center; justify-content: flex-start; flex:1}
+.flex-center-spacebetween {display: flex; align-items: center; justify-content: space-between; flex:1}
+.flex-center-spaceevenly {display: flex; align-items: center; justify-content: space-evenly; flex:1}
+
+.flex-start-center {display: flex; align-items: flex-start; justify-content: center; flex:1}
+.flex-start-start {display: flex; align-items: flex-start; justify-content: flex-start; flex:1;}
+.flex-start-end {display: flex; align-items: flex-start; justify-content: flex-end; flex:1;}
+.flex-start-spacebetween {display: flex; align-items: start; justify-content: space-between; flex:1;}
+.flex-start-spaceevenly {display: flex; align-items: start; justify-content: space-evenly; flex:1;}
+
+.flex-end-center {display: flex; align-items: flex-end; justify-content: center; flex:1;}
+.flex-end-start {display: flex; align-items: flex-end; justify-content: flex-start; flex:1;}
+.flex-end-end {display: flex; align-items: flex-end; justify-content: flex-end; flex:1;}
+.flex-end-spacebetween {display: flex; align-items: center; justify-content: space-between; flex:1;}
+.flex-end-spaceevenly {display: flex; align-items: center; justify-content: space-evenly; flex:1;}
+
+#homeHero {width: 100vw; height: 100vh; overflow: hidden; background-image: url('assets/bg.jpg'); background-size: cover; background-position: center;}
+.hero-content {height: 70vh; width: 100%; border: 2px solid green;}
+
+.dark-overlay {background: rgba(0,0,0,0.15); backdrop-filter: blur(1px); width: 100%; height: 100%;}
+
+
+.logo {
+    width: 50vw; max-width: 700px; min-width: 100px;
+}
+
+.flex-column {flex-direction: column;}
+.flex-wrap {flex-wrap: wrap}
+
+h1 {
+    font-size: clamp(36px, 2vw + 1.2rem, 48px);
+  line-height: clamp(40px, 2vw + 1.3rem, 52px)
+}
+
+h2 {
+    font-size: clamp(2rem, 1.5vw + 1rem, 2.5rem);
+  line-height: clamp(2.2rem, 1.5vw + 1.2rem, 2.7rem);
+}
+
+.hover:hover {cursor: pointer; transform: scale(1.05);}
+.hover {cursor: pointer;}
+.box-shadow {box-shadow: 2px 2px 2px rgba(0,0,0,0.5);}
+.text-shadow {text-shadow: 0 0 2px rgba(0,0,0,0.5);}
+.centered-text {text-align: center;}
+.white-text {color: white;}
+
+.standard-container-padding {padding: 10px;}
+
+.active-link {text-decoration: underline;}
+
+#designElixirCredits {text-decoration: none; font-size: 12px; color: black;}
+
+@media screen and (min-width: 480px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+
+.fade-in{-webkit-animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both}
+@-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
+
