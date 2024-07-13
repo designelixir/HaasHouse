@@ -23,45 +23,101 @@
 
 
 
-
-            <div class="flex-center-center standard-container-padding">
-                <div class="standard-container-padding" style=" width: 10vw;">
-                    <p>Brand</p>
-                    <p>Events</p>
-                    <p>Surf</p>
-                    <p>Misc</p>
-                </div>
-                <div class="flex-center-center flex-wrap">
-                    <div class="photo flex-center-center" style="background-image: url('assets/photos/000002960006-2\(1\).jpg');"></div>
-                    <div class="photo flex-center-center" style="background-image: url('assets/photos/000002980027\(1\).jpg')"></div>
-                    <div class="photo flex-center-center" style="background-image: url('assets/photos/000016810029\(1\).jpg')"></div>
-                    <div class="photo flex-center-center" style="background-image: url('assets/photos/Amy_LindaMar\(1\).jpg')"></div>
-                    <div class="photo flex-center-center" style="background-image: url('assets/photos/000055760032\(1\).jpg')"></div>
-
+            
+                <div class="flex-center-center standard-container-padding photo-section">
+                    <div class="photo-categories flex-start-start flex-column">
+                        <p><i style="font-size: 12px; min-width: 50px; padding: 0 0 15px">filter by:</i></p>
+                        <div class="flex-start-start flex-column photo-categories-buttons">
+                            <button class="category-button" style="display: none" id="all" onclick="toggleCategories('all')">Show All</button>
+                            <button class="category-button" id="brand" onclick="toggleCategories('brand')"><span>Brand</span></button>
+                            <button class="category-button" id="events" onclick="toggleCategories('events')">Events</button>
+                            <button class="category-button" id="surf" onclick="toggleCategories('surf')">Surf</button>
+                            <button class="category-button" id="misc" onclick="toggleCategories('misc')">Misc</button>
+                        </div>
+                    </div>
+                    <div class="photo-container-wrapper flex-center-center">
+                        <div class="flex-start-start flex-wrap photo-container">
+                            <div id="pic-1" onclick="expandPhoto('pic-1')" class="fade-in photo brand" style="background-image: url('assets/photos/000002960006-2(1).jpg' )">
+                                <button class="closer-button">X</button>
+                            </div>
+                            <div id="pic-2" onclick="expandPhoto('pic-2')" class="fade-in photo events surf" style="background-image: url('assets/photos/000002980027(1).jpg' )">
+                                <button class="closer-button">X</button>
+                            </div>
+                            <div id="pic-3" onclick="expandPhoto('pic-3')" class="fade-in photo surf" style="background-image: url('assets/photos/000016810029(1).jpg' )">
+                                <button class="closer-button">X</button>
+                            </div>
+                            <div id="pic-4" onclick="expandPhoto('pic-4')" class="fade-in photo brand" style="background-image: url('assets/photos/000055760032(1).jpg' )">
+                                <button class="closer-button">X</button>
+                            </div>
+                            <div id="pic-5" onclick="expandPhoto('pic-5')" class="fade-in photo brand" style="background-image: url('assets/photos/Amy_LindaMar\(1\).jpg' )">
+                                <button class="closer-button">X</button>
+                            </div>
+                            
+                        </div>
+                    </div>
                     
-
+    
+    
                 </div>
+            
+            
 
-
-            </div>
-
-            <div class="standard-container-padding">
-                <a href="https://www.facebook.com/ColoradoHistoricalVideos" target="_blank" class="hover">
-                    <?xml version="1.0" encoding="UTF-8"?>
-                    <svg id="b" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"
-                        viewBox="0 0 64.206 123.892">
-
-                        <g id="c" data-name="Layer 1">
-                            <path class="d" style="fill: white;"
-                                d="M19.036,123.892c-.021-.522-.06-1.044-.06-1.567-.003-17.738-.003-35.475-.003-53.213v-1.702H0v-22.028h18.973c0-.619-.002-1.088,0-1.558.024-5.764-.121-11.536.117-17.291.287-6.94,2.339-13.304,7.237-18.487,3.726-3.942,8.375-6.175,13.623-7.296C44.214-.161,48.528-.054,52.836.111c3.502.134,6.997.436,10.494.671.275.018.546.097.876.158v19.639c-.417,0-.841-.005-1.265,0-4.311.063-8.628,0-12.931.224-5.088.263-7.965,3.087-8.176,8.207-.219,5.312-.076,10.639-.087,15.959,0,.072.054.144.138.353h21.606c-.953,7.406-1.886,14.651-2.835,22.025h-18.839c-.042.473-.098.817-.098,1.161-.004,18.181-.004,36.362-.001,54.543,0,.28.039.561.06.841h-22.743Z" />
-                        </g>
-                    </svg>
-                </a>
-            </div>
+            
         </div>
     </main>
 
 
 </body>
+<script>
+function toggleCategories(category) {
+    // Get all the photos
+    var photos = document.querySelectorAll('.photo');
+    $('.category-button').removeClass('selected')
+    // Loop through each photo
+    photos.forEach(function(photo) {
+        // If the category is 'all', show all photos
+        if (category === 'all') {
+            photo.classList.remove('hide')
+            photo.classList.add('show')
+            $('#all').css("display", "none")
+        } else {
+            $('#all').css("display", "block")
+            // Otherwise, show only photos with the specified category and hide the rest
+            if (photo.classList.contains(category)) {
+                photo.classList.remove('hide')
+                photo.classList.add('show')
+            } else {
+                photo.classList.remove('show')
+                photo.classList.add('hide')
+            }
+        }
+    });
+    $('#' + category).addClass("selected")
+}
 
+function expandPhoto(pic){
+    const container = document.querySelector('.photo-container');
+    const containerRect = container.getBoundingClientRect();
+    
+    if ($('#' + pic).hasClass('expanded')){
+        $('#' + pic).removeClass('expanded')
+        $('#' + pic).css("width", "100%") ;
+        console.log("close")    
+    } else {
+        $('#' + pic).addClass('expanded')
+        $('#' + pic).css("width", (containerRect.width - 15) + "px") ;
+        console.log("open")
+        
+    }
+    
+}
+
+window.addEventListener('resize', () => {
+    document.querySelectorAll('.photo.expanded').forEach(photo => {
+        photo.classList.remove('expanded');
+        photo.style.width = "100%"
+    });
+});
+
+</script>
 </html>

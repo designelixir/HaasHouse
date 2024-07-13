@@ -5,7 +5,7 @@ class Header extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-    <nav id="top-nav">
+    <nav id="top-nav" class="white-gradient">
       <div class=" flex-center-spacebetween" style="width: 100vw; max-height: 120px; padding: 0 0 0 20px">
           <a href="/"><img src="assets/haas-house-logo-large.svg" class="nav-logo" alt="Haas House logo"/></a>
           <button id="menuButton" onclick="toggleMenu()" class="flex-center-center hover">

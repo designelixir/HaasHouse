@@ -6,12 +6,12 @@
     --tan: #F0EAD6;
     --darktan: #949188;
 }
-html {max-width: 100vw; overflow-x: hidden;}
+html {max-width: 100vw; overflow-x: clip;}
 body {width: 100%; margin: 0px; background:white}
-main {height: 100vh; width: 100vw;}
+
 #top-nav {height: 80px; width: 100vw; top: 0; left: 0; position: fixed;}
 
-#navigation {height: 80px; margin-bottom: 25px;}
+#navigation {height: 80px; margin-bottom: 25px; z-index: 999999999999999;}
 #navigation-bar {visibility: hidden; width: 100%; height: calc(100% - 140px);}
 .nav-logo {width: 200px; z-index: 50000000000; }
 .nav-link-wrapper { height: 80%;}
@@ -72,6 +72,7 @@ p {font-size: 22px;}
 p a {color: black;}
 
 .hover:hover {cursor: pointer; transform: scale(1.05);}
+a:hover {transform: scale(1.01); text-decoration: underline;}
 .hover {cursor: pointer;}
 .box-shadow {box-shadow: 2px 2px 2px rgba(0,0,0,0.5);}
 .text-shadow {text-shadow: 0 0 2px rgba(0,0,0,0.5);}
@@ -79,45 +80,97 @@ p a {color: black;}
 .white-text {color: white;}
 
 .standard-container-padding {padding: 10px;}
-
+.icon {height: 25px;}
 .active-link {text-decoration: underline; color: var(--darktan)}
-
+.white-overlay {width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; z-index: 300000; background: white; pointer-events: none;}
+.invisible-link {text-decoration: none; color: inherit;}
 #designElixirCredits {text-decoration: none; font-size: 12px; color: black;}
 
-@media screen and (min-width: 480px) {
-  body {
+.white-gradient {
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(180deg, rgba(255,255,255,0.9710083862646621) 51%, rgba(255,255,255,0.75) 73%, rgba(255,255,255,0.5) 85%, rgba(255,255,255,0.25) 94%, rgba(255,255,255,0.05) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(255,255,255,0.9710083862646621) 51%, rgba(255,255,255,0.75) 73%, rgba(255,255,255,0.5) 85%, rgba(255,255,255,0.25) 94%, rgba(255,255,255,0.05) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,0.9710083862646621) 51%, rgba(255,255,255,0.75) 73%, rgba(255,255,255,0.5) 85%, rgba(255,255,255,0.25) 94%, rgba(255,255,255,0.05) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1); 
+}
+
+@media screen and (max-width: 700px) {
+  .photo-section {flex-direction: column;}
+  .photo-categories { align-items: center; max-width: unset!important; width: 100%; padding-bottom: 15px;}
+  .photo-categories-buttons {flex-direction: row;  width: 100%; justify-content: space-evenly;}
+  .photo-categories button {padding: 0px 15px;}
+  .category-button {width: calc(100% + 6px)}
+  .photo-container {width: 100%;}
+  .photo {width: 100%; max-width: unset!important; min-width: unset;}
+  .selected:hover {margin: 0!important;}
+}
+
+/* Photo Page */
+.photo-categories {min-width: 120px; max-width: 10vw; }
+.category-button {border: unset; background-color: white; font-size: 18px; padding: 15px 0px; cursor: pointer;}
+.photo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    height: 100%;
+    max-width: 1200px;
     
-  }
 }
 
+.photo-container-wrapper {width: 100%;}
+
+.photo {
+    z-index: 1;
+    width: 100%;
+    max-width: calc(33% - 20px);
+    min-width: 200px;
+    min-height: 300px;
+    height: 25vw;
+    border-radius: 5px;
+    transition: transform 0.3s;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.lightbox-photo {height: 100%;}
+.lightbox {display: none;}
+.expanded {transition: transform 0.3s; width: 90%; min-width: unset!important; max-width: unset!important; height: 85vh; z-index: 99999999999!important; position: fixed; top: 10vh;  background-size: contain; background-color: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px); }
+.photo.expanded:hover {
+    transform: none; /* Override the hover effect */
+}
+.photo:hover {
+    transform: scale(1.05);
+}
+.photo-section {width: 100%; }
+.category-button:hover {font-weight: 800;}
+
+.selected {font-weight: 800!important; text-decoration: underline;}
+
+.show {display: block; -webkit-animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both}
+.hide {display: none; -webkit-animation:fade-out 1.2s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-out 1.2s cubic-bezier(.39,.575,.565,1.000) both}
+
+.closer-button {display: none; font-size: 24px; border: unset; padding: 15px 25px; background: white; cursor: pointer; border-radius: 25px;}
+.expanded .closer-button {display: block!important;}
+/* Animations */
 .fade-in{-webkit-animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both}
-@-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
+@-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}
+@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
 
-#menuLayer1.animate {
-    animation: menuLayer1AnimationClose 0.5s forwards;
-}
-
-#menuLayer2.animate {
-    animation: menuLayer2AnimationClose 0.5s forwards;
-}
-
-#menuLayer3.animate {
-    animation: menuLayer3AnimationClose 0.5s forwards;
-}
-
-#menuLayer1.animateOpen {
-    animation: menuLayer1AnimationClose 0.5s backwards;
-}
-
-#menuLayer2.animateOpen {
-    animation: menuLayer2AnimationClose 0.5s backwards;
-}
-
-#menuLayer3.animateOpen {
-    animation: menuLayer3AnimationClose 0.5s backwards;
-}
+.fade-out {-webkit-animation:fade-out 1s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-out 1s cubic-bezier(.39,.575,.565,1.000) both}
+@-webkit-keyframes fade-out{0%{opacity:1; display: inherit;} 100%{opacity:0}}
+@keyframes fade-out{0%{opacity:1}100%{opacity:0; display: none;}}
 
 
+#menuLayer1.animate {animation: menuLayer1AnimationClose 0.5s forwards;}
+#menuLayer2.animate {animation: menuLayer2AnimationClose 0.5s forwards;}
+#menuLayer3.animate {animation: menuLayer3AnimationClose 0.5s forwards;}
+#menuLayer1.animateOpen {animation: menuLayer1AnimationClose 0.5s backwards;}
+#menuLayer2.animateOpen {animation: menuLayer2AnimationClose 0.5s backwards;}
+#menuLayer3.animateOpen {animation: menuLayer3AnimationClose 0.5s backwards;}
 
 @keyframes menuLayer1AnimationClose {
     0% {transform: none;}
@@ -161,4 +214,3 @@ p a {color: black;}
     animation: menuFill 0.5s forwards;
 }
 
-.photo {min-width: 200px; width: 25vw; max-width: 300px; height: 25vw; background-size: cover; background-position: center; background-repeat: no-repeat; margin: 10px}
