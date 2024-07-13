@@ -5,9 +5,9 @@ class Header extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-    <nav id="top-nav" class="white-gradient">
+    <nav id="top-nav">
       <div class=" flex-center-spacebetween" style="width: 100vw; max-height: 120px; padding: 0 0 0 20px">
-          <a href="/"><img src="assets/haas-house-logo-large.svg" class="nav-logo" alt="Haas House logo"/></a>
+          <a href="/"><img src="assets/haas-house-logo-large.svg" class="nav-logo fade-in" alt="Haas House logo"/></a>
           <button id="menuButton" onclick="toggleMenu()" class="flex-center-center hover">
               <span class="menu-layer" id="menuLayer1">|</span>
               <span class="menu-layer" id="menuLayer2">|</span>
@@ -45,17 +45,20 @@ function toggleMenu() {
         $('#navigation-bar').slideUp(300, function() {
           
             $(this).css('visibility', 'hidden');
-            
             $('.menu-layer').removeClass('animate') 
+            $('.home-nav .nav-logo').css("display", "none")
             $('.menu-layer').addClass('animateOpen') 
+            
             $('#top-nav').css({"animation":"menuFill 0.5s reverse"})
-            $('.nav-logo').css('display', 'inherit')
+            
+
             
                     
         });
         
         
-    } else if ($("#navigation-bar").css('visibility') === 'hidden') {
+    }
+  else if ($("#navigation-bar").css('visibility') === 'hidden') {
         console.log("visibility - hidden");
         
 
@@ -65,7 +68,7 @@ function toggleMenu() {
         $('.menu-layer').removeClass('animateOpen') 
         
         $('.menu-layer').addClass('animate') 
-        $('.nav-logo').css('display', 'block')
+        $('.home-nav .nav-logo').css('display', 'block')
         
         
     }

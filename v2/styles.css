@@ -13,6 +13,7 @@ body {width: 100%; margin: 0px; background:white}
 
 #navigation {height: 80px; margin-bottom: 25px; z-index: 999999999999999;}
 #navigation-bar {visibility: hidden; width: 100%; height: calc(100% - 140px);}
+.home-nav .nav-logo {display: none;}
 .nav-logo {width: 200px; z-index: 50000000000; }
 .nav-link-wrapper { height: 80%;}
 .nav-link {color: var(--tan); text-decoration: none; font-weight: 700; font-size: 48px!important; margin: 2.5px 0}
@@ -86,7 +87,7 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
 .invisible-link {text-decoration: none; color: inherit;}
 #designElixirCredits {text-decoration: none; font-size: 12px; color: black;}
 
-.white-gradient {
+.standard-nav #top-nav{
     background: rgb(255,255,255);
     background: -moz-linear-gradient(180deg, rgba(255,255,255,0.9710083862646621) 51%, rgba(255,255,255,0.75) 73%, rgba(255,255,255,0.5) 85%, rgba(255,255,255,0.25) 94%, rgba(255,255,255,0.05) 100%);
     background: -webkit-linear-gradient(180deg, rgba(255,255,255,0.9710083862646621) 51%, rgba(255,255,255,0.75) 73%, rgba(255,255,255,0.5) 85%, rgba(255,255,255,0.25) 94%, rgba(255,255,255,0.05) 100%);
@@ -103,8 +104,13 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
   .photo-container {width: 100%;}
   .photo {width: 100%; max-width: unset!important; min-width: unset;}
   .selected:hover {margin: 0!important;}
+
+  .bio-wrapper {flex-wrap: wrap;}
+  .bio-image {padding-left: 0px!important;}
 }
 
+.bio-wrapper {width: 100%; padding: 10px; min-height: 85vh;}
+.bio-image {padding-left: 25px; width: 100%; max-width: 500px;}
 /* Photo Page */
 .photo-categories {min-width: 120px; max-width: 10vw; }
 .category-button {border: unset; background-color: white; font-size: 18px; padding: 15px 0px; cursor: pointer;}
@@ -145,7 +151,7 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
 .photo:hover {
     transform: scale(1.05);
 }
-.photo-section {width: 100%; }
+.photo-section {width: 100%; min-height: 85vh; }
 .category-button:hover {font-weight: 800;}
 
 .selected {font-weight: 800!important; text-decoration: underline;}
@@ -161,6 +167,7 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
 @keyframes fade-in{0%{opacity:0}100%{opacity:1}}
 
 .fade-out {-webkit-animation:fade-out 1s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-out 1s cubic-bezier(.39,.575,.565,1.000) both}
+
 @-webkit-keyframes fade-out{0%{opacity:1; display: inherit;} 100%{opacity:0}}
 @keyframes fade-out{0%{opacity:1}100%{opacity:0; display: none;}}
 
