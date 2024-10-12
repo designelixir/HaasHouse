@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Description of the page">
+    <meta name="keywords" content="comma separated">
+    <meta name="author" content="Design Elixir Studio | Megan Byers">
+    <title>Haas House V2 | Home</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts/index.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/vimeo-video-element/+esm"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/player.style/minimal/+esm"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/player.style/sutro/+esm"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+</head>
+
+
+
+<body class="fade-in">
+    <main class="flex-center-center">
+        <div class=" flex-center-center flex-column">
+
+            <header-component data-nav="Video" id="navigation" class="standard-nav"></header-component>
+
+            
+            
+                <div class="flex-center-center standard-container-padding" style="min-height: 80vh;">
+                    <div class="carousel flex-center-center flex-column">
+                        
+                        <div class="carousel-track">
+                          <div class="carousel-item">
+                            <media-theme-sutro class="media-controller" id="media1">
+                                <vimeo-video
+                                  slot="media"
+                                  src="https://vimeo.com/1019027611"
+                                  playsinline
+                                  crossorigin
+                                ></vimeo-video>
+                            </media-theme-sutro>
+                          </div>
+                          <div class="carousel-item">
+                            <media-theme-sutro class="media-controller" id="media2">
+                                <vimeo-video
+                                  slot="media"
+                                  src="https://vimeo.com/1017688771"
+                                  playsinline
+                                  crossorigin
+                                ></vimeo-video>
+                            </media-theme-sutro>
+                            
+                          </div>
+                          <div class="carousel-item">
+                            <media-theme-sutro class="media-controller" id="media2">
+                                <vimeo-video
+                                  slot="media"
+                                  src="https://vimeo.com/1017334540"
+                                  playsinline
+                                  crossorigin
+                                ></vimeo-video>
+                            </media-theme-sutro>
+                            
+                          </div>
+                        </div>
+                        <div class="flex-center-center">
+                            <button class="arrow arrow-left">&#9664;</button>
+                            <button class="arrow arrow-right">&#9654;</button>
+                        </div>
+                        
+                      </div>
+                     
+                </div>
+            
+            
+
+            
+        </div>
+    </main>
+
+
+</body>
+<script>
+    const track = document.querySelector('.carousel-track');
+    const items = document.querySelectorAll('.carousel-item');
+    const prevButton = document.querySelector('.arrow-left');
+    const nextButton = document.querySelector('.arrow-right');
+
+    let currentIndex = 0;
+
+    function updateCarousel(newIndex) {
+      gsap.to(track, {
+        x: -newIndex * 100 + '%',
+        duration: 0.75,
+        ease: 'easeIn.inOut'
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % items.length;
+      updateCarousel(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      updateCarousel(currentIndex);
+    }
+
+    nextButton.addEventListener('click', nextSlide);
+    prevButton.addEventListener('click', prevSlide);
+    
+  </script>
+</html>
