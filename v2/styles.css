@@ -151,9 +151,6 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
 
 .photo {
     z-index: 1;
-    width: 100%;
-    max-width: calc(33% - 20px);
-    min-width: 200px;
     min-height: 300px;
     height: 25vw;
     border-radius: 5px;
