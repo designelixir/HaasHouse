@@ -13,122 +13,91 @@
     <script src="scripts/index.js"></script>
 </head>
 
-
-
 <body class="fade-in">
     <main class="flex-center-center">
-        <div class=" flex-center-center flex-column">
-
+        <div class="flex-center-center flex-column">
             <header-component data-nav="Photo" id="navigation" class="standard-nav"></header-component>
 
-
-
-            
-                <div class="flex-center-center standard-container-padding photo-section">
-                    <!-- <div class="photo-categories flex-start-start flex-column">
-                        <p><i style="font-size: 12px; min-width: 50px; padding: 0 0 15px">filter by:</i></p>
-                        <div class="flex-start-start flex-column photo-categories-buttons">
-                            <button class="category-button" style="display: none" id="all" onclick="toggleCategories('all')">Show All</button>
-                            <button class="category-button" id="brand" onclick="toggleCategories('brand')"><span>Brand</span></button>
-                            <button class="category-button" id="events" onclick="toggleCategories('events')">Events</button>
-                            <button class="category-button" id="surf" onclick="toggleCategories('surf')">Surf</button>
-                            <button class="category-button" id="misc" onclick="toggleCategories('misc')">Misc</button>
+            <div class="flex-center-center standard-container-padding photo-section">
+                <div class="photo-container-wrapper flex-center-center">
+                    <div class="flex-center-center flex-column photo-container" style="max-width: 95vw;">
+                        <div class="flex-start-start">
+                            <div class="flex-start-start flex-column" style="width: 50%">
+                                <img src="assets/photos/1.png" onclick="toggleLightbox(1)" style="width: 100%; padding: 2.5%;" />
+                                <img src="assets/photos/3.png" onclick="toggleLightbox(3)" style="width: 100%; padding: 2.5%;" />
+                                <img src="assets/photos/4.png" onclick="toggleLightbox(4)" style="width: 100%; padding: 2.5%;" />
+                                <img src="assets/photos/5.png" onclick="toggleLightbox(5)" style="width: 100%; padding: 2.5%;" />
+                                <img src="assets/photos/6.png" onclick="toggleLightbox(6)" style="width: 100%; padding: 2.5%;" />
+                            </div>
+                            <div class="flex-start-start flex-column" style="width: 50%">
+                                <img src="assets/photos/2.png" onclick="toggleLightbox(2)" style="width: 100%; padding: 2.5%;" />
+                                <img src="assets/photos/7.png" onclick="toggleLightbox(7)" style="width: 100%; padding: 2.5%;" />
+                                <img src="assets/photos/8.png" onclick="toggleLightbox(8)" style="width: 100%; padding: 2.5%;" />
+                                <img src="assets/photos/9.png" onclick="toggleLightbox(9)" style="width: 100%; padding: 2.5%;" />
+                                <img src="assets/photos/10.png" onclick="toggleLightbox(10)" style="width: 100%; padding: 2.5%;" />
+                                <img src="assets/photos/11.png" onclick="toggleLightbox(11)" style="width: 100%; padding: 2.5%;" />
+                            </div>
                         </div>
-                    </div> -->
-                    <div class="photo-container-wrapper flex-center-center">
-                        <div class="flex-center-center flex-column photo-container" style="max-width: 95vw;">
-                          
-                            <div class="flex-start-start">
-                                <div class="flex-start-start flex-column" style="width: 50%">
-                                    <img src="assets/photos/1.png" style="width: 100%; padding: 2.5%;"/>
-                                    <img src="assets/photos/3.png" style="width: 100%; padding: 2.5%;"/>
-                                    <img src="assets/photos/4.png" style="width: 100%; padding: 2.5%;"/>
-                                    <img src="assets/photos/5.png" style="width: 100%; padding: 2.5%;"/>
-                                    <img src="assets/photos/6.png" style="width: 100%; padding: 2.5%;"/>
-                                </div>
-                                <div class="flex-start-start flex-column" style="width: 50%">
-                                    <img src="assets/photos/2.png" style="width: 100%; padding: 2.5%;"/>
-                                    <img src="assets/photos/7.png" style="width: 100%; padding: 2.5%;"/>
-                                    <img src="assets/photos/8.png" style="width: 100%; padding: 2.5%;"/>
-                                    <img src="assets/photos/9.png" style="width: 100%; padding: 2.5%;"/>
-                                    <img src="assets/photos/10.png" style="width: 100%; padding: 2.5%;"/>
-                                    <img src="assets/photos/11.png" style="width: 100%; padding: 2.5%;"/>
-                                </div>
-                            </div>
-                            <img src="assets/photos/12.png" style="width: 100%; padding: 0 2.5%;"/>
-                            <div class="flex-start-start">
-                                <img src="assets/photos/13.png" style="width: 100%; padding: 2.5%;"/>
-                                <img src="assets/photos/14.png" style="width: 100%; padding: 2.5%;"/>
-                            </div>
-                            
-                            </div>
-                            
-                            
+                        <img src="assets/photos/12.png" style="width: 100%; padding: 0 2.5%;" />
+                        <div class="flex-start-start">
+                            <img src="assets/photos/13.png" onclick="toggleLightbox(13)" style="width: 100%; padding: 2.5%;" />
+                            <img src="assets/photos/14.png" onclick="toggleLightbox(14)" style="width: 100%; padding: 2.5%;" />
                         </div>
                     </div>
-                    
-    
-    
                 </div>
-            
-            
+            </div>
 
-            
+            <div id="lightbox" class="flex-center-center flex-column">
+                <div id="lightbox-viewer" class="flex-end-end flex-column">
+                    <div class="flex-start-end" style="height: 50%; width: 100%;">
+                        <button class="close-lightbox" onclick="closeLightbox()">×</button>
+                    </div>
+                    
+                    <div style="height: 50%; ">
+                        <button class="next-lightbox" onclick="nextImage()">→</button>
+                    </div>
+                </div>
+                <p id="lightbox-text" class="centered-text"></p>
+            </div>
         </div>
     </main>
 
-
 </body>
 <script>
-function toggleCategories(category) {
-    // Get all the photos
-    var photos = document.querySelectorAll('.photo');
-    $('.category-button').removeClass('selected')
-    // Loop through each photo
-    photos.forEach(function(photo) {
-        // If the category is 'all', show all photos
-        if (category === 'all') {
-            photo.classList.remove('hide')
-            photo.classList.add('show')
-            $('#all').css("display", "none")
-        } else {
-            $('#all').css("display", "block")
-            // Otherwise, show only photos with the specified category and hide the rest
-            if (photo.classList.contains(category)) {
-                photo.classList.remove('hide')
-                photo.classList.add('show')
-            } else {
-                photo.classList.remove('show')
-                photo.classList.add('hide')
-            }
+    var descriptions = ['Description for image one', 'Description for image two', 'Description for image three', 'Description for image four', 'Description for image five', 'Description for image six', 'Description for image seven', 'Description for image eight', 'Description for image nine', 'Description for image ten', 'Description for image eleven', 'Description for image twelve', 'Description for image thirteen', 'Description for image fourteen'];
+    var currentImageIndex = 1;
+
+    function toggleLightbox(number) {
+        currentImageIndex = number;
+        var $lightbox = $('#lightbox');
+        var $lightboxViewer = $('#lightbox-viewer');
+        var $lightboxText = $('#lightbox-text');
+
+        // Set the background image and description
+        $lightboxViewer.css('background-image', 'url("assets/photos/' + currentImageIndex + '.png")');
+        $lightboxText.text(descriptions[currentImageIndex - 1]);
+
+        // Show the lightbox
+        $lightbox.addClass('show-lightbox').fadeIn();
+    }
+
+    function closeLightbox() {
+        $('#lightbox').removeClass('show-lightbox').fadeOut();
+    }
+
+    function nextImage() {
+        currentImageIndex++;
+        if (currentImageIndex > descriptions.length) {
+            currentImageIndex = 1; // Loop back to the first image if we exceed the last index
+        }
+        toggleLightbox(currentImageIndex);
+    }
+
+    // Optional: Close the lightbox when clicking outside the content
+    $(document).on('click', '#lightbox', function(event) {
+        if ($(event.target).is('#lightbox')) {
+            closeLightbox();
         }
     });
-    $('#' + category).addClass("selected")
-}
-
-function expandPhoto(pic){
-    const container = document.querySelector('.photo-container');
-    const containerRect = container.getBoundingClientRect();
-    
-    if ($('#' + pic).hasClass('expanded')){
-        $('#' + pic).removeClass('expanded')
-        $('#' + pic).css("width", "100%") ;
-        console.log("close")    
-    } else {
-        $('#' + pic).addClass('expanded')
-        $('#' + pic).css("width", (containerRect.width - 15) + "px") ;
-        console.log("open")
-        
-    }
-    
-}
-
-window.addEventListener('resize', () => {
-    document.querySelectorAll('.photo.expanded').forEach(photo => {
-        photo.classList.remove('expanded');
-        photo.style.width = "100%"
-    });
-});
-
 </script>
 </html>

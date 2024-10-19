@@ -24,6 +24,8 @@ body {width: 100%; margin: 0px; background:white}
 #menuButton {border: unset; color: var(--gold); background: unset; font-size: 68px; transform: rotate(90deg); z-index: 4000000; max-height: 70px; max-width: 70px;}
 #menuButton:hover {color: var(--tan)}
 
+button {background: var(--tan); border: unset; color: black; padding: 5px 10px; font-size: 24px;}
+
 .full-width {width: 100%;}
 
 .flex-center-center {display: flex; align-items: center; justify-content: center; flex:1}
@@ -58,10 +60,10 @@ body {width: 100%; margin: 0px; background:white}
     overflow: hidden;
  }
  .vimeo-wrapper iframe {
-    width: 100vw;
-    height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+    width: 140vw;
+    height: calc((9 / 16) * 140vw); /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
     min-height: 100vh;
-    min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+    min-width: 213vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -103,7 +105,7 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
 .centered-text {text-align: center;}
 .white-text {color: white;}
 
-.standard-container-padding {padding: 10px;}
+.standard-container-padding {padding: 25px;}
 .icon {height: 25px;}
 .active-link {text-decoration: underline; color: var(--darktan)}
 .white-overlay {width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; z-index: 300000; background: white; pointer-events: none;}
@@ -133,7 +135,7 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
 }
 
 .bio-wrapper {width: 100%; padding: 10px; min-height: 85vh;}
-.bio-image {padding-left: 25px; width: 100%; max-width: 500px;}
+.bio-image {padding-left: 25px; width: 100%; max-width: 400px;}
 /* Photo Page */
 .photo-categories {min-width: 120px; max-width: 10vw; }
 .category-button {border: unset; background-color: white; font-size: 18px; padding: 15px 0px; cursor: pointer;}
@@ -287,3 +289,14 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
   #media1 {max-width: 515px; width: 100vw!important; }
   #media2 {max-width: 700px; width: 100vw;}
   #media3 {max-width: 650px; width: 100vw; }
+
+.show-lightbox {display: block!important;}
+  #lightbox {display: none; height: 100vh; width: 100vw; position: fixed; top: 0; left: 0; z-index: 3; backdrop-filter: blur(5px); background: rgba(0,0,0,0.25);}
+  #lightbox-viewer {height: 75vh; width: 95vw; margin-left: 2.5vw; margin-top: 100px; background-size: contain; background-position: center; background-repeat: no-repeat;}
+  #lightbox-text {
+    padding: 15px;
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(90deg, rgba(255,255,255,0.9710083862646621) 51%, rgba(255,255,255,0.75) 73%, rgba(255,255,255,0.5) 85%, rgba(255,255,255,0.25) 94%, rgba(255,255,255,0.05) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(255,255,255,0.9710083862646621) 51%, rgba(255,255,255,0.75) 73%, rgba(255,255,255,0.5) 85%, rgba(255,255,255,0.25) 94%, rgba(255,255,255,0.05) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,0.9710083862646621) 51%, rgba(255,255,255,0.75) 73%, rgba(255,255,255,0.5) 85%, rgba(255,255,255,0.25) 94%, rgba(255,255,255,0.05) 100%);
+  }
