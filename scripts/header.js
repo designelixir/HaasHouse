@@ -17,10 +17,10 @@ class Header extends HTMLElement {
       
       <div class="flex-center-center flex-column" id="navigation-bar">
           <div class="flex-center-center flex-column nav-link-wrapper full-width">
-              <a href="/v2/motion" class="nav-link" id="Motion">motion</a>
-              <a href="/v2/photo" class="nav-link" id="Photo">photo</a>
-              <a href="/v2/about" class="nav-link" id="About">about</a>
-              <a href="/v2/contact" class="nav-link" id="Contact">contact</a>
+              <a href="/motion" class="nav-link" id="Motion">motion</a>
+              <a href="/photo" class="nav-link" id="Photo">photo</a>
+              <a href="/about" class="nav-link" id="About">about</a>
+              <a href="/contact" class="nav-link" id="Contact">contact</a>
           </div>
       </div>
     </nav>
