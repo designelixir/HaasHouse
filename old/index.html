@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HAAS HOUSE</title>
+    <meta name="description" content="Portfolio for Casey Haas"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes" />
+    <link rel="shortcut icon" href="src/haas-logo-black.svg" type="image/x-icon">
+    <link rel="stylesheet"  type="text/css" href="index.css" />
+    <link rel="preconnect" href="https://use.typekit.net/irk7lua.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTCJJ8YNMR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZTCJJ8YNMR');
+    </script>
+    <script>console.log("Last updated: "+ document.lastModified + " MST");</script>
+
+</head>
+
+
+<body id="the-body">
+<div id="hamburger-wrapper"><img src="src/hamburger.svg" class="togglemobile" id="hamburger" style="height: 30px; position: fixed; top: 5%; left: 5%; z-index: 210;"></div>
+
+<div class="navigation">
+
+    <h5 class="mobile-about-link link-remote abouttoggle">X</h5>
+    <h5 class="about-link link-remote abouttoggle">ABOUT</h5>
+    <span class="link-remote logo-span"> 
+        <img src="src/haas-house-white.svg" class="link-remote" id="haas-house" alt="Haas House Text Logo">
+        <img src="src/haas-logo-white.svg" class="link-remote"  id="haas-house-logo" alt="Haas House Logo">
+    </span>
+    <h5 class="contact-link link-remote contacttoggle" >CONTACT</h5>
+    <h5 class="mobile-contact-link link-remote contacttoggle" >X</h5>
+
+</div>
+
+
+<div class="mobile-navigation bounce-top">
+
+    <h5 class="abouttoggle togglemobile">ABOUT</h5>
+    <h5 class="contacttoggle togglemobile">CONTACT</h5>
+    <div class="contact-social-icons">
+        <a href="https://www.linkedin.com/in/casey-t-haas/" target="blank" rel="noopener"><img src="src/linkedin_1.svg" alt='linked in icon'></a>
+        <a href="https://www.instagram.com/haashouse.co/?igshid=g8yno3vr9s4v" target="blank" rel="noopener"><img src="src/instagram.svg" alt='instagram icon'></a>
+    </div>
+</div>
+
+<div class="clouds">
+    <div class="clouds-wrapper"></div>
+</div>
+
+<div id="scene">
+    <div id="loader-wrapper">
+        <div id="loader">
+            <div class="loader-content"> 
+                <img class="heartbeat" src="src/haas-logo-black.svg" alt="haas house logo" style="width: 60%;">
+                <img src="src/loading.gif" alt="loading gif" style="width: 50%; padding: 10%;">
+            </div>
+        </div>
+    </div>
+    
+
+
+    <div class="beach-spread">
+        <div class="sand"></div>
+        
+    </div>
+
+    
+
+    <img class='palm-left palm' src="src/palm-left.png"  alt='palm leaf'>
+    <img class='palm-right palm' src="src/palm-right.png" alt='palm leaf'>
+
+    <div id="tv-container" class="fade-in">
+        <div id="tv-wrapper">
+            <div class="tv-gif-bg" id="film-hover"></div>
+            <div class="tv-gif-bg" id="photo-hover"></div>
+            <div class="tv-gif-bg" id="design-hover"></div>
+
+
+           
+
+
+
+            <div id="tv-contents-container">
+                    <!-- FILM BOUNDING BOX -->
+                    <div class="tv-window film-toggle link-remote scale-up-hover" id="film">
+                        <h2 id="film-link" style="padding-right: 15%;">FILM</h2>
+                    </div>
+
+                    <!-- PHOTO BOUNDING BOX -->
+                    <div class="tv-window photo-toggle link-remote scale-up-hover" id="photo">
+                        <h2 id="photo-link" style="padding-right: 20%;">PHOTO</h2>
+                    </div>
+
+                    <!-- DESIGN BOUNDING BOX -->
+                    <div class="tv-window design-toggle link-remote scale-up-hover" id="design">
+                        <h2  id="design-link" style="padding-right: 20%;">DESIGN</h2>
+                    </div>
+            </div>
+            <!-- TV STACK IMAGE  -->
+            <img src="src/tv-spread.png" rel="preload" id="tvs" alt="stack of tvs" height="100%" width="auto">
+        </div>
+        <div class="shadows" id="left-shadow"></div>
+        <div class="shadows" id="right-shadow"></div>
+
+    </div>
+</div>
+<!-- end scene -->
+
+
+<!-- FILM FULLSCREEN WINDOW -->
+<div class="fullscreen-wrapper" id="film-screen" style="display: none">
+    <div class="tv" id="film-full">
+        <div class="screen">
+            <iframe id="film-iframe" style="width:100%; height:100%;  background-color: black;" allow="fullscreen" src="https://player.vimeo.com/video/499418125?quality=1080p"></iframe>
+        </div>
+        <div class="nav">
+            <img src="src/on_1.svg" class="film-toggle off-remote power-btn" alt="exit film tv">
+            <p class="project-description">Casey Haas Showreel 2021</p>
+        </div>
+    </div>
+</div>
+
+<!-- PHOTO FULLSCREEN WINDOW -->
+<div class="fullscreen-wrapper" id="photo-fullscreen"  style="display: none">
+    <div class="tv" id="photo-full">
+        <div class="screen" id="photo-screen">
+            <img id="photo-target" src="" >
+            <div class="tv-guide" id="photo-tv-guide"> 
+                <div class="tv-guide-close-bar">
+                    <img src="src/x.svg" id="photo-guide-close" class="photo-channel link-remote" alt="close photo tv guide" style="height: 80%; float: right; padding: 5px; ">
+                </div>
+                <div class="tv-guide-top">
+                    <div class="tv-guide-details">
+                        <div class="tv-guide-title">
+                            <h3 class="channel96" style="float: left;">CHANNEL 96</h3>
+                            <h3 class="guidetype" style="float: right;">PHOTO</h3>
+                        </div>
+                        <div class="tv-guide-description" id="photo-description">
+                            <span id="channel1description">human beings</span>
+                            <span id="channel2description">pacific ocean, architecture, california, bolivia</span>
+                            <span id="channel3description">products, statues, concerts </span>
+                        </div>
+                    </div>
+                    
+                    <div class="tv-guide-photo">
+                        <img src="src/haas-logo-white.svg" alt="Haas House Logo">
+                    </div>
+                </div>
+                <div class="tv-guide-bottom">
+                    <div class="photo-channel channel-style link-remote" id="channel-people" onmouseover="triggerD('channel1description', true)" onmouseout="triggerD('channel1description', false)">
+                        <h4>PEOPLE  </h4> 
+                    </div>
+                    <div class="photo-channel channel-style link-remote" id="channel-places" onmouseover="triggerD('channel2description', true)" onmouseout="triggerD('channel2description', false)">
+                        <h4> PLACES  </h4> 
+                    </div>
+                    <div class="photo-channel channel-style link-remote" id="channel-things" onmouseover="triggerD('channel3description', true)" onmouseout="triggerD('channel3description', false)">
+                        <h4> THINGS   </h4> 
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="nav" style="background-color: #3e3a37; border-radius: 5px; border: #3e3b37">
+            <div class="sec-wrapper">
+                    <img src="src/on_1.svg" class="photo-toggle off-remote power-btn" alt="exit film tv">
+                    <div class="arrow-container">
+                        <img src="src/backward.svg" id="last-photo" class="link-remote"  alt="toggle backwards arrow">
+                        <img src="src/forward.svg" id="next-photo" class="link-remote"  alt="toggle forwards arrow">
+                    </div>
+            </div>
+            <div class="sec-wrapper">
+                    <img class="link-remote tv-guide-btn" src="src/tvguide.svg" id="photo-tv-guide-btn" alt="Toggle Photo TV Guide button">
+                    <p class="project-description" id="photo-project-description"></p>
+            </div>
+            
+            
+            
+        </div>
+    </div>
+</div>
+
+<!-- DESIGN FULLSCREEN WINDOW -->
+<div class="fullscreen-wrapper" id="design-fullscreen"  style="display: none">
+    <div class="tv" id="design-full">
+        <div class="screen" id="design-screen">
+            <img id="design-target" src="">
+            <video autoplay muted id="design-video" src="src/print/magazine.mp4" preload style="display: none"></video>
+            <div class="tv-guide" id="design-tv-guide"> 
+                <div class="tv-guide-close-bar">
+                    <img src="src/x.svg" id="design-guide-close" class="design-channel link-remote" alt="close design tv" style="height: 80%; float: right; padding: 5px;">
+                </div>
+                <div class="tv-guide-top">
+                    <div class="tv-guide-details">
+                        <div class="tv-guide-title">
+                            <h3 class="channel96" style="float: left;">CHANNEL 96</h3>
+                            <h3 class="guidetype" style="float: right;">DESIGN</h3>
+                        </div>
+                        <div class="tv-guide-description" id="design-description">
+                            <span id="channel4description">website design, digital design</span>
+                            <span id="channel5description">posters, magazines</span>
+                            <span id="channel6description">design for moving images</span>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="tv-guide-photo">
+                        <img src="src/haas-logo-white.svg" alt="Haas House Logo">
+                    </div>
+                </div>
+                <div class="tv-guide-bottom">
+                    <div class="design-channel channel-style link-remote" id="channel-web" onmouseover="triggerD('channel4description', true)" onmouseout="triggerD('channel4description', false)">
+                        <h4>WEB</h4> 
+                    </div>
+                    <div class="design-channel channel-style link-remote" id="channel-print" onmouseover="triggerD('channel5description', true)" onmouseout="triggerD('channel5description', false)">
+                        <h4>PRINT</h4> 
+                    </div>
+                    <div class="design-channel channel-style link-remote" id="channel-film" onmouseover="triggerD('channel6description', true)" onmouseout="triggerD('channel6description', false)">
+                        <h4>FILM</h4> 
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="nav">
+            <div class="sec-wrapper">
+                <img src="src/on_1.svg" class="design-toggle off-remote power-btn" alt="exit film tv">
+            <div class="arrow-container">
+                <img src="src/backward.svg" id="design-nav-backward" class="link-remote"  alt="toggle backwards arrow">
+                <img src="src/forward.svg" id="design-nav-forward" class="link-remote"  alt="toggle forwards arrow">
+            </div>
+            </div>
+            <div class="sec-wrapper">
+                <img class="link-remote tv-guide-btn" src="src/tvguide.svg" id="design-tv-guide-btn" alt="Design TV Guide Toggle">
+                <p class="project-description" id="design-project-description"></p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- ABOUT WINDOW -->
+<div id="about-window" class="window">
+    <div class="navigation">
+        <img src="src/close.svg" class="abouttoggle link-remote"  style="height: 40px; position: fixed; top: 5%; left: 5%; background: white; z-index: 400;">
+        <span class="link-remote logo-span"> 
+            <img src="src/haas-house-black.svg" class="link-remote" id="haas-house" alt="Haas House Text Logo">
+            <img src="src/haas-logo-black.svg" class="link-remote"  id="haas-house-logo" alt="Haas House Logo">
+        </span>
+    </div>
+
+    <div class="window-wrapper">
+        <div class="window-sec-wrapper">
+            <div class="window-sec" id="about-sec-left" >
+                <img src="src/AboutPagePhoto.png" alt="Casey Haas Portrait">
+            </div>
+            <div class="window-sec" id="about-sec-right" >
+                <img src="src/about-blurb.svg" alt="Casey Haas is a filmmaker, photographer, and designer from the Bay Area. She is a recent graduate of CU Boulder & General Assembly, where she received a BFA in Film Production and a certificate in Visual Design. She created Haas House as an umbrella for all of her work- film, photography, and design. Her creations reflect the California dream she grew up in, whether it be the beaches of Half Moon Bay or the park down the street from the home she grew up in. A firm believer in the saying ‘the most personal is the most creative’, her work often explores her childhood and life experiences. Casey specializes in shooting 35mm, 120mm, super 8mm, and 16mm film.">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT WINDOW -->
+<div id="contact-window" class="window">
+    <div class="navigation">
+        <img src="src/close.svg" class="contacttoggle link-remote"  style="height: 40px; position: fixed; top: 5%; right: 5%; background: white; z-index: 400;">
+        <span class="link-remote logo-span"> 
+            <img src="src/haas-house-black.svg" class="link-remote" id="haas-house" alt="Haas House Text Logo">
+            <img src="src/haas-logo-black.svg" class="link-remote"  id="haas-house-logo" alt="Haas House Logo">
+        </span>
+    </div>
+    <div class="window-wrapper" >
+       <div class="contact-content">
+            <h2 style='color: black; text-align: center;'>THANKS FOR STOPPING BY!<br/>LET'S KEEP IN TOUCH.</h2>
+            <a id="mail-btn" href="mailto:casey@haashouse.co" target="blank" rel="noopener"><img id="mail-img" src="src/mail.webp" alt='email icon' ></a>
+            <div class="contact-social-icons">
+                <a href="https://www.linkedin.com/in/casey-t-haas/" target="blank" rel="noopener"><img src="src/linkedin_1.svg" alt='linked in icon'></a>
+                <a href="https://www.instagram.com/haashouse.co/?igshid=g8yno3vr9s4v" target="blank" rel="noopener"><img src="src/instagram.svg" alt='instagram icon'></a>
+            </div>
+       </div>
+    </div>
+</div>
+
+
+</body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>   
+    <script src="https://player.vimeo.com/api/player.js"></script>
+</html>
