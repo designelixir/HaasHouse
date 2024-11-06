@@ -11,6 +11,8 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
 </head>
 
 <body class="fade-in">
@@ -21,27 +23,36 @@
             <div class="flex-center-center standard-container-padding photo-section">
                 <div class="photo-container-wrapper flex-center-center">
                     <div class="flex-center-center flex-column photo-container" style="max-width: 95vw;">
-                        <div class="flex-start-start">
-                            <div class="flex-start-start flex-column" style="width: 50%">
-                                <img src="assets/photos/1.png" onclick="toggleLightbox(1)" style="width: 100%; padding: 2.5%;" />
-                                <img src="assets/photos/3.png" onclick="toggleLightbox(3)" style="width: 100%; padding: 2.5%;" />
-                                <img src="assets/photos/4.png" onclick="toggleLightbox(4)" style="width: 100%; padding: 2.5%;" />
-                                <img src="assets/photos/5.png" onclick="toggleLightbox(5)" style="width: 100%; padding: 2.5%;" />
-                                <img src="assets/photos/6.png" onclick="toggleLightbox(6)" style="width: 100%; padding: 2.5%;" />
+                        <div class="flex-start-start double-column">
+                            <div class="flex-start-start flex-column single-column" >
+                                <img src="assets/photos/1.png" onclick="toggleLightbox(1)" data-order="1" />
+                                <img src="assets/photos/3.png" onclick="toggleLightbox(3)" data-order="3"  />
+                                <img src="assets/photos/4.png" onclick="toggleLightbox(4)" data-order="5" />
+                                <img src="assets/photos/5.png" onclick="toggleLightbox(5)" data-order="7" />
+                                <img src="assets/photos/6.png" onclick="toggleLightbox(6)" data-order="9" />
                             </div>
-                            <div class="flex-start-start flex-column" style="width: 50%">
-                                <img src="assets/photos/2.png" onclick="toggleLightbox(2)" style="width: 100%; padding: 2.5%;" />
-                                <img src="assets/photos/7.png" onclick="toggleLightbox(7)" style="width: 100%; padding: 2.5%;" />
-                                <img src="assets/photos/8.png" onclick="toggleLightbox(8)" style="width: 100%; padding: 2.5%;" />
-                                <img src="assets/photos/9.png" onclick="toggleLightbox(9)" style="width: 100%; padding: 2.5%;" />
-                                <img src="assets/photos/10.png" onclick="toggleLightbox(10)" style="width: 100%; padding: 2.5%;" />
-                                <img src="assets/photos/11.png" onclick="toggleLightbox(11)" style="width: 100%; padding: 2.5%;" />
+                            <div class="flex-start-start flex-column single-column">
+                                <img src="assets/photos/2.png" onclick="toggleLightbox(2)" data-order="2" />
+                                <img src="assets/photos/7.png" onclick="toggleLightbox(7)" data-order="4" />
+                                <img src="assets/photos/8.png" onclick="toggleLightbox(8)" data-order="6" />
+                                <img src="assets/photos/9.png" onclick="toggleLightbox(9)" data-order="8" />
+                                <img src="assets/photos/10.png" onclick="toggleLightbox(10)" data-order="10" />
+                                <img src="assets/photos/11.png" onclick="toggleLightbox(11)" data-order="12" />
                             </div>
                         </div>
-                        <img src="assets/photos/12.png" style="width: 100%; padding: 0 2.5%;" />
-                        <div class="flex-start-start">
-                            <img src="assets/photos/13.png" onclick="toggleLightbox(13)" style="width: 100%; padding: 2.5%;" />
-                            <img src="assets/photos/14.png" onclick="toggleLightbox(14)" style="width: 100%; padding: 2.5%;" />
+                        <div class="flex-center-center">
+                            <img src="assets/photos/12.png" data-order="13" style="padding: 0%!important; width: 97.5%!important"/>
+                        </div>
+                        
+                        <div class="flex-start-start double-column">
+                            <div class="flex-start-start single-column">
+                                <img src="assets/photos/13.png" onclick="toggleLightbox(13)" data-order="14" />
+                            </div>
+                            <div class="flex-start-start single-column">
+                                <img src="assets/photos/14.png" onclick="toggleLightbox(14)" data-order="15" />
+                            </div>
+                            
+                            
                         </div>
                     </div>
                 </div>
@@ -50,40 +61,83 @@
             <div id="lightbox" class="flex-center-center flex-column">
                 <div id="lightbox-viewer" class="flex-end-end flex-column">
                     <div class="flex-start-end" style="height: 50%; width: 100%;">
-                        <button class="close-lightbox" onclick="closeLightbox()">×</button>
+                        <button class="close-lightbox hover" onclick="closeLightbox()">×</button>
                     </div>
                     
-                    <div style="height: 50%; ">
-                        <button class="next-lightbox" onclick="nextImage()">→</button>
-                    </div>
                 </div>
-                <p id="lightbox-text" class="centered-text"></p>
+                <div class="flex-center-spacebetween" style="max-height: 100px;">
+                    
+                    <p id="lightbox-text" style="width: 100%;" class="centered-text"></p>
+                    <button class="next-lightbox hover" onclick="nextImage()">→</button>
+                </div>
+                
             </div>
         </div>
     </main>
 
 </body>
 <script>
-    var descriptions = ['Description for image one', 'Description for image two', 'Description for image three', 'Description for image four', 'Description for image five', 'Description for image six', 'Description for image seven', 'Description for image eight', 'Description for image nine', 'Description for image ten', 'Description for image eleven', 'Description for image twelve', 'Description for image thirteen', 'Description for image fourteen'];
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Select all images inside the .photo-container
+    const images = Array.from(document.querySelectorAll(".photo-container img"));
+
+    // Sort images by data-order attribute
+    images.sort((a, b) => a.getAttribute('data-order') - b.getAttribute('data-order'));
+
+    // Animate images in the sorted order
+    gsap.from(images, {
+        opacity: 0,
+        y: 20,               // Move images slightly up initially for a smoother effect
+        duration: 1,         // Duration for each fade-in effect
+        ease: "power2.out",  // Easing for a smooth transition
+        stagger: 0.2         // Delay between each image fade-in
+    });
+});
+
+
+
+
+    var descriptions = [
+        'Kaniela Stewart', 
+        "Kelis Kaleopa'a", 
+        "Kelis Kaleopa'a, Kaniela Stewart", 
+        "Keani Canullo", "Kelis Kaleopa'a", "Keani Canullo", "Keani Canullo", 
+        "Kaniela Stewart", "Kai Sallas", "Keani Canullo", "Kelis Kaleopa'a, Kaniela Stewart", "Kaniela Stewart, Kelis Kaleopa'a", "Kelis Kaleopa'a", "Keani Canullo"];
     var currentImageIndex = 1;
 
     function toggleLightbox(number) {
-        currentImageIndex = number;
-        var $lightbox = $('#lightbox');
-        var $lightboxViewer = $('#lightbox-viewer');
-        var $lightboxText = $('#lightbox-text');
+    currentImageIndex = number;
+    const $lightbox = $('#lightbox');
+    const $lightboxViewer = $('#lightbox-viewer');
+    const $lightboxText = $('#lightbox-text');
 
-        // Set the background image and description
-        $lightboxViewer.css('background-image', 'url("assets/photos/' + currentImageIndex + '.png")');
-        $lightboxText.text(descriptions[currentImageIndex - 1]);
+    // Set the background image and description
+    $lightboxViewer.css('background-image', 'url("assets/photos/' + currentImageIndex + '.png")');
+    $lightboxText.text(descriptions[currentImageIndex - 1]);
 
-        // Show the lightbox
-        $lightbox.addClass('show-lightbox').fadeIn();
-    }
+    // Animate the lightbox expanding and fading in
+    gsap.fromTo($lightbox, 
+        { scale: 0.8, opacity: 0, display: "flex" }, // Start with a smaller scale and hidden opacity
+        { scale: 1, opacity: 1, duration: 0.5, ease: "power2.out", display: "flex" } // Fade in and expand
+    );
+}
 
-    function closeLightbox() {
-        $('#lightbox').removeClass('show-lightbox').fadeOut();
-    }
+function closeLightbox() {
+    const $lightbox = $('#lightbox');
+
+    // Animate the lightbox shrinking and fading out
+    gsap.to($lightbox, {
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.in",
+        onComplete: function() {
+            $lightbox.css("display", "none"); // Hide the lightbox after animation completes
+        }
+    });
+}
+
 
     function nextImage() {
         currentImageIndex++;

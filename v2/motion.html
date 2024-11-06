@@ -12,12 +12,16 @@
     <link rel="stylesheet" href="styles.css">
     <script src="scripts/index.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/vimeo-video-element/+esm"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/player.style/minimal/+esm"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/player.style/sutro/+esm"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/player.style/instaplay/+esm"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 </head>
 
+<script>
+  var videos = [
+    "", "https://vimeo.com/1019027611", "https://vimeo.com/1017688771", "https://vimeo.com/1017334540"
+  ]
+</script>
 
 
 <body class="fade-in">
@@ -25,91 +29,87 @@
         <div class=" flex-center-center flex-column">
 
             <header-component data-nav="Motion" id="navigation" class="standard-nav"></header-component>
-
-            
-            
-                <div class="flex-center-center standard-container-padding" style="min-height: 80vh;">
-                    <div class="carousel flex-center-center flex-column">
-                        
-                        <div class="carousel-track">
-                          <div class="carousel-item">
-                            <media-theme-sutro class="media-controller" id="media1">
-                                <vimeo-video
-                                  slot="media"
-                                  src="https://vimeo.com/1019027611"
-                                  playsinline
-                                  crossorigin
-                                ></vimeo-video>
-                            </media-theme-sutro>
-                          </div>
-                          <div class="carousel-item">
-                            <media-theme-sutro class="media-controller" id="media2">
-                                <vimeo-video
-                                  slot="media"
-                                  src="https://vimeo.com/1017688771"
-                                  playsinline
-                                  crossorigin
-                                ></vimeo-video>
-                            </media-theme-sutro>
-                            
-                          </div>
-                          <div class="carousel-item">
-                            <media-theme-sutro class="media-controller" id="media2">
-                                <vimeo-video
-                                  slot="media"
-                                  src="https://vimeo.com/1017334540"
-                                  playsinline
-                                  crossorigin
-                                ></vimeo-video>
-                            </media-theme-sutro>
-                            
-                          </div>
-                        </div>
-                        <div class="flex-center-center">
-                            <button class="arrow arrow-left">&#9664;</button>
-                            <button class="arrow arrow-right">&#9654;</button>
-                        </div>
-                        
-                      </div>
-                     
-                </div>
-            
-            
-
-            
+            <div class="flex-start-start flex-wrap">
+              <div class="carousel-item" data-order="1" style="background-image: url('assets/motion/motion-1.png')" onclick="toggleLightbox(1)">
+                  <img src="assets/play.svg" class="play-icon" style="width: 75px" alt="play icon"/>
+              </div>
+              <div class="carousel-item" data-order="2" style="background-image: url('assets/motion/motion-2.png')" onclick="toggleLightbox(2)">
+                <img src="assets/play.svg" class="play-icon" style="width: 75px" alt="play icon"/>
+              </div>
+              <div class="carousel-item" data-order="3" style="background-image: url('assets/motion/motion-3.png')" onclick="toggleLightbox(3)">
+                <img src="assets/play.svg" class="play-icon" style="width: 75px" alt="play icon"/>
+              </div>
+            </div>
         </div>
+
+        <div id="lightbox" class="flex-center-center flex-column">
+          <div id="lightbox-viewer" class="flex-start-center flex-column">
+              <div class="flex-start-end" style=" width: 100%;">
+                  
+                  <media-theme-instaplay class="media-controller">
+                    <vimeo-video
+                      id="video-player"
+                      slot="media"
+                      src=""
+                      playsinline
+                      crossorigin
+                    ></vimeo-video>
+                  </media-theme-instaplay>
+                  <button class="close-lightbox hover" onclick="closeLightbox()">×</button>
+              </div>
+              
+              
+          </div>
+        </div>
+        
+          
+      
     </main>
 
 
 </body>
 <script>
-    const track = document.querySelector('.carousel-track');
-    const items = document.querySelectorAll('.carousel-item');
-    const prevButton = document.querySelector('.arrow-left');
-    const nextButton = document.querySelector('.arrow-right');
+   document.addEventListener('DOMContentLoaded', () => {
+    // Select all images inside the .photo-container
+    const images = Array.from(document.querySelectorAll(".carousel-item"));
 
-    let currentIndex = 0;
+    // Sort images by data-order attribute
+    images.sort((a, b) => a.getAttribute('data-order') - b.getAttribute('data-order'));
 
-    function updateCarousel(newIndex) {
-      gsap.to(track, {
-        x: -newIndex * 100 + '%',
-        duration: 0.75,
-        ease: 'easeIn.inOut'
-      });
-    }
+    // Animate images in the sorted order
+    gsap.from(images, {
+        opacity: 0,
+        y: 0,               // Move images slightly up initially for a smoother effect
+        duration: 1,         // Duration for each fade-in effect
+        ease: "power2.out",  // Easing for a smooth transition
+        stagger: 0.2         // Delay between each image fade-in
+    });
+});
 
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % items.length;
-      updateCarousel(currentIndex);
-    }
-
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + items.length) % items.length;
-      updateCarousel(currentIndex);
-    }
-
-    nextButton.addEventListener('click', nextSlide);
-    prevButton.addEventListener('click', prevSlide);
+function toggleLightbox(number){
+  const $lightbox = $('#lightbox');
+  const $videoPlayer = $('#video-player');
+  
+  gsap.fromTo($lightbox, 
+        { scale: 0.8, opacity: 0, display: "flex" }, // Start with a smaller scale and hidden opacity
+        { scale: 1, opacity: 1, duration: 0.5, ease: "power2.out", display: "flex" } // Fade in and expand
+    );
+  
+  $videoPlayer.attr("src", videos[number])
+}
+  
+function closeLightbox() {
+    const $lightbox = $('#lightbox');
+    gsap.to($lightbox, {
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.in",
+        onComplete: function() {
+            $lightbox.css("display", "none"); 
+        }
+    });
     
+}
   </script>
 </html>

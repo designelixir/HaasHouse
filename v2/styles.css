@@ -76,7 +76,7 @@ button {background: var(--tan); border: unset; color: black; padding: 5px 10px; 
 
 
 .logo {
-    width: 50vw; max-width: 700px; min-width: 100px;
+    width: 75%; max-width: 700px; min-width: 200px;
 }
 
 .flex-column {flex-direction: column;}
@@ -120,6 +120,7 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1); 
 }
 
+.single-column {width: 50%;}
 @media screen and (max-width: 700px) {
   .photo-section {flex-direction: column;}
   .photo-categories { align-items: center; max-width: unset!important; width: 100%; padding-bottom: 15px;}
@@ -132,6 +133,8 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
 
   .bio-wrapper {flex-wrap: wrap;}
   .bio-image {padding-left: 0px!important;}
+  .double-column {flex-direction: column;}
+  .single-column {width: 100%;}
 }
 
 .bio-wrapper {width: 100%; padding: 10px; min-height: 85vh;}
@@ -147,6 +150,10 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
     height: 100%;
     max-width: 1200px;
     
+}
+
+.photo-container img {
+  width: 100%; padding: 2.5%;
 }
 
 .photo-container-wrapper {width: 100%;}
@@ -245,27 +252,27 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
 
 
 /* Video Carousel */
-.carousel {
-    position: relative;
-    width: 80%;
-    
-    overflow: hidden;
-    border-radius: 10px;
-  }
-
-  .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
 
   .carousel-item {
-    min-width: 100%;
+    margin: 2.5vw;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
+    background-size: cover; 
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 45vw; height: 40vw;
+    transition: transform 0.3s;
+    
   }
+
+  .carousel-item:hover {
+  transform: scale(1.01)!important;
+  cursor: pointer;
+}
+
 
   .arrow {
     
@@ -282,16 +289,14 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
   }
 
 .media-controller {
-    height: 65vh!important;
-    border-radius: 5px;
+    height: 80vh!important;
+    width: 100%;
   }
 
-  #media1 {max-width: 515px; width: 100vw!important; }
-  #media2 {max-width: 700px; width: 100vw;}
-  #media3 {max-width: 650px; width: 100vw; }
+
 
 .show-lightbox {display: block!important;}
-  #lightbox {display: none; height: 100vh; border: 1px solid red; background: rgba(255,255,255,0.9); backdrop-filter: blur(5px); width: 100vw; position: fixed; top: 0; left: 0; z-index: 3; }
+  #lightbox {display: none; height: 100vh; background: rgba(255,255,255,0.9); backdrop-filter: blur(5px); width: 100vw; position: fixed; top: 0; left: 0; z-index: 3; }
   #lightbox-viewer {height: 75vh;  width: 95vw; margin-left: 2.5vw; margin-top: 100px; background-size: contain; background-position: center; background-repeat: no-repeat;}
   #lightbox-text {
     padding: 15px;
