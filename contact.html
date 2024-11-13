@@ -16,7 +16,7 @@
 
 
 <body class="fade-in">
-    <main class="flex-center-center" >
+    <main class="flex-center-center">
         <div class=" flex-center-center flex-column">
 
             <header-component data-nav="Contact" id="navigation" class="standard-nav"></header-component>
@@ -24,15 +24,33 @@
 
 
 
-            <div class="flex-center-center standard-container-padding" style="min-height: 85vh;">
-                <div class="standard-container-padding centered-text">
+            <div class="flex-center-center half-div-container" style="min-height: 80vh; width: 100%;">
+                <div class="half-div standard-container-padding">
                     <h1>contact</h1>
                     <p>email: <a href="mailto:casey@haashouse.co" target="_blank">casey@haashouse.co</a></p>
-                    <div class="flex-center-center">
+                    <div class="flex-center-start">
                         <img src="assets/ig.svg" style="height: 30px; margin: 5px;" alt="instagram" class="hover"/>
                         <img src="assets/tiktok.svg" style="height: 30px; margin: 5px;" alt="tiktok" class="hover" />
                         <img src="assets/youtube.svg" style="height: 30px; margin: 5px;" alt="youtube" class="hover" />
                     </div>
+                </div>
+                <div class="flex-start-start flex-column half-div standard-container-padding">
+                    <form
+                    action="https://formspree.io/f/mpwzryqz"
+                    method="POST"
+                    class="flex-start-start flex-column"
+                    >
+                    <label>Name</label>
+                    <input type="name" required name="name">
+                    
+                    <label>Email</label>
+                    <input type="email" required name="email">
+                    
+                    <label>Message</label>
+                    <textarea type="message" required name="message"></textarea>
+                    
+                    <button type="submit" class="form-button">Send Message</button>
+                    </form>
                 </div>
                 
                 

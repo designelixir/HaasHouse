@@ -11,6 +11,7 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts/index.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/youtube-video-element/+esm"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/vimeo-video-element/+esm"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/player.style/instaplay/+esm"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -19,7 +20,10 @@
 
 <script>
   var videos = [
-    "", "https://vimeo.com/1019027611", "https://vimeo.com/1017688771", "https://vimeo.com/1017334540"
+    "", "https://vimeo.com/1027873456", "https://vimeo.com/1017688771", "https://vimeo.com/1017334540", "https://www.youtube.com/watch?v=eZ4OQY7TiBg"
+  ]
+  var videoCaptions = [
+    "", "Sol Amor", "Experience Saladita", "U.S. Open of Surf", "Loving You (Train to Nowhere)"
   ]
 </script>
 
@@ -29,21 +33,45 @@
         <div class=" flex-center-center flex-column">
 
             <header-component data-nav="Motion" id="navigation" class="standard-nav"></header-component>
-            <div class="flex-start-start flex-wrap">
-              <div class="carousel-item" data-order="1" style="background-image: url('assets/motion/motion-1.png')" onclick="toggleLightbox(1)">
-                  <img src="assets/play.svg" class="play-icon" style="width: 75px" alt="play icon"/>
+
+            <div class="flex-start-center flex-wrap">
+
+              <div class="film-strip-container" onclick="toggleLightbox(1)">
+                <div class="film-strip flex-center-center flex-column">
+                  <div class="film-label"><h6>SURF</h6></div>
+                  <div class="film-play flex-center-center" style="background-image: url('assets/motion/thumbnail-1.png')"></div>
+                  <div class="film-label" style="transform: rotate(-180deg);"><h6>SURF</h6></div>
+                </div>
               </div>
-              <div class="carousel-item" data-order="2" style="background-image: url('assets/motion/motion-2.png')" onclick="toggleLightbox(2)">
-                <img src="assets/play.svg" class="play-icon" style="width: 75px" alt="play icon"/>
+              <div class="film-strip-container" onclick="toggleLightbox(2)">
+                <div class="film-strip flex-center-center flex-column">
+                  <div class="film-label"><h6>SURF</h6></div>
+                  <div class="film-play flex-center-center" style="background-image: url('assets/motion/thumbnail-2.png')"></div>
+                  <div class="film-label" style="transform: rotate(-180deg);"><h6>SURF</h6></div>
+                </div>
               </div>
-              <div class="carousel-item" data-order="3" style="background-image: url('assets/motion/motion-3.png')" onclick="toggleLightbox(3)">
-                <img src="assets/play.svg" class="play-icon" style="width: 75px" alt="play icon"/>
+              <div class="film-strip-container" onclick="toggleLightbox(3)">
+                <div class="film-strip flex-center-center flex-column">
+                  <div class="film-label"><h6>SURF</h6></div>
+                  <div class="film-play flex-center-center" style="background-image: url('assets/motion/thumbnail-3.png')"></div>
+                  <div class="film-label" style="transform: rotate(-180deg);"><h6>SURF</h6></div>
+                </div>
               </div>
+              <div class="film-strip-container" onclick="toggleLightbox(4)">
+                <div class="film-strip flex-center-center flex-column">
+                  <div class="film-label"><h6>SURF</h6></div>
+                  <div class="film-play flex-center-center" style="background-image: url('assets/motion/thumbnail-4.png')"></div>
+                  <div class="film-label" style="transform: rotate(-180deg);"><h6>SURF</h6></div>
+                </div>
+              </div>
+
             </div>
+            
+
         </div>
 
         <div id="lightbox" class="flex-center-center flex-column">
-          <div id="lightbox-viewer" class="flex-start-center flex-column">
+          <div id="lightbox-viewer" class="flex-center-center flex-column">
               <div class="flex-start-end" style=" width: 100%;">
                   
                   <media-theme-instaplay class="media-controller">
@@ -57,6 +85,7 @@
                   </media-theme-instaplay>
                   <button class="close-lightbox hover" onclick="closeLightbox()">×</button>
               </div>
+              <p class="centered-text" id="lightbox-text"></p>
               
               
           </div>
@@ -67,49 +96,79 @@
     </main>
 
 
-</body>
-<script>
-   document.addEventListener('DOMContentLoaded', () => {
-    // Select all images inside the .photo-container
+</body><script>
+  document.addEventListener('DOMContentLoaded', () => {
     const images = Array.from(document.querySelectorAll(".carousel-item"));
-
-    // Sort images by data-order attribute
     images.sort((a, b) => a.getAttribute('data-order') - b.getAttribute('data-order'));
+    gsap.from(images, { opacity: 0, y: 0, duration: 1, ease: "power2.out", stagger: 0.2 });
+  });
 
-    // Animate images in the sorted order
-    gsap.from(images, {
-        opacity: 0,
-        y: 0,               // Move images slightly up initially for a smoother effect
-        duration: 1,         // Duration for each fade-in effect
-        ease: "power2.out",  // Easing for a smooth transition
-        stagger: 0.2         // Delay between each image fade-in
-    });
-});
+  function toggleLightbox(number) {
+    const $lightbox = $('#lightbox');
+    const $lightboxViewer = $('#lightbox-viewer');
+    const $lightboxText = $('#lightbox-text');
+    const videoUrl = videos[number];
+    const videoCaption = videoCaptions[number];
+    
+    // Clear any existing content in the lightbox viewer
+    $lightboxViewer.empty();
+    
+    // Determine video type and set up appropriate HTML
+    let videoElement;
+    if (videoUrl.includes("vimeo.com")) {
+      videoElement = `
+        <media-theme-instaplay class="media-controller">
+          <vimeo-video
+            id="video-player"
+            slot="media"
+            src="${videoUrl}"
+            playsinline
+            crossorigin
+          ></vimeo-video>
+        </media-theme-instaplay>
+      `;
+    } else if (videoUrl.includes("youtube.com")) {
+      videoElement = `
+        <media-theme-instaplay class="media-controller">
+          <youtube-video
+            id="video-player"
+            slot="media"
+            src="${videoUrl}"
+            playsinline
+            crossorigin
+          ></youtube-video>
+        </media-theme-instaplay>
+      `;
+    }
 
-function toggleLightbox(number){
-  const $lightbox = $('#lightbox');
-  const $videoPlayer = $('#video-player');
-  
-  gsap.fromTo($lightbox, 
-        { scale: 0.8, opacity: 0, display: "flex" }, // Start with a smaller scale and hidden opacity
-        { scale: 1, opacity: 1, duration: 0.5, ease: "power2.out", display: "flex" } // Fade in and expand
+    // Append video element and caption to lightbox viewer
+    $lightboxViewer.html(`
+      <div class="flex-start-end" style="width: 100%;">
+        ${videoElement}
+        <button class="close-lightbox hover" onclick="closeLightbox()">×</button>
+      </div>
+      <p class="centered-text" id="lightbox-text">${videoCaption}</p>
+    `);
+
+    // Display lightbox with GSAP animation
+    gsap.fromTo($lightbox, 
+      { scale: 0.8, opacity: 0, display: "flex" },
+      { scale: 1, opacity: 1, duration: 0.5, ease: "power2.out", display: "flex" }
     );
-  
-  $videoPlayer.attr("src", videos[number])
-}
-  
-function closeLightbox() {
+  }
+
+  function closeLightbox() {
     const $lightbox = $('#lightbox');
     gsap.to($lightbox, {
-        scale: 0.8,
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.in",
-        onComplete: function() {
-            $lightbox.css("display", "none"); 
-        }
+      scale: 0.8,
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.in",
+      onComplete: function() {
+        $lightbox.css("display", "none");
+      }
     });
-    
-}
-  </script>
+  }
+</script>
+
 </html>

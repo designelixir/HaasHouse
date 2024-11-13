@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
 
-* {box-sizing: border-box; font-family: 'Almarai', sans-serif;}
+* {box-sizing: border-box; font-family: 'Almarai', sans-serif; color: var(--offblack)!important;}
 :root {
     --gold: #FADD60;
     --tan: #F0EAD6;
     --darktan: #949188;
+    --offblack: #5C594B;
 }
 html {max-width: 100vw; overflow-x: clip;}
 body {width: 100%; margin: 0px; background:white}
@@ -102,7 +103,7 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
 .hover {cursor: pointer;}
 .box-shadow {box-shadow: 2px 2px 2px rgba(0,0,0,0.5);}
 .text-shadow {text-shadow: 0 0 2px rgba(0,0,0,0.5);}
-.centered-text {text-align: center;}
+.centered-text {text-align: center!important;}
 .white-text {color: white;}
 
 .standard-container-padding {padding: 25px;}
@@ -301,3 +302,31 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
   #lightbox-text {
     padding: 15px;
   }
+
+  .film-strip-container { margin: 2vw; width: 29vw; height: 25vw; cursor: pointer; background-image: url('assets/film-strip2.png'); background-size: 100% 100%; background-position: center center;}
+  .film-strip-container:hover {transform: rotate(1deg);}
+  .film-strip-container:hover .film-strip {opacity: 1; transition-duration: 0.3s;}
+
+  .film-strip { width: 100%; height: 100%; opacity: 0.75; }
+  .film-label {height: 15.5%; width: 100%;}
+  .film-label h6 {font-size: 12px; line-height: 0; margin: 9px 35px; color: white!important;} 
+  .film-play {width: 94%; height: 69%; background-size: contain; background-position: center center; background-repeat: no-repeat; }
+
+  @media screen and (max-width: 800px) {
+    .film-strip-container {width: 45vw; height: 35vw;}
+    .half-div-container {flex-direction: column;}
+    .half-div {width: 100%!important;}
+  }
+
+  @media screen and (max-width: 500px) {
+    .film-strip-container {width: 95vw; height: 75vw;}
+    .film-label h6 {font-size: 14px; margin: 10px 45px; color: rgba(255,255,255,0.5)!important;} 
+  }
+
+  form {font-family: 'Almarai', sans-serif!important; width: 75%; }
+  label {font-size: 16px; line-height: 14px; padding: 0; margin: 20px 0 10px 0; font-weight: 600;}
+  input {padding: 10px; font-size: 14px; width: 100%;}
+  textarea {padding: 10px; font-size: 14px; height: 150px; width: 100%;}
+  .form-button {margin-top: 20px; padding: 10px;}
+
+  .half-div {width: 50%;}
