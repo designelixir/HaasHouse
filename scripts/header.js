@@ -6,8 +6,8 @@ class Header extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <nav id="top-nav">
-      <div class=" flex-center-spacebetween" style="width: 100vw; max-height: 120px; padding: 0 0 0 20px">
-          <a href="/"><img src="assets/casey-haas-logo-2.svg" class="nav-logo fade-in" alt="Haas House logo"/></a>
+      <div class=" flex-center-spacebetween" style="width: 100vw; max-height: 120px; padding: 0 10px 0 20px">
+          <a href="/"><img src="assets/casey-haas-surfer-logo.svg" class="nav-logo fade-in" alt="Haas House logo"/></a>
           <button id="menuButton" onclick="toggleMenu()" class="flex-center-center hover">
               <span class="menu-layer" id="menuLayer1">|</span>
               <span class="menu-layer" id="menuLayer2">|</span>
@@ -38,38 +38,45 @@ $(document).ready(function () {
   $('#' + customName + "Mobile").addClass('active-link')
 });
 
+
+
+// Toggle function using GSAP for smooth transitions
 function toggleMenu() {
-    if ($("#navigation-bar").css('visibility') === 'visible') {
+    const menu = $("#navigation-bar");
+    const menuLayers = $(".menu-layer");
+    const navLogo = $(".home-nav .nav-logo");
+    const topNav = $("#top-nav");
+
+    if (menu.css('visibility') === 'visible') {
         console.log("visibility = visible");
-
-        $('#navigation-bar').slideUp(300, function() {
-          
-            $(this).css('visibility', 'hidden');
-            $('.menu-layer').removeClass('animate') 
-            $('.home-nav .nav-logo').css("display", "none")
-            $('.menu-layer').addClass('animateOpen') 
-            
-            $('#top-nav').css({"animation":"menuFill 0.5s reverse"})
-            
-
-            
-                    
+        
+        // Slide up animation with GSAP
+        gsap.to(menu, {
+            duration: 0.3,
+            height: 0,
+            opacity: 0,
+            onComplete: function() {
+                menu.css('visibility', 'hidden');
+                menuLayers.removeClass('animate');
+                menuLayers.addClass('animateOpen');
+                navLogo.css("display", "none");
+                gsap.to(topNav, { duration: 0.5, animation: "menuFill reverse" });
+            }
         });
-        
-        
-    }
-  else if ($("#navigation-bar").css('visibility') === 'hidden') {
+    } else if (menu.css('visibility') === 'hidden') {
         console.log("visibility - hidden");
         
-
-        $('#navigation-bar').css('visibility', 'visible').hide().slideDown(300);
+        // Set menu visibility and animate slide down
+        menu.css('visibility', 'visible').css('height', '100%');
+        gsap.fromTo(menu, { height: 0, opacity: 0 }, { 
+            duration: 0.3,
+            height: "80vh",
+            opacity: 1
+        });
         
-        $('#top-nav').css({"animation":"menuFill 0.5s forwards"})
-        $('.menu-layer').removeClass('animateOpen') 
-        
-        $('.menu-layer').addClass('animate') 
-        $('.home-nav .nav-logo').css('display', 'block')
-        
-        
+        gsap.to(topNav, { duration: 0.5, animation: "menuFill forwards" });
+        menuLayers.removeClass('animateOpen');
+        menuLayers.addClass('animate');
+        navLogo.css('display', 'block');
     }
 }

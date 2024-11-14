@@ -19,41 +19,82 @@
     <main class="flex-center-center">
         <div class="flex-center-center flex-column">
             <header-component data-nav="Photo" id="navigation" class="standard-nav"></header-component>
-
-            <div class="flex-center-center standard-container-padding photo-section">
+            <div class="category-container basic-padding white-gradient flex-center-start">
+                <button class="category-button" id="surfButton" onclick="animatePhotos('surf')">surf</button>
+                <button class="category-button" id="lifestyleButton" onclick="animatePhotos('lifestyle')">lifestyle</button>
+            </div>
+            <div class="flex-center-center photo-section">
                 <div class="photo-container-wrapper flex-center-center">
-                    <div class="flex-center-center flex-column photo-container" style="max-width: 95vw;">
+                    <div class="flex-center-center flex-column photo-container">
                         <div class="flex-start-start double-column">
                             <div class="flex-start-start flex-column single-column" >
-                                <img src="assets/photos/1.png" onclick="toggleLightbox(1)" data-order="1" />
-                                <img src="assets/photos/3.png" onclick="toggleLightbox(3)" data-order="3"  />
-                                <img src="assets/photos/3.jpg" onclick="toggleLightbox(4)" data-order="5" />
-                                <img src="assets/photos/5.png" onclick="toggleLightbox(5)" data-order="7" />
-                                <img src="assets/photos/6.png" onclick="toggleLightbox(6)" data-order="9" />
+                                <img src="assets/photos/1.webp" id="1" class="surf" onclick="toggleLightbox(1)" data-order="1" alt="Kaniela Stewart" />
+                                <img src="assets/photos/3.webp" id="3" class="surf" onclick="toggleLightbox(3)" data-order="3" alt="Kelis Kaleopa'a, Kaniela Stewart"/>
+                                <img src="assets/photos/4.webp" id="4" class="surf" onclick="toggleLightbox(4)" data-order="5" alt="Keani Canullo, 35mm"/>
+                                <img src="assets/photos/5.webp" id="5" class="surf" onclick="toggleLightbox(5)" data-order="7" alt="Kelis Kaleopa'a"/>
+                                <img src="assets/photos/6-cropped.webp" id="6" class="surf" onclick="toggleLightbox(6)" data-order="9" alt="Keani Canullo"/>
                             </div>
                             <div class="flex-start-start flex-column single-column">
-                                <img src="assets/photos/2.png" onclick="toggleLightbox(2)" data-order="2" />
-                                <img src="assets/photos/7.png" onclick="toggleLightbox(7)" data-order="4" />
-                                <img src="assets/photos/8.png" onclick="toggleLightbox(8)" data-order="6" />
-                                <img src="assets/photos/9.png" onclick="toggleLightbox(9)" data-order="8" />
-                                <img src="assets/photos/10.png" onclick="toggleLightbox(10)" data-order="10" />
-                                <img src="assets/photos/11.png" onclick="toggleLightbox(11)" data-order="12" />
+                                <img src="assets/photos/2.webp" id="2" class="surf" onclick="toggleLightbox(2)" data-order="2" alt="Kelis Kaleopa'a"/>
+                                <img src="assets/photos/7.webp" id="7" class="surf" onclick="toggleLightbox(7)" data-order="4" alt="Keani Canullo" />
+                                <img src="assets/photos/8.webp" id="8" class="surf" onclick="toggleLightbox(8)" data-order="6" alt="Kaniela Stewart" />
+                                <img src="assets/photos/9.webp" id="9" class="surf" onclick="toggleLightbox(9)" data-order="8" alt="Kai Sallas"/>
+                                <img src="assets/photos/10.webp" id="10" class="surf" onclick="toggleLightbox(10)" data-order="10" alt="Keani Canullo"/>
+                                <img src="assets/photos/11.webp" id="11" class="surf" onclick="toggleLightbox(11)" data-order="12" alt="Kelis Kaleopa'a, Kaniela Stewart" />
                             </div>
                         </div>
                         <div class="flex-center-center">
-                            <img src="assets/photos/12.png" data-order="13" onclick="toggleLightbox(12)" style="padding: 0%!important; width: 97.5%!important"/>
+                            <img src="assets/photos/12.webp" id="12" class="surf" data-order="13" onclick="toggleLightbox(12)" style="padding: 0%!important; width: 97.5%!important" alt="Kaniela Stewart, Kelis Kaleopa'a"/>
                         </div>
                         
                         <div class="flex-start-start double-column">
                             <div class="flex-start-start single-column">
-                                <img src="assets/photos/13.png" onclick="toggleLightbox(13)" data-order="14" />
+                                <img src="assets/photos/13.webp" id="13" class="surf" onclick="toggleLightbox(13)" data-order="14" alt="Kelis Kaleopa'a"/>
                             </div>
                             <div class="flex-start-start single-column">
-                                <img src="assets/photos/14.png" onclick="toggleLightbox(14)" data-order="15" />
+                                <img src="assets/photos/14.webp" id="14" class="surf" onclick="toggleLightbox(14)" data-order="15" alt="Keani Canullo"/>
                             </div>
-                            
-                            
                         </div>
+
+                        <!-- Lifestyle -->
+                        <div class="flex-start-start double-column">
+                            <div class="flex-start-start flex-column">
+                                <img src="assets/photos/15.webp" id="15" class="lifestyle" onclick="toggleLightbox(15)" data-order="1" alt="Kelis Kaleopa'a, Waikiki (35mm)"/>
+                                <img src="assets/photos/17.webp" id="17" class="lifestyle" onclick="toggleLightbox(17)" data-order="3" alt="Kaniela Stewart, Waikiki (120mm)"/>
+                                <img src="assets/photos/19-cropped.webp" id="19" class="lifestyle" onclick="toggleLightbox(19)" data-order="5" alt="Kelis Kaleopa'a, Waikiki (120mm)"/>
+                            </div>
+                            <div class="flex-start-start flex-column">
+                                <img src="assets/photos/16.webp" id="16" class="lifestyle" onclick="toggleLightbox(16)" data-order="2" alt="Kaniela Stewart, Waikiki"/>
+                                <img src="assets/photos/18.webp" id="18" class="lifestyle" onclick="toggleLightbox(18)" data-order="4" alt="Kelis Kaleopa'a and Kaniela Stewart, Waikiki"/>
+                            </div>
+                        </div>
+                        <div class="flex-center-center">
+                            <img src="assets/photos/20.webp" id="20" class="lifestyle" data-order="6" onclick="toggleLightbox(20)" style="padding: 0%!important; width: 97.5%!important" alt="Kelis Kaleopa'a and Kaniela Stewart (35mm)"/>
+                        </div>
+                        <div class="flex-start-start double-column">
+                            <div class="flex-start-start flex-column">
+                                <img src="assets/photos/21.webp" id="21" class="lifestyle" onclick="toggleLightbox(21)" data-order="7" alt="Kaniela Stewart, Waikiki"/>
+                                <img src="assets/photos/23.webp" id="23" class="lifestyle" onclick="toggleLightbox(23)" data-order="9" alt="Kaniela Stewart, Waikiki (120mm)"/>
+                                
+                            </div>
+                            <div class="flex-start-start flex-column">
+                                <img src="assets/photos/22.webp" id="22" class="lifestyle" onclick="toggleLightbox(22)" data-order="8" alt="Kelis Kaleopa'a, Waikiki (120mm)"/>
+                                <img src="assets/photos/24.webp" id="24" class="lifestyle" onclick="toggleLightbox(24)" data-order="10" alt="Kaniela Stewart, Waikiki"/>
+                            </div>
+                        </div>
+                        <div class="flex-center-center">
+                            <img src="assets/photos/25.webp" id="25" class="lifestyle" data-order="11" onclick="toggleLightbox(25)" style="padding: 0%!important; width: 97.5%!important" alt="Kaniela Stewart, Waikiki"/>
+                        </div>
+                        <div class="flex-start-start double-column">
+                            <div class="flex-start-start flex-column">
+                                <img src="assets/photos/26.webp" id="26" class="lifestyle" onclick="toggleLightbox(26)" data-order="12" alt="Kelis Kaleopa'a and Kaniela Stewart (35mm)"/>
+                            </div>
+                            <div class="flex-start-start flex-column">
+                                <img src="assets/photos/27.webp" id="27" class="lifestyle" onclick="toggleLightbox(27)" data-order="13" alt="Kelis Kaleopa'a, Waikiki (120mm)"/>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -63,58 +104,66 @@
                     <div class="flex-start-end" style="height: 50%; width: 100%;">
                         <button class="close-lightbox hover" onclick="closeLightbox()">×</button>
                     </div>
-                    
                 </div>
                 <div class="flex-center-spacebetween" style="max-height: 100px;">
-                    
                     <p id="lightbox-text" style="width: 100%;" class="centered-text"></p>
                     <button class="next-lightbox hover" onclick="nextImage()">→</button>
                 </div>
-                
             </div>
-        </div>
-    </main>
 
+        </div>
+        
+    </main>
+    <div class="flex-center-center flex-column" style="margin: 10px 0;">
+        <p style="font-size: 12px;">Copyright &copy; Casey Haas 2024 </p>
+        <a href="https://designelixir.studio" target="_blank" style="opacity: 0.5; text-decoration: unset; font-size: 12px; text-align: center;">Made with &hearts; by Design Elixir Studio</a>
+    </div>
+    
 </body>
 <script>
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Select all images inside the .photo-container
-    const images = Array.from(document.querySelectorAll(".photo-container img"));
+let activeCategoryImages = []; // Array to hold the images of the currently active category
+let currentImageIndex = 0; // Track the index of the current image in the active category array
 
-    // Sort images by data-order attribute
-    images.sort((a, b) => a.getAttribute('data-order') - b.getAttribute('data-order'));
+function animatePhotos(category) {
+    // Scroll to top smoothly
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Hide all images and reset button styles
+    const allImages = document.querySelectorAll('.photo-container img');
+    const allButtons = document.querySelectorAll('.category-container button');
+    allImages.forEach(img => img.classList.add('hidden'));
+    allButtons.forEach(button => button.classList.add('inactive'));
+
+    // Show images of the selected category and set the active button
+    activeCategoryImages = Array.from(document.querySelectorAll(`.photo-container .${category}`));
+    activeCategoryImages.forEach(img => img.classList.remove('hidden'));
+    document.querySelector(`#${category}Button`).classList.remove('inactive');
+
+    // Sort images by data-order attribute for animation sequence
+    activeCategoryImages.sort((a, b) => a.getAttribute('data-order') - b.getAttribute('data-order'));
+
+    // Reset currentImageIndex to the first image of the new category
+    currentImageIndex = 0;
 
     // Animate images in the sorted order
-    gsap.from(images, {
-        opacity: 0,
-        y: 20,               // Move images slightly up initially for a smoother effect
-        duration: 1,         // Duration for each fade-in effect
-        ease: "power2.out",  // Easing for a smooth transition
-        stagger: 0.2         // Delay between each image fade-in
-    });
-});
+    gsap.fromTo(
+        activeCategoryImages,
+        { scale: 0.5, opacity: 0 }, // Start with a smaller scale and hidden opacity
+        { scale: 1, opacity: 1, duration: 1, ease: "power2.out", stagger: 0.15 } // Fade in, expand, with a staggered delay
+    );
+}
 
-
-
-
-    var descriptions = [
-        'Kaniela Stewart', 
-        "Kelis Kaleopa'a", 
-        "Kelis Kaleopa'a, Kaniela Stewart", 
-        "Keani Canullo, 35mm", "Kelis Kaleopa'a", "Keani Canullo", "Keani Canullo", 
-        "Kaniela Stewart", "Kai Sallas", "Keani Canullo", "Kelis Kaleopa'a, Kaniela Stewart", "Kaniela Stewart, Kelis Kaleopa'a", "Kelis Kaleopa'a", "Keani Canullo"];
-    var currentImageIndex = 1;
-
-    function toggleLightbox(number) {
-    currentImageIndex = number;
+function toggleLightbox(index) {
+    currentImageIndex = activeCategoryImages.findIndex(img => img.id === String(index)); // Set the index for lightbox cycling
     const $lightbox = $('#lightbox');
     const $lightboxViewer = $('#lightbox-viewer');
     const $lightboxText = $('#lightbox-text');
 
     // Set the background image and description
-    $lightboxViewer.css('background-image', 'url("assets/photos/' + currentImageIndex + '.png")');
-    $lightboxText.text(descriptions[currentImageIndex - 1]);
+    const image = activeCategoryImages[currentImageIndex];
+    $lightboxViewer.css('background-image', `url("${image.src}")`);
+    $lightboxText.text(image.alt);
 
     // Animate the lightbox expanding and fading in
     gsap.fromTo($lightbox, 
@@ -122,6 +171,29 @@ document.addEventListener('DOMContentLoaded', () => {
         { scale: 1, opacity: 1, duration: 0.5, ease: "power2.out", display: "flex" } // Fade in and expand
     );
 }
+
+function nextImage() {
+    // Move to the next image in the active category, wrapping back to the start if at the end
+    currentImageIndex = (currentImageIndex + 1) % activeCategoryImages.length;
+    toggleLightbox(activeCategoryImages[currentImageIndex].id);
+}
+
+// Initial call to display only 'surf' images on page load
+document.addEventListener("DOMContentLoaded", () => {
+    animatePhotos("surf");
+});
+
+// Event listeners for category buttons
+document.getElementById("surfButton").addEventListener("click", () => animatePhotos("surf"));
+document.getElementById("lifestyleButton").addEventListener("click", () => animatePhotos("lifestyle"));
+
+// Close lightbox when clicking outside the content
+$(document).on('click', '#lightbox', function(event) {
+    if ($(event.target).is('#lightbox')) {
+        closeLightbox();
+    }
+});
+
 
 function closeLightbox() {
     const $lightbox = $('#lightbox');
@@ -139,19 +211,6 @@ function closeLightbox() {
 }
 
 
-    function nextImage() {
-        currentImageIndex++;
-        if (currentImageIndex > descriptions.length) {
-            currentImageIndex = 1; // Loop back to the first image if we exceed the last index
-        }
-        toggleLightbox(currentImageIndex);
-    }
-
-    // Optional: Close the lightbox when clicking outside the content
-    $(document).on('click', '#lightbox', function(event) {
-        if ($(event.target).is('#lightbox')) {
-            closeLightbox();
-        }
-    });
+   
 </script>
 </html>
