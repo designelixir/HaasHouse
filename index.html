@@ -11,6 +11,7 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts/index.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
 
 <style>
@@ -20,8 +21,8 @@
 </style>
 
 <body id="homeHero" class="dark-overlay">
-    <div class="vimeo-wrapper flex-center-center">
-        <iframe src="https://player.vimeo.com/video/1029436705?background=1&autoplay=1&loop=1&byline=0&title=0"
+    <div class="vimeo-wrapper flex-center-center slow-fade-in" id="homeBGVideoWrapper">
+        <iframe id="homeBGVideo" src="https://player.vimeo.com/video/1029436705?background=1&autoplay=1&loop=1&byline=0&title=0"
                 frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
      </div>
     <header-component data-nav="Home" id="navigation" class="home-nav"></header-component>
@@ -37,4 +38,17 @@
 
     
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const iframe = document.getElementById("homeBGVideo");
+      const container = document.getElementById("homeBGVideoWrapper");
+  
+      const player = new Vimeo.Player(iframe);
+
+      player.on("loaded", function () {
+        container.style.opacity = 1;
+      });
+    });
+  </script>
+  
 </html>

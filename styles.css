@@ -10,6 +10,7 @@
 }
 html {max-width: 100vw; overflow-x: clip;}
 body {width: 100%; margin: 0px; background:var(--offwhite)}
+#homeBGVideoWrapper {opacity: 0; transition: opacity 1s;}
 #homeHero{background-image: url('assets/preload.png'); background-size: cover; background-position: center; background-repeat: no-repeat;}
 #top-nav {height: 80px; width: 100vw; top: 0; left: 0; position: fixed;}
 .standard-nav #top-nav {background-color: var(--offwhite);}
@@ -308,3 +309,25 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
   .form-button {margin-top: 20px; padding: 10px;}
 
   .half-div {width: 50%;}
+
+  .slow-fade-in {
+    opacity: 0;
+    -webkit-animation: fade-in 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) 3s both;
+            animation: fade-in 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) 3s both;
+  }
+ @-webkit-keyframes slow-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slow-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
