@@ -312,8 +312,8 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
 
   .slow-fade-in {
     opacity: 0;
-    -webkit-animation: fade-in 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) 3s both;
-            animation: fade-in 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) 3s both;
+    -webkit-animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2s both;
+            animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2s both;
   }
  @-webkit-keyframes slow-fade-in {
   0% {
