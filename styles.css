@@ -137,10 +137,15 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
   .photo {width: 100%; max-width: unset!important; min-width: unset;}
   .selected:hover {margin: 0!important;}
 
-  .bio-wrapper {flex-wrap: wrap;}
-  .bio-image {padding-left: 0px!important;}
+  
   .double-column {flex-direction: column;}
   .single-column {width: 100%;}
+}
+
+@media screen and (max-width: 900px) {
+  .bio-wrapper {flex-wrap: wrap;}
+  .bio-wrapper .standard-container-padding {padding: 0; margin-top: 25px;}
+  .bio-image {padding-left: 0px!important;}
 }
 
 .bio-image {padding-right: 25px; width: 100%; max-width: 400px;}
