@@ -148,6 +148,7 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
   .bio-wrapper {flex-wrap: wrap; max-width: unset!important;}
   .bio-wrapper .standard-container-padding {padding: 0; margin-top: 25px;}
   .bio-image { width: 100%; min-width: unset!important;}
+  
 }
 
 .bio-image { width: 100%; max-width: 400px; min-width: 400px;}
@@ -306,6 +307,7 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
     .film-strip-container {width: 45vw; height: 35vw;}
     .half-div-container {flex-direction: column;}
     .half-div {width: 100%!important;}
+    .contact-left {align-items: flex-start; justify-content: flex-start;}
     .services-container {flex-direction: column}
     .services-image {min-width: unset; margin-right: unset; width: 100%!important; margin-bottom: 25px;}
   }
