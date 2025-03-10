@@ -19,12 +19,15 @@
 </head>
 
 <script>
-  var videos = [
-    "", "https://vimeo.com/1027873456", "https://vimeo.com/1017688771", "https://vimeo.com/1017334540", "https://www.youtube.com/watch?v=eZ4OQY7TiBg",
-    "https://vimeo.com/1054677903", "https://vimeo.com/1054678378"
-  ]
-  var videoCaptions = [
-    "", "Sol Amor", "Experience Saladita", "U.S. Open of Surf", "Loving You (Train to Nowhere)", "SuperGirl Pro 2024", "Malibu Longboard Classic 2024"
+  
+
+  var videoContent = [
+    {name: "Sol Amor", link: "https://vimeo.com/1027873456", image: "assets/motion/sol-amor.png"},
+    {name: "Malibu Longboard Classic", link: "https://vimeo.com/1054678378"},
+    {name: "Experience Saladita", link: "https://vimeo.com/1017688771"}, 
+    {name: "Super Girl Pro", link: "https://vimeo.com/1054677903"}, 
+    {name: "US Open of Surf", link: "https://vimeo.com/1017334540"}, 
+    {name: "Loving You (Train to Nowhere)", link: "https://www.youtube.com/watch?v=eZ4OQY7TiBg"}
   ]
 </script>
 
@@ -37,48 +40,74 @@
 
             <div class="flex-start-center flex-wrap">
 
+              <div class="film-strip-container" onclick="toggleLightbox(0)">
+                <div class="film-strip flex-center-center flex-column">
+                  <div class="film-label"><h6>SURF</h6></div>
+                  <div class="film-play flex-center-center">
+                    <div class="super-8-box super-8-box-right"></div>
+                    <div class="super-8-film" style="background-image: url('assets/motion/sol-amor.png')"></div>
+                    <div class="super-8-box super-8-box-left"></div>
+                  </div>
+                  <div class="film-label" style="transform: rotate(-180deg);"><h6>SURF</h6></div>
+                </div>
+              </div>
               <div class="film-strip-container" onclick="toggleLightbox(1)">
                 <div class="film-strip flex-center-center flex-column">
                   <div class="film-label"><h6>SURF</h6></div>
-                  <div class="film-play flex-center-center" style="background-image: url('assets/motion/thumbnail-1.png')"></div>
+                  <div class="film-play flex-center-center">
+                    <div class="super-8-box super-8-box-right"></div>
+                    <div class="super-8-film" style="background-image: url('assets/motion/malibu.png')"></div>
+                    <div class="super-8-box super-8-box-left"></div>
+                  </div>
                   <div class="film-label" style="transform: rotate(-180deg);"><h6>SURF</h6></div>
                 </div>
               </div>
               <div class="film-strip-container" onclick="toggleLightbox(2)">
                 <div class="film-strip flex-center-center flex-column">
                   <div class="film-label"><h6>SURF</h6></div>
-                  <div class="film-play flex-center-center" style="background-image: url('assets/motion/thumbnail-2.png')"></div>
+                  <div class="film-play flex-center-center">
+                    <div class="super-8-box super-8-box-right"></div>
+                    <div class="super-8-film" style="background-image: url('assets/motion/saladita.png')"></div>
+                    <div class="super-8-box super-8-box-left"></div>
+                  </div>
                   <div class="film-label" style="transform: rotate(-180deg);"><h6>SURF</h6></div>
                 </div>
               </div>
               <div class="film-strip-container" onclick="toggleLightbox(3)">
                 <div class="film-strip flex-center-center flex-column">
                   <div class="film-label"><h6>SURF</h6></div>
-                  <div class="film-play flex-center-center" style="background-image: url('assets/motion/thumbnail-3.png')"></div>
+                  <div class="film-play flex-center-center">
+                    <div class="super-8-box super-8-box-right"></div>
+                    <div class="super-8-film" style="background-image: url('assets/motion/supergirl.png')"></div>
+                    <div class="super-8-box super-8-box-left"></div>
+                  </div>
                   <div class="film-label" style="transform: rotate(-180deg);"><h6>SURF</h6></div>
                 </div>
               </div>
               <div class="film-strip-container" onclick="toggleLightbox(4)">
                 <div class="film-strip flex-center-center flex-column">
                   <div class="film-label"><h6>SURF</h6></div>
-                  <div class="film-play flex-center-center" style="background-image: url('assets/motion/thumbnail-4.png')"></div>
+                  <div class="film-play flex-center-center">
+                    <div class="super-8-box super-8-box-right"></div>
+                    <div class="super-8-film" style="background-image: url('assets/motion/us-open.png')"></div>
+                    <div class="super-8-box super-8-box-left"></div>
+                  </div>
                   <div class="film-label" style="transform: rotate(-180deg);"><h6>SURF</h6></div>
                 </div>
               </div>
               <div class="film-strip-container" onclick="toggleLightbox(5)">
                 <div class="film-strip flex-center-center flex-column">
                   <div class="film-label"><h6>SURF</h6></div>
-                  <div class="film-play flex-center-center" style="background-image: url('assets/motion/thumbnail-5.jpg')"></div>
+                  <div class="film-play flex-center-center">
+                    <div class="super-8-box super-8-box-right"></div>
+                    <div class="super-8-film" style="background-image: url('assets/motion/mckenna.png')"></div>
+                    <div class="super-8-box super-8-box-left"></div>
+                  </div>
                   <div class="film-label" style="transform: rotate(-180deg);"><h6>SURF</h6></div>
                 </div>
               </div>
-              <div class="film-strip-container" onclick="toggleLightbox(6)">
-                <div class="film-strip flex-center-center flex-column">
-                  <div class="film-label"><h6>SURF</h6></div>
-                  <div class="film-play flex-center-center" style="background-image: url('assets/motion/thumbnail-6.jpg')"></div>
-                  <div class="film-label" style="transform: rotate(-180deg);"><h6>SURF</h6></div>
-                </div>
-              </div>
+              
+              
 
             </div>
             
@@ -126,8 +155,8 @@
     const $lightbox = $('#lightbox');
     const $lightboxViewer = $('#lightbox-viewer');
     const $lightboxText = $('#lightbox-text');
-    const videoUrl = videos[number];
-    const videoCaption = videoCaptions[number];
+    const videoUrl = videoContent[number].link;
+    const videoCaption = videoContent[number].name;
     
     // Clear any existing content in the lightbox viewer
     $lightboxViewer.empty();
