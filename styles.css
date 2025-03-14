@@ -1,13 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
 
-* {box-sizing: border-box; font-family: 'Almarai', sans-serif; color: var(--offblack);}
+@font-face {
+  font-family: 'SidewalkSurf';
+  src: url('assets/fonts/SidewalkSurf.otf') format('opentype'),
+       url('assets/fonts/SidewalkSurf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SilverSouthSerif';
+  src: url('assets/fonts/SilverSouthSerif.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {box-sizing: border-box; color: var(--offblack);}
 :root {
     --gold: #FADD60;
     --tan: #F0EAD6;
     --darktan: #949188;
     --offblack: #5C594B;
     --offwhite: #FFFBF8;
+    --header-font: 'SidewalkSurf', sans-serif;
+    --text-font:  'SilverSouthSerif', serif;
 }
+
+.header-font {font-family: var(--header-font);}
+.text-font {font-family: var(--text-font);}
+
 html {max-width: 100vw; overflow-x: clip;}
 body {width: 100%; margin: 0px; background:var(--offwhite)}
 
@@ -88,20 +108,28 @@ button {background: var(--tan); border: unset; color: black; padding: 5px 10px; 
 .flex-wrap {flex-wrap: wrap}
 
 h1 {
+  font-family: 'SidewalkSurf', sans-serif;
     font-size: clamp(36px, 2vw + 1.2rem, 48px);
-  line-height: clamp(40px, 2vw + 1.3rem, 52px)
+  line-height: clamp(40px, 2vw + 1.3rem, 52px); 
+  letter-spacing: 0.5px;
 }
 
 h2 {
     font-size: clamp(2rem, 1.5vw + 1rem, 2.5rem);
   line-height: clamp(2.2rem, 1.5vw + 1.2rem, 2.7rem);
+  font-family: var(--text-font);
 }
 
 
+.caption {font-family: var(--text-font); line-height: 14px; margin: 0; font-style: italic;}
 
-p {font-size: 22px;}
-p a {color: black;}
 
+
+p {font-size: 18px; font-family: var(--text-font)}
+label { font-family: var(--text-font)}
+p a {color: black; }
+a, i {font-family: inherit;}
+button {font-size: 22px; font-family: var(--text-font); text-transform: uppercase; letter-spacing: 1px}
 .hover:hover {cursor: pointer; transform: scale(1.05);}
 a:hover {transform: scale(1.01); text-decoration: underline;}
 .hover {cursor: pointer;}
