@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
 @font-face {
   font-family: 'SidewalkSurf';
   src: url('assets/fonts/SidewalkSurf.otf') format('opentype'),
@@ -14,6 +14,7 @@
   font-style: normal;
 }
 
+
 * {box-sizing: border-box; color: var(--offblack);}
 :root {
     --gold: #FADD60;
@@ -22,7 +23,7 @@
     --offblack: #5C594B;
     --offwhite: #FFFBF8;
     --header-font: 'SidewalkSurf', sans-serif;
-    --text-font:  'SilverSouthSerif', serif;
+    --text-font: 'Almarai', sans-serif;
 }
 
 .header-font {font-family: var(--header-font);}
