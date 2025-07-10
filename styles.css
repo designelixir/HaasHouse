@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 @font-face {
   font-family: 'SidewalkSurf';
   src: url('assets/fonts/SidewalkSurf.otf') format('opentype'),
@@ -23,7 +26,7 @@
     --offblack: #5C594B;
     --offwhite: #FFFBF8;
     --header-font: 'SidewalkSurf', sans-serif;
-    --text-font: 'Almarai', sans-serif;
+    --text-font: 'PT Serif', sans-serif;
 }
 
 .header-font {font-family: var(--header-font);}
@@ -130,7 +133,7 @@ p {font-size: 18px; font-family: var(--text-font)}
 label { font-family: var(--text-font)}
 p a {color: black; }
 a, i {font-family: inherit;}
-button {font-size: 22px; font-family: var(--text-font); text-transform: uppercase; letter-spacing: 1px}
+button {font-size: 22px; font-family: var(--text-font); text-transform: uppercase; }
 .hover:hover {cursor: pointer; transform: scale(1.05);}
 a:hover {transform: scale(1.01); text-decoration: underline;}
 .hover {cursor: pointer;}
@@ -148,9 +151,9 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
 
 .white-gradient {
   background: rgb(255, 251, 248);
-  background: -moz-linear-gradient(180deg, rgba(255, 251, 248, 0.971) 51%, rgba(255, 251, 248, 0.75) 73%, rgba(255, 251, 248, 0.5) 85%, rgba(255, 251, 248, 0.25) 94%, rgba(255, 251, 248, 0.05) 100%);
-  background: -webkit-linear-gradient(180deg, rgba(255, 251, 248, 0.971) 51%, rgba(255, 251, 248, 0.75) 73%, rgba(255, 251, 248, 0.5) 85%, rgba(255, 251, 248, 0.25) 94%, rgba(255, 251, 248, 0.05) 100%);
-  background: linear-gradient(180deg, rgba(255, 251, 248, 0.971) 51%, rgba(255, 251, 248, 0.75) 73%, rgba(255, 251, 248, 0.5) 85%, rgba(255, 251, 248, 0.25) 94%, rgba(255, 251, 248, 0.05) 100%);
+  background: -moz-linear-gradient(180deg, rgba(255, 251, 248, 0.971) 10%, rgba(255, 251, 248, 0.75) 73%, rgba(255, 251, 248, 0.5) 85%, rgba(255, 251, 248, 0.25) 94%, rgba(255, 251, 248, 0.05) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(255, 251, 248, 0.971) 10%, rgba(255, 251, 248, 0.75) 73%, rgba(255, 251, 248, 0.5) 85%, rgba(255, 251, 248, 0.25) 94%, rgba(255, 251, 248, 0.05) 100%);
+  background: linear-gradient(180deg, rgba(255, 251, 248, 0.971) 10%, rgba(255, 251, 248, 0.75) 73%, rgba(255, 251, 248, 0.5) 85%, rgba(255, 251, 248, 0.25) 94%, rgba(255, 251, 248, 0.05) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFFBF8",endColorstr="#FFFBF8",GradientType=1); 
 }
 
@@ -183,20 +186,14 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
 .bio-image { width: 100%; max-width: 400px; min-width: 400px;}
 /* Photo Page */
 
-.photo-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
-    height: 100%;
+.three-four-ratio {aspect-ratio: 3/4; width: 50vw; object-fit: cover;}
+.full-ratio {width: 100vw;}
+
+@media screen and (max-width: 700px) {
+  .three-four-ratio {aspect-ratio: unset; width: 100%; }
+  
 }
 
-.photo-container img {
-  width: 100%; padding: 2.5%; cursor: pointer;
-}
-.photo-container img:hover {
-  transform: scale(1.01)!important; transition: 0.3s;
-}
 .hidden {
   opacity: 0;
   display: none;

@@ -15,6 +15,24 @@
 
 </head>
 
+<style>
+.photo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    height: 100%;
+}
+
+.photo-container img {
+  width: 100%; padding: 2.5%; cursor: pointer;
+}
+.photo-container img:hover {
+  transform: scale(1.01)!important; transition: 0.3s;
+}
+
+</style>
+
 <body class="fade-in">
     <main class="flex-center-center">
         <div class="flex-center-center flex-column">
@@ -28,69 +46,69 @@
                     <div class="flex-center-center flex-column photo-container">
                         <div class="flex-start-start double-column">
                             <div class="flex-start-start flex-column single-column" >
-                                <img src="assets/photos/1.webp" id="1" class="surf" onclick="toggleLightbox(1)" data-order="1" alt="Kaniela Stewart" />
-                                <img src="assets/photos/3.webp" id="3" class="surf" onclick="toggleLightbox(3)" data-order="3" alt="Kelis Kaleopa'a, Kaniela Stewart"/>
-                                <img src="assets/photos/4.webp" id="4" class="surf" onclick="toggleLightbox(4)" data-order="5" alt="Keani Canullo, 35mm"/>
-                                <img src="assets/photos/5.webp" id="5" class="surf" onclick="toggleLightbox(5)" data-order="7" alt="Kelis Kaleopa'a"/>
-                                <img src="assets/photos/6-cropped.webp" id="6" class="surf" onclick="toggleLightbox(6)" data-order="9" alt="Keani Canullo"/>
+                                <img src="assets/photos/photo-old/1.webp" id="1" class="surf" onclick="toggleLightbox(1)" data-order="1" alt="Kaniela Stewart" />
+                                <img src="assets/photos/photo-old/3.webp" id="3" class="surf" onclick="toggleLightbox(3)" data-order="3" alt="Kelis Kaleopa'a, Kaniela Stewart"/>
+                                <img src="assets/photos/photo-old/4.webp" id="4" class="surf" onclick="toggleLightbox(4)" data-order="5" alt="Keani Canullo, 35mm"/>
+                                <img src="assets/photos/photo-old/5.webp" id="5" class="surf" onclick="toggleLightbox(5)" data-order="7" alt="Kelis Kaleopa'a"/>
+                                <img src="assets/photos/photo-old/6-cropped.webp" id="6" class="surf" onclick="toggleLightbox(6)" data-order="9" alt="Keani Canullo"/>
                             </div>
                             <div class="flex-start-start flex-column single-column">
-                                <img src="assets/photos/2.webp" id="2" class="surf" onclick="toggleLightbox(2)" data-order="2" alt="Kelis Kaleopa'a"/>
-                                <img src="assets/photos/7.webp" id="7" class="surf" onclick="toggleLightbox(7)" data-order="4" alt="Keani Canullo" />
-                                <img src="assets/photos/8.webp" id="8" class="surf" onclick="toggleLightbox(8)" data-order="6" alt="Kaniela Stewart" />
-                                <img src="assets/photos/9.webp" id="9" class="surf" onclick="toggleLightbox(9)" data-order="8" alt="Kai Sallas"/>
-                                <img src="assets/photos/10.webp" id="10" class="surf" onclick="toggleLightbox(10)" data-order="10" alt="Keani Canullo"/>
-                                <img src="assets/photos/11.webp" id="11" class="surf" onclick="toggleLightbox(11)" data-order="12" alt="Kelis Kaleopa'a, Kaniela Stewart" />
+                                <img src="assets/photos/photo-old/2.webp" id="2" class="surf" onclick="toggleLightbox(2)" data-order="2" alt="Kelis Kaleopa'a"/>
+                                <img src="assets/photos/photo-old/7.webp" id="7" class="surf" onclick="toggleLightbox(7)" data-order="4" alt="Keani Canullo" />
+                                <img src="assets/photos/photo-old/8.webp" id="8" class="surf" onclick="toggleLightbox(8)" data-order="6" alt="Kaniela Stewart" />
+                                <img src="assets/photos/photo-old/9.webp" id="9" class="surf" onclick="toggleLightbox(9)" data-order="8" alt="Kai Sallas"/>
+                                <img src="assets/photos/photo-old/10.webp" id="10" class="surf" onclick="toggleLightbox(10)" data-order="10" alt="Keani Canullo"/>
+                                <img src="assets/photos/photo-old/11.webp" id="11" class="surf" onclick="toggleLightbox(11)" data-order="12" alt="Kelis Kaleopa'a, Kaniela Stewart" />
                             </div>
                         </div>
                         <div class="flex-center-center">
-                            <img src="assets/photos/12.webp" id="12" class="surf" data-order="13" onclick="toggleLightbox(12)" style="padding: 0%!important; width: 97.5%!important" alt="Kaniela Stewart, Kelis Kaleopa'a"/>
+                            <img src="assets/photos/photo-old/12.webp" id="12" class="surf" data-order="13" onclick="toggleLightbox(12)" style="padding: 0%!important; width: 97.5%!important" alt="Kaniela Stewart, Kelis Kaleopa'a"/>
                         </div>
                         
                         <div class="flex-start-start double-column">
                             <div class="flex-start-start single-column">
-                                <img src="assets/photos/13.webp" id="13" class="surf" onclick="toggleLightbox(13)" data-order="14" alt="Kelis Kaleopa'a"/>
+                                <img src="assets/photos/photo-old/13.webp" id="13" class="surf" onclick="toggleLightbox(13)" data-order="14" alt="Kelis Kaleopa'a"/>
                             </div>
                             <div class="flex-start-start single-column">
-                                <img src="assets/photos/14.webp" id="14" class="surf" onclick="toggleLightbox(14)" data-order="15" alt="Keani Canullo"/>
+                                <img src="assets/photos/photo-old/14.webp" id="14" class="surf" onclick="toggleLightbox(14)" data-order="15" alt="Keani Canullo"/>
                             </div>
                         </div>
 
                         <!-- Lifestyle -->
                         <div class="flex-start-start double-column">
                             <div class="flex-start-start flex-column">
-                                <img src="assets/photos/15.webp" id="15" class="lifestyle" onclick="toggleLightbox(15)" data-order="1" alt="Kelis Kaleopa'a, Waikiki (35mm)"/>
-                                <img src="assets/photos/17.webp" id="17" class="lifestyle" onclick="toggleLightbox(17)" data-order="3" alt="Kaniela Stewart, Waikiki (120mm)"/>
-                                <img src="assets/photos/19-cropped.webp" id="19" class="lifestyle" onclick="toggleLightbox(19)" data-order="5" alt="Kelis Kaleopa'a, Waikiki (120mm)"/>
+                                <img src="assets/photos/photo-old/15.webp" id="15" class="lifestyle" onclick="toggleLightbox(15)" data-order="1" alt="Kelis Kaleopa'a, Waikiki (35mm)"/>
+                                <img src="assets/photos/photo-old/17.webp" id="17" class="lifestyle" onclick="toggleLightbox(17)" data-order="3" alt="Kaniela Stewart, Waikiki (120mm)"/>
+                                <img src="assets/photos/photo-old/19-cropped.webp" id="19" class="lifestyle" onclick="toggleLightbox(19)" data-order="5" alt="Kelis Kaleopa'a, Waikiki (120mm)"/>
                             </div>
                             <div class="flex-start-start flex-column">
-                                <img src="assets/photos/16.webp" id="16" class="lifestyle" onclick="toggleLightbox(16)" data-order="2" alt="Kaniela Stewart, Waikiki"/>
-                                <img src="assets/photos/18.webp" id="18" class="lifestyle" onclick="toggleLightbox(18)" data-order="4" alt="Kelis Kaleopa'a and Kaniela Stewart, Waikiki"/>
+                                <img src="assets/photos/photo-old/16.webp" id="16" class="lifestyle" onclick="toggleLightbox(16)" data-order="2" alt="Kaniela Stewart, Waikiki"/>
+                                <img src="assets/photos/photo-old/18.webp" id="18" class="lifestyle" onclick="toggleLightbox(18)" data-order="4" alt="Kelis Kaleopa'a and Kaniela Stewart, Waikiki"/>
                             </div>
                         </div>
                         <div class="flex-center-center">
-                            <img src="assets/photos/20.webp" id="20" class="lifestyle" data-order="6" onclick="toggleLightbox(20)" style="padding: 0%!important; width: 97.5%!important" alt="Kelis Kaleopa'a and Kaniela Stewart (35mm)"/>
+                            <img src="assets/photos/photo-old/20.webp" id="20" class="lifestyle" data-order="6" onclick="toggleLightbox(20)" style="padding: 0%!important; width: 97.5%!important" alt="Kelis Kaleopa'a and Kaniela Stewart (35mm)"/>
                         </div>
                         <div class="flex-start-start double-column">
                             <div class="flex-start-start flex-column">
-                                <img src="assets/photos/21.webp" id="21" class="lifestyle" onclick="toggleLightbox(21)" data-order="7" alt="Kaniela Stewart, Waikiki"/>
-                                <img src="assets/photos/23.webp" id="23" class="lifestyle" onclick="toggleLightbox(23)" data-order="9" alt="Kaniela Stewart, Waikiki (120mm)"/>
+                                <img src="assets/photos/photo-old/21.webp" id="21" class="lifestyle" onclick="toggleLightbox(21)" data-order="7" alt="Kaniela Stewart, Waikiki"/>
+                                <img src="assets/photos/photo-old/23.webp" id="23" class="lifestyle" onclick="toggleLightbox(23)" data-order="9" alt="Kaniela Stewart, Waikiki (120mm)"/>
                                 
                             </div>
                             <div class="flex-start-start flex-column">
-                                <img src="assets/photos/22.webp" id="22" class="lifestyle" onclick="toggleLightbox(22)" data-order="8" alt="Kelis Kaleopa'a, Waikiki (120mm)"/>
-                                <img src="assets/photos/24.webp" id="24" class="lifestyle" onclick="toggleLightbox(24)" data-order="10" alt="Kaniela Stewart, Waikiki"/>
+                                <img src="assets/photos/photo-old/22.webp" id="22" class="lifestyle" onclick="toggleLightbox(22)" data-order="8" alt="Kelis Kaleopa'a, Waikiki (120mm)"/>
+                                <img src="assets/photos/photo-old/24.webp" id="24" class="lifestyle" onclick="toggleLightbox(24)" data-order="10" alt="Kaniela Stewart, Waikiki"/>
                             </div>
                         </div>
                         <div class="flex-center-center">
-                            <img src="assets/photos/25.webp" id="25" class="lifestyle" data-order="11" onclick="toggleLightbox(25)" style="padding: 0%!important; width: 97.5%!important" alt="Kaniela Stewart, Waikiki"/>
+                            <img src="assets/photos/photo-old/25.webp" id="25" class="lifestyle" data-order="11" onclick="toggleLightbox(25)" style="padding: 0%!important; width: 97.5%!important" alt="Kaniela Stewart, Waikiki"/>
                         </div>
                         <div class="flex-start-start double-column">
                             <div class="flex-start-start flex-column">
-                                <img src="assets/photos/26.webp" id="26" class="lifestyle" onclick="toggleLightbox(26)" data-order="12" alt="Kelis Kaleopa'a and Kaniela Stewart (35mm)"/>
+                                <img src="assets/photos/photo-old/26.webp" id="26" class="lifestyle" onclick="toggleLightbox(26)" data-order="12" alt="Kelis Kaleopa'a and Kaniela Stewart (35mm)"/>
                             </div>
                             <div class="flex-start-start flex-column">
-                                <img src="assets/photos/27.webp" id="27" class="lifestyle" onclick="toggleLightbox(27)" data-order="13" alt="Kelis Kaleopa'a, Waikiki (120mm)"/>
+                                <img src="assets/photos/photo-old/27.webp" id="27" class="lifestyle" onclick="toggleLightbox(27)" data-order="13" alt="Kelis Kaleopa'a, Waikiki (120mm)"/>
                             </div>
                         </div>
 
@@ -155,21 +173,22 @@ function animatePhotos(category) {
 }
 
 function toggleLightbox(index) {
-    currentImageIndex = activeCategoryImages.findIndex(img => img.id === String(index)); // Set the index for lightbox cycling
-    const $lightbox = $('#lightbox');
-    const $lightboxViewer = $('#lightbox-viewer');
-    const $lightboxText = $('#lightbox-text');
+    console.log("placeholder")
+    // currentImageIndex = activeCategoryImages.findIndex(img => img.id === String(index)); // Set the index for lightbox cycling
+    // const $lightbox = $('#lightbox');
+    // const $lightboxViewer = $('#lightbox-viewer');
+    // const $lightboxText = $('#lightbox-text');
 
-    // Set the background image and description
-    const image = activeCategoryImages[currentImageIndex];
-    $lightboxViewer.css('background-image', `url("${image.src}")`);
-    $lightboxText.text(image.alt);
+    // // Set the background image and description
+    // const image = activeCategoryImages[currentImageIndex];
+    // $lightboxViewer.css('background-image', `url("${image.src}")`);
+    // $lightboxText.text(image.alt);
 
-    // Animate the lightbox expanding and fading in
-    gsap.fromTo($lightbox, 
-        { scale: 0.8, opacity: 0, display: "flex" }, // Start with a smaller scale and hidden opacity
-        { scale: 1, opacity: 1, duration: 0.5, ease: "power2.out", display: "flex" } // Fade in and expand
-    );
+    // // Animate the lightbox expanding and fading in
+    // gsap.fromTo($lightbox, 
+    //     { scale: 0.8, opacity: 0, display: "flex" }, // Start with a smaller scale and hidden opacity
+    //     { scale: 1, opacity: 1, duration: 0.5, ease: "power2.out", display: "flex" } // Fade in and expand
+    // );
 }
 
 function nextImage() {
