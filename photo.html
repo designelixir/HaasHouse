@@ -15,24 +15,6 @@
 
 </head>
 
-<style>
-.photo-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
-    height: 100%;
-}
-
-.photo-container img {
-  width: 100%; padding: 2.5%; cursor: pointer;
-}
-.photo-container img:hover {
-  transform: scale(1.01)!important; transition: 0.3s;
-}
-
-</style>
-
 <body class="fade-in">
     <main class="flex-center-center">
         <div class="flex-center-center flex-column">
@@ -44,88 +26,64 @@
             <div class="flex-center-center photo-section">
                 <div class="photo-container-wrapper flex-center-center">
                     <div class="flex-center-center flex-column photo-container">
-                        <div class="flex-start-start double-column">
-                            <div class="flex-start-start flex-column single-column" >
-                                <img src="assets/photos/photo-old/1.webp" id="1" class="surf" onclick="toggleLightbox(1)" data-order="1" alt="Kaniela Stewart" />
-                                <img src="assets/photos/photo-old/3.webp" id="3" class="surf" onclick="toggleLightbox(3)" data-order="3" alt="Kelis Kaleopa'a, Kaniela Stewart"/>
-                                <img src="assets/photos/photo-old/4.webp" id="4" class="surf" onclick="toggleLightbox(4)" data-order="5" alt="Keani Canullo, 35mm"/>
-                                <img src="assets/photos/photo-old/5.webp" id="5" class="surf" onclick="toggleLightbox(5)" data-order="7" alt="Kelis Kaleopa'a"/>
-                                <img src="assets/photos/photo-old/6-cropped.webp" id="6" class="surf" onclick="toggleLightbox(6)" data-order="9" alt="Keani Canullo"/>
-                            </div>
-                            <div class="flex-start-start flex-column single-column">
-                                <img src="assets/photos/photo-old/2.webp" id="2" class="surf" onclick="toggleLightbox(2)" data-order="2" alt="Kelis Kaleopa'a"/>
-                                <img src="assets/photos/photo-old/7.webp" id="7" class="surf" onclick="toggleLightbox(7)" data-order="4" alt="Keani Canullo" />
-                                <img src="assets/photos/photo-old/8.webp" id="8" class="surf" onclick="toggleLightbox(8)" data-order="6" alt="Kaniela Stewart" />
-                                <img src="assets/photos/photo-old/9.webp" id="9" class="surf" onclick="toggleLightbox(9)" data-order="8" alt="Kai Sallas"/>
-                                <img src="assets/photos/photo-old/10.webp" id="10" class="surf" onclick="toggleLightbox(10)" data-order="10" alt="Keani Canullo"/>
-                                <img src="assets/photos/photo-old/11.webp" id="11" class="surf" onclick="toggleLightbox(11)" data-order="12" alt="Kelis Kaleopa'a, Kaniela Stewart" />
-                            </div>
-                        </div>
-                        <div class="flex-center-center">
-                            <img src="assets/photos/photo-old/12.webp" id="12" class="surf" data-order="13" onclick="toggleLightbox(12)" style="padding: 0%!important; width: 97.5%!important" alt="Kaniela Stewart, Kelis Kaleopa'a"/>
-                        </div>
-                        
-                        <div class="flex-start-start double-column">
-                            <div class="flex-start-start single-column">
-                                <img src="assets/photos/photo-old/13.webp" id="13" class="surf" onclick="toggleLightbox(13)" data-order="14" alt="Kelis Kaleopa'a"/>
-                            </div>
-                            <div class="flex-start-start single-column">
-                                <img src="assets/photos/photo-old/14.webp" id="14" class="surf" onclick="toggleLightbox(14)" data-order="15" alt="Keani Canullo"/>
-                            </div>
-                        </div>
+                        <!-- Surf -->
+                         <div class="flex-start-start flex-wrap full-width">
+                            <img src="assets/photos/surf/A.jpg" id="1" class="surf full-ratio"  data-order="1" alt=""/>
+                            <img src="assets/photos/surf/B.jpg" id="2" class="surf full-ratio" data-order="2" alt=""/>
+                            <img src="assets/photos/surf/C.jpg" id="3" class="surf full-ratio" data-order="3" alt=""/>
+                            <img src="assets/photos/surf/D.jpg" id="4" class="surf full-ratio" data-order="4" alt=""/>
+                            <img src="assets/photos/surf/E.jpg" id="5" class="surf three-four-ratio"  data-order="5" alt=""/>
+                            <img src="assets/photos/surf/F.jpg" id="6" class="surf three-four-ratio" data-order="6" alt=""/>
+                            <img src="assets/photos/surf/G.jpg" id="7" class="surf full-ratio" data-order="7" alt=""/>
+                            <img src="assets/photos/surf/H.jpg" id="8" class="surf three-four-ratio"  data-order="8" alt=""/>
+                            <img src="assets/photos/surf/I.jpg" id="9" class="surf three-four-ratio" data-order="9" alt=""/>
+                            <img src="assets/photos/surf/J.jpg" id="10" class="surf full-ratio" data-order="10" alt=""/>
+                            <img src="assets/photos/surf/K.jpg" id="11" class="surf full-ratio" data-order="11" alt=""/>
+                            <img src="assets/photos/surf/L.jpg" id="12" class="surf three-four-ratio" data-order="12" alt=""/>
+                            <img src="assets/photos/surf/M.jpg" id="13" class="surf three-four-ratio"  data-order="13" alt=""/>
+                            <img src="assets/photos/surf/N.jpg" id="14" class="surf full-ratio" data-order="14" alt=""/>
+                            <img src="assets/photos/surf/O.jpg" id="15" class="surf full-ratio" data-order="15" alt=""/>
+                            <img src="assets/photos/surf/P.jpg" id="16" class="surf full-ratio" data-order="16" alt=""/>
+                            <img src="assets/photos/surf/Q.jpg" id="17" class="surf three-four-ratio"  data-order="17" alt=""/>
+                            <img src="assets/photos/surf/R.jpg" id="18" class="surf three-four-ratio" data-order="18" alt=""/>
+                            <img src="assets/photos/surf/S.jpg" id="19" class="surf full-ratio" data-order="19" alt=""/>
+                            <img src="assets/photos/surf/T.jpg" id="20" class="surf full-ratio" data-order="20" alt=""/>
+                            <img src="assets/photos/surf/U.jpg" id="21" class="surf full-ratio" data-order="21" alt=""/>
+                            
+                         </div>
 
                         <!-- Lifestyle -->
-                        <div class="flex-start-start double-column">
-                            <div class="flex-start-start flex-column">
-                                <img src="assets/photos/photo-old/15.webp" id="15" class="lifestyle" onclick="toggleLightbox(15)" data-order="1" alt="Kelis Kaleopa'a, Waikiki (35mm)"/>
-                                <img src="assets/photos/photo-old/17.webp" id="17" class="lifestyle" onclick="toggleLightbox(17)" data-order="3" alt="Kaniela Stewart, Waikiki (120mm)"/>
-                                <img src="assets/photos/photo-old/19-cropped.webp" id="19" class="lifestyle" onclick="toggleLightbox(19)" data-order="5" alt="Kelis Kaleopa'a, Waikiki (120mm)"/>
-                            </div>
-                            <div class="flex-start-start flex-column">
-                                <img src="assets/photos/photo-old/16.webp" id="16" class="lifestyle" onclick="toggleLightbox(16)" data-order="2" alt="Kaniela Stewart, Waikiki"/>
-                                <img src="assets/photos/photo-old/18.webp" id="18" class="lifestyle" onclick="toggleLightbox(18)" data-order="4" alt="Kelis Kaleopa'a and Kaniela Stewart, Waikiki"/>
-                            </div>
-                        </div>
-                        <div class="flex-center-center">
-                            <img src="assets/photos/photo-old/20.webp" id="20" class="lifestyle" data-order="6" onclick="toggleLightbox(20)" style="padding: 0%!important; width: 97.5%!important" alt="Kelis Kaleopa'a and Kaniela Stewart (35mm)"/>
-                        </div>
-                        <div class="flex-start-start double-column">
-                            <div class="flex-start-start flex-column">
-                                <img src="assets/photos/photo-old/21.webp" id="21" class="lifestyle" onclick="toggleLightbox(21)" data-order="7" alt="Kaniela Stewart, Waikiki"/>
-                                <img src="assets/photos/photo-old/23.webp" id="23" class="lifestyle" onclick="toggleLightbox(23)" data-order="9" alt="Kaniela Stewart, Waikiki (120mm)"/>
-                                
-                            </div>
-                            <div class="flex-start-start flex-column">
-                                <img src="assets/photos/photo-old/22.webp" id="22" class="lifestyle" onclick="toggleLightbox(22)" data-order="8" alt="Kelis Kaleopa'a, Waikiki (120mm)"/>
-                                <img src="assets/photos/photo-old/24.webp" id="24" class="lifestyle" onclick="toggleLightbox(24)" data-order="10" alt="Kaniela Stewart, Waikiki"/>
-                            </div>
-                        </div>
-                        <div class="flex-center-center">
-                            <img src="assets/photos/photo-old/25.webp" id="25" class="lifestyle" data-order="11" onclick="toggleLightbox(25)" style="padding: 0%!important; width: 97.5%!important" alt="Kaniela Stewart, Waikiki"/>
-                        </div>
-                        <div class="flex-start-start double-column">
-                            <div class="flex-start-start flex-column">
-                                <img src="assets/photos/photo-old/26.webp" id="26" class="lifestyle" onclick="toggleLightbox(26)" data-order="12" alt="Kelis Kaleopa'a and Kaniela Stewart (35mm)"/>
-                            </div>
-                            <div class="flex-start-start flex-column">
-                                <img src="assets/photos/photo-old/27.webp" id="27" class="lifestyle" onclick="toggleLightbox(27)" data-order="13" alt="Kelis Kaleopa'a, Waikiki (120mm)"/>
-                            </div>
-                        </div>
 
+                        <div class="flex-start-start flex-wrap">
+                            <img src="assets/photos/lifestyle/A.jpg" id="22" class="lifestyle three-four-ratio"  data-order="1" alt=""/>
+                            <img src="assets/photos/lifestyle/B.jpg" id="23" class="lifestyle three-four-ratio" data-order="2" alt=""/>
+                            <img src="assets/photos/lifestyle/C.jpg" id="24" class="lifestyle full-ratio"  data-order="3" alt=""/>
+                            <img src="assets/photos/lifestyle/D.jpg" id="25" class="lifestyle three-four-ratio" data-order="4" alt=""/>
+                            <img src="assets/photos/lifestyle/E.jpg" id="26" class="lifestyle three-four-ratio"  data-order="5" alt=""/>
+                            <img src="assets/photos/lifestyle/F.jpg" id="27" class="lifestyle three-four-ratio" data-order="6" alt=""/>
+                            <img src="assets/photos/lifestyle/G.jpg" id="28" class="lifestyle three-four-ratio" data-order="7" alt=""/>
 
+                            <img src="assets/photos/lifestyle/H.jpg" id="29" class="lifestyle three-four-ratio"  data-order="8" alt=""/>
+                            <img src="assets/photos/lifestyle/I.jpg" id="30" class="lifestyle three-four-ratio" data-order="9" alt=""/>
+
+                            <img src="assets/photos/lifestyle/J.jpg" id="31" class="lifestyle three-four-ratio"  data-order="10" alt=""/>
+                            <img src="assets/photos/lifestyle/K.jpg" id="32" class="lifestyle three-four-ratio" data-order="11" alt=""/>
+
+                            <img src="assets/photos/lifestyle/L.jpg" id="33" class="lifestyle full-ratio" data-order="12" alt=""/>
+
+                            <img src="assets/photos/lifestyle/M.jpg" id="34" class="lifestyle three-four-ratio"  data-order="13" alt=""/>
+                            <img src="assets/photos/lifestyle/N.jpg" id="35" class="lifestyle three-four-ratio" data-order="14" alt=""/>
+
+                            <img src="assets/photos/lifestyle/O.jpg" id="36" class="lifestyle three-four-ratio"  data-order="15" alt=""/>
+                            <img src="assets/photos/lifestyle/P.jpg" id="37" class="lifestyle three-four-ratio" data-order="16" alt=""/>
+
+                            <img src="assets/photos/lifestyle/Q.jpg" id="38" class="lifestyle three-four-ratio"  data-order="17" alt=""/>
+                            <img src="assets/photos/lifestyle/R.jpg" id="39" class="lifestyle three-four-ratio" data-order="18" alt=""/>
+
+                            <img src="assets/photos/lifestyle/S.jpg" id="40" class="lifestyle full-ratio"  data-order="19" alt=""/>
+                            
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <div id="lightbox" class="flex-center-center flex-column">
-                <div id="lightbox-viewer" class="flex-end-end flex-column">
-                    <div class="flex-start-end" style="height: 50%; width: 100%;">
-                        <button class="close-lightbox hover" onclick="closeLightbox()">×</button>
-                    </div>
-                </div>
-                <div class="flex-center-spacebetween" style="max-height: 100px;">
-                    <p id="lightbox-text" style="width: 100%;" class="centered-text"></p>
-                    <button class="next-lightbox hover" onclick="nextImage()">→</button>
                 </div>
             </div>
 
@@ -138,98 +96,53 @@
     </div>
     
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script>
+gsap.registerPlugin(ScrollTrigger);
 
-let activeCategoryImages = []; // Array to hold the images of the currently active category
-let currentImageIndex = 0; // Track the index of the current image in the active category array
+let activeCategoryImages = [];
 
 function animatePhotos(category) {
-    // Scroll to top smoothly
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // Hide all images and reset button styles
     const allImages = document.querySelectorAll('.photo-container img');
     const allButtons = document.querySelectorAll('.category-container button');
     allImages.forEach(img => img.classList.add('hidden'));
     allButtons.forEach(button => button.classList.add('inactive'));
 
-    // Show images of the selected category and set the active button
     activeCategoryImages = Array.from(document.querySelectorAll(`.photo-container .${category}`));
     activeCategoryImages.forEach(img => img.classList.remove('hidden'));
     document.querySelector(`#${category}Button`).classList.remove('inactive');
 
-    // Sort images by data-order attribute for animation sequence
     activeCategoryImages.sort((a, b) => a.getAttribute('data-order') - b.getAttribute('data-order'));
 
-    // Reset currentImageIndex to the first image of the new category
-    currentImageIndex = 0;
-
-    // Animate images in the sorted order
-    gsap.fromTo(
-        activeCategoryImages,
-        { scale: 0.5, opacity: 0 }, // Start with a smaller scale and hidden opacity
-        { scale: 1, opacity: 1, duration: 1, ease: "power2.out", stagger: 0.15 } // Fade in, expand, with a staggered delay
-    );
+    // Animate each image individually as it comes into view
+    activeCategoryImages.forEach((img, index) => {
+        gsap.fromTo(
+            img,
+            { scale: 0.5, opacity: 0 },
+            {
+                scale: 1,
+                opacity: 1,
+                duration: 1,
+                ease: "power2.out",
+                delay: index * 0.001,
+                scrollTrigger: {
+                    trigger: img,
+                    start: "top 90%",
+                    toggleActions: "play none none none"
+                }
+            }
+        );
+    });
 }
 
-function toggleLightbox(index) {
-    console.log("placeholder")
-    // currentImageIndex = activeCategoryImages.findIndex(img => img.id === String(index)); // Set the index for lightbox cycling
-    // const $lightbox = $('#lightbox');
-    // const $lightboxViewer = $('#lightbox-viewer');
-    // const $lightboxText = $('#lightbox-text');
-
-    // // Set the background image and description
-    // const image = activeCategoryImages[currentImageIndex];
-    // $lightboxViewer.css('background-image', `url("${image.src}")`);
-    // $lightboxText.text(image.alt);
-
-    // // Animate the lightbox expanding and fading in
-    // gsap.fromTo($lightbox, 
-    //     { scale: 0.8, opacity: 0, display: "flex" }, // Start with a smaller scale and hidden opacity
-    //     { scale: 1, opacity: 1, duration: 0.5, ease: "power2.out", display: "flex" } // Fade in and expand
-    // );
-}
-
-function nextImage() {
-    // Move to the next image in the active category, wrapping back to the start if at the end
-    currentImageIndex = (currentImageIndex + 1) % activeCategoryImages.length;
-    toggleLightbox(activeCategoryImages[currentImageIndex].id);
-}
-
-// Initial call to display only 'surf' images on page load
 document.addEventListener("DOMContentLoaded", () => {
     animatePhotos("surf");
 });
 
-// Event listeners for category buttons
 document.getElementById("surfButton").addEventListener("click", () => animatePhotos("surf"));
 document.getElementById("lifestyleButton").addEventListener("click", () => animatePhotos("lifestyle"));
-
-// Close lightbox when clicking outside the content
-$(document).on('click', '#lightbox', function(event) {
-    if ($(event.target).is('#lightbox')) {
-        closeLightbox();
-    }
-});
-
-
-function closeLightbox() {
-    const $lightbox = $('#lightbox');
-
-    // Animate the lightbox shrinking and fading out
-    gsap.to($lightbox, {
-        scale: 0.8,
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.in",
-        onComplete: function() {
-            $lightbox.css("display", "none"); // Hide the lightbox after animation completes
-        }
-    });
-}
-
-
-   
 </script>
+
 </html>
