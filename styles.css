@@ -150,11 +150,11 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
 #designElixirCredits {text-decoration: none; font-size: 12px; color: black;}
 
 .white-gradient {
-  background: rgb(255, 251, 248);
-  background: -moz-linear-gradient(180deg, rgba(255, 251, 248, 0.971) 10%, rgba(255, 251, 248, 0.75) 73%, rgba(255, 251, 248, 0.5) 85%, rgba(255, 251, 248, 0.25) 94%, rgba(255, 251, 248, 0.05) 100%);
-  background: -webkit-linear-gradient(180deg, rgba(255, 251, 248, 0.971) 10%, rgba(255, 251, 248, 0.75) 73%, rgba(255, 251, 248, 0.5) 85%, rgba(255, 251, 248, 0.25) 94%, rgba(255, 251, 248, 0.05) 100%);
-  background: linear-gradient(180deg, rgba(255, 251, 248, 0.971) 10%, rgba(255, 251, 248, 0.75) 73%, rgba(255, 251, 248, 0.5) 85%, rgba(255, 251, 248, 0.25) 94%, rgba(255, 251, 248, 0.05) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFFBF8",endColorstr="#FFFBF8",GradientType=1); 
+background: #FFFBF8;
+background: -webkit-linear-gradient(0deg, rgba(255, 251, 248, 0) 0%, rgba(255, 251, 248, 0.77) 30%, rgba(255, 251, 248, 0.89) 50%, rgba(255, 251, 248, 1) 69%, rgba(255, 251, 248, 1) 100%);
+background: -moz-linear-gradient(0deg, rgba(255, 251, 248, 0) 0%, rgba(255, 251, 248, 0.77) 30%, rgba(255, 251, 248, 0.89) 50%, rgba(255, 251, 248, 1) 69%, rgba(255, 251, 248, 1) 100%);
+background: linear-gradient(0deg, rgba(255, 251, 248, 0) 0%, rgba(255, 251, 248, 0.77) 30%, rgba(255, 251, 248, 0.89) 50%, rgba(255, 251, 248, 1) 69%, rgba(255, 251, 248, 1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFFBF8", endColorstr="#FFFBF8", GradientType=0);
 }
 
 
@@ -185,12 +185,15 @@ a:hover {transform: scale(1.01); text-decoration: underline;}
 
 .bio-image { width: 100%; max-width: 400px; min-width: 400px;}
 /* Photo Page */
-
+.one-three-ratio { width: 40vw; height: 50vw; object-fit: cover;}
+.two-three-ratio { width: 60vw; height: 50vw; object-fit: cover;}
 .three-four-ratio {aspect-ratio: 3/4; width: 50vw; object-fit: cover;}
 .full-ratio {width: 100vw;}
 
 @media screen and (max-width: 700px) {
   .three-four-ratio {aspect-ratio: unset; width: 100%; }
+  .two-three-ratio {aspect-ratio: unset; width: 100%; }
+  .one-three-ratio {aspect-ratio: unset; width: 100%; }
   
 }
 
