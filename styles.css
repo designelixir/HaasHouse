@@ -157,6 +157,8 @@ background: linear-gradient(0deg, rgba(255, 251, 248, 0) 0%, rgba(255, 251, 248,
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFFBF8", endColorstr="#FFFBF8", GradientType=0);
 }
 
+.photo-container img {pointer-events: none;}
+
 
 .single-column {width: 50%;}
 @media screen and (max-width: 700px) {
