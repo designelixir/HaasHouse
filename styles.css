@@ -233,7 +233,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFFBF8", endC
 }
 .photo-section {width: 100%; min-height: 85vh; margin-top: 50px }
 .category-button:hover {font-weight: 800;}
-.category-container {position: fixed; top: 80px; z-index: 3; width: 100%;}
+.category-container { width: 100%;}
 
 .selected {font-weight: 800!important; text-decoration: underline;}
 
