@@ -11,70 +11,65 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts/index.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/wtw3bse.css">
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="xs6jn6/BKrCx7nmYXxII4g" async></script>
 </head>
-
-
 
 <body class="fade-in">
     <main class="flex-center-center">
-        <div class=" flex-center-center flex-column">
-
+        <div class="flex-center-center flex-column">
             <header-component data-nav="Contact" id="navigation" class="standard-nav"></header-component>
-
-
-
-
-            <div class="flex-center-center standard-container-padding half-div-container bio-wrapper" style="min-height: 80vh; width: 100%;">
-                <div class="half-div flex-end-end flex-column contact-left" style="margin-right: 25px">
-                    <h1 style="letter-spacing: 2px">Contact</h1>
-                    <p>email: <a href="mailto:casey@haashouse.co" target="_blank">casey@haashouse.co</a></p>
-                    <div class="flex-center-start">
-                        <a href="https://www.instagram.com/caseythaas/" target="_blank"><img src="assets/ig.svg" style="height: 30px; margin: 5px;" alt="instagram" class="hover"/></a>
-                        <a href="https://www.tiktok.com/@haas.house" target="_blank"><img src="assets/tiktok.svg" style="height: 30px; margin: 5px;" alt="tiktok" class="hover" /></a>
-                        <a href="https://www.youtube.com/@caseyhaas8062" target="_blank"><img src="assets/youtube.svg" style="height: 30px; margin: 5px;" alt="youtube" class="hover" /></a>
-                    </div>
+            <div class="flex-center-center standard-container-padding half-div-container bio-wrapper full-width" style="min-height: 80vh;">
+                <div class="contact-wrapper">
+                    <h1 style="text-transform: uppercase">Contact</h1>
+                    <p><strong>Email:&nbsp;</strong><a href="mailto:casey@haashouse.co" aria-label="Email Casey Haas">casey@haashouse.co</a></p>
+                    <nav class="flex-center-start" aria-label="Social media links">
+                        <a href="https://www.instagram.com/caseythaas/" target="_blank" rel="noopener noreferrer" aria-label="Follow Casey on Instagram"> <img src="assets/ig.svg" alt="Instagram" class="hover" style="height: 30px; margin: 5px;"> </a>
+                        <a href="https://www.tiktok.com/@haas.house" target="_blank" rel="noopener noreferrer" aria-label="Follow Casey on TikTok"> <img src="assets/tiktok.svg" alt="TikTok" class="hover" style="height: 30px; margin: 5px;"> </a>
+                        <a href="https://www.youtube.com/@caseyhaas8062" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to Casey on YouTube"> <img src="assets/youtube.svg" alt="YouTube" class="hover" style="height: 30px; margin: 5px;"> </a>
+                    </nav>
                 </div>
-                <div class="flex-start-start flex-column half-div standard-container-padding">
-                    <form
-                    action="https://formspree.io/f/mqaevjjy"
-                    method="POST"
-                    class="flex-start-start flex-column"
-                    >
-                    <label>Name</label>
-                    <input type="name" required name="name">
-                    
-                    <label>Email</label>
-                    <input type="email" required name="email">
 
-                    <label>Social Media</label>
-                    <input type="text" name="social">
-                    
-                    <label>Tell Me About Your Project</label>
-                    <textarea type="message" required name="message"></textarea>
-                    
-                    <button type="submit" class="form-button hover">Send Message</button>
+                <div class="flex-start-start flex-column standard-container-padding form-wrapper">
+                    <form action="https://formspree.io/f/mqaevjjy" method="POST" class="flex-start-start flex-column" aria-label="Contact form">
+                        <div class="flex-center-spacebetween full-width no-flex-grow">
+                            <div class="full-width" style="margin-right: 25px;">
+                                <label for="name" aria-label="required">*Name</label>
+                                <input type="text" id="name" name="name" required aria-required="true">
+                            </div>
+                            <div class="full-width">
+                                <label for="email" aria-label="required">*Email</label>
+                                <input type="email" id="email" name="email" required aria-required="true">
+                            </div>
+                        </div>
+
+                        <label for="social" aria-label="required">*Social Media</label>
+                        <input type="text" id="social" name="social" required aria-required="true">
+
+                        <div class="flex-center-spacebetween full-width no-flex-grow" style="margin-top: 25px;">
+                            <div class="full-width" style="margin-right: 25px;">
+                                <label for="dateofevent" aria-label="required">*Date(s) of Event</label>
+                                <input type="text" id="dateofevent" name="dateofevent" required aria-required="true">
+                            </div>
+                            <div class="full-width">
+                                <label for="location" aria-label="required">*Venue / Location</label>
+                                <input type="text" id="location" name="location" required aria-required="true">
+                            </div>
+                        </div>
+                        
+                        <label for="message" aria-label="required">*Project Details</label>
+                        <textarea id="message" name="message" required aria-required="true" rows="6"></textarea>
+                        
+                        <div class="flex-center-center full-width no-flex-grow">
+                            <button type="submit" class="form-button hover">Send</button>
+                        </div>
                     </form>
                 </div>
-                
-                
+
             </div>
 
-            <div class="standard-container-padding">
-                <a href="https://www.facebook.com/ColoradoHistoricalVideos" target="_blank" class="hover">
-                    <?xml version="1.0" encoding="UTF-8"?>
-                    <svg id="b" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px"
-                        viewBox="0 0 64.206 123.892">
-
-                        <g id="c" data-name="Layer 1">
-                            <path class="d" style="fill: white;"
-                                d="M19.036,123.892c-.021-.522-.06-1.044-.06-1.567-.003-17.738-.003-35.475-.003-53.213v-1.702H0v-22.028h18.973c0-.619-.002-1.088,0-1.558.024-5.764-.121-11.536.117-17.291.287-6.94,2.339-13.304,7.237-18.487,3.726-3.942,8.375-6.175,13.623-7.296C44.214-.161,48.528-.054,52.836.111c3.502.134,6.997.436,10.494.671.275.018.546.097.876.158v19.639c-.417,0-.841-.005-1.265,0-4.311.063-8.628,0-12.931.224-5.088.263-7.965,3.087-8.176,8.207-.219,5.312-.076,10.639-.087,15.959,0,.072.054.144.138.353h21.606c-.953,7.406-1.886,14.651-2.835,22.025h-18.839c-.042.473-.098.817-.098,1.161-.004,18.181-.004,36.362-.001,54.543,0,.28.039.561.06.841h-22.743Z" />
-                        </g>
-                    </svg>
-                </a>
-            </div>
         </div>
     </main>
-
 
 </body>
 

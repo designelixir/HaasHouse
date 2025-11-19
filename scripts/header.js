@@ -20,7 +20,6 @@ class Header extends HTMLElement {
               <a href="/motion" class="nav-link text-font" id="Motion">motion</a>
               <a href="/photo" class="nav-link text-font" id="Photo">photo</a>
               <a href="/about" class="nav-link text-font" id="About">about</a>
-              <a href="/services" class="nav-link text-font" id="Services">services</a>
               <a href="/contact" class="nav-link text-font" id="Contact">contact</a>
           </div>
       </div>
