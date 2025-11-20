@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to the portfolio site for Casey Haas, featuring surf based brand photography and video. ">
-    <meta name="keywords" content="comma separated">
+    <meta name="description" content="Welcome to the portfolio site for Casey Haas, a Los Angeles photographer and videographer specializing in analog surf film, Super 8, and brand storytelling for the surf industry.">
+    <meta name="keywords" content="Casey Haas, surf photographer, surf videographer, Los Angeles, analog film, Super 8, film photography, surf brand marketing, vintage surf media, LA photographer, surf industry">
     <meta name="author" content="Design Elixir Studio | Megan Byers">
     <title>Casey Haas | Home</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
@@ -15,42 +14,26 @@
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="xs6jn6/BKrCx7nmYXxII4g" async></script>
     <link rel="stylesheet" href="https://use.typekit.net/wtw3bse.css">
 </head>
-
-<style>
-    main {height: 100vh; width: 100vw;}
-    .menu-layer {color: white!important;}
-    .menu-layer.animate {color: var(--gold)!important;}
-</style>
-
 <body id="homeHero" class="dark-overlay">
-    <div class="vimeo-wrapper flex-center-center " id="homeBGVideoWrapper">
-        <iframe id="homeBGVideo" class="slow-fade-in" src="https://player.vimeo.com/video/1029436705?background=1&autoplay=1&loop=1&byline=0&title=0"
-                frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <div class="vimeo-wrapper flex-center-center" id="homeBGVideoWrapper">
+        <iframe id="homeBGVideo" class="slow-fade-in" src="https://player.vimeo.com/video/1029436705?background=1&autoplay=1&loop=1&byline=0&title=0"></iframe>
      </div>
     <header-component data-nav="Home" id="navigation" class="home-nav"></header-component>
-    <main class="flex-center-center flex-column">
+    <main id="homeMain" class="flex-center-center flex-column">
         <div class="hero-content flex-center-center flex-column">
-            <img src="assets/casey-haas-surfer-logo-white.svg" class="Casey Haas logo" />
-            <h2 class="centered-text white-text"><a class="invisible-link white-text hover" href="/motion">motion</a> | <a class="invisible-link white-text hover" href="/photo">photo</a></h2>
+            <img src="assets/casey-haas-surfer-logo-white.svg" class="logo" alt="Casey Haas logo">
+            <h2 class="centered-text white-text"><a class="invisible-link white-text hover" href="/film">film</a> | <a class="invisible-link white-text hover" href="/photo">photo</a></h2>
         </div>
-        
-        
     </main>
-    <div class="white-overlay fade-out"></div>
-
-    
-</body>
-<script>
+    <script>
     document.addEventListener("DOMContentLoaded", function () {
       const iframe = document.getElementById("homeBGVideo");
       const container = document.getElementById("homeBGVideoWrapper");
-  
       const player = new Vimeo.Player(iframe);
-
       player.on("loaded", function () {
         container.style.opacity = 1;
       });
     });
   </script>
-  
+</body>
 </html>

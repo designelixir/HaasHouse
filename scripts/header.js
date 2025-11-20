@@ -17,7 +17,7 @@ class Header extends HTMLElement {
       
       <div class="flex-center-center flex-column" id="navigation-bar">
           <div class="flex-center-center flex-column nav-link-wrapper full-width">
-              <a href="/motion" class="nav-link text-font" id="Motion">motion</a>
+              <a href="/film" class="nav-link text-font" id="Film">film</a>
               <a href="/photo" class="nav-link text-font" id="Photo">photo</a>
               <a href="/about" class="nav-link text-font" id="About">about</a>
               <a href="/contact" class="nav-link text-font" id="Contact">contact</a>
